@@ -13,7 +13,7 @@ export const pt: Content = {
     about: "Quem Somos",
     services: "Soluções",
     method: "Método",
-    productions: "Eventos",
+    productions: "Produções",
     impact: "Impacto",
     contact: "Contato",
   },
@@ -34,7 +34,7 @@ export const pt: Content = {
   },
 
   hero: {
-    headline: "Estrutura, operação e execução de projetos.",
+    headline: "Operações, produções e impacto para fazer acontecer.",
     subheadline:
       "Organizamos processos, equipes e governança para que projetos de impacto, cultura, inovação e expansão finalmente funcionem.",
     proof: "Uma operação que funciona mesmo quando você não está presente.",
@@ -44,7 +44,7 @@ export const pt: Content = {
     title: "O que fazemos",
     description: "Criamos estrutura, clareza e ritmo em iniciativas complexas.",
     subtext:
-      "Onde há muitos envolvidos, sobrecarga e entregas travadas, construímos a operação que faz o projeto acontecer.",
+      "Onde há múltiplos stakeholders, sobrecarga e entregas travadas, nós construímos a operação necessária para fazer acontecer.",
     pillars: [
       {
         title: "Mapeamos o que trava",
@@ -54,7 +54,7 @@ export const pt: Content = {
       {
         title: "Instalamos a operação",
         description:
-          "Processos, rituais de alinhamento, cadência de entrega e documentação. Uma rotina que roda de verdade.",
+          "Processos, rituais de alinhamento, cadência de entrega e documentação. Não um deck — uma rotina que roda.",
       },
       {
         title: "Acompanhamos até rodar",
@@ -77,17 +77,17 @@ export const pt: Content = {
         linkLabel: "Ver Creation OPS",
       },
       {
-        eyebrow: "Produções e Experiências",
-        title: "Creation Eventos",
-        description: "Eventos, ativações e experiências, do conceito à entrega.",
+        eyebrow: "Conteúdo & Experiências",
+        title: "Creation Produções",
+        description: "Audiovisual, eventos, campanhas e projetos especiais.",
         href: "/producoes",
         linkLabel: "Ver Creation Produções",
       },
       {
-        eyebrow: "Social, Cultural e ESG",
+        eyebrow: "Social, Cultural & ESG",
         title: "Creation Impacto",
         description:
-          "Rigor e método para projetos sociais e culturais durarem.",
+          "Projetos que redefinem territórios, comunidades e narrativas sociais.",
         href: "/impacto",
         linkLabel: "Ver Creation Impacto",
       },
@@ -100,7 +100,7 @@ export const pt: Content = {
     subtitle:
       "90 dias para organizar, destravar e operacionalizar projetos complexos.",
     description:
-      "Criamos a operação que seu projeto precisa, clara, documentada, replicável e sustentável.",
+      "Criamos a operação que seu projeto precisa — clara, documentada, replicável e sustentável.",
     phases: [
       {
         number: "01",
@@ -135,7 +135,7 @@ export const pt: Content = {
         label: "Fase 3",
         title: "Execução Acompanhada",
         description:
-          "Acompanhamos a operação até rodar, garantindo ritmo, alinhamento e sustentabilidade.",
+          "Acompanhamos a operação até rodar — garantindo ritmo, alinhamento e sustentabilidade.",
         deliverables: [
           "Acompanhamento próximo",
           "Correções em tempo real",
@@ -146,7 +146,7 @@ export const pt: Content = {
       },
     ],
     result:
-      "No final, você terá uma operação clara, documentada e replicável, que funciona mesmo quando você não está presente.",
+      "No final, você terá uma operação clara, documentada e replicável — que funciona mesmo quando você não está presente.",
     howWeWork: {
       title: "Como trabalhamos",
       items: [
@@ -168,14 +168,14 @@ export const pt: Content = {
       "Apoiamos organizações que precisam de estrutura, clareza e ritmo para fazer projetos importantes acontecerem.",
     audiences: [
       {
-        title: "Produtoras e casas de eventos",
+        title: "ONGs, Fundações e Institutos",
         description:
-          "Operações que faturam bem mas vivem apagando incêndio e perdendo margem no fim do projeto.",
+          "Estruturamos operações para que projetos com propósito ganhem força, consistência e impacto real.",
       },
       {
-        title: "Negócios de experiência em expansão",
+        title: "Hubs, Labs, Cultura e Educação",
         description:
-          "Quem cresce rápido e precisa de um modelo que rode sem depender do dono em tudo.",
+          "Ambientes criativos precisam de ordem para gerar resultados. Nós tornamos essas operações funcionais.",
       },
       {
         title: "Food, Retail e Negócios em Expansão",
@@ -194,15 +194,15 @@ export const pt: Content = {
     hero: {
       title: "Criamos clareza e propósito para fazer acontecer.",
       subtitle:
-        "Somos um estúdio de arquitetura operacional. Entramos onde há caos, múltiplos stakeholders, equipes sobrecarregadas, decisões difusas, e criamos ordem.",
+        "Somos um estúdio de arquitetura operacional. Entramos onde há caos — múltiplos stakeholders, equipes sobrecarregadas, decisões difusas — e criamos ordem.",
     },
     mission: {
       title: "Missão",
-      text: "Transformar iniciativas travadas em operações que funcionam, com método, ritmo e propósito.",
+      text: "Transformar iniciativas travadas em operações que funcionam — com método, ritmo e propósito.",
     },
     vision: {
       title: "Visão",
-      text: "Ser a operação por trás dos projetos e eventos que precisam dar certo, no Brasil e fora dele.",
+      text: "Ser a operação por trás dos projetos que mudam territórios, marcas e comunidades — no Brasil e fora dele.",
     },
     values: {
       title: "Valores",
@@ -224,7 +224,7 @@ export const pt: Content = {
         },
         {
           title: "Impacto com prestação de contas",
-          description: "Se não é medido, não é impacto, é intenção.",
+          description: "Se não é medido, não é impacto — é intenção.",
         },
         {
           title: "Território no centro",
@@ -250,32 +250,32 @@ export const pt: Content = {
     },
     niche: {
       title: "Nosso Nicho",
-      text: "Atuamos onde criatividade e execução se encontram. Produtoras, eventos, negócios de experiência e projetos complexos que precisam de estrutura para sair do papel com previsibilidade.",
+      text: "Atuamos onde propósito e resultado se encontram — ONGs, fundações, institutos, governos, hubs criativos e negócios em expansão que precisam de estrutura para executar com clareza.",
     },
     differentiator: {
       title: "Nosso Diferencial",
-      text: "Não apenas diagnosticamos, instalamos. Unimos rigor de consultoria, criatividade centrada nas pessoas e execução prática. Nossas estruturas são replicáveis, adaptáveis e sustentáveis no tempo.",
+      text: "Não apenas diagnosticamos — instalamos. Unimos rigor de consultoria, criatividade centrada nas pessoas e execução prática. Nossas estruturas são replicáveis, adaptáveis e sustentáveis no tempo.",
     },
     partnersTitle: "Nossos Parceiros",
     manifesto: {
       title: "Manifesto",
       paragraphs: [
-        "A gente acredita que as coisas acontecem quando pessoas e organizações recuperam a capacidade de imaginar e de executar. A Creation existe para transformar essa imaginação em resultado real.",
-        "Somos feitos de método, prática e coragem. Trabalhamos onde a ideia encontra a realidade, onde o projeto vira operação e onde marcas, eventos e negócios descobrem como fazer acontecer sem depender da sorte.",
-        "Acreditamos na inteligência das pessoas, na força das equipes e no poder da execução. Inovação não é privilégio. É ferramenta. Resultado não é discurso. É entrega.",
-        "Por isso construímos pontes entre estratégia e operação, entre a ideia e a entrega, entre o que se imagina e o que de fato acontece.",
-        "Nosso trabalho é criar clareza quando tudo parece caótico. Dar ritmo quando o prazo aperta. E garantir execução quando o projeto precisa sair do papel.",
-        "Movemos projetos, equipes e eventos com responsabilidade e inteligência. Buscamos o que é possível, mas também o que ainda não foi feito. Porque entregar não basta. A gente eleva o padrão.",
+        "Nós acreditamos que o mundo se move quando pessoas e organizações recuperam sua capacidade de imaginar — e executar. Na Creation Pro, existimos para transformar essa imaginação em impacto real.",
+        "Somos feitos de propósito, método e coragem. Trabalhamos onde ideias encontram realidade, onde projetos se tornam sistemas vivos e onde comunidades, marcas e territórios descobrem novos caminhos para prosperar.",
+        "Acreditamos na inteligência das pessoas, na força das redes e no poder da criatividade aplicada. Acreditamos que inovação não é privilégio — é ferramenta. E que impacto não é discurso — é resultado.",
+        "Por isso, construímos pontes. Entre estratégia e operação. Entre tecnologia e humanidade. Entre empresas, governos, ONGs e os territórios que mais precisam ser ouvidos.",
+        "Nosso trabalho é criar clareza quando tudo parece caótico. Dar ritmo quando o futuro exige velocidade. E garantir execução quando o sonho precisa ganhar forma.",
+        "Movemos projetos, equipes e ecossistemas com responsabilidade, sensibilidade e inteligência. Buscamos o que é possível, mas também o que ainda não existe. Porque transformar não é apenas entregar: é elevar.",
       ],
-      closing: "Somos estrutura. Somos operação. Somos execução.",
-      signature: "O futuro não se espera, o futuro se constrói.",
+      closing: "Somos criação. Somos operação. Somos impacto.",
+      signature: "O futuro não se espera — o futuro se constrói.",
     },
   },
 
   services: {
     title: "Nossas Verticais",
     subtitle:
-      "Três frentes especializadas. Um único método por trás, o Creation OPS.",
+      "Três frentes especializadas. Um único método por trás — o Creation OPS.",
     methodNote: "Todas as verticais rodam sobre o mesmo framework de 90 dias.",
     opsLinkLabel: "Conhecer o Creation OPS",
     items: [
@@ -305,7 +305,7 @@ export const pt: Content = {
         subtitle:
           "Estrutura operacional para projetos sociais, culturais, educacionais ou territoriais",
         solves:
-          "Cuidamos da parte difícil, processos, governança, prestação de contas, indicadores e operação, para que o impacto aconteça de verdade.",
+          "Cuidamos da parte difícil — processos, governança, prestação de contas, indicadores e operação — para que o impacto aconteça de verdade.",
         delivers:
           "Framework operacional, governança, sistema de indicadores, documentação e acompanhamento contínuo.",
         result:
@@ -372,15 +372,15 @@ export const pt: Content = {
     routine: {
       title: "Como é a rotina",
       items: [
-        "Reunião semanal de uma hora, com pauta e decisão registrada.",
-        "Entrega semanal, nunca só relatório.",
+        "Reunião semanal de uma hora — com pauta e decisão registrada.",
+        "Entrega semanal — nunca só relatório.",
         "Documentação acessível, viva, atualizada.",
         "Comunicação direta. Sem intermediários, sem ruído.",
       ],
     },
     investment: {
       title: "Investimento",
-      text: "O escopo é fechado após a conversa de diagnóstico. Não trabalhamos com proposta genérica, cada operação tem um tamanho.",
+      text: "O escopo é fechado após a conversa de diagnóstico. Não trabalhamos com proposta genérica — cada operação tem um tamanho.",
     },
     finalCta: {
       title: "Vamos destravar sua operação?",
@@ -391,9 +391,9 @@ export const pt: Content = {
 
   productions: {
     hero: {
-      title: "Eventos e experiências que acontecem.",
+      title: "Criamos produtos, conteúdos e experiências que conectam.",
       subtitle:
-        "Cuidamos da operação inteira do seu evento, do conceito à entrega. Você pensa a experiência, a gente faz acontecer no prazo, no padrão e sem imprevisto.",
+        "Da estratégia à entrega — audiovisual, eventos, campanhas e projetos especiais.",
     },
     servicesTitle: "O que produzimos",
     mediaTitle: "Alguns momentos que ajudamos a produzir",
@@ -416,7 +416,7 @@ export const pt: Content = {
       {
         title: "Eventos & Experiências",
         description:
-          "De grandes eventos a experiências imersivas, estruturamos tudo para máximo impacto.",
+          "De grandes eventos a experiências imersivas — estruturamos tudo para máximo impacto.",
       },
       {
         title: "Projetos Especiais",
@@ -507,7 +507,7 @@ export const pt: Content = {
           title: "Hacking.Rio",
           client: "Íons Innovation",
           problem:
-            "Um hackathon que precisava manter engajamento e volume de entregas ao migrar entre formatos, presencial, híbrido e totalmente online, sem uma estrutura de produção que sustentasse essa escala a cada edição.",
+            "Um hackathon que precisava manter engajamento e volume de entregas ao migrar entre formatos — presencial, híbrido e totalmente online — sem uma estrutura de produção que sustentasse essa escala a cada edição.",
           action:
             "Operamos a produção do evento em todas as edições desde 2019, atravessando os formatos presencial, híbrido e online sem perda de engajamento nem de volume de entregas.",
           results: [
@@ -573,7 +573,7 @@ export const pt: Content = {
   contact: {
     title: "Vamos estruturar a operação do seu projeto?",
     description:
-      "Se sua iniciativa está travada, complexa, confusa ou sobrecarregada, nós podemos ajudar. A Creation Pro estrutura processos, equipes e governança para que sua operação funcione de forma clara, humana e sustentável.",
+      "Se sua iniciativa está travada, complexa, confusa ou sobrecarregada — nós podemos ajudar. A Creation Pro estrutura processos, equipes e governança para que sua operação funcione de forma clara, humana e sustentável.",
     form: {
       name: "Seu nome",
       namePlaceholder: "Benjamin Jesus",
@@ -584,9 +584,9 @@ export const pt: Content = {
       projectType: "Tipo de projeto",
       projectTypePlaceholder: "Selecione uma opção",
       projectTypes: [
-        "Creation OPS, estruturação operacional",
-        "Creation Eventos, produção e experiências",
-        "Creation Impacto, projeto social, cultural ou ESG",
+        "Creation OPS — estruturação operacional",
+        "Creation Produções — evento, campanha ou audiovisual",
+        "Creation Impacto — projeto social, cultural ou ESG",
         "Outro",
       ],
       message: "Conte brevemente sobre seu projeto",
@@ -601,7 +601,7 @@ export const pt: Content = {
       email: "info@creation-pro.com",
       whatsapp: "Chamar no WhatsApp",
       whatsappNumber: "+55 21 99917-6231",
-      note: "A conversa de diagnóstico é uma oportunidade para entendermos seu contexto. Não é uma consultoria gratuita interminável, é um primeiro passo objetivo para avaliar se faz sentido trabalharmos juntos.",
+      note: "A conversa de diagnóstico é uma oportunidade para entendermos seu contexto. Não é uma consultoria gratuita interminável — é um primeiro passo objetivo para avaliar se faz sentido trabalharmos juntos.",
     },
   },
 
@@ -617,7 +617,7 @@ export const pt: Content = {
     solutionsTitle: "Verticais",
     solutionsLinks: [
       { label: "Creation OPS", href: "/servicos" },
-      { label: "Creation Eventos", href: "/producoes" },
+      { label: "Creation Produções", href: "/producoes" },
       { label: "Creation Impacto", href: "/impacto" },
     ],
     copyright: "Creation Produções LTDA. Todos os direitos reservados.",

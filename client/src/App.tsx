@@ -6,11 +6,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import Home from "@/pages/Home";
 import QuemSomos from "@/pages/QuemSomos";
-import Servicos from "@/pages/Servicos";
-import CreationOps from "@/pages/servicos/CreationOps";
+// Ponte temporaria: as URLs da nova IA (3 areas) ja entram no ar servidas pelas
+// paginas existentes. Os arquivos serao renomeados (Servicos -> Consultoria,
+// Impacto -> ImpactoSocial) quando reescrevermos o conteudo dessas paginas.
+import Consultoria from "@/pages/Servicos";
 import Producoes from "@/pages/Producoes";
 import CreatorOpsRio from "@/pages/producoes/CreatorOpsRio";
-import Impacto from "@/pages/Impacto";
+import ImpactoSocial from "@/pages/Impacto";
 import Contato from "@/pages/Contato";
 import CreationProfile from "@/pages/CreationProfile";
 import NotFound from "@/pages/not-found";
@@ -24,10 +26,15 @@ import {
 import { resolveInitialLang } from "@/lib/detectLang";
 
 /**
- * `import './i18n'` REMOVIDO.
- * O i18n.js sobrescrevia o DOM por cima do React via textContent, com um
- * MutationObserver para recolar a traducao a cada re-render. Agora o idioma
- * vem da rota e o conteudo do useContent(). React puro.
+ * `import './i18n'` REMOVIDO (Sprint 0). O idioma vem da rota e o conteudo do
+ * useContent(). React puro, sem DOM overwrite.
+ *
+ * Mudancas de IA (3 areas):
+ *   /servicos      -> /consultoria      (Servicos.tsx via alias; rename depois)
+ *   /impacto       -> /impacto-social   (Impacto.tsx via alias; rename depois)
+ *   /servicos/ops  -> removido          (Creation OPS dissolvido)
+ *   /profile       -> so em EN
+ *   /metodo        -> redirect p/ /consultoria por ora; pagina propria (R5) depois
  */
 
 function LanguageSync({ lang }: { lang: string }) {
@@ -68,11 +75,6 @@ function HrefLangTags({ currentPath }: { currentPath: string }) {
   return null;
 }
 
-/**
- * O Wouter nao faz scroll restoration. Ao trocar de pagina, o navegador
- * mantinha a posicao do scroll anterior — voce clicava em "Impacto" no menu
- * e caia no meio da pagina.
- */
 function ScrollToTop({ path }: { path: string }) {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
@@ -90,18 +92,23 @@ function LangRouter({ lang }: { lang: string }) {
       <HrefLangTags currentPath={location} />
       <Switch>
         <Route path={`/${lang}`} component={Home} />
-        <Route path={`/${lang}/quem-somos`} component={QuemSomos} />
-        <Route path={`/${lang}/servicos`} component={Servicos} />
-        <Route path={`/${lang}/servicos/ops`} component={CreationOps} />
+        <Route path={`/${lang}/consultoria`} component={Consultoria} />
         <Route path={`/${lang}/producoes`} component={Producoes} />
-        <Route path={`/${lang}/producoes/creator-ops-rio`} component={CreatorOpsRio} />
-        <Route path={`/${lang}/impacto`} component={Impacto} />
-        {/* /metodo foi absorvido por /servicos. Redirect preserva SEO e links externos. */}
-        <Route path={`/${lang}/metodo`}>
-          <Redirect to={`/${lang}/servicos`} />
-        </Route>
+        <Route
+          path={`/${lang}/producoes/creator-ops-rio`}
+          component={CreatorOpsRio}
+        />
+        <Route path={`/${lang}/impacto-social`} component={ImpactoSocial} />
+        <Route path={`/${lang}/quem-somos`} component={QuemSomos} />
         <Route path={`/${lang}/contato`} component={Contato} />
-        <Route path={`/${lang}/profile`} component={CreationProfile} />
+        {/* Metodo esta absorvido em Consultoria por ora. Pagina propria (R5)
+            + secao por area vem em incremento dedicado. */}
+        <Route path={`/${lang}/metodo`}>
+          <Redirect to={`/${lang}/consultoria`} />
+        </Route>
+        {lang === "en" && (
+          <Route path={`/${lang}/profile`} component={CreationProfile} />
+        )}
         <Route component={NotFound} />
       </Switch>
     </>
@@ -114,7 +121,9 @@ function RedirectHandler() {
   useEffect(() => {
     const lang = getLangFromPath(location);
     if (!lang) {
-      setLocation(getPathWithLang(location, resolveInitialLang()), { replace: true });
+      setLocation(getPathWithLang(location, resolveInitialLang()), {
+        replace: true,
+      });
     }
   }, [location, setLocation]);
 
