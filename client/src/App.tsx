@@ -6,13 +6,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import Home from "@/pages/Home";
 import QuemSomos from "@/pages/QuemSomos";
-// Ponte temporaria: as URLs da nova IA (3 areas) ja entram no ar servidas pelas
-// paginas existentes. Os arquivos serao renomeados (Servicos -> Consultoria,
-// Impacto -> ImpactoSocial) quando reescrevermos o conteudo dessas paginas.
-import Consultoria from "@/pages/Servicos";
+import Consultoria from "@/pages/Consultoria";
 import Producoes from "@/pages/Producoes";
 import CreatorOpsRio from "@/pages/producoes/CreatorOpsRio";
-import ImpactoSocial from "@/pages/Impacto";
+import CreationMarcas from "@/pages/CreationMarcas";
+import OngZero from "@/pages/OngZero";
+import MotorSroi from "@/pages/MotorSroi";
+import BiEventos from "@/pages/BiEventos";
+import ImpactoSocial from "@/pages/ImpactoSocial";
+import Metodo from "@/pages/Metodo";
 import Contato from "@/pages/Contato";
 import CreationProfile from "@/pages/CreationProfile";
 import NotFound from "@/pages/not-found";
@@ -30,11 +32,13 @@ import { resolveInitialLang } from "@/lib/detectLang";
  * useContent(). React puro, sem DOM overwrite.
  *
  * Mudancas de IA (3 areas):
- *   /servicos      -> /consultoria      (Servicos.tsx via alias; rename depois)
- *   /impacto       -> /impacto-social   (Impacto.tsx via alias; rename depois)
- *   /servicos/ops  -> removido          (Creation OPS dissolvido)
- *   /profile       -> so em EN
- *   /metodo        -> redirect p/ /consultoria por ora; pagina propria (R5) depois
+ *   /consultoria    -> Consultoria.tsx (renomeado de Servicos.tsx; ponte encerrada)
+ *   /impacto-social -> ImpactoSocial.tsx (renomeado de Impacto.tsx; ponte encerrada)
+ *   /servicos/ops   -> removido (Creation OPS dissolvido; CreationOps.tsx orfao)
+ *   /profile        -> so em EN
+ *   /metodo         -> R5 ATIVADO: pagina propria (Metodo.tsx), nao mais redirect
+ *   /creator-ops-rio -> URL curta (era /producoes/creator-ops-rio)
+ *   /creation-marcas, /ong-zero, /motor-sroi, /bi-de-eventos -> 4 landings novas
  */
 
 function LanguageSync({ lang }: { lang: string }) {
@@ -94,18 +98,15 @@ function LangRouter({ lang }: { lang: string }) {
         <Route path={`/${lang}`} component={Home} />
         <Route path={`/${lang}/consultoria`} component={Consultoria} />
         <Route path={`/${lang}/producoes`} component={Producoes} />
-        <Route
-          path={`/${lang}/producoes/creator-ops-rio`}
-          component={CreatorOpsRio}
-        />
+        <Route path={`/${lang}/creator-ops-rio`} component={CreatorOpsRio} />
+        <Route path={`/${lang}/creation-marcas`} component={CreationMarcas} />
+        <Route path={`/${lang}/ong-zero`} component={OngZero} />
+        <Route path={`/${lang}/motor-sroi`} component={MotorSroi} />
+        <Route path={`/${lang}/bi-de-eventos`} component={BiEventos} />
         <Route path={`/${lang}/impacto-social`} component={ImpactoSocial} />
         <Route path={`/${lang}/quem-somos`} component={QuemSomos} />
         <Route path={`/${lang}/contato`} component={Contato} />
-        {/* Metodo esta absorvido em Consultoria por ora. Pagina propria (R5)
-            + secao por area vem em incremento dedicado. */}
-        <Route path={`/${lang}/metodo`}>
-          <Redirect to={`/${lang}/consultoria`} />
-        </Route>
+        <Route path={`/${lang}/metodo`} component={Metodo} />
         {lang === "en" && (
           <Route path={`/${lang}/profile`} component={CreationProfile} />
         )}

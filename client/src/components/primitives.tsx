@@ -5,18 +5,25 @@ import { cn } from "@/lib/utils";
 import { useLocalizedHref } from "@/content";
 
 // ============================================================================
-// PRIMITIVOS — Manual de Marca v3
+// PRIMITIVOS — Manual de Identidade V6.0
 // ----------------------------------------------------------------------------
-// SUPERFICIES: o manual da tres. Bone, Abyss, Ink. Nao existe cinza-claro.
-// Antes o site alternava branco / #f8f9fa para criar ritmo. Como Bone e a
-// unica superficie clara, o ritmo entre secoes claras passa a vir de DIVISOR
-// (border-abyss/14), nao de cor de fundo.
+// SUPERFICIES: bone (claro), abyss/ink (escuro). O ritmo entre secoes claras
+// consecutivas vem de DIVISOR (border-abyss/14), nao de cor de fundo — nao
+// existe cinza-claro no sistema.
 //
-// CONTRASTE (manual, pag. W1):
-//   Fundo claro (bone):   corpo text-abyss 12.47:1 | secundario text-abyss/70 5.15:1
-//                         PROIBIDO text-signal (2.20:1) e text-slate (3.78:1)
-//   Fundo escuro (abyss): corpo text-bone 12.47:1  | secundario text-bone/70 6.84:1
-//                         link/acento text-signal 5.67:1
+// CONTRASTE (manual V6, pag. 15):
+//   Fundo claro (bone/white): corpo text-abyss | link Abyss peso 600 sublinhado
+//                              PROIBIDO texto Mist/signal em fundo claro
+//   Fundo escuro (abyss/ink): corpo text-bone | link/acento Mist (token
+//                              "signal" no codigo, valor Mist — ver
+//                              tailwind.config.ts)
+//
+// GRID E RESPIRO (manual V6, pag. 18): 12 colunas desktop / 8 tablet / 4
+// mobile, base espacial em multiplos de 8px, 64px+ entre blocos principais.
+// A escala de padding abaixo (py-10/14/20/28 = 40/56/80/112px) ja respeita
+// os multiplos de 8. NAO implementado ainda: grid formal de 12 colunas com
+// col-span — hoje cada pagina usa grid-cols-N avulso. Rebuild maior, fica
+// para decisao separada.
 // ============================================================================
 
 type Tone = "bone" | "abyss" | "ink";
@@ -79,8 +86,8 @@ interface SectionHeaderProps {
 }
 
 /**
- * Tipografia: Newsreader nos titulos (font-display), Inter no corpo.
- * O manual e explicito: "Newsreader NUNCA em corpo. Inter NUNCA em titulo."
+ * Tipografia (V6): Inter em tudo, titulo e corpo. Newsreader saiu do
+ * sistema oficial — font-display hoje aponta para Inter (tailwind.config.ts).
  */
 export function SectionHeader({
   title,
@@ -94,7 +101,9 @@ export function SectionHeader({
     <div
       className={cn(
         "mb-12",
-        align === "center" ? "text-center mx-auto max-w-measure" : "max-w-measure",
+        align === "center"
+          ? "text-center mx-auto max-w-measure"
+          : "max-w-measure",
         className,
       )}
     >
@@ -138,21 +147,17 @@ export function Grid({
   className,
 }: {
   children: ReactNode;
-  cols?: 2 | 3;
+  cols?: 2 | 3 | 4;
   className?: string;
 }) {
+  const colsClass = {
+    2: "grid-cols-1 md:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+  }[cols];
+
   return (
-    <div
-      className={cn(
-        "grid gap-8",
-        cols === 2
-          ? "grid-cols-1 md:grid-cols-2"
-          : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
-        className,
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("grid gap-8", colsClass, className)}>{children}</div>
   );
 }
 

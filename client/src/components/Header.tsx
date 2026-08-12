@@ -1,45 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useContent, useLang } from "@/content";
 import { getPathWithoutLang, type SupportedLang } from "@/lib/lang";
 import { storeLang } from "@/lib/detectLang";
 
-
 /**
- * MUDANCAS:
- * 1. getCurrentLang() do i18n.js -> useLang() (le da rota, sem estado duplicado)
- * 2. content estatico -> useContent(). O navLinks era construido FORA do
- *    componente, congelando o idioma no primeiro import.
- * 3. Os data-i18n sumiram. Nao ha mais ninguem para le-los.
- * 4. CREATOR OPS RIO SAIU DO MENU. Tinha submenu proprio com emoji, competindo
- *    em destaque com as verticais institucionais. Publico diferente, moeda
- *    diferente, identidade diferente. Vira spin-off. Continua acessivel pela
- *    pagina Producoes.
+ * ESTAGIO 2 — mega-menu full-screen (Manual V6, pag. 21 "Shell do site").
+ * Substitui o Estagio 1 (lista horizontal desktop + Sheet lateral mobile).
+ *
+ * "Hamburguer em todos os dispositivos; overlay full-screen em Abyss."
+ * Cabecalho fica so com logo + hamburguer — minimalista, como o V6 pede.
+ *
+ * Colunas de area: uso as sub-marcas/produtos que TEM pagina propria de
+ * verdade hoje (Creation Marcas, Creation Ops Rio, BI de Eventos, ONG.zero,
+ * Motor SROI), nao o exemplo ilustrativo do manual (Estrategia/Inovacao/
+ * Marcas) — esses nomes sao exemplo de profundidade, nao taxonomia literal
+ * (o manual explicita: "nao substitui... arquitetura do site").
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const c = useContent();
   const currentLang = useLang();
 
-  const showCreationProfile = currentLang === "en" || currentLang === "es";
-
-  const navLinks = [
-    { href: "/", label: c.nav.home, submenu: undefined as { href: string; label: string }[] | undefined },
-    { href: "/quem-somos", label: c.nav.about, submenu: undefined },
-    {
-      href: "/servicos",
-      label: c.nav.services,
-      submenu: [{ href: "/servicos/ops", label: "Creation OPS" }],
-    },
-    { href: "/producoes", label: c.nav.productions, submenu: undefined },
-    { href: "/impacto", label: c.nav.impact, submenu: undefined },
-    { href: "/contato", label: c.nav.contact, submenu: undefined },
-  ];
+  const showCreationProfile = currentLang === "en";
 
   const localize = (href: string) =>
     href === "/" ? `/${currentLang}` : `/${currentLang}${href}`;
@@ -49,226 +34,235 @@ export default function Header() {
 
   const switchLanguage = (targetLang: SupportedLang) => {
     storeLang(targetLang);
-    setLocation(cleanPath === "/" ? `/${targetLang}` : `/${targetLang}${cleanPath}`);
+    setLocation(
+      cleanPath === "/" ? `/${targetLang}` : `/${targetLang}${cleanPath}`,
+    );
   };
 
   const langButtons: SupportedLang[] = ["pt", "en", "es"];
 
+  // Trava scroll enquanto o overlay esta aberto.
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  // Esc fecha o overlay.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isOpen]);
+
+  // Fecha o overlay automaticamente ao trocar de rota (clique em link).
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  const areas = [
+    {
+      href: "/consultoria",
+      label: c.nav.consultoria,
+      subItems: [
+        {
+          label: c.consultoria.creationMarcas.title,
+          href: c.consultoria.creationMarcas.href,
+        },
+      ],
+    },
+    {
+      href: "/producoes",
+      label: c.nav.producoes,
+      subItems: [
+        {
+          label: c.producoes.creatorOpsRio.eyebrow,
+          href: c.producoes.creatorOpsRio.href,
+        },
+        {
+          label: c.producoes.biEventos.eyebrow,
+          href: c.producoes.biEventos.href,
+        },
+      ],
+    },
+    {
+      href: "/impacto-social",
+      label: c.nav.impactoSocial,
+      subItems: [
+        {
+          label: c.impactoSocial.ongZero.title,
+          href: c.impactoSocial.ongZero.href,
+        },
+        {
+          label: c.impactoSocial.motorSroi.title,
+          href: c.impactoSocial.motorSroi.href,
+        },
+      ],
+    },
+  ];
+
+  const institutional = [
+    { label: c.nav.method, href: "/metodo" },
+    { label: c.nav.about, href: "/quem-somos" },
+    { label: c.nav.contact, href: "/contato" },
+    ...(showCreationProfile
+      ? [{ label: "Creation Profile", href: "/profile" }]
+      : []),
+  ];
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-abyss" data-testid="header">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
-          <Link href={localize("/")} data-testid="link-logo">
-            <img src="/brand/lockup_bone_transp.svg" alt={c.brand.name} className="h-10 md:h-16 w-auto cursor-pointer" />
-          </Link>
+    <>
+      <header
+        className="sticky top-0 z-50 w-full bg-abyss"
+        data-testid="header"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <Link href={localize("/")} data-testid="link-logo">
+              <img
+                src="/brand/lockup_bone_transp.svg"
+                alt={c.brand.name}
+                className="h-10 md:h-16 w-auto cursor-pointer"
+              />
+            </Link>
 
-          <nav className="hidden md:flex items-center gap-1" data-testid="nav-desktop">
-            {navLinks.map((link) => (
-              <div key={link.href} className="relative group">
-                <Link href={localize(link.href)}>
-                  <span
-                    className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 cursor-pointer ${
-                      isCurrentPath(link.href)
-                        ? "text-signal"
-                        : "text-bone/80 hover:text-bone"
-                    }`}
-                  >
-                    {link.label}
-                    {link.submenu && <ChevronDown className="h-4 w-4" />}
-                  </span>
-                </Link>
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-bone hover:text-bone/80 transition-colors p-2 -mr-2"
+              aria-label="Menu"
+              aria-expanded={isOpen}
+              data-testid="button-menu-open"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      </header>
 
-                {link.submenu && (
-                  <div className="absolute left-0 w-56 border border-bone/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-abyss">
-                    {link.submenu.map((sublink) => (
-                      <Link key={sublink.href} href={localize(sublink.href)}>
+      {/* Overlay full-screen */}
+      <div
+        className={`fixed inset-0 z-[60] bg-abyss transition-opacity duration-300 motion-reduce:transition-none ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isOpen}
+        data-testid="overlay-menu"
+      >
+        <div className="h-full overflow-y-auto">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Topo do overlay: logo + fechar */}
+            <div className="flex h-16 items-center justify-between">
+              <Link href={localize("/")} data-testid="link-logo-overlay">
+                <img
+                  src="/brand/lockup_bone_transp.svg"
+                  alt={c.brand.name}
+                  className="h-10 md:h-16 w-auto cursor-pointer"
+                />
+              </Link>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-bone hover:text-bone/80 transition-colors p-2 -mr-2"
+                aria-label="Fechar menu"
+                data-testid="button-menu-close"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Corpo: 3 areas + institucional */}
+            <nav
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-10 md:py-16"
+              data-testid="nav-overlay"
+            >
+              {areas.map((area) => (
+                <div key={area.href}>
+                  <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
+                    {c.nav.areasLabel}
+                  </p>
+                  <Link href={localize(area.href)}>
+                    <span
+                      className={`block text-h2 font-bold mb-4 cursor-pointer transition-colors ${
+                        isCurrentPath(area.href)
+                          ? "text-signal"
+                          : "text-bone hover:text-signal"
+                      }`}
+                    >
+                      {area.label}
+                    </span>
+                  </Link>
+                  {area.subItems.length > 0 && (
+                    <ul className="space-y-3">
+                      {area.subItems.map((item) => (
+                        <li key={item.href}>
+                          <Link href={localize(item.href)}>
+                            <span
+                              className={`text-small uppercase tracking-wide font-semibold cursor-pointer transition-colors ${
+                                isCurrentPath(item.href)
+                                  ? "text-signal"
+                                  : "text-bone/60 hover:text-signal"
+                              }`}
+                            >
+                              {item.label}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+
+              <div>
+                <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
+                  {c.nav.companyLabel}
+                </p>
+                <ul className="space-y-3">
+                  {institutional.map((item) => (
+                    <li key={item.href}>
+                      <Link href={localize(item.href)}>
                         <span
-                          className={`block px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
-                            isCurrentPath(sublink.href)
-                              ? "text-signal bg-bone/5"
-                              : "text-bone/80 hover:text-bone hover:bg-bone/5"
+                          className={`block text-h3 font-semibold cursor-pointer transition-colors ${
+                            isCurrentPath(item.href)
+                              ? "text-signal"
+                              : "text-bone hover:text-signal"
                           }`}
                         >
-                          {sublink.label}
+                          {item.label}
                         </span>
                       </Link>
-                    ))}
-
-                    {showCreationProfile && link.href === "/servicos" && (
-                      <Link href={localize("/profile")}>
-                        <span
-                          className={`block px-4 py-2 text-sm font-medium transition-colors cursor-pointer ${
-                            isCurrentPath("/profile")
-                              ? "text-signal bg-bone/5"
-                              : "text-bone/80 hover:text-bone hover:bg-bone/5"
-                          }`}
-                        >
-                          Creation Profile
-                        </span>
-                      </Link>
-                    )}
-                  </div>
-                )}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </nav>
+            </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <div className="lang-selector" data-testid="lang-selector">
+            {/* Rodape do overlay: idioma */}
+            <div className="border-t border-bone/14 py-6 flex items-center gap-2">
               {langButtons.map((lang) => (
                 <button
                   key={lang}
                   onClick={() => switchLanguage(lang)}
-                  className={`lang-btn ${currentLang === lang ? "active" : ""}`}
+                  className={`text-small font-semibold px-3 py-1.5 transition-colors ${
+                    currentLang === lang
+                      ? "text-signal"
+                      : "text-bone/50 hover:text-bone"
+                  }`}
                   data-testid={`button-lang-${lang}`}
                 >
                   {lang.toUpperCase()}
                 </button>
               ))}
             </div>
-
-            <Link href={localize(c.cta.href)}>
-              <span
-                className="inline-flex items-center gap-2 text-signal font-semibold hover:gap-3 transition-all cursor-pointer"
-                data-testid="button-header-cta"
-              >
-                {c.cta.primary}
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </Link>
           </div>
-
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-bone hover:bg-bone/10"
-                data-testid="button-mobile-menu"
-              >
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Menu</span>
-              </Button>
-            </SheetTrigger>
-
-            <SheetContent side="right" className="w-[280px] p-0 border-bone/20 bg-abyss">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b border-bone/14">
-                  <img src="/brand/lockup_bone_transp.svg" alt={c.brand.name} className="h-12 w-auto" />
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setIsOpen(false)}
-                    className="text-bone hover:bg-bone/10"
-                    data-testid="button-close-menu"
-                  >
-                    <X className="h-5 w-5" />
-                  </Button>
-                </div>
-
-                <nav className="flex flex-col p-4 gap-1" data-testid="nav-mobile">
-                  {navLinks.map((link) => (
-                    <div key={link.href}>
-                      <div className="flex items-center justify-between">
-                        <Link href={localize(link.href)} className="flex-1">
-                          <span
-                            onClick={() => {
-                              if (!link.submenu) setIsOpen(false);
-                            }}
-                            className={`block px-3 py-3 text-base font-medium transition-colors cursor-pointer ${
-                              isCurrentPath(link.href)
-                                ? "text-signal bg-bone/5"
-                                : "text-bone/80 hover:text-bone hover:bg-bone/5"
-                            }`}
-                          >
-                            {link.label}
-                          </span>
-                        </Link>
-
-                        {link.submenu && (
-                          <button
-                            onClick={() =>
-                              setOpenSubmenu(openSubmenu === link.href ? null : link.href)
-                            }
-                            className="px-3 py-3 text-bone/80"
-                          >
-                            <ChevronDown
-                              className={`h-4 w-4 transition-transform ${
-                                openSubmenu === link.href ? "rotate-180" : ""
-                              }`}
-                            />
-                          </button>
-                        )}
-                      </div>
-
-                      {link.submenu && openSubmenu === link.href && (
-                        <div className="bg-bone/5 mt-1">
-                          {link.submenu.map((sublink) => (
-                            <Link key={sublink.href} href={localize(sublink.href)}>
-                              <span
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenSubmenu(null);
-                                }}
-                                className="block px-4 py-3 text-base font-medium text-bone/80 hover:text-bone hover:bg-bone/5 transition-colors cursor-pointer"
-                              >
-                                {sublink.label}
-                              </span>
-                            </Link>
-                          ))}
-
-                          {showCreationProfile && link.href === "/servicos" && (
-                            <Link href={localize("/profile")}>
-                              <span
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setOpenSubmenu(null);
-                                }}
-                                className="block px-4 py-3 text-base font-medium text-bone/80 hover:text-bone hover:bg-bone/5 transition-colors cursor-pointer"
-                              >
-                                Creation Profile
-                              </span>
-                            </Link>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </nav>
-
-                <div className="mt-auto p-4 border-t border-bone/14">
-                  <div className="flex items-center justify-center gap-2 mb-6">
-                    {langButtons.map((lang) => (
-                      <button
-                        key={lang}
-                        onClick={() => {
-                          switchLanguage(lang);
-                          setIsOpen(false);
-                        }}
-                        className={`lang-btn ${currentLang === lang ? "active" : ""}`}
-                        data-testid={`button-mobile-lang-${lang}`}
-                      >
-                        {lang.toUpperCase()}
-                      </button>
-                    ))}
-                  </div>
-
-                  <Link href={localize(c.cta.href)}>
-                    <span
-                      onClick={() => setIsOpen(false)}
-                      className="inline-flex items-center gap-2 text-signal font-semibold hover:gap-3 transition-all cursor-pointer"
-                      data-testid="button-mobile-cta"
-                    >
-                      {c.cta.primary}
-                      <ArrowRight className="h-4 w-4" />
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
         </div>
       </div>
-    </header>
+    </>
   );
 }

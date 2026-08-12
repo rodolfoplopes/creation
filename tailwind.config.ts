@@ -6,35 +6,49 @@ export default {
   theme: {
     extend: {
       borderRadius: {
-        lg: "0.5rem", /* 8px - corporate BlackRock style */
-        md: "0.375rem", /* 6px */
-        sm: "0.25rem", /* 4px */
+        lg: "0.5rem" /* 8px - corporate BlackRock style */,
+        md: "0.375rem" /* 6px */,
+        sm: "0.25rem" /* 4px */,
       },
       colors: {
         // ========================================================
-        // CREATION — Manual de Marca v3
-        // Pares texto/fundo validados em WCAG 2.1 (manual, pag. W1)
+        // CREATION — Manual de Identidade V6.0 (agosto/2026)
+        // Substitui o Manual v3. Mudancas criticas:
+        //   - Signal (#1EB3C6, ciano) SAIU da paleta oficial.
+        //   - O NOME do token "signal" foi mantido no codigo (evita
+        //     reeditar toda pagina que ja usa text-signal/bg-signal/
+        //     border-signal); só o VALOR mudou para o novo acento Mist.
+        //     Renomear o token para "mist" fica como limpeza futura,
+        //     cosmetica, nao bloqueia nada visualmente.
         //
-        //   Fundo claro (bone):
-        //     corpo       text-abyss                12.47:1
-        //     secundario  text-abyss/70              5.15:1
-        //     link        text-abyss + underline
-        //     PROIBIDO    text-signal  (2.20:1)
-        //     PROIBIDO    text-slate   (3.78:1)
+        // Pares texto/fundo validados em WCAG 2.1 AA (manual, pag. 15):
+        //   Abyss/White      14.32:1  Aprovado  texto principal
+        //   Abyss/Bone       12.47:1  Aprovado  secoes editoriais
+        //   White/Abyss      14.32:1  Aprovado  menu, rodape, secao imersiva
+        //   Mist/Abyss       11.88:1  Aprovado  links/labels/acentos em fundo escuro
+        //   Abyss/Mist       11.88:1  Aprovado  texto/controles sobre Mist
+        //   Abyss/RhodiumFlat 7.62:1  Aprovado  texto sobre metalico plano
+        //   RhodiumFlat/Abyss 7.62:1  Aprovado  dado grande, icone, acento
+        //   Slate/White       4.34:1  Reprovado no corpo (so texto grande)
+        //   Mist/White        1.20:1  Reprovado  nunca usar como texto
         //
-        //   Fundo escuro (abyss / ink):
-        //     corpo       text-bone                 12.47:1
-        //     secundario  text-bone/70               6.84:1
-        //     link/acento text-signal                5.67:1
-        //
-        //   Slate: bordas e icones apenas. NUNCA texto.
-        //   Ember e Lichen NAO existem no site.
+        // Regra critica: em fundo claro, link e Abyss peso 600 sublinhado
+        // (nao mais cor de acento). Mist so atua como acento em fundo escuro.
         // ========================================================
         abyss: "#0A2E3B",
-        signal: "#1EB3C6",
+        signal: "#D8EEF2", // valor = Mist (V6); nome do token preservado
         bone: "#F2EFE9",
         ink: "#061C24",
         slate: "#6E7B85",
+
+        // Tokens novos do V6, disponiveis para uso futuro (nao usados em
+        // nenhuma pagina ainda — nenhum componente precisa mudar por isso).
+        mist: "#D8EEF2",
+        rhodium: {
+          shadow: "#7F878B",
+          flat: "#B8BEC1",
+          highlight: "#EEF1F2",
+        },
 
         // Flat / base colors (regular buttons)
         background: "hsl(var(--background) / <alpha-value>)",
@@ -98,7 +112,7 @@ export default {
         "sidebar-accent": {
           DEFAULT: "hsl(var(--sidebar-accent) / <alpha-value>)",
           foreground: "hsl(var(--sidebar-accent-foreground) / <alpha-value>)",
-          border: "var(--sidebar-accent-border)"
+          border: "var(--sidebar-accent-border)",
         },
         status: {
           online: "rgb(34 197 94)",
@@ -115,16 +129,24 @@ export default {
         },
       },
       // ========================================================
-      // TIPOGRAFIA — Manual v3, pagina W2
-      //   display : Newsreader 700  (H1, H2, citacao)
-      //   sans    : Inter 400/600   (corpo, interface, legenda)
-      //   Newsreader NUNCA em corpo. Inter NUNCA em titulo principal.
-      //   Base 16px. Nunca menor. Medida de linha 60-75 caracteres.
+      // TIPOGRAFIA — Manual V6.0, pagina 16
+      //   Regra substituida: Newsreader e Sohne SAIRAM do sistema.
+      //   Agora e Inter para tudo: titulos, corpo, interface, dados.
+      //   O logotipo em si (a palavra "creation") continua sendo um
+      //   desenho proprio em curvas (TeX Gyre Termes Bold) — isso e
+      //   so o arquivo do lockup, nao afeta fonte de conteudo.
+      //   Pesos oficiais: 400, 500, 600, 700.
+      //
+      //   NAO migrado hoje (fica para depois): a escala fluida por
+      //   clamp() que o V6 especifica (display: clamp(40,6vw,72) etc.)
+      //   Os tamanhos fixos abaixo (px) sao os do V3 antigo — ainda
+      //   funcionam, so nao sao fluidos. Trocar por clamp() e tarefa
+      //   separada, nao urgente (nao quebra nada, so nao e ideal).
       // ========================================================
       fontFamily: {
-        display: ["Newsreader", "Georgia", "serif"],
+        display: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Newsreader", "Georgia", "serif"],
+        serif: ["Inter", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)"],
       },
       fontSize: {

@@ -1,83 +1,240 @@
 import Layout from "@/components/Layout";
 import HeroInternal from "@/components/layout/HeroInternal";
 import ProductionsMediaGrid from "@/components/producoes/ProductionsMediaGrid";
-import { Section, SectionHeader, Grid, FeatureCard, CTAButton } from "@/components/primitives";
-import { ArrowRight } from "lucide-react";
+import {
+  Section,
+  SectionHeader,
+  Grid,
+  FeatureCard,
+  CTAButton,
+} from "@/components/primitives";
+import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
 
 /**
- * ANTES: todo o texto hardcoded em PT, traduzido em runtime pelo i18n.js
- * sobrescrevendo o DOM. Com o i18n.js morto, /en/producoes mostrava
- * portugues. Agora o conteudo vem do useContent().
+ * /producoes — shape v4. c.productions -> c.producoes; hero.subtitle -> hero.intro;
+ * creatorOps -> creatorOpsRio (nome Creation Ops Rio, href curto /creator-ops-rio).
  *
- * Removidos os icones Film / Megaphone / Zap / Calendar / Sparkles em
- * caixinhas cianas - genericos de biblioteca, rebaixavam a tipografia.
+ * mediaTitle nao existe mais no contrato. Substitui por
+ * c.producoes.audiovisual.title ate confirmar o prop real do componente.
+ *
+ * HeroInternal nao recebia eyebrow no codigo original — eyebrow
+ * ("PRODUCOES") fica de fora do hero por ora, nao arrisquei prop que o
+ * componente pode nao aceitar.
  */
 export default function Producoes() {
   const c = useContent();
   const localize = useLocalizedHref();
 
+  const cases = c.cases.items.filter((item) => item.eyebrow === "EVENTOS");
+
   return (
     <Layout>
       <HeroInternal
-        title={c.productions.hero.title}
-        subtitle={c.productions.hero.subtitle}
+        title={c.producoes.hero.title}
+        subtitle={c.producoes.hero.intro}
         videoSrc="/images/video-hero.mp4"
       />
 
+      {/* Eventos e Experiências (5 categorias) */}
       <Section tone="bone" divider firstContent>
-        <SectionHeader title={c.productions.servicesTitle} />
+        <SectionHeader
+          title={c.producoes.events.title}
+          subtitle={c.producoes.events.intro}
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-abyss/14 border border-abyss/14">
+          {c.producoes.events.categories.map((category) => (
+            <article key={category.title} className="bg-bone p-6 md:p-8">
+              <h3 className="font-display text-h3 font-bold text-abyss mb-2">
+                {category.title}
+              </h3>
+              <p className="text-small text-abyss/70 mb-4 leading-relaxed">
+                {category.description}
+              </p>
+              <ul className="space-y-1">
+                {category.items.map((item) => (
+                  <li key={item} className="text-caption text-abyss/50">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </Section>
 
+      {/* Audiovisual */}
+      <Section tone="ink" divider>
+        <SectionHeader
+          title={c.producoes.audiovisual.title}
+          subtitle={c.producoes.audiovisual.intro}
+          onDark
+        />
         <Grid cols={3}>
-          {c.productions.services.map((service) => (
+          {c.producoes.audiovisual.items.map((item) => (
             <FeatureCard
-              key={service.title}
-              title={service.title}
-              description={service.description}
+              key={item.title}
+              title={item.title}
+              description={item.description}
+              onDark
             />
           ))}
         </Grid>
       </Section>
 
-      {/*
-        CREATOR OPS RIO - SPIN-OFF.
-        Saiu da home. Saiu do menu. Virou UMA LINHA aqui, com link.
-        Publico diferente (creator internacional vs. ONG brasileira), moeda
-        diferente (USD), idioma diferente (EN), identidade visual diferente
-        (verde neon + amarelo + navy competindo com preto/branco/ciano).
-        Modelo: marca endossada. Herda credibilidade sem poluir posicionamento.
-        TODO(Sprint 4): dominio proprio (creatorops.rio) + assinatura "by Creation".
-      */}
+      {/* Capacidade Operacional: Fixer + Host */}
+      <Section tone="bone" divider>
+        <SectionHeader
+          title={c.producoes.operational.title}
+          subtitle={c.producoes.operational.intro}
+        />
+
+        <div className="mb-10">
+          <h3 className="font-display text-h2 font-bold text-abyss mb-4">
+            {c.producoes.operational.fixer.title}
+          </h3>
+          <p className="text-abyss/70 leading-relaxed max-w-measure mb-8 border-l-2 border-signal pl-6">
+            {c.producoes.operational.fixer.locationScoutHighlight}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
+            {c.producoes.operational.fixer.items.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <Check className="h-4 w-4 text-signal shrink-0 mt-1" />
+                <span className="text-small text-abyss/70">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-abyss/14 pt-8">
+          <h3 className="font-display text-h3 font-bold text-abyss mb-2">
+            {c.producoes.operational.hosting.title}
+          </h3>
+          <p className="text-abyss/70 leading-relaxed max-w-measure">
+            {c.producoes.operational.hosting.description}
+          </p>
+        </div>
+      </Section>
+
+      {/* Creation Ops Rio (sub-marca) */}
       <Section tone="ink">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold text-signal mb-3 uppercase tracking-widest">
-              {c.productions.creatorOps.eyebrow}
+            <p className="text-caption font-semibold text-signal mb-3 uppercase tracking-widest">
+              {c.producoes.creatorOpsRio.eyebrow}
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-bone mb-4 tracking-tight">
-              {c.productions.creatorOps.title}
+            <h2 className="font-display text-h2 font-bold text-bone mb-4">
+              {c.producoes.creatorOpsRio.title}
             </h2>
             <p className="text-bone/70 leading-relaxed">
-              {c.productions.creatorOps.description}
+              {c.producoes.creatorOpsRio.description}
             </p>
           </div>
-
-          <Link href={localize(c.productions.creatorOps.href)}>
+          <Link href={localize(c.producoes.creatorOpsRio.href)}>
             <span className="inline-flex items-center gap-2 border border-bone/30 text-bone px-8 py-4 font-semibold hover:border-white transition-colors cursor-pointer shrink-0">
-              {c.productions.creatorOps.linkLabel}
+              {c.producoes.creatorOpsRio.linkLabel}
               <ArrowRight className="h-5 w-5" />
             </span>
           </Link>
         </div>
       </Section>
 
-      <ProductionsMediaGrid title={c.productions.mediaTitle} />
+      {/* BI de Eventos (produto de inteligencia) */}
       <Section tone="abyss" size="sm">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <h2 className="font-display text-h2 sm:text-h1 font-bold text-bone max-w-measure">
-            {c.contact.title}
-          </h2>
+          <div className="max-w-measure">
+            <p className="text-caption font-semibold text-signal mb-2 uppercase tracking-widest">
+              {c.producoes.biEventos.eyebrow}
+            </p>
+            <h2 className="font-display text-h2 font-bold text-bone mb-3">
+              {c.producoes.biEventos.title}
+            </h2>
+            <p className="text-bone/70 leading-relaxed">
+              {c.producoes.biEventos.description}
+            </p>
+          </div>
+          <Link href={localize(c.producoes.biEventos.href)}>
+            <span className="inline-flex items-center gap-2 text-signal font-semibold hover:gap-3 transition-all cursor-pointer shrink-0">
+              {c.producoes.biEventos.linkLabel}
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
+        </div>
+      </Section>
+
+      <ProductionsMediaGrid title={c.producoes.audiovisual.title} />
+
+      {/* Cases (filtrados do array global por eyebrow) */}
+      {cases.length > 0 && (
+        <Section tone="bone" divider>
+          <SectionHeader title={c.cases.title} subtitle={c.cases.subtitle} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
+            {cases.map((item) => (
+              <article
+                key={item.title}
+                className="bg-bone p-8 md:p-10 flex flex-col"
+              >
+                <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
+                  {item.eyebrow}
+                </p>
+                <h3 className="font-display text-h2 font-bold text-abyss mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-small text-abyss/70 mb-6">{item.client}</p>
+
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {item.results.map((result) => (
+                    <div key={result.label}>
+                      <p className="font-display text-h3 font-bold text-abyss tabular-nums">
+                        {result.value}
+                      </p>
+                      <p className="text-caption text-abyss/70 leading-snug">
+                        {result.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-4 flex-1">
+                  <div>
+                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                      {c.labels.caseProblem}
+                    </h4>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                      {c.labels.caseAction}
+                    </h4>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.action}
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-caption text-abyss/50 mt-6 pt-6 border-t border-abyss/14 leading-relaxed">
+                  {item.support}
+                </p>
+              </article>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* Para quem + CTA final */}
+      <Section tone="abyss" size="sm">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="max-w-measure">
+            <p className="text-caption font-semibold text-bone/70 mb-2 uppercase tracking-widest">
+              {c.labels.forWhom}
+            </p>
+            <p className="text-bone/70 leading-relaxed">
+              {c.producoes.forWhom}
+            </p>
+          </div>
           <CTAButton
             label={c.cta.primary}
             href={c.cta.href}
