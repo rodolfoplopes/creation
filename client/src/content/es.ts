@@ -3,7 +3,7 @@ import type { Content } from "./types";
 export const es: Content = {
   brand: {
     name: "Creation",
-    microcopy: "Pensamos y realizamos.",
+    microcopy: "Claridad. Ritmo. Ejecución.",
     footerTagline: "Pensamos y realizamos proyectos innovadores.",
     locations: "Brasil | Estados Unidos",
   },
@@ -248,7 +248,7 @@ export const es: Content = {
           "Construcción de la identidad de marca, con contenido y storytelling.",
       },
       {
-        title: "Procesos",
+        title: "Gestión de Procesos de Negocio",
         description:
           "Diseño de procesos y gobernanza que sostienen la operación.",
       },
@@ -351,15 +351,18 @@ export const es: Content = {
       items: [
         {
           title: "Web Content",
-          description: "Contenido para redes y canales digitales.",
+          description:
+            "Videos pensados para el ritmo de las redes y canales digitales: formatos cortos, guionados para retener la atención en los primeros segundos, con entrega recurrente, no puntual.",
         },
         {
           title: "Short Films",
-          description: "Cortometrajes, institucionales y de marca.",
+          description:
+            "Piezas de mayor aliento, con guion y dirección propios, para contar una historia completa en pocos minutos: institucionales, de marca o documentales cortos.",
         },
         {
           title: "Campañas y Brand Content",
-          description: "Producción publicitaria y contenido de marca.",
+          description:
+            "Producción publicitaria alineada con la campaña de marketing de la marca, del concepto al filme final, incluyendo los recortes para cada canal donde la campaña se difunde.",
         },
       ],
     },
@@ -369,6 +372,8 @@ export const es: Content = {
         "La capacidad de viabilizar una producción en el terreno, con la red y el conocimiento local que una producción de afuera no tiene.",
       fixer: {
         title: "Fixer",
+        description:
+          "Un fixer resuelve todo lo que una producción necesita en el terreno antes de que las cámaras enciendan: permisos, locación, seguridad, equipo y logística. Es la diferencia entre llegar y grabar, o llegar y perder días resolviendo lo que ya debería estar listo.",
         locationScoutHighlight:
           "Localizamos escenarios desde Río de Janeiro hasta la Costa Verde: metrópoli, playa y naturaleza tropical en un radio corto, lo que permite escenarios radicalmente distintos sin mover la operación.",
         items: [
@@ -582,6 +587,8 @@ export const es: Content = {
     title: "Creation Ops Rio",
     intro:
       "Producir en Río de Janeiro desde afuera cuesta tiempo y fricción: proveedores desconocidos, permisos, logística. Asumimos esa parte para que usted llegue y produzca.",
+    experienceStatement:
+      "Más de 15 años de experiencia en recepción y seguridad de dignatarios, organizaciones y grandes eventos.",
     whatChanges: {
       title: "Lo que cambia",
       before: [

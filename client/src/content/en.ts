@@ -3,7 +3,7 @@ import type { Content } from "./types";
 export const en: Content = {
   brand: {
     name: "Creation",
-    microcopy: "We think and build.",
+    microcopy: "Clarity. Rhythm. Execution.",
     footerTagline: "We think and build innovative projects.",
     locations: "Brazil | United States",
   },
@@ -247,7 +247,7 @@ export const en: Content = {
         description: "Building brand identity, with content and storytelling.",
       },
       {
-        title: "Processes",
+        title: "Business Process Management",
         description:
           "Designing operational processes and governance that sustain the operation.",
       },
@@ -350,15 +350,18 @@ export const en: Content = {
       items: [
         {
           title: "Web Content",
-          description: "Content for social and digital channels.",
+          description:
+            "Videos built for the pace of social and digital channels: short formats, scripted to hold attention in the first seconds, delivered on a recurring cadence rather than as one-off pieces.",
         },
         {
           title: "Short Films",
-          description: "Short films, institutional and brand pieces.",
+          description:
+            "Longer-form pieces with their own script and direction, telling a complete story in a few minutes: institutional films, brand films or short documentaries.",
         },
         {
           title: "Campaigns and Brand Content",
-          description: "Advertising production and brand content.",
+          description:
+            "Advertising production aligned with the brand's marketing campaign, from concept to final film, including the cuts for each channel where the campaign runs.",
         },
       ],
     },
@@ -368,6 +371,8 @@ export const en: Content = {
         "The ability to make a production happen on the ground, with the local network and knowledge that an out-of-town production doesn't have.",
       fixer: {
         title: "Fixer",
+        description:
+          "A fixer handles everything a production needs on the ground before the cameras roll: permits, locations, security, crew and logistics. It's the difference between arriving to shoot and arriving to spend days sorting out what should already be in place.",
         locationScoutHighlight:
           "We scout locations from Rio de Janeiro to the Costa Verde: metropolis, beach and tropical nature within a short radius, allowing radically different backdrops without moving the production.",
         items: [
@@ -581,6 +586,8 @@ export const en: Content = {
     title: "Creation Ops Rio",
     intro:
       "Producing in Rio de Janeiro from outside costs time and friction: unfamiliar vendors, permits, logistics. We take that part on so you can arrive and produce.",
+    experienceStatement:
+      "15+ years of experience in reception and security for dignitaries, organizations and large-scale events.",
     whatChanges: {
       title: "What changes",
       before: [

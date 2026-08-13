@@ -3,7 +3,7 @@ import type { Content } from "./types";
 export const pt: Content = {
   brand: {
     name: "Creation",
-    microcopy: "Pensamos e realizamos.",
+    microcopy: "Clareza. Ritmo. Execução.",
     footerTagline: "Pensamos e realizamos projetos inovadores.",
     locations: "Brasil | Estados Unidos",
   },
@@ -240,7 +240,7 @@ export const pt: Content = {
           "Construção da identidade da marca, com conteúdo e storytelling.",
       },
       {
-        title: "Processos",
+        title: "Gestão de Processos de Negócios",
         description:
           "Desenho de processos e governança que sustentam a operação.",
       },
@@ -335,15 +335,18 @@ export const pt: Content = {
       items: [
         {
           title: "Web Content",
-          description: "Conteúdo para redes e canais digitais.",
+          description:
+            "Vídeos pensados para o ritmo das redes e canais digitais: formatos curtos, roteirizados para reter atenção nos primeiros segundos, com entrega recorrente, não pontual.",
         },
         {
           title: "Short Films",
-          description: "Filmes curtos, institucionais e de marca.",
+          description:
+            "Peças de maior fôlego, com roteiro e direção próprios, para contar uma história completa em poucos minutos: institucionais, de marca ou documentais curtos.",
         },
         {
           title: "Campanhas e Brand Content",
-          description: "Produção publicitária e conteúdo de marca.",
+          description:
+            "Produção publicitária alinhada à campanha de marketing da marca, do conceito ao filme final, incluindo os recortes para cada canal onde a campanha vai rodar.",
         },
       ],
     },
@@ -353,6 +356,8 @@ export const pt: Content = {
         "A capacidade de viabilizar uma produção no terreno, com a rede e o conhecimento local que uma produção de fora não tem.",
       fixer: {
         title: "Fixer",
+        description:
+          "Um fixer resolve tudo que uma produção precisa no terreno antes das câmeras ligarem: autorizações, locação, segurança, equipe e logística. É a diferença entre chegar e gravar, ou chegar e passar dias resolvendo o que devia estar pronto.",
         locationScoutHighlight:
           "Mapeamos locações do Rio de Janeiro à Costa Verde: metrópole, praia e natureza tropical num raio curto, permitindo cenários radicalmente diferentes sem mover a operação.",
         items: [
@@ -566,6 +571,8 @@ export const pt: Content = {
     title: "Creation Ops Rio",
     intro:
       "Cuidamos da operação inteira de uma produção no Rio de Janeiro, da estratégia à execução: autorizações, locações, equipe e logística. Você chega com o projeto e encontra a cidade já resolvida.",
+    experienceStatement:
+      "Mais de 15 anos de experiência em receptivo e segurança de dignitários, organizações e grandes eventos.",
     whatChanges: {
       title: "O que muda quando a operação é nossa",
       before: [

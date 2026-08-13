@@ -7,9 +7,10 @@ import { useLocalizedHref } from "@/content";
 // ============================================================================
 // PRIMITIVOS — Manual de Identidade V6.0
 // ----------------------------------------------------------------------------
-// SUPERFICIES: bone (claro), abyss/ink (escuro). O ritmo entre secoes claras
-// consecutivas vem de DIVISOR (border-abyss/14), nao de cor de fundo — nao
-// existe cinza-claro no sistema.
+// SUPERFICIES: White (55-65%, fundo principal, PADRAO do Section agora) e
+// Bone (10-15%, so secoes editoriais/transicoes e cartoes internos — cases,
+// FeatureCard). Abyss/Ink permanecem os tons escuros. O ritmo entre secoes
+// claras consecutivas vem de DIVISOR (border-abyss/14), nao de cor de fundo.
 //
 // CONTRASTE (manual V6, pag. 15):
 //   Fundo claro (bone/white): corpo text-abyss | link Abyss peso 600 sublinhado
@@ -23,12 +24,13 @@ import { useLocalizedHref } from "@/content";
 // A escala de padding abaixo (py-10/14/20/28 = 40/56/80/112px) ja respeita
 // os multiplos de 8. NAO implementado ainda: grid formal de 12 colunas com
 // col-span — hoje cada pagina usa grid-cols-N avulso. Rebuild maior, fica
-// para decisao separada.
+// para decisao separada (ja discutida e adiada de proposito).
 // ============================================================================
 
-type Tone = "bone" | "abyss" | "ink";
+type Tone = "white" | "bone" | "abyss" | "ink";
 
 const TONES: Record<Tone, string> = {
+  white: "bg-white text-abyss",
   bone: "bg-bone text-abyss",
   abyss: "bg-abyss text-bone",
   ink: "bg-ink text-bone",
@@ -47,7 +49,7 @@ interface SectionProps {
 
 export function Section({
   children,
-  tone = "bone",
+  tone = "white",
   size = "md",
   divider = false,
   className,

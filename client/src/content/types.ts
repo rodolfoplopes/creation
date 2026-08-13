@@ -226,6 +226,7 @@ export interface Content {
       intro: string;
       fixer: {
         title: string;
+        description: string; // o que o fixer resolve, antes da lista
         locationScoutHighlight: string; // destaque Rio + Costa Verde
         items: string[]; // Permits, Location Scout, Security, Rentals, Vehicles, Crew, Accommodation, Story R&D
       };
@@ -265,6 +266,7 @@ export interface Content {
     eyebrow: string;
     title: string;
     intro: string;
+    experienceStatement: string; // credencial real ("+15 anos de experiencia..."), nao numero de projeto
     whatChanges: { title: string; before: string[]; after: string[] };
     packages: { title: string; subtitle: string; items: TitledItem[] }; // Content Sprint, Brand Campaign, Business Tourism VIP, Expatriates(em breve)
     differentiator: { title: string; body: string };
