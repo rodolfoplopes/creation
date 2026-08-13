@@ -193,12 +193,12 @@ export default function Header() {
           kind: "service" as const,
         },
         {
-          label: c.impactoSocial.ongZero.title,
+          label: c.impactoSocial.ongZero.eyebrow,
           href: c.impactoSocial.ongZero.href,
           kind: "product" as const,
         },
         {
-          label: c.impactoSocial.motorSroi.title,
+          label: "Motor SROI",
           href: c.impactoSocial.motorSroi.href,
           kind: "product" as const,
         },
@@ -225,9 +225,9 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             <Link href={localize("/")} data-testid="link-logo">
               <img
-                src="/brand/lockup_bone_transp.svg"
+                src="/brand/creation_assinatura_completa_branca.svg"
                 alt={c.brand.name}
-                className="h-[105px] md:h-[130px] w-auto cursor-pointer"
+                className="h-14 md:h-20 w-auto cursor-pointer"
               />
             </Link>
 
@@ -262,9 +262,9 @@ export default function Header() {
             <div className="flex items-center justify-between py-4">
               <Link href={localize("/")} data-testid="link-logo-overlay">
                 <img
-                  src="/brand/lockup_bone_transp.svg"
+                  src="/brand/creation_assinatura_completa_branca.svg"
                   alt={c.brand.name}
-                  className="h-[105px] md:h-[130px] w-auto cursor-pointer"
+                  className="h-14 md:h-20 w-auto cursor-pointer"
                 />
               </Link>
               <button
@@ -310,10 +310,10 @@ export default function Header() {
                             onClick={() => handleMenuClick(item.href)}
                           >
                             <span
-                              className={`cursor-pointer transition-colors ${
+                              className={`cursor-pointer transition-colors text-small ${
                                 item.kind === "product"
-                                  ? "text-small uppercase tracking-wide font-semibold"
-                                  : "text-small font-normal"
+                                  ? "font-semibold tracking-wide"
+                                  : "font-normal"
                               } ${
                                 isCurrentPath(item.href.split("#")[0])
                                   ? "text-signal"
