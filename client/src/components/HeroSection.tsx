@@ -19,7 +19,7 @@ export default function HeroSection() {
   };
   return (
     <section
-      className="relative min-h-[calc(100vh-4rem)] flex items-center bg-bone overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center bg-white overflow-hidden"
       data-testid="section-hero"
     >
       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-signal" />

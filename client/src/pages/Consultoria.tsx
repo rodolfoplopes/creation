@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Image as ImageIcon } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
 
@@ -20,30 +20,41 @@ export default function Consultoria() {
   const c = useContent();
   const localize = useLocalizedHref();
 
-  const cases = c.cases.items.filter((item) => item.eyebrow === "GESTÃO DE PROJETOS");
+  const cases = c.cases.items.filter(
+    (item) => item.eyebrow === "GESTÃO DE PROJETOS",
+  );
 
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative bg-bone py-14 md:py-20 overflow-hidden">
+      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-measure">
-            <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
-              {c.consultoria.hero.eyebrow}
-            </p>
-            <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
-              {c.consultoria.hero.title}
-            </h1>
-            <p className="text-xl text-abyss/70 leading-relaxed">
-              {c.consultoria.hero.intro}
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-measure">
+              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+                {c.consultoria.hero.eyebrow}
+              </p>
+              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
+                {c.consultoria.hero.title}
+              </h1>
+              <p className="text-xl text-abyss/70 leading-relaxed">
+                {c.consultoria.hero.intro}
+              </p>
+            </div>
+            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
+                quando o arquivo chegar. */}
+            <div className="hidden lg:block">
+              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
+                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Sections (abertura, diferencial, especialidade) */}
-      <Section tone="bone" divider firstContent>
+      <Section tone="white" divider firstContent>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-abyss/14 border border-abyss/14">
           {c.consultoria.sections.map((section) => (
             <article key={section.title} className="bg-bone p-8 md:p-10">
@@ -59,19 +70,32 @@ export default function Consultoria() {
       {/* Serviços */}
       <Section tone="ink" divider>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 max-w-4xl">
-          {c.consultoria.services.map((service) => (
-            <div key={service.title}>
+          {c.consultoria.services.map((service, i) => (
+            <div
+              key={service.title}
+              id={
+                [
+                  "gestao-de-projetos",
+                  "inteligencia-e-estrategia",
+                  "branding-e-identidade",
+                  "processos",
+                ][i]
+              }
+              className="scroll-mt-[180px]"
+            >
               <h3 className="font-display text-h3 font-bold text-bone mb-2">
                 {service.title}
               </h3>
-              <p className="text-bone/70 leading-relaxed">{service.description}</p>
+              <p className="text-bone/70 leading-relaxed">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Hub Inovação */}
-      <Section tone="bone" divider>
+      <Section id="inovacao" tone="white" divider className="scroll-mt-[180px]">
         <p className="text-caption font-semibold text-signal mb-3 uppercase tracking-widest">
           {c.consultoria.innovation.eyebrow}
         </p>
@@ -120,11 +144,14 @@ export default function Consultoria() {
 
       {/* Cases (filtrados do array global por eyebrow) */}
       {cases.length > 0 && (
-        <Section tone="bone" divider>
+        <Section tone="white" divider>
           <SectionHeader title={c.cases.title} subtitle={c.cases.subtitle} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
             {cases.map((item) => (
-              <article key={item.title} className="bg-bone p-8 md:p-10 flex flex-col">
+              <article
+                key={item.title}
+                className="bg-bone p-8 md:p-10 flex flex-col"
+              >
                 <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
                   {item.eyebrow}
                 </p>
@@ -151,13 +178,17 @@ export default function Consultoria() {
                     <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
                       {c.labels.caseProblem}
                     </h4>
-                    <p className="text-abyss/70 leading-relaxed">{item.problem}</p>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.problem}
+                    </p>
                   </div>
                   <div>
                     <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
                       {c.labels.caseAction}
                     </h4>
-                    <p className="text-abyss/70 leading-relaxed">{item.action}</p>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.action}
+                    </p>
                   </div>
                 </div>
 
@@ -193,13 +224,15 @@ export default function Consultoria() {
       </Section>
 
       {/* Para quem + CTA final */}
-      <Section tone="bone" size="sm">
+      <Section tone="white" size="sm">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-measure">
             <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
               {c.labels.forWhom}
             </p>
-            <p className="text-abyss/70 leading-relaxed">{c.consultoria.forWhom}</p>
+            <p className="text-abyss/70 leading-relaxed">
+              {c.consultoria.forWhom}
+            </p>
           </div>
           <CTAButton
             label={c.cta.primary}

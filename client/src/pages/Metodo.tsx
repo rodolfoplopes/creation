@@ -18,7 +18,7 @@ export default function Metodo() {
 
   return (
     <Layout>
-      <section className="relative bg-bone py-14 md:py-20 overflow-hidden">
+      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -35,7 +35,7 @@ export default function Metodo() {
         </div>
       </section>
 
-      <Section tone="bone" divider firstContent>
+      <Section tone="white" divider firstContent>
         <div className="space-y-px bg-abyss/10">
           {c.method.stages.map((stage) => (
             <div

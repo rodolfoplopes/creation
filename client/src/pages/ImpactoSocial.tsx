@@ -1,8 +1,13 @@
 import Layout from "@/components/Layout";
-import HeroInternal from "@/components/layout/HeroInternal";
 import ImpactoTripleImage from "@/components/impacto/ImpactoTripleImage";
-import { Section, SectionHeader, Grid, FeatureCard, CTAButton } from "@/components/primitives";
-import { ArrowRight } from "lucide-react";
+import {
+  Section,
+  SectionHeader,
+  Grid,
+  FeatureCard,
+  CTAButton,
+} from "@/components/primitives";
+import { ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
 
@@ -28,17 +33,40 @@ export default function ImpactoSocial() {
 
   return (
     <Layout>
-      <HeroInternal
-        title={c.impactoSocial.hero.title}
-        subtitle={c.impactoSocial.hero.intro}
-        showCta
-        ctaText={c.cta.primary}
-        ctaHref={c.cta.href}
-        showSecondaryCta={false}
-      />
+      {/* Hero */}
+      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-measure">
+              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+                {c.impactoSocial.hero.eyebrow}
+              </p>
+              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
+                {c.impactoSocial.hero.title}
+              </h1>
+              <p className="text-xl text-abyss/70 leading-relaxed mb-8">
+                {c.impactoSocial.hero.intro}
+              </p>
+              <CTAButton
+                label={c.cta.primary}
+                href={c.cta.href}
+                variant="primary"
+              />
+            </div>
+            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
+                quando o arquivo chegar. */}
+            <div className="hidden lg:block">
+              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
+                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Sections (de intencao a programa, territorio no centro) */}
-      <Section tone="bone" divider firstContent>
+      <Section tone="white" divider firstContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
           {c.impactoSocial.sections.map((section) => (
             <article key={section.title} className="bg-bone p-8 md:p-10">
@@ -54,25 +82,40 @@ export default function ImpactoSocial() {
       <ImpactoTripleImage />
 
       {/* Serviços */}
-      <Section tone="bone">
+      <Section tone="white">
         <Grid cols={2}>
-          {c.impactoSocial.services.map((service) => (
-            <FeatureCard
+          {c.impactoSocial.services.map((service, i) => (
+            <div
               key={service.title}
-              title={service.title}
-              description={service.description}
-            />
+              id={
+                [
+                  "estruturacao-de-ongs",
+                  "programas-de-impacto-social",
+                  "relatorios-de-impacto-e-esg",
+                  "gestao-de-projetos-sociais",
+                ][i]
+              }
+              className="scroll-mt-[180px]"
+            >
+              <FeatureCard
+                title={service.title}
+                description={service.description}
+              />
+            </div>
           ))}
         </Grid>
       </Section>
 
       {/* Cases (filtrados do array global por eyebrow) */}
       {cases.length > 0 && (
-        <Section tone="bone" divider>
+        <Section tone="white" divider>
           <SectionHeader title={c.cases.title} subtitle={c.cases.subtitle} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
             {cases.map((item) => (
-              <article key={item.title} className="bg-bone p-8 md:p-10 flex flex-col">
+              <article
+                key={item.title}
+                className="bg-bone p-8 md:p-10 flex flex-col"
+              >
                 <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
                   {item.eyebrow}
                 </p>
@@ -99,13 +142,17 @@ export default function ImpactoSocial() {
                     <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
                       {c.labels.caseProblem}
                     </h4>
-                    <p className="text-abyss/70 leading-relaxed">{item.problem}</p>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.problem}
+                    </p>
                   </div>
                   <div>
                     <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
                       {c.labels.caseAction}
                     </h4>
-                    <p className="text-abyss/70 leading-relaxed">{item.action}</p>
+                    <p className="text-abyss/70 leading-relaxed">
+                      {item.action}
+                    </p>
                   </div>
                 </div>
 
@@ -119,12 +166,17 @@ export default function ImpactoSocial() {
       )}
 
       {/* Matchmaking — PT leve (strong: false); EN/ES podem tratar com mais peso */}
-      <Section tone="bone" size={c.impactoSocial.matchmaking.strong ? undefined : "sm"}>
+      <Section
+        tone="white"
+        size={c.impactoSocial.matchmaking.strong ? undefined : "sm"}
+      >
         <div className="max-w-measure">
           <h2 className="font-display text-h3 font-bold text-abyss mb-3">
             {c.impactoSocial.matchmaking.title}
           </h2>
-          <p className="text-abyss/70 leading-relaxed">{c.impactoSocial.matchmaking.body}</p>
+          <p className="text-abyss/70 leading-relaxed">
+            {c.impactoSocial.matchmaking.body}
+          </p>
         </div>
       </Section>
 
@@ -175,13 +227,15 @@ export default function ImpactoSocial() {
       </Section>
 
       {/* Para quem + CTA final */}
-      <Section tone="bone" size="sm">
+      <Section tone="white" size="sm">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-measure">
             <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
               {c.labels.forWhom}
             </p>
-            <p className="text-abyss/70 leading-relaxed">{c.impactoSocial.forWhom}</p>
+            <p className="text-abyss/70 leading-relaxed">
+              {c.impactoSocial.forWhom}
+            </p>
           </div>
           <CTAButton
             label={c.cta.primary}

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { Image as ImageIcon } from "lucide-react";
 import { Section, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
@@ -11,28 +12,41 @@ export default function BiEventos() {
 
   return (
     <Layout>
-      <section className="relative bg-bone py-14 md:py-20 overflow-hidden">
+      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
-              {page.eyebrow}
-            </p>
-            <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
-              {page.title}
-            </h1>
-            <p className="text-xl text-abyss/70 leading-relaxed">{page.intro}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl">
+              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+                {page.eyebrow}
+              </p>
+              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
+                {page.title}
+              </h1>
+              <p className="text-xl text-abyss/70 leading-relaxed">
+                {page.intro}
+              </p>
+            </div>
+            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
+                quando o arquivo chegar. */}
+            <div className="hidden lg:block">
+              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
+                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* O que medimos */}
-      <Section tone="bone" divider firstContent>
+      <Section tone="white" divider firstContent>
         <div className="max-w-measure border-l-2 border-signal pl-8">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.whatWeMeasure.title}
           </h2>
-          <p className="text-lg text-abyss/70 leading-relaxed">{page.whatWeMeasure.body}</p>
+          <p className="text-lg text-abyss/70 leading-relaxed">
+            {page.whatWeMeasure.body}
+          </p>
         </div>
       </Section>
 
@@ -42,12 +56,14 @@ export default function BiEventos() {
           <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.externalRead.title}
           </h2>
-          <p className="text-bone/70 leading-relaxed">{page.externalRead.body}</p>
+          <p className="text-bone/70 leading-relaxed">
+            {page.externalRead.body}
+          </p>
         </div>
       </Section>
 
       {/* Para quem + CTA */}
-      <Section tone="bone" size="sm">
+      <Section tone="white" size="sm">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="max-w-measure">
             <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">

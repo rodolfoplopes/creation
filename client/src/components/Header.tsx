@@ -7,16 +7,21 @@ import { storeLang } from "@/lib/detectLang";
 
 /**
  * ESTAGIO 2 — mega-menu full-screen (Manual V6, pag. 21 "Shell do site").
- * Substitui o Estagio 1 (lista horizontal desktop + Sheet lateral mobile).
  *
  * "Hamburguer em todos os dispositivos; overlay full-screen em Abyss."
  * Cabecalho fica so com logo + hamburguer — minimalista, como o V6 pede.
  *
- * Colunas de area: uso as sub-marcas/produtos que TEM pagina propria de
- * verdade hoje (Creation Marcas, Creation Ops Rio, BI de Eventos, ONG.zero,
- * Motor SROI), nao o exemplo ilustrativo do manual (Estrategia/Inovacao/
- * Marcas) — esses nomes sao exemplo de profundidade, nao taxonomia literal
- * (o manual explicita: "nao substitui... arquitetura do site").
+ * CORRECAO (apos feedback real): a primeira versao do menu so listava os
+ * PRODUTOS/sub-marcas com pagina propria (Creation Marcas, Creation Ops
+ * Rio, BI de Eventos, ONG.zero, Motor SROI), escondendo os SERVICOS reais
+ * de cada area (Gestao de Projetos, Eventos e Experiencias, Fixer etc.),
+ * que so existem como secao dentro da pagina da area. Isso fazia o menu
+ * comunicar errado — como se as ferramentas fossem o produto principal.
+ *
+ * Agora cada coluna lista os 4 servicos reais (link com #ancora pra secao
+ * dentro da pagina) + os 2 produtos com pagina propria (kind:"product",
+ * estilo visual distinto: caixa alta). O scroll ate a ancora e feito na
+ * mao (handleMenuClick) porque o wouter nao rola sozinho ao navegar.
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
@@ -64,14 +69,66 @@ export default function Header() {
     setIsOpen(false);
   }, [location]);
 
+  // Rola ate a secao ancorada apos navegar (wouter nao faz isso sozinho).
+  // Tambem fecha o overlay explicitamente: se o clique for uma ancora na
+  // MESMA pagina (ex.: ja em /consultoria, clica em #inovacao), o pathname
+  // nao muda, e o useEffect que fecha ao trocar de rota pode nao disparar.
+  const handleMenuClick = (href: string) => {
+    setIsOpen(false);
+    const hash = href.split("#")[1];
+    if (hash) {
+      setTimeout(() => {
+        document
+          .getElementById(hash)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 150);
+    }
+  };
+
+  // Cada area lista os SERVICOS reais (ancora dentro da propria pagina) +
+  // os PRODUTOS/sub-marcas que tem pagina propria (kind:"product"). Antes
+  // so os produtos apareciam, escondendo o conteudo principal do menu.
   const areas = [
     {
       href: "/consultoria",
       label: c.nav.consultoria,
       subItems: [
         {
-          label: c.consultoria.creationMarcas.title,
+          label: c.consultoria.services[0].title,
+          href: "/consultoria#gestao-de-projetos",
+          kind: "service" as const,
+        },
+        {
+          label: c.consultoria.services[2].title,
+          href: "/consultoria#branding-e-identidade",
+          kind: "service" as const,
+        },
+        {
+          label: c.consultoria.services[1].title,
+          href: "/consultoria#inteligencia-e-estrategia",
+          kind: "service" as const,
+        },
+        {
+          label: c.consultoria.services[3].title,
+          href: "/consultoria#processos",
+          kind: "service" as const,
+        },
+        {
+          label: c.consultoria.innovation.eyebrow,
+          href: "/consultoria#inovacao",
+          kind: "service" as const,
+        },
+        {
+          // Nome de menu diferente do nome da pagina/produto ("Creation
+          // Marcas"), a pedido: rotulo generico do servico no menu.
+          label:
+            currentLang === "en"
+              ? "Trademark Registration & Protection"
+              : currentLang === "es"
+                ? "Registro y Protección de Marcas"
+                : "Registro e Proteção de Marcas",
           href: c.consultoria.creationMarcas.href,
+          kind: "product" as const,
         },
       ],
     },
@@ -80,12 +137,34 @@ export default function Header() {
       label: c.nav.producoes,
       subItems: [
         {
+          label: c.producoes.events.title,
+          href: "/producoes#eventos",
+          kind: "service" as const,
+        },
+        {
+          label: c.producoes.audiovisual.title,
+          href: "/producoes#audiovisual",
+          kind: "service" as const,
+        },
+        {
+          label: c.producoes.operational.fixer.title,
+          href: "/producoes#fixer",
+          kind: "service" as const,
+        },
+        {
+          label: c.producoes.operational.hosting.title,
+          href: "/producoes#host",
+          kind: "service" as const,
+        },
+        {
           label: c.producoes.creatorOpsRio.eyebrow,
           href: c.producoes.creatorOpsRio.href,
+          kind: "product" as const,
         },
         {
           label: c.producoes.biEventos.eyebrow,
           href: c.producoes.biEventos.href,
+          kind: "product" as const,
         },
       ],
     },
@@ -94,12 +173,34 @@ export default function Header() {
       label: c.nav.impactoSocial,
       subItems: [
         {
+          label: c.impactoSocial.services[0].title,
+          href: "/impacto-social#estruturacao-de-ongs",
+          kind: "service" as const,
+        },
+        {
+          label: c.impactoSocial.services[1].title,
+          href: "/impacto-social#programas-de-impacto-social",
+          kind: "service" as const,
+        },
+        {
+          label: c.impactoSocial.services[2].title,
+          href: "/impacto-social#relatorios-de-impacto-e-esg",
+          kind: "service" as const,
+        },
+        {
+          label: c.impactoSocial.services[3].title,
+          href: "/impacto-social#gestao-de-projetos-sociais",
+          kind: "service" as const,
+        },
+        {
           label: c.impactoSocial.ongZero.title,
           href: c.impactoSocial.ongZero.href,
+          kind: "product" as const,
         },
         {
           label: c.impactoSocial.motorSroi.title,
           href: c.impactoSocial.motorSroi.href,
+          kind: "product" as const,
         },
       ],
     },
@@ -121,12 +222,12 @@ export default function Header() {
         data-testid="header"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center justify-between py-4">
             <Link href={localize("/")} data-testid="link-logo">
               <img
                 src="/brand/lockup_bone_transp.svg"
                 alt={c.brand.name}
-                className="h-10 md:h-16 w-auto cursor-pointer"
+                className="h-[105px] md:h-[130px] w-auto cursor-pointer"
               />
             </Link>
 
@@ -158,12 +259,12 @@ export default function Header() {
         <div className="h-full overflow-y-auto">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Topo do overlay: logo + fechar */}
-            <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center justify-between py-4">
               <Link href={localize("/")} data-testid="link-logo-overlay">
                 <img
                   src="/brand/lockup_bone_transp.svg"
                   alt={c.brand.name}
-                  className="h-10 md:h-16 w-auto cursor-pointer"
+                  className="h-[105px] md:h-[130px] w-auto cursor-pointer"
                 />
               </Link>
               <button
@@ -186,7 +287,10 @@ export default function Header() {
                   <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
                     {c.nav.areasLabel}
                   </p>
-                  <Link href={localize(area.href)}>
+                  <Link
+                    href={localize(area.href)}
+                    onClick={() => handleMenuClick(area.href)}
+                  >
                     <span
                       className={`block text-h2 font-bold mb-4 cursor-pointer transition-colors ${
                         isCurrentPath(area.href)
@@ -201,10 +305,17 @@ export default function Header() {
                     <ul className="space-y-3">
                       {area.subItems.map((item) => (
                         <li key={item.href}>
-                          <Link href={localize(item.href)}>
+                          <Link
+                            href={localize(item.href)}
+                            onClick={() => handleMenuClick(item.href)}
+                          >
                             <span
-                              className={`text-small uppercase tracking-wide font-semibold cursor-pointer transition-colors ${
-                                isCurrentPath(item.href)
+                              className={`cursor-pointer transition-colors ${
+                                item.kind === "product"
+                                  ? "text-small uppercase tracking-wide font-semibold"
+                                  : "text-small font-normal"
+                              } ${
+                                isCurrentPath(item.href.split("#")[0])
                                   ? "text-signal"
                                   : "text-bone/60 hover:text-signal"
                               }`}
@@ -226,7 +337,10 @@ export default function Header() {
                 <ul className="space-y-3">
                   {institutional.map((item) => (
                     <li key={item.href}>
-                      <Link href={localize(item.href)}>
+                      <Link
+                        href={localize(item.href)}
+                        onClick={() => handleMenuClick(item.href)}
+                      >
                         <span
                           className={`block text-h3 font-semibold cursor-pointer transition-colors ${
                             isCurrentPath(item.href)

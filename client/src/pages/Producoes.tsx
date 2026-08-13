@@ -8,7 +8,7 @@ import {
   FeatureCard,
   CTAButton,
 } from "@/components/primitives";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Image as ImageIcon } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
 
@@ -38,7 +38,13 @@ export default function Producoes() {
       />
 
       {/* Eventos e Experiências (5 categorias) */}
-      <Section tone="bone" divider firstContent>
+      <Section
+        id="eventos"
+        tone="white"
+        divider
+        firstContent
+        className="scroll-mt-[180px]"
+      >
         <SectionHeader
           title={c.producoes.events.title}
           subtitle={c.producoes.events.intro}
@@ -65,7 +71,12 @@ export default function Producoes() {
       </Section>
 
       {/* Audiovisual */}
-      <Section tone="ink" divider>
+      <Section
+        id="audiovisual"
+        tone="ink"
+        divider
+        className="scroll-mt-[180px]"
+      >
         <SectionHeader
           title={c.producoes.audiovisual.title}
           subtitle={c.producoes.audiovisual.intro}
@@ -84,19 +95,49 @@ export default function Producoes() {
       </Section>
 
       {/* Capacidade Operacional: Fixer + Host */}
-      <Section tone="bone" divider>
+      <Section tone="white" divider>
         <SectionHeader
           title={c.producoes.operational.title}
           subtitle={c.producoes.operational.intro}
         />
 
-        <div className="mb-10">
-          <h3 className="font-display text-h2 font-bold text-abyss mb-4">
-            {c.producoes.operational.fixer.title}
-          </h3>
-          <p className="text-abyss/70 leading-relaxed max-w-measure mb-8 border-l-2 border-signal pl-6">
+        <div id="fixer" className="mb-10 scroll-mt-[180px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
+            <div>
+              <h3 className="font-display text-h2 font-bold text-abyss mb-4">
+                {c.producoes.operational.fixer.title}
+              </h3>
+              <p className="text-abyss/70 leading-relaxed max-w-measure">
+                {c.producoes.operational.fixer.description}
+              </p>
+            </div>
+            {/* Imagem ilustrativa do servico de Fixer — aguardando foto real.
+                Trocar por <img src="..." /> quando o arquivo chegar. */}
+            <div className="hidden lg:block">
+              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
+                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              </div>
+            </div>
+          </div>
+
+          <p className="text-abyss/70 leading-relaxed max-w-measure mb-6 border-l-2 border-signal pl-6">
             {c.producoes.operational.fixer.locationScoutHighlight}
           </p>
+
+          {/* Grid de fotos de locacao (Rio + Costa Verde) — aguardando fotos
+              reais. Trocar cada box por <img src="..." /> quando os arquivos
+              chegarem. */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="aspect-square bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center"
+              >
+                <ImageIcon className="h-6 w-6 text-abyss/20" />
+              </div>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
             {c.producoes.operational.fixer.items.map((item) => (
               <div key={item} className="flex items-start gap-3">
@@ -107,7 +148,10 @@ export default function Producoes() {
           </div>
         </div>
 
-        <div className="border-t border-abyss/14 pt-8">
+        <div
+          id="host"
+          className="border-t border-abyss/14 pt-8 scroll-mt-[180px]"
+        >
           <h3 className="font-display text-h3 font-bold text-abyss mb-2">
             {c.producoes.operational.hosting.title}
           </h3>
@@ -167,7 +211,7 @@ export default function Producoes() {
 
       {/* Cases (filtrados do array global por eyebrow) */}
       {cases.length > 0 && (
-        <Section tone="bone" divider>
+        <Section tone="white" divider>
           <SectionHeader title={c.cases.title} subtitle={c.cases.subtitle} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
             {cases.map((item) => (
