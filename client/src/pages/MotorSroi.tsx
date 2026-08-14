@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Image as ImageIcon } from "lucide-react";
+import heroImg from "@assets/hero-motor-sroi.jpg";
 import { Section, Grid, FeatureCard, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
@@ -23,15 +23,11 @@ export default function MotorSroi() {
               <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
                 {page.title}
               </h1>
-              <p className="text-xl text-abyss/70 leading-relaxed">
-                {page.intro}
-              </p>
+              <p className="text-xl text-abyss/70 leading-relaxed">{page.intro}</p>
             </div>
-            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
-                quando o arquivo chegar. */}
             <div className="hidden lg:block">
-              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
-                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={heroImg} alt="" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -60,9 +56,7 @@ export default function MotorSroi() {
           <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.whyRealData.title}
           </h2>
-          <p className="text-bone/70 leading-relaxed">
-            {page.whyRealData.body}
-          </p>
+          <p className="text-bone/70 leading-relaxed">{page.whyRealData.body}</p>
         </div>
       </Section>
 

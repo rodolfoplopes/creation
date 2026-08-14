@@ -1,12 +1,11 @@
 import { ChevronDown } from "lucide-react";
 import { CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
-import heroImage from "@assets/ariel-tutillo-sM-ejBVJrKo-unsplash_1767378163287.jpg";
+import heroImage from "@assets/hero-home.jpg";
 
 /**
- * TODO(Sprint 2, ainda pendente): trocar a imagem.
- * O alt original era "Corporate cityscape" - arranha-ceu generico de stock.
- * Contradiz o discurso de proposito, ONGs e territorios.
+ * RESOLVIDO: hero-home.jpg substitui a foto de stock generica que
+ * contradizia o discurso de proposito, ONGs e territorios.
  *
  * FIX v4: c.hero.proof nao existe mais no contrato (hero so tem
  * headline + subheadline). A linha de "prova" no hero foi removida daqui;

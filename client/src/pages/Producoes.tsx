@@ -7,9 +7,31 @@ import {
   FeatureCard,
   CTAButton,
 } from "@/components/primitives";
-import { ArrowRight, Check, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
+import heroImg from "@assets/hero-producoes.jpg";
+import fixerImg from "@assets/fixer-ilustrativa.jpg";
+import locacao01 from "@assets/locacao-01.jpg";
+import locacao02 from "@assets/locacao-02.jpg";
+import locacao03 from "@assets/locacao-03.jpg";
+import locacao04 from "@assets/locacao-04.jpg";
+import locacao05 from "@assets/locacao-05.jpg";
+import locacao06 from "@assets/locacao-06.jpg";
+import caseHrTalks from "@assets/case-hr-talks.jpg";
+import caseWorldCreativityDay from "@assets/case-world-creativity-day..jpg";
+
+const locacaoImages = [
+  locacao01,
+  locacao02,
+  locacao03,
+  locacao04,
+  locacao05,
+  locacao06,
+];
+// Ordem dos cases filtrados por "EVENTOS" no pt.ts: HR Talks, depois World
+// Creativity Day — mesma ordem usada aqui pra casar indice com foto.
+const caseImages = [caseHrTalks, caseWorldCreativityDay];
 
 /**
  * /producoes — shape v4. c.productions -> c.producoes; hero.subtitle -> hero.intro;
@@ -50,8 +72,12 @@ export default function Producoes() {
             {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
                 quando o arquivo chegar. */}
             <div className="hidden lg:block">
-              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
-                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={heroImg}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -145,8 +171,12 @@ export default function Producoes() {
             {/* Imagem ilustrativa do servico de Fixer — aguardando foto real.
                 Trocar por <img src="..." /> quando o arquivo chegar. */}
             <div className="hidden lg:block">
-              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
-                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={fixerImg}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -155,16 +185,10 @@ export default function Producoes() {
             {c.producoes.operational.fixer.locationScoutHighlight}
           </p>
 
-          {/* Grid de fotos de locacao (Rio + Costa Verde) — aguardando fotos
-              reais. Trocar cada box por <img src="..." /> quando os arquivos
-              chegarem. */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center"
-              >
-                <ImageIcon className="h-6 w-6 text-abyss/20" />
+            {locacaoImages.map((img, i) => (
+              <div key={i} className="aspect-square overflow-hidden">
+                <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -245,54 +269,60 @@ export default function Producoes() {
         <Section tone="white" divider>
           <SectionHeader title={c.cases.title} subtitle={c.cases.subtitle} />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
-            {cases.map((item) => (
-              <article
-                key={item.title}
-                className="bg-bone p-8 md:p-10 flex flex-col"
-              >
-                <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
-                  {item.eyebrow}
-                </p>
-                <h3 className="font-display text-h2 font-bold text-abyss mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-small text-abyss/70 mb-6">{item.client}</p>
+            {cases.map((item, i) => (
+              <article key={item.title} className="bg-bone flex flex-col">
+                <div className="aspect-[16/9] overflow-hidden">
+                  <img
+                    src={caseImages[i]}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
+                    {item.eyebrow}
+                  </p>
+                  <h3 className="font-display text-h2 font-bold text-abyss mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-small text-abyss/70 mb-6">{item.client}</p>
 
-                <div className="grid grid-cols-3 gap-4 mb-8">
-                  {item.results.map((result) => (
-                    <div key={result.label}>
-                      <p className="font-display text-h3 font-bold text-abyss tabular-nums">
-                        {result.value}
-                      </p>
-                      <p className="text-caption text-abyss/70 leading-snug">
-                        {result.label}
+                  <div className="grid grid-cols-3 gap-4 mb-8">
+                    {item.results.map((result) => (
+                      <div key={result.label}>
+                        <p className="font-display text-h3 font-bold text-abyss tabular-nums">
+                          {result.value}
+                        </p>
+                        <p className="text-caption text-abyss/70 leading-snug">
+                          {result.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4 flex-1">
+                    <div>
+                      <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                        {c.labels.caseProblem}
+                      </h4>
+                      <p className="text-abyss/70 leading-relaxed">
+                        {item.problem}
                       </p>
                     </div>
-                  ))}
-                </div>
-
-                <div className="space-y-4 flex-1">
-                  <div>
-                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
-                      {c.labels.caseProblem}
-                    </h4>
-                    <p className="text-abyss/70 leading-relaxed">
-                      {item.problem}
-                    </p>
+                    <div>
+                      <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                        {c.labels.caseAction}
+                      </h4>
+                      <p className="text-abyss/70 leading-relaxed">
+                        {item.action}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
-                      {c.labels.caseAction}
-                    </h4>
-                    <p className="text-abyss/70 leading-relaxed">
-                      {item.action}
-                    </p>
-                  </div>
-                </div>
 
-                <p className="text-caption text-abyss/50 mt-6 pt-6 border-t border-abyss/14 leading-relaxed">
-                  {item.support}
-                </p>
+                  <p className="text-caption text-abyss/50 mt-6 pt-6 border-t border-abyss/14 leading-relaxed">
+                    {item.support}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

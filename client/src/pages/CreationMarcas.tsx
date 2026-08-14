@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import { Image as ImageIcon } from "lucide-react";
+import heroImg from "@assets/hero-creation-marcas.jpg";
 import { Section, Grid, FeatureCard, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
@@ -29,11 +29,13 @@ export default function CreationMarcas() {
                 {page.intro}
               </p>
             </div>
-            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
-                quando o arquivo chegar. */}
             <div className="hidden lg:block">
-              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
-                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={heroImg}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
