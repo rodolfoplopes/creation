@@ -230,6 +230,7 @@ export interface Content {
         title: string;
         description: string;                // o que o fixer resolve, antes da lista
         locationScoutHighlight: string; // destaque Rio + Costa Verde
+        locationGridLabel: string;  // rotulo acima do grid de 6 fotos de locacao
         items: string[];             // Permits, Location Scout, Security, Rentals, Vehicles, Crew, Accommodation, Story R&D
       };
       hosting: { title: string; description: string };

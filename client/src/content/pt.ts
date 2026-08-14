@@ -349,6 +349,7 @@ export const pt: Content = {
           "Um fixer resolve tudo que uma produção precisa no terreno antes das câmeras ligarem: autorizações, locação, segurança, equipe e logística. É a diferença entre chegar e gravar, ou chegar e passar dias resolvendo o que devia estar pronto.",
         locationScoutHighlight:
           "Mapeamos locações do Rio de Janeiro à Costa Verde: metrópole, praia e natureza tropical num raio curto, permitindo cenários radicalmente diferentes sem mover a operação.",
+        locationGridLabel: "Algumas das locações mapeadas",
         items: [
           "Permits e autorizações",
           "Location Scout",

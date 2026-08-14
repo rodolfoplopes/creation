@@ -354,6 +354,7 @@ export const en: Content = {
           "A fixer handles everything a production needs on the ground before the cameras roll: permits, locations, security, crew and logistics. It's the difference between arriving to shoot and arriving to spend days sorting out what should already be in place.",
         locationScoutHighlight:
           "We scout locations from Rio de Janeiro to the Costa Verde: metropolis, beach and tropical nature within a short radius, allowing radically different backdrops without moving the production.",
+        locationGridLabel: "Some of the locations we've mapped",
         items: [
           "Permits and legal",
           "Location Scout",

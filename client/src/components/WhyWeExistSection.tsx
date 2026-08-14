@@ -1,23 +1,19 @@
 import { useState, useCallback, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import slideHome04 from "@assets/slide-home-04.jpg";
-import slideHome05 from "@assets/slide-home-05.jpg";
-import slideHome06 from "@assets/slide-home-06.jpg";
 
 /**
- * Reduzido/expandido a pedido: saíram Blockchain Rio Festival e CarnaSensa
- * (2 das 5 originais). Entraram 3 fotos novas (slide-home-04/05/06, via
- * @assets — diferente do padrao antigo /images/... de caminho publico).
- * Total: 6 slides (3 antigos que ficaram + 3 novos).
+ * Voltou para as 3 fotos originais que sobraram do primeiro corte
+ * (Creation Pro Story, Expo, ReservaX Lounge). As 3 novas (slide-home-
+ * 04/05/06) foram removidas — corte/enquadramento ruim com object-cover
+ * em altura fixa (rosto cortado, foto esticada). Se voltar a tentar fotos
+ * novas aqui, pre-cortar pra uma proporcao larga (perto de 16:9) antes de
+ * subir evita o mesmo problema.
  */
 const slides = [
   { src: "/images/story-line.jpg", alt: "Creation Pro Story" },
   { src: "/images/expo.jpg", alt: "Expo" },
   { src: "/images/reservax.jpg", alt: "ReservaX Lounge" },
-  { src: slideHome04, alt: "Creation" },
-  { src: slideHome05, alt: "Creation" },
-  { src: slideHome06, alt: "Creation" },
 ];
 export default function WhyWeExistSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
