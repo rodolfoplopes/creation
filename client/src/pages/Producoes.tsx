@@ -1,5 +1,4 @@
 import Layout from "@/components/Layout";
-import HeroInternal from "@/components/layout/HeroInternal";
 import ProductionsMediaGrid from "@/components/producoes/ProductionsMediaGrid";
 import {
   Section,
@@ -19,9 +18,10 @@ import { useContent, useLocalizedHref } from "@/content";
  * mediaTitle nao existe mais no contrato. Substitui por
  * c.producoes.audiovisual.title ate confirmar o prop real do componente.
  *
- * HeroInternal nao recebia eyebrow no codigo original — eyebrow
- * ("PRODUCOES") fica de fora do hero por ora, nao arrisquei prop que o
- * componente pode nao aceitar.
+ * FIX (a pedido): HeroInternal removido — hero agora e o mesmo padrao das
+ * outras areas (2 colunas, slot de imagem), sem video. O video que estava
+ * no hero (/images/video-hero.mp4) foi para dentro da secao Audiovisual,
+ * com texto de apoio (videoCaption).
  */
 export default function Producoes() {
   const c = useContent();
@@ -31,11 +31,32 @@ export default function Producoes() {
 
   return (
     <Layout>
-      <HeroInternal
-        title={c.producoes.hero.title}
-        subtitle={c.producoes.hero.intro}
-        videoSrc="/images/video-hero.mp4"
-      />
+      {/* Hero — video removido daqui, foi para Audiovisual com texto de apoio */}
+      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-measure">
+              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+                {c.producoes.hero.eyebrow}
+              </p>
+              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
+                {c.producoes.hero.title}
+              </h1>
+              <p className="text-xl text-abyss/70 leading-relaxed">
+                {c.producoes.hero.intro}
+              </p>
+            </div>
+            {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
+                quando o arquivo chegar. */}
+            <div className="hidden lg:block">
+              <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden flex items-center justify-center">
+                <ImageIcon className="h-12 w-12 text-abyss/20" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Eventos e Experiências (5 categorias) */}
       <Section
@@ -82,6 +103,16 @@ export default function Producoes() {
           subtitle={c.producoes.audiovisual.intro}
           onDark
         />
+        <div className="mb-10">
+          <video
+            src="/images/video-hero.mp4"
+            controls
+            className="w-full aspect-video bg-abyss/50 border border-bone/14"
+          />
+          <p className="mt-3 text-small text-bone/60">
+            {c.producoes.audiovisual.videoCaption}
+          </p>
+        </div>
         <Grid cols={3}>
           {c.producoes.audiovisual.items.map((item) => (
             <FeatureCard

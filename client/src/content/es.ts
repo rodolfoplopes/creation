@@ -348,6 +348,7 @@ export const es: Content = {
       title: "Audiovisual",
       intro:
         "Producimos contenido audiovisual desde la planificación hasta la entrega: dirección, equipo, equipamiento, locación y posproducción.",
+      videoCaption: "Un ejemplo de nuestro trabajo en video.",
       items: [
         {
           title: "Web Content",
@@ -390,7 +391,7 @@ export const es: Content = {
       hosting: {
         title: "Host y Receptivo",
         description:
-          "Recepción y apoyo local para quienes vienen a producir desde afuera.",
+          "Recibimos producciones que llegan desde fuera de Río de Janeiro, desde la llegada hasta el día a día en el set. Nos encargamos del alojamiento, el transporte, el montaje de una base de operaciones local y del contacto local durante toda la producción, de modo que el equipo que llega encuentra la logística ya resuelta, sin tener que gestionar proveedores a distancia.",
       },
     },
     creatorOpsRio: {

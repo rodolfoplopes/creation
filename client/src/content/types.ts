@@ -218,6 +218,7 @@ export interface Content {
     audiovisual: {
       title: string;
       intro: string;
+      videoCaption: string; // texto de apoio do video, que veio do hero pra ca
       items: ServiceItem[]; // Web Content, Short Films, Campanhas/Brand Content
     };
     // Capacidade Operacional (Fixer + Host)

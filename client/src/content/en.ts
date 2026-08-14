@@ -347,6 +347,7 @@ export const en: Content = {
       title: "Audiovisual",
       intro:
         "We produce audiovisual content from planning to delivery: direction, crew, equipment, location and post-production, in Brazil and in the United States.",
+      videoCaption: "An example of our work on video.",
       items: [
         {
           title: "Web Content",
@@ -389,7 +390,7 @@ export const en: Content = {
       hosting: {
         title: "Host and Reception",
         description:
-          "Reception and local support for productions coming in from out of town.",
+          "We receive productions coming from outside Rio de Janeiro, from arrival through the day-to-day on set. We handle accommodation, transport, setting up a local operations base, and stay as the local point of contact throughout the production, so the crew that arrives finds the logistics already handled, with no vendor to manage from a distance.",
       },
     },
     creatorOpsRio: {
