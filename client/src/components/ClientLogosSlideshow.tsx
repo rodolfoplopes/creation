@@ -1,5 +1,4 @@
 import { useContent } from "@/content";
-
 /**
  * ANTES: 11 PNGs de @assets/ com fundo proprio (gradiente azul-rosa). O
  * object-cover cortava em quadrado e criava as "caixas furta-cor" que nao
@@ -9,9 +8,8 @@ import { useContent } from "@/content";
  * AGORA: 9 SVGs vetoriais, em marquee continuo. Fundo Bone, logos em Abyss
  * monocromatico. O array e duplicado para o loop nao dar salto no fim.
  *
- * TODO(Sprint 2): cada logo precisa de UMA LINHA dizendo o que foi feito.
- * Globo, L'Oreal, SENAC, Hacking.Rio sem contexto sao decoracao.
- * Com contexto, sao prova.
+ * DECISAO (nao pendencia): uma linha de contexto por logo foi cogitada e
+ * descartada de proposito — carrossel simples, sem legenda por cliente.
  */
 const clientLogos = [
   { src: "/images/clients/1.svg", alt: "Globo" },
@@ -24,13 +22,10 @@ const clientLogos = [
   { src: "/images/clients/8.svg", alt: "Life Impact International" },
   { src: "/images/clients/9.svg", alt: "Instituto Casa do Pai" },
 ];
-
 export default function ClientLogosSlideshow() {
   const c = useContent();
-
   // Duplicado: o loop precisa de duas voltas para nao dar salto.
   const loop = [...clientLogos, ...clientLogos];
-
   return (
     <section className="py-14 md:py-20 bg-bone border-t border-abyss/14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -38,12 +33,10 @@ export default function ClientLogosSlideshow() {
           {c.about.partnersTitle}
         </h2>
       </div>
-
       <div className="relative overflow-hidden">
         {/* Fade: o logo entra e sai do Bone, nao e cortado seco */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-bone to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-bone to-transparent" />
-
         <div className="flex w-max animate-marquee items-center gap-16 md:gap-24">
           {loop.map((logo, i) => (
             <img
