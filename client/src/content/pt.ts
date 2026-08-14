@@ -350,6 +350,7 @@ export const pt: Content = {
         locationScoutHighlight:
           "Mapeamos locações do Rio de Janeiro à Costa Verde: metrópole, praia e natureza tropical num raio curto, permitindo cenários radicalmente diferentes sem mover a operação.",
         locationGridLabel: "Algumas das locações mapeadas",
+        itemsLabel: "O que está incluído",
         items: [
           "Permits e autorizações",
           "Location Scout",

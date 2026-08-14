@@ -354,6 +354,7 @@ export const es: Content = {
         locationScoutHighlight:
           "Localizamos escenarios desde Río de Janeiro hasta la Costa Verde: metrópoli, playa y naturaleza tropical en un radio corto, lo que permite escenarios radicalmente distintos sin mover la operación.",
         locationGridLabel: "Algunas de las locaciones mapeadas",
+        itemsLabel: "Qué incluye",
         items: [
           "Permisos y autorizaciones",
           "Location Scout",

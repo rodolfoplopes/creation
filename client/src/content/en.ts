@@ -355,6 +355,7 @@ export const en: Content = {
         locationScoutHighlight:
           "We scout locations from Rio de Janeiro to the Costa Verde: metropolis, beach and tropical nature within a short radius, allowing radically different backdrops without moving the production.",
         locationGridLabel: "Some of the locations we've mapped",
+        itemsLabel: "What's included",
         items: [
           "Permits and legal",
           "Location Scout",

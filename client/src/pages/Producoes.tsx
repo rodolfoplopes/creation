@@ -1,12 +1,6 @@
 import Layout from "@/components/Layout";
 import ProductionsMediaGrid from "@/components/producoes/ProductionsMediaGrid";
-import {
-  Section,
-  SectionHeader,
-  Grid,
-  FeatureCard,
-  CTAButton,
-} from "@/components/primitives";
+import { Section, SectionHeader, Grid, FeatureCard, CTAButton } from "@/components/primitives";
 import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import { useContent, useLocalizedHref } from "@/content";
@@ -20,14 +14,7 @@ import locacao06 from "@assets/locacao-06.jpg";
 import caseHrTalks from "@assets/case-hr-talks.jpg";
 import caseWorldCreativityDay from "@assets/case-world-creativity-day..jpg";
 
-const locacaoImages = [
-  locacao01,
-  locacao02,
-  locacao03,
-  locacao04,
-  locacao05,
-  locacao06,
-];
+const locacaoImages = [locacao01, locacao02, locacao03, locacao04, locacao05, locacao06];
 // Ordem dos cases filtrados por "EVENTOS" no pt.ts: HR Talks, depois World
 // Creativity Day — mesma ordem usada aqui pra casar indice com foto.
 const caseImages = [caseHrTalks, caseWorldCreativityDay];
@@ -64,19 +51,13 @@ export default function Producoes() {
               <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
                 {c.producoes.hero.title}
               </h1>
-              <p className="text-xl text-abyss/70 leading-relaxed">
-                {c.producoes.hero.intro}
-              </p>
+              <p className="text-xl text-abyss/70 leading-relaxed">{c.producoes.hero.intro}</p>
             </div>
             {/* Slot de imagem — aguardando foto real. Trocar por <img src="..." />
                 quando o arquivo chegar. */}
             <div className="hidden lg:block">
               <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={heroImg}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+                <img src={heroImg} alt="" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -84,17 +65,8 @@ export default function Producoes() {
       </section>
 
       {/* Eventos e Experiências (5 categorias) */}
-      <Section
-        id="eventos"
-        tone="white"
-        divider
-        firstContent
-        className="scroll-mt-[180px]"
-      >
-        <SectionHeader
-          title={c.producoes.events.title}
-          subtitle={c.producoes.events.intro}
-        />
+      <Section id="eventos" tone="white" divider firstContent className="scroll-mt-[180px]">
+        <SectionHeader title={c.producoes.events.title} subtitle={c.producoes.events.intro} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-abyss/14 border border-abyss/14">
           {c.producoes.events.categories.map((category) => (
             <article key={category.title} className="bg-bone p-6 md:p-8">
@@ -117,83 +89,75 @@ export default function Producoes() {
       </Section>
 
       {/* Audiovisual */}
-      <Section
-        id="audiovisual"
-        tone="ink"
-        divider
-        className="scroll-mt-[180px]"
-      >
-        <SectionHeader
-          title={c.producoes.audiovisual.title}
-          subtitle={c.producoes.audiovisual.intro}
-          onDark
-        />
+      <Section id="audiovisual" tone="ink" divider className="scroll-mt-[180px]">
+        <SectionHeader title={c.producoes.audiovisual.title} subtitle={c.producoes.audiovisual.intro} onDark />
         <div className="mb-10">
           <video
             src="/images/video-hero.mp4"
             controls
             className="w-full aspect-video bg-abyss/50 border border-bone/14"
           />
-          <p className="mt-3 text-small text-bone/60">
-            {c.producoes.audiovisual.videoCaption}
-          </p>
+          <p className="mt-3 text-small text-bone/60">{c.producoes.audiovisual.videoCaption}</p>
         </div>
         <Grid cols={3}>
           {c.producoes.audiovisual.items.map((item) => (
-            <FeatureCard
-              key={item.title}
-              title={item.title}
-              description={item.description}
-              onDark
-            />
+            <FeatureCard key={item.title} title={item.title} description={item.description} onDark />
           ))}
         </Grid>
       </Section>
 
       {/* Capacidade Operacional: Fixer + Host */}
       <Section tone="white" divider>
-        <SectionHeader
-          title={c.producoes.operational.title}
-          subtitle={c.producoes.operational.intro}
-        />
+        <SectionHeader title={c.producoes.operational.title} subtitle={c.producoes.operational.intro} />
 
-        {/* Fixer */}
+        {/* Fixer — grade assimetrica de 2 colunas (7/5). Antes, texto em
+            max-w-measure sozinho numa secao larga deixava metade da tela
+            vazia. Agora a lista de capacidades (que ja existia, so estava
+            solta em largura total abaixo) preenche o lado que sobrava. */}
         <div id="fixer" className="mb-16 scroll-mt-[180px]">
-          <h3 className="font-display text-h2 font-bold text-abyss mb-4">
-            {c.producoes.operational.fixer.title}
-          </h3>
-          <p className="text-abyss/70 leading-relaxed max-w-measure mb-8">
-            {c.producoes.operational.fixer.description}
-          </p>
-
-          <p className="text-abyss/70 leading-relaxed max-w-measure mb-10 border-l-2 border-signal pl-6">
-            {c.producoes.operational.fixer.locationScoutHighlight}
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-12">
+            <div className="lg:col-span-7">
+              <h3 className="font-display text-h2 font-bold text-abyss mb-4">
+                {c.producoes.operational.fixer.title}
+              </h3>
+              <p className="text-abyss/70 leading-relaxed mb-8">
+                {c.producoes.operational.fixer.description}
+              </p>
+              <p className="text-abyss/70 leading-relaxed border-l-2 border-signal pl-6">
+                {c.producoes.operational.fixer.locationScoutHighlight}
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+                {c.producoes.operational.fixer.itemsLabel}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                {c.producoes.operational.fixer.items.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <Check className="h-4 w-4 text-signal shrink-0 mt-1" />
+                    <span className="text-small text-abyss/70">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
             {c.producoes.operational.fixer.locationGridLabel}
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {locacaoImages.map((img, i) => (
               <div key={i} className="aspect-square overflow-hidden">
                 <img src={img} alt="" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
-            {c.producoes.operational.fixer.items.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <Check className="h-4 w-4 text-signal shrink-0 mt-1" />
-                <span className="text-small text-abyss/70">{item}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Host — tratamento de card proprio, nao mais nota de rodape */}
+        {/* Host — card com mais respiro, alinhado a coluna de texto (7/12)
+            do Fixer acima, pra nao parecer um bloco solto e desproporcional */}
         <div id="host" className="scroll-mt-[180px]">
-          <div className="bg-bone border border-abyss/14 p-8 md:p-10 max-w-2xl">
+          <div className="bg-bone border border-abyss/14 p-8 md:p-10 lg:w-7/12">
             <h3 className="font-display text-h3 font-bold text-abyss mb-2">
               {c.producoes.operational.hosting.title}
             </h3>
@@ -260,56 +224,48 @@ export default function Producoes() {
             {cases.map((item, i) => (
               <article key={item.title} className="bg-bone flex flex-col">
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img
-                    src={caseImages[i]}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={caseImages[i]} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-8 md:p-10 flex flex-col flex-1">
-                  <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
-                    {item.eyebrow}
-                  </p>
-                  <h3 className="font-display text-h2 font-bold text-abyss mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-small text-abyss/70 mb-6">{item.client}</p>
+                <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
+                  {item.eyebrow}
+                </p>
+                <h3 className="font-display text-h2 font-bold text-abyss mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-small text-abyss/70 mb-6">{item.client}</p>
 
-                  <div className="grid grid-cols-3 gap-4 mb-8">
-                    {item.results.map((result) => (
-                      <div key={result.label}>
-                        <p className="font-display text-h3 font-bold text-abyss tabular-nums">
-                          {result.value}
-                        </p>
-                        <p className="text-caption text-abyss/70 leading-snug">
-                          {result.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4 flex-1">
-                    <div>
-                      <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
-                        {c.labels.caseProblem}
-                      </h4>
-                      <p className="text-abyss/70 leading-relaxed">
-                        {item.problem}
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {item.results.map((result) => (
+                    <div key={result.label}>
+                      <p className="font-display text-h3 font-bold text-abyss tabular-nums">
+                        {result.value}
+                      </p>
+                      <p className="text-caption text-abyss/70 leading-snug">
+                        {result.label}
                       </p>
                     </div>
-                    <div>
-                      <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
-                        {c.labels.caseAction}
-                      </h4>
-                      <p className="text-abyss/70 leading-relaxed">
-                        {item.action}
-                      </p>
-                    </div>
-                  </div>
+                  ))}
+                </div>
 
-                  <p className="text-caption text-abyss/50 mt-6 pt-6 border-t border-abyss/14 leading-relaxed">
-                    {item.support}
-                  </p>
+                <div className="space-y-4 flex-1">
+                  <div>
+                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                      {c.labels.caseProblem}
+                    </h4>
+                    <p className="text-abyss/70 leading-relaxed">{item.problem}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-caption font-semibold text-abyss mb-1 uppercase tracking-wide">
+                      {c.labels.caseAction}
+                    </h4>
+                    <p className="text-abyss/70 leading-relaxed">{item.action}</p>
+                  </div>
+                </div>
+
+                <p className="text-caption text-abyss/50 mt-6 pt-6 border-t border-abyss/14 leading-relaxed">
+                  {item.support}
+                </p>
                 </div>
               </article>
             ))}
@@ -324,9 +280,7 @@ export default function Producoes() {
             <p className="text-caption font-semibold text-bone/70 mb-2 uppercase tracking-widest">
               {c.labels.forWhom}
             </p>
-            <p className="text-bone/70 leading-relaxed">
-              {c.producoes.forWhom}
-            </p>
+            <p className="text-bone/70 leading-relaxed">{c.producoes.forWhom}</p>
           </div>
           <CTAButton
             label={c.cta.primary}
