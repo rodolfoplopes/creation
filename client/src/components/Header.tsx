@@ -114,7 +114,12 @@ export default function Header() {
           kind: "service" as const,
         },
         {
-          label: c.consultoria.innovation.eyebrow,
+          label:
+            currentLang === "en"
+              ? "Innovation"
+              : currentLang === "es"
+                ? "Innovación"
+                : "Inovação",
           href: "/consultoria#inovacao",
           kind: "service" as const,
         },
@@ -157,12 +162,12 @@ export default function Header() {
           kind: "service" as const,
         },
         {
-          label: c.producoes.creatorOpsRio.eyebrow,
+          label: "Creation Ops Rio",
           href: c.producoes.creatorOpsRio.href,
           kind: "product" as const,
         },
         {
-          label: c.producoes.biEventos.eyebrow,
+          label: currentLang === "en" ? "BI for Events" : "BI de Eventos",
           href: c.producoes.biEventos.href,
           kind: "product" as const,
         },
@@ -284,9 +289,6 @@ export default function Header() {
             >
               {areas.map((area) => (
                 <div key={area.href}>
-                  <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
-                    {c.nav.areasLabel}
-                  </p>
                   <Link
                     href={localize(area.href)}
                     onClick={() => handleMenuClick(area.href)}
