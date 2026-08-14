@@ -227,7 +227,7 @@ export default function Header() {
               <img
                 src="/brand/creation_assinatura_completa_branca.svg"
                 alt={c.brand.name}
-                className="h-14 md:h-20 w-auto cursor-pointer"
+                className="h-10 md:h-14 w-auto cursor-pointer"
               />
             </Link>
 
@@ -264,7 +264,7 @@ export default function Header() {
                 <img
                   src="/brand/creation_assinatura_completa_branca.svg"
                   alt={c.brand.name}
-                  className="h-14 md:h-20 w-auto cursor-pointer"
+                  className="h-10 md:h-14 w-auto cursor-pointer"
                 />
               </Link>
               <button
