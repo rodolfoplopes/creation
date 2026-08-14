@@ -283,6 +283,7 @@ export const pt: Content = {
       intro:
         "Um evento não se resolve na ideia, se resolve na operação: os fornecedores, a montagem, as autorizações, a equipe e a logística do dia. Assumimos essa operação da concepção à execução no local, e respondemos pelo resultado do início ao fim.",
     },
+    mediaGridTitle: "Alguns dos projetos realizados",
     events: {
       title: "Eventos e Experiências",
       intro:

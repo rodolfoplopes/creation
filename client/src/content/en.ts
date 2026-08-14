@@ -126,13 +126,11 @@ export const en: Content = {
       },
       {
         title: "Cultural and creative organizations",
-        description:
-          "That need to get projects off the ground and raise funding.",
+        description: "That need to get projects off the ground and raise funding.",
       },
       {
         title: "Public sector and brands",
-        description:
-          "That need an operation accountable for the entire delivery.",
+        description: "That need an operation accountable for the entire delivery.",
       },
     ],
   },
@@ -146,7 +144,8 @@ export const en: Content = {
     },
     architectMetaphor: {
       title: "We work like architects",
-      body: "An architect doesn't hand over the blueprint and disappear. They design the structure and answer for it until it stands. That's how we lead a project: we create the structure that lets everything else happen, and we stay until it does. The design and the build are the same responsibility, not two stages handed off from one team to another.",
+      body:
+        "An architect doesn't hand over the blueprint and disappear. They design the structure and answer for it until it stands. That's how we lead a project: we create the structure that lets everything else happen, and we stay until it does. The design and the build are the same responsibility, not two stages handed off from one team to another.",
     },
     mission: {
       title: "Mission",
@@ -160,35 +159,23 @@ export const en: Content = {
     // confirma Excellence/Innovation/Method/Execution/Impact/Clarity).
     values: {
       title: "Values",
-      subtitle:
-        "Principles that move us. Each one implies a choice we've already made.",
+      subtitle: "Principles that move us. Each one implies a choice we've already made.",
       items: [
-        {
-          title: "Excellence",
-          description: "We strive to be and do better every day.",
-        },
+        { title: "Excellence", description: "We strive to be and do better every day." },
         {
           title: "Innovation",
-          description:
-            "We choose the new path even when the obvious one would cost less.",
+          description: "We choose the new path even when the obvious one would cost less.",
         },
         {
           title: "Method",
-          description:
-            "An operation that depends on one person is not an operation.",
+          description: "An operation that depends on one person is not an operation.",
         },
-        {
-          title: "Execution",
-          description: "We deliver what runs, not what impresses.",
-        },
+        { title: "Execution", description: "We deliver what runs, not what impresses." },
         {
           title: "Impact",
           description: "If it isn't measured, it isn't impact: it's intention.",
         },
-        {
-          title: "Clarity",
-          description: "We don't accelerate what nobody understands.",
-        },
+        { title: "Clarity", description: "We don't accelerate what nobody understands." },
       ],
     },
     forWhom: {
@@ -220,27 +207,28 @@ export const en: Content = {
     sections: [
       {
         title: "End to end, with us alongside you",
-        body: "We structure the project, build the work plan, coordinate the execution teams and follow through to delivery. Our role isn't limited to initial planning, nor to isolated execution. Both stages are led together, because structure without execution doesn't happen, and execution without structure doesn't hold. When the project is established and runs on its own, we conclude our part.",
+        body:
+          "We structure the project, build the work plan, coordinate the execution teams and follow through to delivery. Our role isn't limited to initial planning, nor to isolated execution. Both stages are led together, because structure without execution doesn't happen, and execution without structure doesn't hold. When the project is established and runs on its own, we conclude our part.",
       },
       {
         title: "When the easy path and the right one aren't the same",
-        body: "Faced with two solutions of equal cost, we choose the more consistent one, even when it takes more work on our part. That choice isn't always the fastest, but it's the one that holds up over time. It's also what separates a project that merely meets its goals from one that becomes a reference for whoever commissioned it.",
+        body:
+          "Faced with two solutions of equal cost, we choose the more consistent one, even when it takes more work on our part. That choice isn't always the fastest, but it's the one that holds up over time. It's also what separates a project that merely meets its goals from one that becomes a reference for whoever commissioned it.",
       },
       {
         title: "Where we go deeper",
-        body: "We work frequently in the creative economy, culture and entrepreneurship. In these fields, viability runs through incentive laws and public grants, where technical and formal precision decides whether a project gets approved. It's where our structuring experience has the greatest practical effect.",
+        body:
+          "We work frequently in the creative economy, culture and entrepreneurship. In these fields, viability runs through incentive laws and public grants, where technical and formal precision decides whether a project gets approved. It's where our structuring experience has the greatest practical effect.",
       },
     ],
     services: [
       {
         title: "Project Management",
-        description:
-          "Structuring and leading projects from diagnosis to delivery.",
+        description: "Structuring and leading projects from diagnosis to delivery.",
       },
       {
         title: "Intelligence and Strategy",
-        description:
-          "Diagnosis, research and strategy design before any action.",
+        description: "Diagnosis, research and strategy design before any action.",
       },
       {
         title: "Branding and Identity",
@@ -248,8 +236,7 @@ export const en: Content = {
       },
       {
         title: "Business Process Management",
-        description:
-          "Designing operational processes and governance that sustain the operation.",
+        description: "Designing operational processes and governance that sustain the operation.",
       },
     ],
     // LOCKED — titulo-tese travado no doc.
@@ -261,23 +248,19 @@ export const en: Content = {
       formats: [
         {
           title: "Design Sprints",
-          description:
-            "Short, intensive programs that turn a challenge into a testable prototype in a few days.",
+          description: "Short, intensive programs that turn a challenge into a testable prototype in a few days.",
         },
         {
           title: "Hackathons",
-          description:
-            "Development marathons that bring multidisciplinary teams together to build real solutions in compressed time.",
+          description: "Development marathons that bring multidisciplinary teams together to build real solutions in compressed time.",
         },
         {
           title: "Ideathons",
-          description:
-            "Structured sessions to generate and select ideas, from problem to proposal.",
+          description: "Structured sessions to generate and select ideas, from problem to proposal.",
         },
         {
           title: "Intrapreneurship",
-          description:
-            "Programs that prepare internal teams to lead initiatives with entrepreneurial autonomy.",
+          description: "Programs that prepare internal teams to lead initiatives with entrepreneurial autonomy.",
         },
       ],
     },
@@ -305,6 +288,7 @@ export const en: Content = {
       intro:
         "An event isn't settled by the idea, it's settled by the production: the vendors, the build, the permits, the crew and the logistics of the day. We take on that production from concept to on-site execution, in Brazil and in the United States, and we answer for the result from start to finish.",
     },
+    mediaGridTitle: "Some of the projects we've delivered",
     events: {
       title: "Events and Experiences",
       intro:
@@ -313,12 +297,7 @@ export const en: Content = {
         {
           title: "Corporate",
           description: "Conventions, launches and internal events.",
-          items: [
-            "Conventions",
-            "Launches",
-            "Team celebrations",
-            "Internal events",
-          ],
+          items: ["Conventions", "Launches", "Team celebrations", "Internal events"],
         },
         {
           title: "Innovation",
@@ -327,8 +306,7 @@ export const en: Content = {
         },
         {
           title: "Cultural",
-          description:
-            "Festivals, shows, exhibitions and the creative economy.",
+          description: "Festivals, shows, exhibitions and the creative economy.",
           items: ["Festivals", "Shows", "Exhibitions"],
         },
         {
@@ -395,8 +373,7 @@ export const en: Content = {
     },
     creatorOpsRio: {
       eyebrow: "CREATION OPS RIO",
-      title:
-        "Executive production in Rio, for those coming from outside to create",
+      title: "Executive production in Rio, for those coming from outside to create",
       description:
         "Reception, logistics and complete local production for content creators and international brands in Rio de Janeiro.",
       linkLabel: "Learn about Creation Ops Rio",
@@ -426,18 +403,19 @@ export const en: Content = {
     sections: [
       {
         title: "From intention to a program that works",
-        body: "We structure foundations and institutes, design impact programs, and lead social projects on the ground. In some engagements we deliver the design and the organization runs it; in others, we lead the day to day. What stays constant is the responsibility for the structure, because a good social program doesn't depend on isolated effort, but on a model that holds up after we leave.",
+        body:
+          "We structure foundations and institutes, design impact programs, and lead social projects on the ground. In some engagements we deliver the design and the organization runs it; in others, we lead the day to day. What stays constant is the responsibility for the structure, because a good social program doesn't depend on isolated effort, but on a model that holds up after we leave.",
       },
       {
         title: "The territory at the center, not the margin",
-        body: "A social project holds up when it's built with the people who live in the territory, not just for them. We work with local leaders, we pay everyone who takes part, and we submit decisions to the people who know the reality up close. It's the more demanding path, and the only one that produces a result that remains after the project ends.",
+        body:
+          "A social project holds up when it's built with the people who live in the territory, not just for them. We work with local leaders, we pay everyone who takes part, and we submit decisions to the people who know the reality up close. It's the more demanding path, and the only one that produces a result that remains after the project ends.",
       },
     ],
     services: [
       {
         title: "NGO Structuring",
-        description:
-          "Creating and structuring social organizations, from concept to fundraising.",
+        description: "Creating and structuring social organizations, from concept to fundraising.",
       },
       {
         title: "Impact Programs",
@@ -445,8 +423,7 @@ export const en: Content = {
       },
       {
         title: "Impact and ESG Reports",
-        description:
-          "Measuring and documenting impact, for accountability and ESG.",
+        description: "Measuring and documenting impact, for accountability and ESG.",
       },
       {
         title: "Social Project Management",
@@ -458,7 +435,8 @@ export const en: Content = {
     // ponte local no Brasil para quem investe de fora.
     matchmaking: {
       title: "A local operator for those investing from abroad",
-      body: "For those who invest in social impact and need a local operator who knows the territory, we are that bridge. We identify serious projects, structure the operation on the ground in Brazil, and measure the return with real data.",
+      body:
+        "For those who invest in social impact and need a local operator who knows the territory, we are that bridge. We identify serious projects, structure the operation on the ground in Brazil, and measure the return with real data.",
       strong: true,
     },
     ongZero: {
@@ -539,8 +517,7 @@ export const en: Content = {
           { value: "172", label: "global speakers" },
           { value: "40h", label: "of live content" },
         ],
-        support:
-          "FITI, the International Technology and Innovation Forum, broadcast live in 2020.",
+        support: "FITI, the International Technology and Innovation Forum, broadcast live in 2020.",
         image: "/cases/hr-talks.jpg",
       },
       {
@@ -572,14 +549,8 @@ export const en: Content = {
           "We ran seller recruitment on the ground, door to door and at local fairs and events, and helped form a Local Economy Committee with municipal offices, business associations and partner institutions to broaden institutional support for the platform. We tracked and reported the numbers honestly every quarter, including when growth fell short of projections, and adjusted outreach from that rather than inflating expectations.",
         results: [
           { value: "241", label: "sellers registered on the platform" },
-          {
-            value: "56",
-            label: "neighborhoods reached across Itaguaí and Seropédica",
-          },
-          {
-            value: "R$30,650.11",
-            label: "in revenue recorded through Dec/2022",
-          },
+          { value: "56", label: "neighborhoods reached across Itaguaí and Seropédica" },
+          { value: "R$30,650.11", label: "in revenue recorded through Dec/2022" },
         ],
         support:
           "Quarterly tracking of platform registrations and sales, with growth below the project's initial projection. Social impact evaluation conducted by Rede Asta.",
@@ -631,33 +602,31 @@ export const en: Content = {
       items: [
         {
           title: "Content Sprint",
-          description:
-            "Agile production for creators, with crew and equipment ready to shoot within days.",
+          description: "Agile production for creators, with crew and equipment ready to shoot within days.",
         },
         {
           title: "Brand Campaign",
-          description:
-            "Full campaign production for brands and agencies, from concept to delivery.",
+          description: "Full campaign production for brands and agencies, from concept to delivery.",
         },
         {
           title: "Business Tourism VIP",
-          description:
-            "Executive reception for business trips, with logistics and schedule handled.",
+          description: "Executive reception for business trips, with logistics and schedule handled.",
         },
         {
           title: "Expatriates (coming soon)",
-          description:
-            "Settling-in support for those relocating to Rio de Janeiro.",
+          description: "Settling-in support for those relocating to Rio de Janeiro.",
         },
       ],
     },
     differentiator: {
       title: "Local knowledge that can't be improvised",
-      body: "Years of production in Rio de Janeiro mean a tested vendor network, knowledge of licensing processes, and a real read on the territory, the kind of knowledge a quick search doesn't solve.",
+      body:
+        "Years of production in Rio de Janeiro mean a tested vendor network, knowledge of licensing processes, and a real read on the territory, the kind of knowledge a quick search doesn't solve.",
     },
     howWeWork: {
       title: "How we work",
-      body: "We follow the same Full Cycle as any Creation project: we understand the brief, structure the production, execute in Rio, and close with a report of what was delivered.",
+      body:
+        "We follow the same Full Cycle as any Creation project: we understand the brief, structure the production, execute in Rio, and close with a report of what was delivered.",
     },
     forWhom:
       "For creators, brands and international agencies who want to produce in Rio de Janeiro without building an operation from scratch.",
@@ -671,48 +640,34 @@ export const en: Content = {
       "A brand belongs to whoever registers it first. The earlier the registration, the lower the risk of another company claiming the name before you.",
     whyEarly: {
       title: "Why register early",
-      body: "Trademark rights in Brazil are born from registration with INPI, not from use. Waiting exposes the brand to the risk of another company registering it first, even if you're already in the market.",
+      body:
+        "Trademark rights in Brazil are born from registration with INPI, not from use. Waiting exposes the brand to the risk of another company registering it first, even if you're already in the market.",
     },
     whatWeDo: {
       title: "What we do",
       items: [
         {
           title: "INPI Registration",
-          description:
-            "The registration application handled from start to finish, with process follow-up.",
+          description: "The registration application handled from start to finish, with process follow-up.",
         },
         {
           title: "Continuous Monitoring",
-          description:
-            "Ongoing monitoring to identify conflicting registration attempts.",
+          description: "Ongoing monitoring to identify conflicting registration attempts.",
         },
       ],
     },
     differentiator: {
       title: "Registering with people who understand the whole brand",
-      body: "Beyond registration, we handle branding, identity and content. Whoever handles the registration also understands the rest of the brand, not just the legal process.",
+      body:
+        "Beyond registration, we handle branding, identity and content. Whoever handles the registration also understands the rest of the brand, not just the legal process.",
     },
     howItWorks: {
       title: "How it works",
       steps: [
-        {
-          title: "Search",
-          description:
-            "Checking brand availability across the relevant classes.",
-        },
-        {
-          title: "Strategy",
-          description: "Defining the classes and the protection strategy.",
-        },
-        {
-          title: "Filing",
-          description: "Filing the registration application with INPI.",
-        },
-        {
-          title: "Follow-up",
-          description:
-            "Monitoring the process through to registration approval.",
-        },
+        { title: "Search", description: "Checking brand availability across the relevant classes." },
+        { title: "Strategy", description: "Defining the classes and the protection strategy." },
+        { title: "Filing", description: "Filing the registration application with INPI." },
+        { title: "Follow-up", description: "Monitoring the process through to registration approval." },
       ],
     },
     forWhom:
@@ -722,43 +677,29 @@ export const en: Content = {
   ongZeroPage: {
     eyebrow: "NGO STRUCTURING",
     title: "ONG.zero",
-    intro:
-      "We build the NGO together with the person behind it. We don't hand over something ready-made to run.",
+    intro: "We build the NGO together with the person behind it. We don't hand over something ready-made to run.",
     buildTogether: {
       title: "We build together, we don't hand over ready-made",
-      body: "The founder takes part in every stage and comes out able to lead what was created. An organization that depends on Creation to exist is not a structured organization.",
+      body:
+        "The founder takes part in every stage and comes out able to lead what was created. An organization that depends on Creation to exist is not a structured organization.",
     },
     stages: {
       title: "The five stages",
       items: [
-        {
-          title: "Concept",
-          description:
-            "Defining the cause, the theory of impact and the operating model.",
-        },
-        {
-          title: "Formation",
-          description:
-            "Bylaws, registration and tax ID: the legal side of the foundation.",
-        },
-        {
-          title: "Organization",
-          description: "Governance, internal structure and processes.",
-        },
+        { title: "Concept", description: "Defining the cause, the theory of impact and the operating model." },
+        { title: "Formation", description: "Bylaws, registration and tax ID: the legal side of the foundation." },
+        { title: "Organization", description: "Governance, internal structure and processes." },
         {
           title: "Brand and Identity",
-          description:
-            "Name, logo and narrative, with Creation Marcas support when needed.",
+          description: "Name, logo and narrative, with Creation Marcas support when needed.",
         },
         {
           title: "Fundraising and Sustainability",
-          description:
-            "Grants, donors and incentive laws, so the organization sustains itself after setup.",
+          description: "Grants, donors and incentive laws, so the organization sustains itself after setup.",
         },
       ],
     },
-    forWhom:
-      "For those structuring an NGO, foundation or institute from the ground up.",
+    forWhom: "For those structuring an NGO, foundation or institute from the ground up.",
   },
 
   // LOCKED — titulo travado no doc.
@@ -772,19 +713,18 @@ export const en: Content = {
       items: [
         {
           title: "SROI Calculation",
-          description:
-            "Social return calculated from primary data, with an auditable methodology.",
+          description: "Social return calculated from primary data, with an auditable methodology.",
         },
         {
           title: "Impact Reports",
-          description:
-            "The data becomes a presentable document for accountability and fundraising.",
+          description: "The data becomes a presentable document for accountability and fundraising.",
         },
       ],
     },
     whyRealData: {
       title: "Why measure with real data",
-      body: "Made-up numbers don't survive an investor's or partner's first question. That's why the SROI Engine works only with primary data, collected on the project itself.",
+      body:
+        "Made-up numbers don't survive an investor's or partner's first question. That's why the SROI Engine works only with primary data, collected on the project itself.",
     },
     forWhom:
       "For institutes, foundations and companies that need to prove, with an auditable methodology, the social return of their projects.",
@@ -798,14 +738,15 @@ export const en: Content = {
       "An event happens once, but the data it produces can inform the next ones. Today that data tends to get lost, scattered across different vendors; BI for Events brings it all together in a single dashboard.",
     whatWeMeasure: {
       title: "What we measure",
-      body: "Attendance and flow, engagement, return and reach, and performance by area. A decision-making instrument, not a descriptive report.",
+      body:
+        "Attendance and flow, engagement, return and reach, and performance by area. A decision-making instrument, not a descriptive report.",
     },
     externalRead: {
       title: "An external, independent measure",
-      body: "We don't need to have produced the event to measure it. It's a read from someone who has nothing to prove about their own work, the kind of independence that gives the number credibility.",
+      body:
+        "We don't need to have produced the event to measure it. It's a read from someone who has nothing to prove about their own work, the kind of independence that gives the number credibility.",
     },
-    forWhom:
-      "For organizers, sponsors and brands who want to know, with data, what worked at the event.",
+    forWhom: "For organizers, sponsors and brands who want to know, with data, what worked at the event.",
   },
 
   contact: {

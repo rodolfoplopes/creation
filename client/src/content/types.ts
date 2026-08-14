@@ -65,19 +65,19 @@ export interface ServiceCategory {
 
 // Os quatro tempos do metodo Ciclo Completo.
 export interface MethodStage {
-  number: string; // "01".."04"
-  name: string; // Diagnostico / Estruturacao / Execucao / Validacao
-  tagline: string; // frase curta ("entender antes de agir")
+  number: string;      // "01".."04"
+  name: string;        // Diagnostico / Estruturacao / Execucao / Validacao
+  tagline: string;     // frase curta ("entender antes de agir")
   description: string;
 }
 
 // Bloco padrao de "frente" (area): hero + secoes de corpo.
 // Usado por consultoria, producoes, impactoSocial.
 export interface FrontHero {
-  eyebrow: string; // ex.: "GESTAO DE PROJETOS"
-  title: string; // o titulo-tese da frente
-  intro: string; // abertura
-  lead?: string; // 2o paragrafo opcional
+  eyebrow: string;     // ex.: "GESTAO DE PROJETOS"
+  title: string;       // o titulo-tese da frente
+  intro: string;       // abertura
+  lead?: string;       // 2o paragrafo opcional
 }
 
 export interface FrontSection {
@@ -109,10 +109,10 @@ export interface AreaCard {
 
 export interface Content {
   brand: {
-    name: string; // "Creation"
+    name: string;            // "Creation"
     microcopy: string;
     footerTagline: string;
-    locations: string; // "Brasil | Estados Unidos"
+    locations: string;       // "Brasil | Estados Unidos"
   };
 
   // Menu (mega-menu full-screen). Areas + institucionais.
@@ -125,8 +125,8 @@ export interface Content {
     about: string;
     contact: string;
     // rotulos de agrupamento dentro do mega-menu
-    areasLabel: string; // "Areas" / "Areas" / "Areas"
-    companyLabel: string; // "A Creation"
+    areasLabel: string;      // "Areas" / "Areas" / "Areas"
+    companyLabel: string;    // "A Creation"
   };
 
   cta: {
@@ -137,32 +137,32 @@ export interface Content {
   };
 
   labels: {
-    caseProblem: string; // "O que travava"
-    caseAction: string; // "O que fizemos"
-    forWhom: string; // "Para quem"
-    seeMethod: string; // "Ver o metodo"
+    caseProblem: string;     // "O que travava"
+    caseAction: string;      // "O que fizemos"
+    forWhom: string;         // "Para quem"
+    seeMethod: string;       // "Ver o metodo"
   };
 
   // ---- HOME ----
   hero: {
     // A frase de posicionamento (a coroa).
-    headline: string; // "Pensamos e realizamos projetos inovadores."
+    headline: string;        // "Pensamos e realizamos projetos inovadores."
     subheadline: string;
   };
 
   areas: {
     title: string;
     subtitle: string;
-    items: AreaCard[]; // Consultoria, Producoes, Impacto Social
+    items: AreaCard[];       // Consultoria, Producoes, Impacto Social
   };
 
   // Metodo resumido na home + pagina (absorvido em Consultoria, mas o bloco existe).
   method: {
     badge: string;
-    title: string; // "Ciclo Completo"
+    title: string;           // "Ciclo Completo"
     intro: string;
-    stages: MethodStage[]; // 4 tempos
-    loopNote: string; // "a prova alimenta o proximo diagnostico"
+    stages: MethodStage[];   // 4 tempos
+    loopNote: string;        // "a prova alimenta o proximo diagnostico"
   };
 
   targetAudience: {
@@ -174,16 +174,16 @@ export interface Content {
   // ---- SOBRE ----
   about: {
     hero: { title: string; subtitle: string };
-    architectMetaphor: { title: string; body: string }; // "Trabalhamos como arquitetos"
+    architectMetaphor: { title: string; body: string };   // "Trabalhamos como arquitetos"
     mission: { title: string; text: string };
     vision: { title: string; text: string };
-    values: { title: string; subtitle: string; items: TitledItem[] }; // 6 valores
+    values: { title: string; subtitle: string; items: TitledItem[] };  // 6 valores
     forWhom: { title: string; text: string; distinction: string };
     partnersTitle: string;
     manifesto: {
       title: string;
       paragraphs: string[];
-      closing: string; // "O futuro nao se espera. O futuro se constroi."
+      closing: string;       // "O futuro nao se espera. O futuro se constroi."
     };
     // presenca (Sobre EN menciona Brasil+EUA de leve)
     presenceNote?: string;
@@ -192,22 +192,23 @@ export interface Content {
   // ---- CONSULTORIA (rosto Gestao de Projetos; absorve metodo + Inovacao) ----
   consultoria: {
     hero: FrontHero;
-    sections: FrontSection[]; // "de ponta a ponta", "caminho dificil", "especialidade"
-    services: ServiceItem[]; // Gestao de Projetos, Inteligencia, Branding, Processos
+    sections: FrontSection[];        // "de ponta a ponta", "caminho dificil", "especialidade"
+    services: ServiceItem[];         // Gestao de Projetos, Inteligencia, Branding, Processos
     // capacidade Inovacao como bloco dentro de Consultoria
     innovation: {
       eyebrow: string;
-      title: string; // "Inovacao nao e lampejo, e metodo"
+      title: string;                 // "Inovacao nao e lampejo, e metodo"
       intro: string;
-      formats: ServiceItem[]; // Design Sprints, Hackathons, Ideathons, Intraempreendedorismo
+      formats: ServiceItem[];        // Design Sprints, Hackathons, Ideathons, Intraempreendedorismo
     };
-    creationMarcas: SubBrandCard; // landing Creation Marcas
+    creationMarcas: SubBrandCard;    // landing Creation Marcas
     forWhom: string;
   };
 
   // ---- PRODUCOES (Eventos + Audiovisual + Operacional) ----
   producoes: {
     hero: FrontHero;
+    mediaGridTitle: string;        // titulo do grid de 9->6 fotos de projetos, distinto do titulo de Audiovisual
     // Bloco Eventos e Experiencias (5 categorias)
     events: {
       title: string;
@@ -218,8 +219,8 @@ export interface Content {
     audiovisual: {
       title: string;
       intro: string;
-      videoCaption: string; // texto de apoio do video, que veio do hero pra ca
-      items: ServiceItem[]; // Web Content, Short Films, Campanhas/Brand Content
+      videoCaption: string;         // texto de apoio do video, que veio do hero pra ca
+      items: ServiceItem[];          // Web Content, Short Films, Campanhas/Brand Content
     };
     // Capacidade Operacional (Fixer + Host)
     operational: {
@@ -227,30 +228,30 @@ export interface Content {
       intro: string;
       fixer: {
         title: string;
-        description: string; // o que o fixer resolve, antes da lista
+        description: string;                // o que o fixer resolve, antes da lista
         locationScoutHighlight: string; // destaque Rio + Costa Verde
-        items: string[]; // Permits, Location Scout, Security, Rentals, Vehicles, Crew, Accommodation, Story R&D
+        items: string[];             // Permits, Location Scout, Security, Rentals, Vehicles, Crew, Accommodation, Story R&D
       };
       hosting: { title: string; description: string };
     };
-    creatorOpsRio: SubBrandCard; // landing Creator Ops Rio
-    biEventos: SubBrandCard; // produto BI de Eventos
+    creatorOpsRio: SubBrandCard;     // landing Creator Ops Rio
+    biEventos: SubBrandCard;         // produto BI de Eventos
     forWhom: string;
   };
 
   // ---- IMPACTO SOCIAL (ONGs/ONG.zero + Programas + ESG + Projetos Sociais) ----
   impactoSocial: {
     hero: FrontHero;
-    sections: FrontSection[]; // "de intencao a programa", "territorio no centro"
-    services: ServiceItem[]; // Estruturacao de ONGs, Programas, Relatorios/ESG, Projetos Sociais
+    sections: FrontSection[];        // "de intencao a programa", "territorio no centro"
+    services: ServiceItem[];         // Estruturacao de ONGs, Programas, Relatorios/ESG, Projetos Sociais
     // matchmaking: secao forte em EN/ES, leve em PT
     matchmaking: {
       title: string;
       body: string;
-      strong: boolean; // controla se e secao destacada
+      strong: boolean;               // controla se e secao destacada
     };
-    ongZero: SubBrandCard; // landing ONG.zero
-    motorSroi: SubBrandCard; // produto Motor SROI
+    ongZero: SubBrandCard;           // landing ONG.zero
+    motorSroi: SubBrandCard;         // produto Motor SROI
     cases: { title: string; items: CaseStudy[] };
     forWhom: string;
   };
@@ -259,7 +260,7 @@ export interface Content {
   cases: {
     title: string;
     subtitle: string;
-    items: CaseStudy[]; // os 5 cases
+    items: CaseStudy[];              // os 5 cases
   };
 
   // ---- SUB-MARCAS / LANDINGS (paginas proprias) ----
@@ -280,7 +281,7 @@ export interface Content {
     title: string;
     intro: string;
     whyEarly: { title: string; body: string };
-    whatWeDo: { title: string; items: TitledItem[] }; // Registro INPI, Monitoramento
+    whatWeDo: { title: string; items: TitledItem[] };  // Registro INPI, Monitoramento
     differentiator: { title: string; body: string };
     howItWorks: { title: string; steps: TitledItem[] };
     forWhom: string;
@@ -290,26 +291,26 @@ export interface Content {
     eyebrow: string;
     title: string;
     intro: string;
-    buildTogether: { title: string; body: string }; // constroi junto, nao chave-na-mao
-    stages: { title: string; items: TitledItem[] }; // Conceito, Abertura, Organizacao, Marca, Captacao
+    buildTogether: { title: string; body: string };    // constroi junto, nao chave-na-mao
+    stages: { title: string; items: TitledItem[] };    // Conceito, Abertura, Organizacao, Marca, Captacao
     forWhom: string;
   };
 
   motorSroiPage: {
     eyebrow: string;
-    title: string; // "Meca o impacto social e comprove o seu valor"
+    title: string;                   // "Meca o impacto social e comprove o seu valor"
     intro: string;
-    functions: { title: string; items: TitledItem[] }; // Calculo SROI, Relatorios (SO o presente)
+    functions: { title: string; items: TitledItem[] };  // Calculo SROI, Relatorios (SO o presente)
     whyRealData: { title: string; body: string };
     forWhom: string;
   };
 
   biEventosPage: {
     eyebrow: string;
-    title: string; // "Todo evento produz dados"
+    title: string;                   // "Todo evento produz dados"
     intro: string;
     whatWeMeasure: { title: string; body: string };
-    externalRead: { title: string; body: string }; // medidor externo independente
+    externalRead: { title: string; body: string };      // medidor externo independente
     forWhom: string;
   };
 
@@ -326,7 +327,7 @@ export interface Content {
       organizationPlaceholder: string;
       projectType: string;
       projectTypePlaceholder: string;
-      projectTypes: string[]; // atualizado p/ as novas areas
+      projectTypes: string[];        // atualizado p/ as novas areas
       message: string;
       messagePlaceholder: string;
       submit: string;
@@ -350,7 +351,7 @@ export interface Content {
     companyTitle: string;
     companyLinks: LinkItem[];
     solutionsTitle: string;
-    solutionsLinks: LinkItem[]; // as 3 areas + sub-marcas
+    solutionsLinks: LinkItem[];      // as 3 areas + sub-marcas
     copyright: string;
   };
 }

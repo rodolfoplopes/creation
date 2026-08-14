@@ -119,8 +119,7 @@ export const es: Content = {
     audiences: [
       {
         title: "Institutos y fundaciones",
-        description:
-          "Que necesitan estructurar programas y comprobar el impacto.",
+        description: "Que necesitan estructurar programas y comprobar el impacto.",
       },
       {
         title: "Empresas en expansión",
@@ -132,8 +131,7 @@ export const es: Content = {
       },
       {
         title: "Sector público y marcas",
-        description:
-          "Que necesitan una operación responsable de toda la entrega.",
+        description: "Que necesitan una operación responsable de toda la entrega.",
       },
     ],
   },
@@ -147,7 +145,8 @@ export const es: Content = {
     },
     architectMetaphor: {
       title: "Trabajamos como arquitectos",
-      body: "Un arquitecto no entrega el plano y desaparece. Diseña la estructura y responde por ella hasta que queda en pie. Así conducimos un proyecto: creamos la estructura que permite que todo lo demás suceda, y permanecemos hasta que sucede. El diseño y la obra son la misma responsabilidad, no dos etapas que se pasan de una mano a otra.",
+      body:
+        "Un arquitecto no entrega el plano y desaparece. Diseña la estructura y responde por ella hasta que queda en pie. Así conducimos un proyecto: creamos la estructura que permite que todo lo demás suceda, y permanecemos hasta que sucede. El diseño y la obra son la misma responsabilidad, no dos etapas que se pasan de una mano a otra.",
     },
     mission: {
       title: "Misión",
@@ -160,35 +159,23 @@ export const es: Content = {
     // LOCKED — versao final dos 6 valores, frase por frase, travada no doc.
     values: {
       title: "Valores",
-      subtitle:
-        "Principios que nos mueven. Cada uno implica una elección que ya hicimos.",
+      subtitle: "Principios que nos mueven. Cada uno implica una elección que ya hicimos.",
       items: [
-        {
-          title: "Excelencia",
-          description: "Buscamos ser y hacer mejor cada día.",
-        },
+        { title: "Excelencia", description: "Buscamos ser y hacer mejor cada día." },
         {
           title: "Innovación",
-          description:
-            "Elegimos el camino nuevo aun cuando el obvio costaría menos.",
+          description: "Elegimos el camino nuevo aun cuando el obvio costaría menos.",
         },
         {
           title: "Método",
-          description:
-            "Una operación que depende de una persona no es una operación.",
+          description: "Una operación que depende de una persona no es una operación.",
         },
-        {
-          title: "Ejecución",
-          description: "Entregamos lo que funciona, no lo que impresiona.",
-        },
+        { title: "Ejecución", description: "Entregamos lo que funciona, no lo que impresiona." },
         {
           title: "Impacto",
           description: "Si no se mide, no es impacto: es intención.",
         },
-        {
-          title: "Claridad",
-          description: "No aceleramos lo que nadie entiende.",
-        },
+        { title: "Claridad", description: "No aceleramos lo que nadie entiende." },
       ],
     },
     forWhom: {
@@ -220,37 +207,36 @@ export const es: Content = {
     sections: [
       {
         title: "De principio a fin, junto a usted",
-        body: "Estructuramos el proyecto, armamos el plan de trabajo, coordinamos los equipos de ejecución y acompañamos la entrega. Nuestro papel no se limita a la planificación inicial, ni a la ejecución aislada. Ambas etapas se conducen de forma integrada, porque la estructura sin ejecución no se realiza, y la ejecución sin estructura no se sostiene. Cuando el proyecto está establecido y opera de forma autónoma, concluimos nuestra participación.",
+        body:
+          "Estructuramos el proyecto, armamos el plan de trabajo, coordinamos los equipos de ejecución y acompañamos la entrega. Nuestro papel no se limita a la planificación inicial, ni a la ejecución aislada. Ambas etapas se conducen de forma integrada, porque la estructura sin ejecución no se realiza, y la ejecución sin estructura no se sostiene. Cuando el proyecto está establecido y opera de forma autónoma, concluimos nuestra participación.",
       },
       {
         title: "Cuando el camino fácil y el correcto no son el mismo",
-        body: "Ante dos soluciones de costo equivalente, optamos por la más consistente, aunque exija más trabajo de nuestra parte. Esa elección no siempre es la más rápida, pero es la que sostiene el resultado en el tiempo. Es también lo que separa un proyecto que apenas cumple sus metas de uno que se convierte en una referencia para quien lo encargó.",
+        body:
+          "Ante dos soluciones de costo equivalente, optamos por la más consistente, aunque exija más trabajo de nuestra parte. Esa elección no siempre es la más rápida, pero es la que sostiene el resultado en el tiempo. Es también lo que separa un proyecto que apenas cumple sus metas de uno que se convierte en una referencia para quien lo encargó.",
       },
       {
         title: "Dónde profundizamos",
-        body: "Trabajamos con frecuencia en economía creativa, cultura y emprendimiento. En estos campos, la viabilidad pasa por leyes de incentivo y convocatorias públicas, donde la precisión técnica y formal determina si un proyecto es aprobado. Es donde nuestra experiencia en estructuración tiene el mayor efecto práctico.",
+        body:
+          "Trabajamos con frecuencia en economía creativa, cultura y emprendimiento. En estos campos, la viabilidad pasa por leyes de incentivo y convocatorias públicas, donde la precisión técnica y formal determina si un proyecto es aprobado. Es donde nuestra experiencia en estructuración tiene el mayor efecto práctico.",
       },
     ],
     services: [
       {
         title: "Gestión de Proyectos",
-        description:
-          "Estructuración y conducción de proyectos desde el diagnóstico hasta la entrega.",
+        description: "Estructuración y conducción de proyectos desde el diagnóstico hasta la entrega.",
       },
       {
         title: "Inteligencia y Estrategia",
-        description:
-          "Diagnóstico, investigación y diseño de estrategia antes de la acción.",
+        description: "Diagnóstico, investigación y diseño de estrategia antes de la acción.",
       },
       {
         title: "Branding e Identidad",
-        description:
-          "Construcción de la identidad de marca, con contenido y storytelling.",
+        description: "Construcción de la identidad de marca, con contenido y storytelling.",
       },
       {
         title: "Gestión de Procesos de Negocio",
-        description:
-          "Diseño de procesos y gobernanza que sostienen la operación.",
+        description: "Diseño de procesos y gobernanza que sostienen la operación.",
       },
     ],
     // LOCKED — titulo-tese travado no doc.
@@ -262,23 +248,19 @@ export const es: Content = {
       formats: [
         {
           title: "Design Sprints",
-          description:
-            "Programas cortos e intensivos que transforman un desafío en un prototipo comprobable en pocos días.",
+          description: "Programas cortos e intensivos que transforman un desafío en un prototipo comprobable en pocos días.",
         },
         {
           title: "Hackathons",
-          description:
-            "Maratones de desarrollo que reúnen equipos multidisciplinarios para construir soluciones reales en tiempo comprimido.",
+          description: "Maratones de desarrollo que reúnen equipos multidisciplinarios para construir soluciones reales en tiempo comprimido.",
         },
         {
           title: "Ideathons",
-          description:
-            "Sesiones estructuradas de generación y selección de ideas, del problema a la propuesta.",
+          description: "Sesiones estructuradas de generación y selección de ideas, del problema a la propuesta.",
         },
         {
           title: "Intraemprendimiento",
-          description:
-            "Programas que preparan equipos internos para conducir iniciativas con autonomía emprendedora.",
+          description: "Programas que preparan equipos internos para conducir iniciativas con autonomía emprendedora.",
         },
       ],
     },
@@ -305,6 +287,7 @@ export const es: Content = {
       intro:
         "Un evento no se resuelve en la idea, se resuelve en la operación: los proveedores, el montaje, los permisos, el equipo y la logística del día. Asumimos esa operación desde la concepción hasta la ejecución en el lugar, y respondemos por el resultado de principio a fin.",
     },
+    mediaGridTitle: "Algunos de los proyectos realizados",
     events: {
       title: "Eventos y Experiencias",
       intro:
@@ -313,23 +296,16 @@ export const es: Content = {
         {
           title: "Corporativo",
           description: "Convenciones, lanzamientos y eventos internos.",
-          items: [
-            "Convenciones",
-            "Lanzamientos",
-            "Celebraciones de equipo",
-            "Eventos internos",
-          ],
+          items: ["Convenciones", "Lanzamientos", "Celebraciones de equipo", "Eventos internos"],
         },
         {
           title: "Innovación",
-          description:
-            "Hackathons, sprints y demo days producidos como eventos.",
+          description: "Hackathons, sprints y demo days producidos como eventos.",
           items: ["Hackathons", "Design Sprints", "Ideathons", "Demo Days"],
         },
         {
           title: "Culturales",
-          description:
-            "Festivales, espectáculos, exposiciones y economía creativa.",
+          description: "Festivales, espectáculos, exposiciones y economía creativa.",
           items: ["Festivales", "Espectáculos", "Exposiciones"],
         },
         {
@@ -396,8 +372,7 @@ export const es: Content = {
     },
     creatorOpsRio: {
       eyebrow: "CREATION OPS RIO",
-      title:
-        "Producción ejecutiva en Río, para quienes vienen de afuera a crear",
+      title: "Producción ejecutiva en Río, para quienes vienen de afuera a crear",
       description:
         "Recepción, logística y producción local completa para content creators y marcas internacionales en Río de Janeiro.",
       linkLabel: "Conocer Creation Ops Rio",
@@ -427,39 +402,38 @@ export const es: Content = {
     sections: [
       {
         title: "De la intención a un programa que funciona",
-        body: "Estructuramos fundaciones e institutos, diseñamos programas de impacto y conducimos proyectos sociales en el territorio. En algunos contratos entregamos el diseño y la organización opera; en otros, conducimos el día a día. Lo que se mantiene constante es la responsabilidad por la estructura, porque un buen programa social no depende de un esfuerzo aislado, sino de un modelo que se sostiene después de que nos vamos.",
+        body:
+          "Estructuramos fundaciones e institutos, diseñamos programas de impacto y conducimos proyectos sociales en el territorio. En algunos contratos entregamos el diseño y la organización opera; en otros, conducimos el día a día. Lo que se mantiene constante es la responsabilidad por la estructura, porque un buen programa social no depende de un esfuerzo aislado, sino de un modelo que se sostiene después de que nos vamos.",
       },
       {
         title: "El territorio en el centro, no en el margen",
-        body: "Un proyecto social se sostiene cuando se construye con quienes viven el territorio, y no solo para ellos. Trabajamos con líderes locales, remuneramos a quienes participan y sometemos las decisiones a quienes conocen la realidad de cerca. Es el camino más exigente, y el único que produce un resultado que permanece después de que el proyecto termina.",
+        body:
+          "Un proyecto social se sostiene cuando se construye con quienes viven el territorio, y no solo para ellos. Trabajamos con líderes locales, remuneramos a quienes participan y sometemos las decisiones a quienes conocen la realidad de cerca. Es el camino más exigente, y el único que produce un resultado que permanece después de que el proyecto termina.",
       },
     ],
     services: [
       {
         title: "Estructuración de ONGs",
-        description:
-          "Creación y estructuración de organizaciones sociales, del concepto a la captación.",
+        description: "Creación y estructuración de organizaciones sociales, del concepto a la captación.",
       },
       {
         title: "Programas de Impacto",
-        description:
-          "Diseño y conducción de programas sociales en el territorio.",
+        description: "Diseño y conducción de programas sociales en el territorio.",
       },
       {
         title: "Informes de Impacto y ESG",
-        description:
-          "Medición y documentación del impacto, para rendición de cuentas y ESG.",
+        description: "Medición y documentación del impacto, para rendición de cuentas y ESG.",
       },
       {
         title: "Gestión de Proyectos Sociales",
-        description:
-          "Coordinación y ejecución de proyectos sociales en el campo.",
+        description: "Coordinación y ejecución de proyectos sociales en el campo.",
       },
     ],
     // PT leve, conforme o doc (matchmaking forte so em EN).
     matchmaking: {
       title: "Un puente para quienes invierten en impacto",
-      body: "Para quienes invierten en impacto social y necesitan un operador local que conozca el territorio, somos ese puente. Identificamos proyectos serios, estructuramos la operación en el terreno y medimos el retorno con datos reales.",
+      body:
+        "Para quienes invierten en impacto social y necesitan un operador local que conozca el territorio, somos ese puente. Identificamos proyectos serios, estructuramos la operación en el terreno y medimos el retorno con datos reales.",
       strong: false,
     },
     ongZero: {
@@ -540,8 +514,7 @@ export const es: Content = {
           { value: "172", label: "ponentes globales" },
           { value: "40h", label: "de contenido en vivo" },
         ],
-        support:
-          "FITI, Foro Internacional de Tecnología e Innovación, transmitido en vivo en 2020.",
+        support: "FITI, Foro Internacional de Tecnología e Innovación, transmitido en vivo en 2020.",
         image: "/cases/hr-talks.jpg",
       },
       {
@@ -574,10 +547,7 @@ export const es: Content = {
         results: [
           { value: "241", label: "emprendedores registrados en la plataforma" },
           { value: "56", label: "barrios atendidos en Itaguaí y Seropédica" },
-          {
-            value: "R$30.650,11",
-            label: "en facturación registrada hasta dic/2022",
-          },
+          { value: "R$30.650,11", label: "en facturación registrada hasta dic/2022" },
         ],
         support:
           "Seguimiento trimestral de registros y ventas en la plataforma, con crecimiento por debajo de la proyección inicial del proyecto. Evaluación de impacto social conducida por Rede Asta.",
@@ -629,33 +599,31 @@ export const es: Content = {
       items: [
         {
           title: "Content Sprint",
-          description:
-            "Producción ágil para creadores, con equipo y equipamiento listos para grabar en pocos días.",
+          description: "Producción ágil para creadores, con equipo y equipamiento listos para grabar en pocos días.",
         },
         {
           title: "Brand Campaign",
-          description:
-            "Producción completa de campaña para marcas y agencias, del concepto a la entrega.",
+          description: "Producción completa de campaña para marcas y agencias, del concepto a la entrega.",
         },
         {
           title: "Business Tourism VIP",
-          description:
-            "Recepción ejecutiva para viajes de negocios, con logística y agenda organizadas.",
+          description: "Recepción ejecutiva para viajes de negocios, con logística y agenda organizadas.",
         },
         {
           title: "Expatriados (próximamente)",
-          description:
-            "Apoyo de instalación para quienes se mudan a Río de Janeiro.",
+          description: "Apoyo de instalación para quienes se mudan a Río de Janeiro.",
         },
       ],
     },
     differentiator: {
       title: "Conocimiento local que no se improvisa",
-      body: "Años de producción en Río de Janeiro significan una red de proveedores probada, conocimiento de los procesos de licenciamiento y una lectura real del territorio, el tipo de conocimiento que no se resuelve con una búsqueda rápida.",
+      body:
+        "Años de producción en Río de Janeiro significan una red de proveedores probada, conocimiento de los procesos de licenciamiento y una lectura real del territorio, el tipo de conocimiento que no se resuelve con una búsqueda rápida.",
     },
     howWeWork: {
       title: "Cómo trabajamos",
-      body: "Seguimos el mismo Ciclo Completo de cualquier proyecto de Creation: entendemos el briefing, estructuramos la producción, ejecutamos en Río y cerramos con un informe de lo entregado.",
+      body:
+        "Seguimos el mismo Ciclo Completo de cualquier proyecto de Creation: entendemos el briefing, estructuramos la producción, ejecutamos en Río y cerramos con un informe de lo entregado.",
     },
     forWhom:
       "Para creadores, marcas y agencias internacionales que quieren producir en Río de Janeiro sin montar una operación desde cero.",
@@ -669,48 +637,34 @@ export const es: Content = {
       "Una marca es de quien la registra primero. Cuanto más temprano el registro, menor el riesgo de que otra empresa reivindique el nombre antes que usted.",
     whyEarly: {
       title: "Por qué registrar temprano",
-      body: "El derecho sobre una marca en Brasil nace del registro ante el INPI, no del uso. Esperar expone la marca al riesgo de que otra empresa la registre primero, aunque usted ya esté en el mercado.",
+      body:
+        "El derecho sobre una marca en Brasil nace del registro ante el INPI, no del uso. Esperar expone la marca al riesgo de que otra empresa la registre primero, aunque usted ya esté en el mercado.",
     },
     whatWeDo: {
       title: "Lo que hacemos",
       items: [
         {
           title: "Registro ante el INPI",
-          description:
-            "Solicitud de registro conducida de principio a fin, con seguimiento del proceso.",
+          description: "Solicitud de registro conducida de principio a fin, con seguimiento del proceso.",
         },
         {
           title: "Monitoreo continuo",
-          description:
-            "Seguimiento permanente para identificar intentos de registro conflictivos.",
+          description: "Seguimiento permanente para identificar intentos de registro conflictivos.",
         },
       ],
     },
     differentiator: {
       title: "Registrar con quien entiende de marca completa",
-      body: "Además del registro, nos ocupamos de branding, identidad y contenido. Quien se ocupa del registro también entiende del resto de la marca, no solo del proceso jurídico.",
+      body:
+        "Además del registro, nos ocupamos de branding, identidad y contenido. Quien se ocupa del registro también entiende del resto de la marca, no solo del proceso jurídico.",
     },
     howItWorks: {
       title: "Cómo funciona",
       steps: [
-        {
-          title: "Consulta",
-          description:
-            "Verificación de disponibilidad de la marca en las clases relevantes.",
-        },
-        {
-          title: "Estrategia",
-          description:
-            "Definición de las clases y la estrategia de protección.",
-        },
-        {
-          title: "Solicitud",
-          description: "Presentación de la solicitud de registro ante el INPI.",
-        },
-        {
-          title: "Seguimiento",
-          description: "Monitoreo del proceso hasta la concesión del registro.",
-        },
+        { title: "Consulta", description: "Verificación de disponibilidad de la marca en las clases relevantes." },
+        { title: "Estrategia", description: "Definición de las clases y la estrategia de protección." },
+        { title: "Solicitud", description: "Presentación de la solicitud de registro ante el INPI." },
+        { title: "Seguimiento", description: "Monitoreo del proceso hasta la concesión del registro." },
       ],
     },
     forWhom:
@@ -720,43 +674,29 @@ export const es: Content = {
   ongZeroPage: {
     eyebrow: "ESTRUCTURACIÓN DE ONGS",
     title: "ONG.zero",
-    intro:
-      "Construimos la ONG junto con quien la idealiza. No entregamos algo listo para operar.",
+    intro: "Construimos la ONG junto con quien la idealiza. No entregamos algo listo para operar.",
     buildTogether: {
       title: "Construimos juntos, no entregamos algo hecho",
-      body: "El fundador participa en cada etapa y sale capaz de conducir lo que se creó. Una organización que depende de Creation para existir no es una organización estructurada.",
+      body:
+        "El fundador participa en cada etapa y sale capaz de conducir lo que se creó. Una organización que depende de Creation para existir no es una organización estructurada.",
     },
     stages: {
       title: "Las cinco etapas",
       items: [
-        {
-          title: "Concepto",
-          description:
-            "Definición de la causa, la tesis de impacto y el modelo de actuación.",
-        },
-        {
-          title: "Constitución",
-          description:
-            "Estatuto, registro y RUT: la parte jurídica de la fundación.",
-        },
-        {
-          title: "Organización",
-          description: "Gobernanza, estructura interna y procesos.",
-        },
+        { title: "Concepto", description: "Definición de la causa, la tesis de impacto y el modelo de actuación." },
+        { title: "Constitución", description: "Estatuto, registro y RUT: la parte jurídica de la fundación." },
+        { title: "Organización", description: "Gobernanza, estructura interna y procesos." },
         {
           title: "Marca e Identidad",
-          description:
-            "Nombre, logo y narrativa, con apoyo de Creation Marcas cuando sea necesario.",
+          description: "Nombre, logo y narrativa, con apoyo de Creation Marcas cuando sea necesario.",
         },
         {
           title: "Captación y Sostenibilidad",
-          description:
-            "Convocatorias, donantes y leyes de incentivo, para que la organización se sostenga después del montaje.",
+          description: "Convocatorias, donantes y leyes de incentivo, para que la organización se sostenga después del montaje.",
         },
       ],
     },
-    forWhom:
-      "Para quienes están estructurando una ONG, fundación o instituto desde cero.",
+    forWhom: "Para quienes están estructurando una ONG, fundación o instituto desde cero.",
   },
 
   // LOCKED — titulo travado no doc.
@@ -770,19 +710,18 @@ export const es: Content = {
       items: [
         {
           title: "Cálculo de SROI",
-          description:
-            "Retorno social calculado a partir de datos primarios, con metodología auditable.",
+          description: "Retorno social calculado a partir de datos primarios, con metodología auditable.",
         },
         {
           title: "Informes de Impacto",
-          description:
-            "El dato se convierte en documento presentable para rendición de cuentas y captación.",
+          description: "El dato se convierte en documento presentable para rendición de cuentas y captación.",
         },
       ],
     },
     whyRealData: {
       title: "Por qué medir con datos reales",
-      body: "Los números ficticios no sobreviven a la primera pregunta de un inversor o socio. Por eso el Motor SROI trabaja solo con datos primarios, recolectados en el propio proyecto.",
+      body:
+        "Los números ficticios no sobreviven a la primera pregunta de un inversor o socio. Por eso el Motor SROI trabaja solo con datos primarios, recolectados en el propio proyecto.",
     },
     forWhom:
       "Para institutos, fundaciones y empresas que necesitan comprobar, con metodología auditable, el retorno social de sus proyectos.",
@@ -796,14 +735,15 @@ export const es: Content = {
       "El evento sucede una vez, pero los datos que produce pueden informar los siguientes. Hoy, esos datos suelen perderse dispersos entre distintos proveedores; el BI de Eventos los reúne todos en un solo panel.",
     whatWeMeasure: {
       title: "Lo que medimos",
-      body: "Público y flujo, engagement, retorno y repercusión, y desempeño por área. Un instrumento de decisión, no un informe descriptivo.",
+      body:
+        "Público y flujo, engagement, retorno y repercusión, y desempeño por área. Un instrumento de decisión, no un informe descriptivo.",
     },
     externalRead: {
       title: "Un medidor externo e independiente",
-      body: "No exigimos haber producido el evento para medirlo. Es una lectura de quien no necesita demostrar su propio trabajo, el tipo de imparcialidad que da credibilidad al número.",
+      body:
+        "No exigimos haber producido el evento para medirlo. Es una lectura de quien no necesita demostrar su propio trabajo, el tipo de imparcialidad que da credibilidad al número.",
     },
-    forWhom:
-      "Para organizadores, patrocinadores y marcas que quieren saber, con datos, qué funcionó en el evento.",
+    forWhom: "Para organizadores, patrocinadores y marcas que quieren saber, con datos, qué funcionó en el evento.",
   },
 
   contact: {
