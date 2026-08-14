@@ -30,7 +30,7 @@ export default function Footer() {
                 <img
                   src="/brand/creation_assinatura_completa_branca.svg"
                   alt={c.brand.name}
-                  className="h-10 md:h-12 w-auto cursor-pointer"
+                  className="h-5 md:h-6 w-auto cursor-pointer"
                   data-testid="img-footer-logo"
                 />
               </Link>
