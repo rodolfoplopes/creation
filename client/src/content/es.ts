@@ -564,6 +564,26 @@ export const es: Content = {
         image: "/cases/pertinho-de-casa.jpg",
       },
       {
+        eyebrow: "TERRITORIO",
+        title: "Una plataforma que crece al ritmo del territorio",
+        client: "Rede Asta · Porto Sudeste",
+        problem:
+          "Una plataforma de ventas para pequeños emprendedores solo genera valor si de verdad se registran y venden a través de ella, y eso no sucede solo en un territorio sin un hábito digital consolidado. El desafío era sostener el crecimiento de registros y ventas trimestre a trimestre, sin que el ritmo dependiera de un único lanzamiento.",
+        action:
+          "Condujimos la captación de vendedores en el territorio, puerta a puerta y en ferias y eventos locales, y ayudamos a formar un Comité por la Economía Local con secretarías municipales, asociaciones comerciales e instituciones aliadas, para ampliar el apoyo institucional a la plataforma. Acompañamos y reportamos los números cada trimestre con honestidad, incluso cuando el crecimiento quedó por debajo de lo proyectado, y ajustamos la captación a partir de eso, en vez de inflar expectativas.",
+        results: [
+          { value: "241", label: "emprendedores registrados en la plataforma" },
+          { value: "56", label: "barrios atendidos en Itaguaí y Seropédica" },
+          {
+            value: "R$30.650,11",
+            label: "en facturación registrada hasta dic/2022",
+          },
+        ],
+        support:
+          "Seguimiento trimestral de registros y ventas en la plataforma, con crecimiento por debajo de la proyección inicial del proyecto. Evaluación de impacto social conducida por Rede Asta.",
+        image: "/cases/pertinho-plataforma.jpg",
+      },
+      {
         eyebrow: "EVENTOS",
         title: "Tres días, dos espacios, un solo evento",
         client: "Centro Cultural Banco do Brasil RJ · 2023",
