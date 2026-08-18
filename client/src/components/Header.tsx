@@ -22,10 +22,28 @@ import { storeLang } from "@/lib/detectLang";
  * dentro da pagina) + os 2 produtos com pagina propria (kind:"product",
  * estilo visual distinto: caixa alta). O scroll ate a ancora e feito na
  * mao (handleMenuClick) porque o wouter nao rola sozinho ao navegar.
+ *
+ * ESTAGIO 3 (Manual V7) — cabecalho fixo virou dinamico: branco puro no
+ * topo da pagina (igual o fundo do hero, sem nenhuma linha de separacao),
+ * e transiciona pra Abyss solido com logo branco assim que a pagina rola
+ * além de 20px. Estado via useEffect + scroll listener (isScrolled).
+ *
+ * Tentativa anterior usava uma borda inferior fina (hairline) pra dar
+ * alguma definicao ao branco-sobre-branco — feedback real: nao ficou bom,
+ * removida. A transicao de cor ao rolar resolve a definicao de um jeito
+ * mais dinamico, sem precisar de linha nenhuma.
+ *
+ * O overlay full-screen do menu CONTINUA escuro
+ * de proposito — foi decisao explicita manter "a caixa" quando abre.
+ *
+ * Logo: cabecalho fixo usa a variante Abyss (escura, contraste sobre
+ * branco); o overlay continua com a variante branca (contraste sobre
+ * Abyss). Dois arquivos SVG diferentes, cada um no contexto certo.
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const c = useContent();
   const currentLang = useLang();
 
@@ -39,12 +57,19 @@ export default function Header() {
 
   const switchLanguage = (targetLang: SupportedLang) => {
     storeLang(targetLang);
-    setLocation(
-      cleanPath === "/" ? `/${targetLang}` : `/${targetLang}${cleanPath}`,
-    );
+    setLocation(cleanPath === "/" ? `/${targetLang}` : `/${targetLang}${cleanPath}`);
   };
 
   const langButtons: SupportedLang[] = ["pt", "en", "es"];
+
+  // Cabecalho branco no topo, vira Abyss com logo branco ao rolar. Limiar
+  // de 20px evita ficar trocando de cor com um micro-scroll acidental.
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Trava scroll enquanto o overlay esta aberto.
   useEffect(() => {
@@ -78,9 +103,7 @@ export default function Header() {
     const hash = href.split("#")[1];
     if (hash) {
       setTimeout(() => {
-        document
-          .getElementById(hash)
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
     }
   };
@@ -93,33 +116,12 @@ export default function Header() {
       href: "/consultoria",
       label: c.nav.consultoria,
       subItems: [
+        { label: c.consultoria.services[0].title, href: "/consultoria#gestao-de-projetos", kind: "service" as const },
+        { label: c.consultoria.services[2].title, href: "/consultoria#branding-e-identidade", kind: "service" as const },
+        { label: c.consultoria.services[1].title, href: "/consultoria#inteligencia-e-estrategia", kind: "service" as const },
+        { label: c.consultoria.services[3].title, href: "/consultoria#processos", kind: "service" as const },
         {
-          label: c.consultoria.services[0].title,
-          href: "/consultoria#gestao-de-projetos",
-          kind: "service" as const,
-        },
-        {
-          label: c.consultoria.services[2].title,
-          href: "/consultoria#branding-e-identidade",
-          kind: "service" as const,
-        },
-        {
-          label: c.consultoria.services[1].title,
-          href: "/consultoria#inteligencia-e-estrategia",
-          kind: "service" as const,
-        },
-        {
-          label: c.consultoria.services[3].title,
-          href: "/consultoria#processos",
-          kind: "service" as const,
-        },
-        {
-          label:
-            currentLang === "en"
-              ? "Innovation"
-              : currentLang === "es"
-                ? "Innovación"
-                : "Inovação",
+          label: currentLang === "en" ? "Innovation" : currentLang === "es" ? "Innovación" : "Inovação",
           href: "/consultoria#inovacao",
           kind: "service" as const,
         },
@@ -141,31 +143,11 @@ export default function Header() {
       href: "/producoes",
       label: c.nav.producoes,
       subItems: [
-        {
-          label: c.producoes.events.title,
-          href: "/producoes#eventos",
-          kind: "service" as const,
-        },
-        {
-          label: c.producoes.audiovisual.title,
-          href: "/producoes#audiovisual",
-          kind: "service" as const,
-        },
-        {
-          label: c.producoes.operational.fixer.title,
-          href: "/producoes#fixer",
-          kind: "service" as const,
-        },
-        {
-          label: c.producoes.operational.hosting.title,
-          href: "/producoes#host",
-          kind: "service" as const,
-        },
-        {
-          label: "Creation Ops Rio",
-          href: c.producoes.creatorOpsRio.href,
-          kind: "product" as const,
-        },
+        { label: c.producoes.events.title, href: "/producoes#eventos", kind: "service" as const },
+        { label: c.producoes.audiovisual.title, href: "/producoes#audiovisual", kind: "service" as const },
+        { label: c.producoes.operational.fixer.title, href: "/producoes#fixer", kind: "service" as const },
+        { label: c.producoes.operational.hosting.title, href: "/producoes#host", kind: "service" as const },
+        { label: "Creation Ops Rio", href: c.producoes.creatorOpsRio.href, kind: "product" as const },
         {
           label: currentLang === "en" ? "BI for Events" : "BI de Eventos",
           href: c.producoes.biEventos.href,
@@ -177,36 +159,12 @@ export default function Header() {
       href: "/impacto-social",
       label: c.nav.impactoSocial,
       subItems: [
-        {
-          label: c.impactoSocial.services[0].title,
-          href: "/impacto-social#estruturacao-de-ongs",
-          kind: "service" as const,
-        },
-        {
-          label: c.impactoSocial.services[1].title,
-          href: "/impacto-social#programas-de-impacto-social",
-          kind: "service" as const,
-        },
-        {
-          label: c.impactoSocial.services[2].title,
-          href: "/impacto-social#relatorios-de-impacto-e-esg",
-          kind: "service" as const,
-        },
-        {
-          label: c.impactoSocial.services[3].title,
-          href: "/impacto-social#gestao-de-projetos-sociais",
-          kind: "service" as const,
-        },
-        {
-          label: c.impactoSocial.ongZero.eyebrow,
-          href: c.impactoSocial.ongZero.href,
-          kind: "product" as const,
-        },
-        {
-          label: "Motor SROI",
-          href: c.impactoSocial.motorSroi.href,
-          kind: "product" as const,
-        },
+        { label: c.impactoSocial.services[0].title, href: "/impacto-social#estruturacao-de-ongs", kind: "service" as const },
+        { label: c.impactoSocial.services[1].title, href: "/impacto-social#programas-de-impacto-social", kind: "service" as const },
+        { label: c.impactoSocial.services[2].title, href: "/impacto-social#relatorios-de-impacto-e-esg", kind: "service" as const },
+        { label: c.impactoSocial.services[3].title, href: "/impacto-social#gestao-de-projetos-sociais", kind: "service" as const },
+        { label: c.impactoSocial.ongZero.eyebrow, href: c.impactoSocial.ongZero.href, kind: "product" as const },
+        { label: "Motor SROI", href: c.impactoSocial.motorSroi.href, kind: "product" as const },
       ],
     },
   ];
@@ -215,22 +173,26 @@ export default function Header() {
     { label: c.nav.method, href: "/metodo" },
     { label: c.nav.about, href: "/quem-somos" },
     { label: c.nav.contact, href: "/contato" },
-    ...(showCreationProfile
-      ? [{ label: "Creation Profile", href: "/profile" }]
-      : []),
+    ...(showCreationProfile ? [{ label: "Creation Profile", href: "/profile" }] : []),
   ];
 
   return (
     <>
       <header
-        className="sticky top-0 z-50 w-full bg-abyss"
+        className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
+          isScrolled ? "bg-abyss" : "bg-white"
+        }`}
         data-testid="header"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <Link href={localize("/")} data-testid="link-logo">
               <img
-                src="/brand/creation_assinatura_completa_branca.svg"
+                src={
+                  isScrolled
+                    ? "/brand/creation_assinatura_completa_branca.svg"
+                    : "/brand/creation_assinatura_completa_abyss.svg"
+                }
                 alt={c.brand.name}
                 className="h-5 md:h-7 w-auto cursor-pointer"
               />
@@ -238,7 +200,11 @@ export default function Header() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className="text-bone hover:text-bone/80 transition-colors p-2 -mr-2"
+              className={`transition-colors p-2 -mr-2 ${
+                isScrolled
+                  ? "text-bone hover:text-bone/80"
+                  : "text-abyss hover:text-abyss/70"
+              }`}
               aria-label="Menu"
               aria-expanded={isOpen}
               data-testid="button-menu-open"
@@ -252,9 +218,7 @@ export default function Header() {
       {/* Overlay full-screen */}
       <div
         className={`fixed inset-0 z-[60] bg-abyss transition-opacity duration-300 motion-reduce:transition-none ${
-          isOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         role="dialog"
         aria-modal="true"
@@ -289,10 +253,7 @@ export default function Header() {
             >
               {areas.map((area) => (
                 <div key={area.href}>
-                  <Link
-                    href={localize(area.href)}
-                    onClick={() => handleMenuClick(area.href)}
-                  >
+                  <Link href={localize(area.href)} onClick={() => handleMenuClick(area.href)}>
                     <span
                       className={`block text-h2 font-bold mb-4 cursor-pointer transition-colors ${
                         isCurrentPath(area.href)
@@ -307,10 +268,7 @@ export default function Header() {
                     <ul className="space-y-3">
                       {area.subItems.map((item) => (
                         <li key={item.href}>
-                          <Link
-                            href={localize(item.href)}
-                            onClick={() => handleMenuClick(item.href)}
-                          >
+                          <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>
                             <span
                               className={`cursor-pointer transition-colors text-small ${
                                 item.kind === "product"
@@ -339,10 +297,7 @@ export default function Header() {
                 <ul className="space-y-3">
                   {institutional.map((item) => (
                     <li key={item.href}>
-                      <Link
-                        href={localize(item.href)}
-                        onClick={() => handleMenuClick(item.href)}
-                      >
+                      <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>
                         <span
                           className={`block text-h3 font-semibold cursor-pointer transition-colors ${
                             isCurrentPath(item.href)
