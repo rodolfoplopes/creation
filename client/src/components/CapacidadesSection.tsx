@@ -2,13 +2,13 @@ import { Link } from "wouter";
 import { ArrowRight, Check } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
 import Reveal from "@/components/Reveal";
-import { useLocalizedHref } from "@/content";
-import { homeCapacidades } from "@/content/stubData";
+import { useLocalizedHref, useLang } from "@/content";
+import { stubPages } from "@/content/stub";
 
 /**
  * Home V2, Bloco 03 (CAPACIDADES) — substitui VerticalsSection, que ainda
  * mostrava as 3 areas de negocio antigas (Consultoria/Producoes/Impacto
- * Social). PT-only por enquanto, ver stubData.ts.
+ * Social). Traduzida nos 3 idiomas (ver client/src/content/stub/{lang}.ts).
  *
  * TESTE EXPERIMENTAL (nao aprovado): fundo branco predominante (era tone
  * "bone") com o acento "spark" fazendo a diferenciacao dos cards em vez de
@@ -18,12 +18,19 @@ import { homeCapacidades } from "@/content/stubData";
  */
 export default function CapacidadesSection() {
   const localize = useLocalizedHref();
+  const lang = useLang();
+  const homeCapacidades = stubPages[lang].homeCapacidades;
+  const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
 
   return (
     <Section id="capacidades" tone="white" divider>
       <SectionHeader
-        title="Estratégia, gestão e operações. Juntas."
-        subtitle="Um projeto precisa de direção, coordenação e capacidade de entrega. Combinamos essas três competências de acordo com o desafio, o momento do projeto e a estrutura disponível em cada organização."
+        title={t("Estratégia, gestão e operações. Juntas.", "Strategy, management and operations. Together.", "Estrategia, gestión y operaciones. Juntas.")}
+        subtitle={t(
+          "Um projeto precisa de direção, coordenação e capacidade de entrega. Combinamos essas três competências de acordo com o desafio, o momento do projeto e a estrutura disponível em cada organização.",
+          "A project needs direction, coordination and delivery capacity. We combine these three competencies according to the challenge, the project's moment and the structure available in each organization.",
+          "Un proyecto necesita dirección, coordinación y capacidad de entrega. Combinamos estas tres competencias según el desafío, el momento del proyecto y la estructura disponible en cada organización.",
+        )}
       />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-abyss/10 border border-abyss/14">
         {homeCapacidades.map((cap, i) => (

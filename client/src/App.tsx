@@ -16,13 +16,14 @@ import CreationProfile from "@/pages/CreationProfile";
 import Cases from "@/pages/Cases";
 import NotFound from "@/pages/not-found";
 import StubPageLayout from "@/components/StubPageLayout";
-import { stubData } from "@/content/stubData";
+import { stubPages } from "@/content/stub";
 import {
   supportedLangs,
   defaultLang,
   getLangFromPath,
   getPathWithLang,
   isValidLang,
+  type SupportedLang,
 } from "@/lib/lang";
 import { resolveInitialLang } from "@/lib/detectLang";
 
@@ -33,9 +34,9 @@ import { resolveInitialLang } from "@/lib/detectLang";
  * Arquitetura V2 (Manual V7.1 + indice de aprovacao do cliente): a IA de
  * 3 areas (Consultoria/Producoes/Impacto Social) foi substituida por
  * Solucoes > Estrategia/Gestao/Operacoes/Inovacao/Impacto/Branding &
- * Experiencias. Paginas novas sao STUBS PT-only (ver
- * client/src/content/stubData.ts) — estrutura e links aprovaveis, texto e
- * design finais ainda pendentes. Rotas antigas dissolvidas redirecionam:
+ * Experiencias. Paginas novas vivem em client/src/content/stub/ (pt.ts/
+ * en.ts/es.ts, ja traduzidas nos 3 idiomas — fora do contrato Content
+ * tipado, que exige outros campos). Rotas antigas dissolvidas redirecionam:
  *   /consultoria    -> /solucoes
  *   /producoes      -> /operacoes
  *   /impacto-social -> /impacto
@@ -90,8 +91,9 @@ function ScrollToTop({ path }: { path: string }) {
   return null;
 }
 
-function LangRouter({ lang }: { lang: string }) {
+function LangRouter({ lang }: { lang: SupportedLang }) {
   const [location] = useLocation();
+  const s = stubPages[lang].stubData;
 
   return (
     <>
@@ -101,27 +103,27 @@ function LangRouter({ lang }: { lang: string }) {
       <Switch>
         <Route path={`/${lang}`} component={Home} />
 
-        {/* Arquitetura V2 (Manual V7.1 + indice de aprovacao) — stubs PT-only,
-            ver client/src/content/stubData.ts */}
-        <Route path={`/${lang}/solucoes`} component={() => <StubPageLayout data={stubData.solucoes} />} />
-        <Route path={`/${lang}/solucoes/estrategia`} component={() => <StubPageLayout data={stubData.estrategia} />} />
-        <Route path={`/${lang}/solucoes/inteligencia-de-mercado`} component={() => <StubPageLayout data={stubData["inteligencia-de-mercado"]} />} />
-        <Route path={`/${lang}/solucoes/diagnostico-e-planejamento`} component={() => <StubPageLayout data={stubData["diagnostico-e-planejamento"]} />} />
-        <Route path={`/${lang}/solucoes/estruturacao-de-projetos`} component={() => <StubPageLayout data={stubData["estruturacao-de-projetos"]} />} />
-        <Route path={`/${lang}/solucoes/gestao`} component={() => <StubPageLayout data={stubData.gestao} />} />
-        <Route path={`/${lang}/solucoes/gestao-de-projetos`} component={() => <StubPageLayout data={stubData["gestao-de-projetos"]} />} />
-        <Route path={`/${lang}/solucoes/gestao-de-processos`} component={() => <StubPageLayout data={stubData["gestao-de-processos"]} />} />
-        <Route path={`/${lang}/solucoes/governanca-e-indicadores`} component={() => <StubPageLayout data={stubData["governanca-e-indicadores"]} />} />
-        <Route path={`/${lang}/operacoes`} component={() => <StubPageLayout data={stubData.operacoes} />} />
-        <Route path={`/${lang}/operacoes/gestao-de-eventos`} component={() => <StubPageLayout data={stubData["gestao-de-eventos"]} />} />
-        <Route path={`/${lang}/operacoes/producao-executiva`} component={() => <StubPageLayout data={stubData["producao-executiva"]} />} />
-        <Route path={`/${lang}/operacoes/location-fixer-rio-de-janeiro`} component={() => <StubPageLayout data={stubData["location-fixer-rio-de-janeiro"]} />} />
-        <Route path={`/${lang}/operacoes/receptivo-drivers-locacoes`} component={() => <StubPageLayout data={stubData["receptivo-drivers-locacoes"]} />} />
-        <Route path={`/${lang}/inovacao`} component={() => <StubPageLayout data={stubData.inovacao} />} />
-        <Route path={`/${lang}/impacto`} component={() => <StubPageLayout data={stubData.impacto} />} />
-        <Route path={`/${lang}/impacto/marketing-de-causa`} component={() => <StubPageLayout data={stubData["marketing-de-causa"]} />} />
-        <Route path={`/${lang}/branding-experiencias`} component={() => <StubPageLayout data={stubData["branding-experiencias"]} />} />
-        <Route path={`/${lang}/como-trabalhamos`} component={() => <StubPageLayout data={stubData["como-trabalhamos"]} />} />
+        {/* Arquitetura V2 (Manual V7.1 + indice de aprovacao) — conteudo em
+            client/src/content/stub/{lang}.ts */}
+        <Route path={`/${lang}/solucoes`} component={() => <StubPageLayout data={s.solucoes} />} />
+        <Route path={`/${lang}/solucoes/estrategia`} component={() => <StubPageLayout data={s.estrategia} />} />
+        <Route path={`/${lang}/solucoes/inteligencia-de-mercado`} component={() => <StubPageLayout data={s["inteligencia-de-mercado"]} />} />
+        <Route path={`/${lang}/solucoes/diagnostico-e-planejamento`} component={() => <StubPageLayout data={s["diagnostico-e-planejamento"]} />} />
+        <Route path={`/${lang}/solucoes/estruturacao-de-projetos`} component={() => <StubPageLayout data={s["estruturacao-de-projetos"]} />} />
+        <Route path={`/${lang}/solucoes/gestao`} component={() => <StubPageLayout data={s.gestao} />} />
+        <Route path={`/${lang}/solucoes/gestao-de-projetos`} component={() => <StubPageLayout data={s["gestao-de-projetos"]} />} />
+        <Route path={`/${lang}/solucoes/gestao-de-processos`} component={() => <StubPageLayout data={s["gestao-de-processos"]} />} />
+        <Route path={`/${lang}/solucoes/governanca-e-indicadores`} component={() => <StubPageLayout data={s["governanca-e-indicadores"]} />} />
+        <Route path={`/${lang}/operacoes`} component={() => <StubPageLayout data={s.operacoes} />} />
+        <Route path={`/${lang}/operacoes/gestao-de-eventos`} component={() => <StubPageLayout data={s["gestao-de-eventos"]} />} />
+        <Route path={`/${lang}/operacoes/producao-executiva`} component={() => <StubPageLayout data={s["producao-executiva"]} />} />
+        <Route path={`/${lang}/operacoes/location-fixer-rio-de-janeiro`} component={() => <StubPageLayout data={s["location-fixer-rio-de-janeiro"]} />} />
+        <Route path={`/${lang}/operacoes/receptivo-drivers-locacoes`} component={() => <StubPageLayout data={s["receptivo-drivers-locacoes"]} />} />
+        <Route path={`/${lang}/inovacao`} component={() => <StubPageLayout data={s.inovacao} />} />
+        <Route path={`/${lang}/impacto`} component={() => <StubPageLayout data={s.impacto} />} />
+        <Route path={`/${lang}/impacto/marketing-de-causa`} component={() => <StubPageLayout data={s["marketing-de-causa"]} />} />
+        <Route path={`/${lang}/branding-experiencias`} component={() => <StubPageLayout data={s["branding-experiencias"]} />} />
+        <Route path={`/${lang}/como-trabalhamos`} component={() => <StubPageLayout data={s["como-trabalhamos"]} />} />
         <Route path={`/${lang}/cases`} component={Cases} />
 
         <Route path={`/${lang}/creator-ops-rio`} component={CreatorOpsRio} />

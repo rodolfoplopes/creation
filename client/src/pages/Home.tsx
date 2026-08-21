@@ -9,7 +9,7 @@ import TargetAudienceSection from "@/components/TargetAudienceSection";
 import CTASection from "@/components/CTASection";
 
 /**
- * Home V2 (Arquitetura V2 — ver client/src/content/stubData.ts): substitui
+ * Home V2 (Arquitetura V2 — ver client/src/content/stub/): substitui
  * VerticalsSection (3 cards de area de negocio antigos — Consultoria/
  * Producoes/Impacto Social, que nao existem mais no menu) pelos Blocos
  * 03/04/05 do doc aprovado: Capacidades (Estrategia/Gestao/Operacoes),

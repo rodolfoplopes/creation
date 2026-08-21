@@ -2,8 +2,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
 import Reveal from "@/components/Reveal";
-import { useLocalizedHref } from "@/content";
-import { homeSolucoes } from "@/content/stubData";
+import { useLocalizedHref, useLang } from "@/content";
+import { stubPages } from "@/content/stub";
 
 /**
  * Home V2, Bloco 05 (SOLUCOES CREATION) — "uma solucao so aparece quando
@@ -19,14 +19,25 @@ import { homeSolucoes } from "@/content/stubData";
  */
 export default function SolucoesCreationSection() {
   const localize = useLocalizedHref();
+  const lang = useLang();
+  const homeSolucoes = stubPages[lang].homeSolucoes;
+  const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
 
   if (homeSolucoes.length === 0) return null;
 
   return (
     <Section tone="white" divider>
       <SectionHeader
-        title="Repertório transformado em soluções mais fáceis de contratar."
-        subtitle="Algumas necessidades recorrentes foram organizadas em soluções com escopo, processo e entregas definidos."
+        title={t(
+          "Repertório transformado em soluções mais fáceis de contratar.",
+          "Expertise turned into solutions that are easier to hire.",
+          "Repertorio transformado en soluciones más fáciles de contratar.",
+        )}
+        subtitle={t(
+          "Algumas necessidades recorrentes foram organizadas em soluções com escopo, processo e entregas definidos.",
+          "Some recurring needs have been organized into solutions with defined scope, process and deliverables.",
+          "Algunas necesidades recurrentes se organizaron en soluciones con alcance, proceso y entregas definidos.",
+        )}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {homeSolucoes.map((sol, i) => (
@@ -40,7 +51,7 @@ export default function SolucoesCreationSection() {
                   {sol.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-abyss font-semibold group-hover:text-spark group-hover:gap-3 transition-all">
-                  Conheça {sol.title}
+                  {t("Conheça", "See", "Conozca")} {sol.title}
                   <ArrowRight className="h-5 w-5" />
                 </span>
               </article>

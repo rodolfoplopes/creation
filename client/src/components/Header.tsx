@@ -38,10 +38,8 @@ import { storeLang } from "@/lib/detectLang";
  * landing, sem destaque na navegacao, ate validacao propria).
  *
  * As paginas novas (Estrategia, Gestao, Operacoes, Inovacao, Impacto,
- * Branding & Experiencias, Cases, Como Trabalhamos) sao STUBS PT-only por
- * enquanto (ver client/src/content/stubData.ts) — os rotulos do menu abaixo
- * tem traducao EN/ES (sao curtos), mas o CONTEUDO das paginas ainda so
- * existe em portugues.
+ * Branding & Experiencias, Cases, Como Trabalhamos) ja tem conteudo nos 3
+ * idiomas (ver client/src/content/stub/pt.ts, en.ts, es.ts).
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
@@ -111,9 +109,9 @@ export default function Header() {
     }
   };
 
-  // Traducoes curtas dos rotulos de menu (arquitetura V2). As PAGINAS por
-  // tras desses links ainda sao stubs PT-only (client/src/content/stubData.ts)
-  // — so o rotulo do menu em si tem EN/ES.
+  // Traducoes curtas dos rotulos de menu (arquitetura V2). As paginas por
+  // tras desses links tambem ja tem conteudo nos 3 idiomas (ver
+  // client/src/content/stub/pt.ts, en.ts, es.ts).
   const t = (pt: string, en: string, es: string) =>
     currentLang === "en" ? en : currentLang === "es" ? es : pt;
 

@@ -3,7 +3,7 @@ import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import { Link } from "wouter";
 import { ArrowLeft, Check } from "lucide-react";
 import { useLocalizedHref } from "@/content";
-import type { StubBlock, StubPageData } from "@/content/stubData";
+import type { StubBlock, StubPageData } from "@/content/stub";
 
 function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
   return (
@@ -47,10 +47,11 @@ function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
 }
 
 /**
- * Renderizador generico das paginas da Arquitetura V2 ainda em stub (ver
- * stubData.ts). Reusa os primitivos visuais existentes (Section,
- * SectionHeader, CTAButton) — nao e um redesign, e a validacao da nova
- * arquitetura de menu com o visual atual.
+ * Renderizador generico das paginas da Arquitetura V2 (ver
+ * client/src/content/stub/pt.ts, en.ts, es.ts — ja traduzidas nos 3
+ * idiomas). Reusa os primitivos visuais existentes (Section, SectionHeader,
+ * CTAButton) — nao e um redesign, e a validacao da nova arquitetura de menu
+ * com o visual atual.
  *
  * DESIGN V7.1 piloto (mesmo tratamento aprovado na Home — ver
  * CapacidadesSection/EspecialidadesSection/HeroSection): fundo branco
