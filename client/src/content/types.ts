@@ -1,21 +1,20 @@
 // ============================================================================
-// CONTRATO DE CONTEUDO — v4 (arquitetura de 4 areas)
+// CONTRATO DE CONTEUDO — v5 (Arquitetura V2, Manual V7.1)
 // pt.ts, en.ts e es.ts implementam este shape.
 // Adicionou chave aqui? O TypeScript obriga os 3 idiomas a terem.
 // Divergencia entre linguas passa a ser impossivel.
 //
-// TAXONOMIA OFICIAL (nova):
-//   Consultoria     -> rosto Gestao de Projetos; absorve o metodo Ciclo Completo;
-//                      capacidade Inovacao (submenu); landing Creation Marcas.
-//   Producoes       -> Eventos e Experiencias (5 categorias) + Audiovisual +
-//                      capacidade Operacional (Fixer/Host); landing Creator Ops Rio;
-//                      produto BI de Eventos.
-//   Impacto Social  -> Estruturacao de ONGs (landing ONG.zero) + Programas +
-//                      Relatorios/ESG + Projetos Sociais; produto Motor SROI.
+// A IA de 3 areas de negocio (Consultoria/Producoes/Impacto Social — v4)
+// foi dissolvida nesta versao. As paginas novas (Solucoes, Estrategia,
+// Gestao, Operacoes, Inovacao, Impacto, Branding & Experiencias, Cases,
+// Como Trabalhamos) sao PT-only por enquanto e vivem em stubData.ts —
+// fora deste contrato tipado, que exige paridade pt/en/es.
 //
-//   Metodo: Ciclo Completo (Diagnostico -> Estruturacao -> Execucao -> Validacao).
-//   Sub-marcas: Creator Ops Rio, Creation Marcas, ONG.zero. Produtos: Motor SROI, BI de Eventos.
-//   Profile: landing so-EN (fora do menu de areas).
+// O que continua aqui: Home (hero/method/targetAudience), Sobre (about),
+// as landings de sub-marca/produto (creatorOpsRioPage, creationMarcasPage,
+// ongZeroPage, motorSroiPage, biEventosPage — sem destaque no menu ate
+// validacao propria) e paginas institucionais (Contato, Footer).
+// Profile: landing so-EN.
 // ============================================================================
 
 // ---- Primitivos reutilizaveis (preservados do contrato antigo) ----
@@ -30,68 +29,12 @@ export interface LinkItem {
   href: string;
 }
 
-export interface CaseResult {
-  value: string;
-  label: string;
-}
-
-export interface CaseStudy {
-  eyebrow: string;
-  title: string;
-  client: string;
-  problem: string;
-  action: string;
-  results: CaseResult[];
-  // Linha de prova/atribuicao no rodape do case (ex.: "Avaliacao de impacto
-  // social conduzida pela Rede Asta"). NAO opcional de proposito: quando um
-  // case usa credito de terceiro, essa linha e obrigatoria (regra de ouro
-  // dos cases, creation-cases.md) e nao pode ser omitida por descuido.
-  support: string;
-  image: string;
-}
-
-// Um servico dentro de uma area (nome + descricao curta).
-export interface ServiceItem {
-  title: string;
-  description: string;
-}
-
-// Uma categoria que agrupa servicos (ex.: Eventos > [Corporativo, Inovacao, ...]).
-export interface ServiceCategory {
-  title: string;
-  description: string;
-  items: string[];
-}
-
 // Os quatro tempos do metodo Ciclo Completo.
 export interface MethodStage {
   number: string;      // "01".."04"
   name: string;        // Diagnostico / Estruturacao / Execucao / Validacao
   tagline: string;     // frase curta ("entender antes de agir")
   description: string;
-}
-
-// Bloco padrao de "frente" (area): hero + secoes de corpo.
-// Usado por consultoria, producoes, impactoSocial.
-export interface FrontHero {
-  eyebrow: string;     // ex.: "GESTAO DE PROJETOS"
-  title: string;       // o titulo-tese da frente
-  intro: string;       // abertura
-  lead?: string;       // 2o paragrafo opcional
-}
-
-export interface FrontSection {
-  title: string;
-  body: string;
-}
-
-// Card de sub-marca/landing referenciado de dentro de uma area.
-export interface SubBrandCard {
-  eyebrow: string;
-  title: string;
-  description: string;
-  linkLabel: string;
-  href: string;
 }
 
 // ============================================================================
@@ -168,82 +111,6 @@ export interface Content {
     };
     // presenca (Sobre EN menciona Brasil+EUA de leve)
     presenceNote?: string;
-  };
-
-  // ---- CONSULTORIA (rosto Gestao de Projetos; absorve metodo + Inovacao) ----
-  consultoria: {
-    hero: FrontHero;
-    sections: FrontSection[];        // "de ponta a ponta", "caminho dificil", "especialidade"
-    services: ServiceItem[];         // Gestao de Projetos, Inteligencia, Branding, Processos
-    // capacidade Inovacao como bloco dentro de Consultoria
-    innovation: {
-      eyebrow: string;
-      title: string;                 // "Inovacao nao e lampejo, e metodo"
-      intro: string;
-      formats: ServiceItem[];        // Design Sprints, Hackathons, Ideathons, Intraempreendedorismo
-    };
-    creationMarcas: SubBrandCard;    // landing Creation Marcas
-    forWhom: string;
-  };
-
-  // ---- PRODUCOES (Eventos + Audiovisual + Operacional) ----
-  producoes: {
-    hero: FrontHero;
-    mediaGridTitle: string;        // titulo do grid de 9->6 fotos de projetos, distinto do titulo de Audiovisual
-    // Bloco Eventos e Experiencias (5 categorias)
-    events: {
-      title: string;
-      intro: string;
-      categories: ServiceCategory[]; // Corporativo, Inovacao, Culturais, Institucionais, Live Mkt
-    };
-    // Bloco Audiovisual
-    audiovisual: {
-      title: string;
-      intro: string;
-      videoCaption: string;         // texto de apoio do video, que veio do hero pra ca
-      items: ServiceItem[];          // Web Content, Short Films, Campanhas/Brand Content
-    };
-    // Capacidade Operacional (Fixer + Host)
-    operational: {
-      title: string;
-      intro: string;
-      fixer: {
-        title: string;
-        description: string;                // o que o fixer resolve, antes da lista
-        locationScoutHighlight: string; // destaque Rio + Costa Verde
-        locationGridLabel: string;  // rotulo acima do grid de 6 fotos de locacao
-        itemsLabel: string;         // rotulo acima da lista de capacidades (agora ao lado do texto, nao mais abaixo)
-        items: string[];             // Permits, Location Scout, Security, Rentals, Vehicles, Crew, Accommodation, Story R&D
-      };
-      hosting: { title: string; description: string };
-    };
-    creatorOpsRio: SubBrandCard;     // landing Creator Ops Rio
-    biEventos: SubBrandCard;         // produto BI de Eventos
-    forWhom: string;
-  };
-
-  // ---- IMPACTO SOCIAL (ONGs/ONG.zero + Programas + ESG + Projetos Sociais) ----
-  impactoSocial: {
-    hero: FrontHero;
-    sections: FrontSection[];        // "de intencao a programa", "territorio no centro"
-    services: ServiceItem[];         // Estruturacao de ONGs, Programas, Relatorios/ESG, Projetos Sociais
-    // matchmaking: secao forte em EN/ES, leve em PT
-    matchmaking: {
-      title: string;
-      body: string;
-      strong: boolean;               // controla se e secao destacada
-    };
-    ongZero: SubBrandCard;           // landing ONG.zero
-    motorSroi: SubBrandCard;         // produto Motor SROI
-    cases: { title: string; items: CaseStudy[] };
-    forWhom: string;
-  };
-
-  // ---- CASES (todos, referenciaveis pela home e por cada area) ----
-  cases: {
-    title: string;
-    subtitle: string;
-    items: CaseStudy[];              // os 5 cases
   };
 
   // ---- SUB-MARCAS / LANDINGS (paginas proprias) ----
