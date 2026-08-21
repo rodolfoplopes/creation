@@ -23,10 +23,10 @@ export default function Home() {
   return (
     <Layout>
       <HeroSection />
+      <WhyWeExistSection />
       <CapacidadesSection />
       <EspecialidadesSection />
       <SolucoesCreationSection />
-      <WhyWeExistSection />
       <MethodTeaserSection />
       <TargetAudienceSection />
       <CTASection />

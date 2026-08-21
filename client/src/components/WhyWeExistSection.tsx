@@ -16,6 +16,12 @@ import useEmblaCarousel from "embla-carousel-react";
  * rounded-2xl e sombra leve — a curva-contraponto do manual (pag. 10/15)
  * aplicada so na imagem. Setas e indicadores viraram pilula (rounded-full)
  * pra ecoar a mesma linguagem, em vez dos quadrados originais.
+ *
+ * POSICAO (pedido do cliente): secao subiu pra logo abaixo do Hero (era
+ * a 5a secao da Home) e ganhou -mt negativo pra a foto "espiar" por baixo
+ * do Hero (uma tira/"1 dedo" da imagem visivel ainda dentro da area do
+ * Hero) — mesmo recurso do notion.com, cujo screenshot de produto sempre
+ * aparece cortado no rodape da dobra inicial.
  */
 const slides = [
   { src: "/images/story-line.webp", alt: "Creation Pro Story" },
@@ -45,11 +51,11 @@ export default function WhyWeExistSection() {
   }, [emblaApi, onSelect]);
   return (
     <section
-      className="relative bg-white py-10 md:py-14"
+      className="relative z-10 bg-white -mt-10 md:-mt-16 pb-10 md:pb-14"
       data-testid="section-why-we-exist"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-2xl overflow-hidden shadow-sm" ref={emblaRef}>
+        <div className="relative rounded-2xl overflow-hidden shadow-md" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => (
               <div key={index} className="flex-[0_0_100%] min-w-0">
