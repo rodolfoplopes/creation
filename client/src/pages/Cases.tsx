@@ -5,7 +5,11 @@ import { casesStub } from "@/content/stubData";
 /**
  * /cases — pagina unica com todos os cases selecionados (sem paginas
  * individuais), conforme decisao registrada no indice mestre da Arquitetura
- * V2. Stub PT-only, mesmo visual do site atual.
+ * V2. Stub PT-only.
+ *
+ * DESIGN V7.1 piloto (mesmo tratamento aprovado na Home/StubPageLayout):
+ * fundo branco predominante + acento "spark" pontual. Experimental, ainda
+ * sem validacao formal do time de design do cliente.
  */
 export default function Cases() {
   return (
@@ -13,7 +17,8 @@ export default function Cases() {
       <section className="relative bg-white py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-measure">
-            <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+            <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+              <span className="h-1.5 w-1.5 rounded-full bg-spark shrink-0" />
               CASES
             </p>
             <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
@@ -27,11 +32,11 @@ export default function Cases() {
         </div>
       </section>
 
-      <Section tone="bone" divider>
+      <Section tone="white" divider>
         <SectionHeader title="Projetos selecionados" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
           {casesStub.map((item) => (
-            <article key={item.title} className="bg-white p-8">
+            <article key={item.title} className="bg-white hover:bg-spark/5 transition-colors p-8">
               <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
                 {item.client}
               </p>
@@ -45,7 +50,7 @@ export default function Cases() {
                 {item.numbers.map((n) => (
                   <li
                     key={n}
-                    className="text-small font-semibold text-abyss"
+                    className="text-small font-semibold text-spark"
                   >
                     {n}
                   </li>
