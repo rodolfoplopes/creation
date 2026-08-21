@@ -662,7 +662,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Ideas gain value when they become projects.",
     intro: "Innovation doesn't start in a workshop and doesn't end in a presentation. It needs a relevant problem, decision criteria, mobilized people, and a path to test, learn and implement.",
     lead: "Creation structures and runs innovation initiatives connected to strategy and the organization's real capacity.",
-    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — innovation program run by Creation" },
+    image: { src: "/images/blockchain-rio.webp", alt: "Blockchain Rio — innovation event run by Creation" },
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
@@ -713,7 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impact that is built and proven.",
     intro: "Social intention doesn't replace strategy, management or evidence. Creation helps companies, organizations and partners turn commitments into structured programs.",
     lead: "With defined audiences, clear responsibilities and follow-up compatible with the change being pursued.",
-    image: { src: "/images/impacto-hero.webp", alt: "Social impact program on the ground, run by Creation" },
+    image: { src: "/images/impacto-artesanato.webp", alt: "Local artisan market, part of a social impact program run by Creation" },
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [

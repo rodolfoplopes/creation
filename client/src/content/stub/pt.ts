@@ -662,7 +662,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Ideias ganham valor quando se tornam projetos.",
     intro: "Inovação não começa em uma dinâmica e não termina em uma apresentação. Ela precisa de um problema relevante, critérios de decisão, pessoas mobilizadas e um caminho para testar, aprender e implementar.",
     lead: "A Creation estrutura e realiza iniciativas de inovação conectadas à estratégia e à capacidade real da organização.",
-    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — programa de inovação realizado pela Creation" },
+    image: { src: "/images/blockchain-rio.webp", alt: "Blockchain Rio — evento de inovação realizado pela Creation" },
     parentLabel: "Soluções",
     parentHref: "/solucoes",
     blocks: [
@@ -713,7 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impacto que se constrói e se comprova.",
     intro: "Intenção social não substitui estratégia, gestão nem evidência. A Creation ajuda empresas, organizações e parceiros a transformar compromissos em programas estruturados.",
     lead: "Com públicos definidos, responsabilidades claras e acompanhamento compatível com o que se pretende mudar.",
-    image: { src: "/images/impacto-hero.webp", alt: "Programa de impacto social em território, realizado pela Creation" },
+    image: { src: "/images/impacto-artesanato.webp", alt: "Feira de artesanato local, parte de um programa de impacto realizado pela Creation" },
     parentLabel: "Soluções",
     parentHref: "/solucoes",
     blocks: [

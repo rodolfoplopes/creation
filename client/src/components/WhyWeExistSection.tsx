@@ -20,7 +20,7 @@ import useEmblaCarousel from "embla-carousel-react";
 const slides = [
   { src: "/images/story-line.webp", alt: "Creation Pro Story" },
   { src: "/images/expo.webp", alt: "Expo" },
-  { src: "/images/reservax.webp", alt: "ReservaX Lounge" },
+  { src: "/images/world-creativity.webp", alt: "World Creativity Day" },
 ];
 export default function WhyWeExistSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
