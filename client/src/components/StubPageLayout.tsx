@@ -58,6 +58,11 @@ function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
  * predominante (era tone "bone" no grid de filhos) com o acento "spark"
  * pontual (dot no eyebrow, hover dos cards e do link de voltar).
  * Experimental, ainda sem validacao formal do time de design do cliente.
+ *
+ * ENTRADA DE IMAGEM (pedido do cliente): `data.image`, quando presente
+ * (hoje so Inovacao/Impacto/Branding & Experiencias), renderiza logo
+ * abaixo do texto do hero, no mesmo tratamento rounded-2xl + sombra leve
+ * usado no carrossel da Home (WhyWeExistSection).
  */
 export default function StubPageLayout({ data }: { data: StubPageData }) {
   const localize = useLocalizedHref();
@@ -91,6 +96,18 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
           </div>
         </div>
       </section>
+
+      {data.image && (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+          <div className="rounded-2xl overflow-hidden shadow-sm">
+            <img
+              src={data.image.src}
+              alt={data.image.alt}
+              className="w-full h-[280px] md:h-[420px] object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       {data.blocks?.map((block, i) => (
         <BlockRenderer key={block.heading} block={block} index={i} />

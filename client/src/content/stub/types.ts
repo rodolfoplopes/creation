@@ -35,11 +35,17 @@ export interface StubStepBlock {
 
 export type StubBlock = StubBulletBlock | StubCardBlock | StubStepBlock;
 
+export interface StubPageImage {
+  src: string;
+  alt: string;
+}
+
 export interface StubPageData {
   eyebrow: string;
   title: string;
   intro: string;
   lead?: string;
+  image?: StubPageImage;
   parentLabel?: string;
   parentHref?: string;
   blocks?: StubBlock[];

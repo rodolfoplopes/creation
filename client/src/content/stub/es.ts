@@ -662,6 +662,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Las ideas ganan valor cuando se convierten en proyectos.",
     intro: "La innovación no empieza en una dinámica ni termina en una presentación. Necesita un problema relevante, criterios de decisión, personas movilizadas y un camino para probar, aprender e implementar.",
     lead: "Creation estructura y realiza iniciativas de innovación conectadas a la estrategia y a la capacidad real de la organización.",
+    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — programa de innovación realizado por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -712,6 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impacto que se construye y se comprueba.",
     intro: "La intención social no reemplaza la estrategia, la gestión ni la evidencia. Creation ayuda a empresas, organizaciones y socios a transformar compromisos en programas estructurados.",
     lead: "Con públicos definidos, responsabilidades claras y seguimiento compatible con lo que se pretende cambiar.",
+    image: { src: "/images/impacto-hero.jpg", alt: "Programa de impacto social en territorio, realizado por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -811,6 +813,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Estrategia que puede verse, vivirse y recordarse.",
     intro: "Una marca se vuelve concreta en los encuentros que produce. Creation conecta posicionamiento, concepto y operación para crear experiencias coherentes con lo que la organización quiere representar.",
     lead: "Y capaces de funcionar en el mundo real.",
+    image: { src: "/images/reservax-lounge.jpg", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
