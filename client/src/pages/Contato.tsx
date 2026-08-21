@@ -21,6 +21,12 @@ import { useContent } from "@/content";
  * REMOVIDO: um MutationObserver que observava o <body> inteiro (childList,
  * subtree, characterData) so para repopular o dropdown de projectTypes quando
  * o i18n.js mexesse no DOM. Agora os tipos vem do content, tipados.
+ *
+ * REDESIGN (pedido do cliente — paleta/diagramacao notion.com): fundo
+ * bege "bone" e barra lateral "signal" saem; fundo branco predominante,
+ * cards do formulario e da lateral em rounded-2xl (era border-abyss/14
+ * com canto reto). O card escuro final continua abyss — unica nota
+ * escura da pagina, mesmo racional de Quem Somos/StubPageLayout.
  */
 export default function Contato() {
   const { toast } = useToast();
@@ -76,24 +82,21 @@ export default function Contato() {
 
   return (
     <Layout>
-      <section className="relative bg-bone py-14 md:py-20 overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-abyss mb-6 tracking-tight">
-              {c.contact.title}
-            </h1>
-            <p className="text-xl text-abyss/70 leading-relaxed">
-              {c.contact.description}
-            </p>
-          </div>
+      <section className="relative bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-display text-display sm:text-6xl md:text-7xl font-extrabold text-abyss mb-6">
+            {c.contact.title}
+          </h1>
+          <p className="text-xl text-abyss/70 leading-relaxed max-w-measure mx-auto">
+            {c.contact.description}
+          </p>
         </div>
       </section>
 
-      <Section tone="bone" firstContent>
+      <Section tone="white">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
-            <Card className="bg-bone border border-abyss/14">
+            <Card className="bg-white border border-abyss/10 rounded-2xl">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -196,7 +199,7 @@ export default function Contato() {
           </div>
 
           <div className="space-y-6">
-            <Card className="bg-bone border border-abyss/14">
+            <Card className="rounded-2xl border border-abyss/10 bg-bone/50">
               <CardContent className="p-6">
                 <p className="text-abyss font-semibold mb-1">
                   {c.contact.aside.title}
@@ -210,7 +213,7 @@ export default function Contato() {
                 <div className="space-y-3">
                   <a
                     href={`mailto:${c.contact.aside.email}`}
-                    className="flex items-center gap-3 p-3 bg-bone hover:bg-[#e9ecef] transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-spark/5 transition-colors"
                   >
                     <Mail className="h-5 w-5 text-abyss" />
                     <span className="text-sm text-abyss/70">
@@ -221,7 +224,7 @@ export default function Contato() {
                     href="https://wa.me/5521999176231"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 bg-bone hover:bg-[#e9ecef] transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-spark/5 transition-colors"
                   >
                     <MessageSquare className="h-5 w-5 text-abyss" />
                     <span className="text-sm text-abyss/70">
@@ -232,7 +235,7 @@ export default function Contato() {
               </CardContent>
             </Card>
 
-            <Card className="bg-abyss border-abyss">
+            <Card className="rounded-2xl bg-abyss border-abyss">
               <CardContent className="p-6">
                 <p className="text-bone/90 text-sm leading-relaxed">
                   {c.contact.aside.note}
