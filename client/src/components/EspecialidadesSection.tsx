@@ -8,12 +8,15 @@ import { homeEspecialidades } from "@/content/stubData";
 /**
  * Home V2, Bloco 04 (ESPECIALIDADES) — Inovacao/Impacto/Branding &
  * Experiencias. Nao existia antes na Home. PT-only, ver stubData.ts.
+ *
+ * TESTE EXPERIMENTAL (nao aprovado): borda esquerda vira "spark" no hover
+ * (era abyss estatico) — mesmo racional do teste em CapacidadesSection.
  */
 export default function EspecialidadesSection() {
   const localize = useLocalizedHref();
 
   return (
-    <Section tone="white">
+    <Section tone="white" divider>
       <SectionHeader
         title="Onde combinamos capacidade com repertório."
         subtitle="Estratégia, gestão e operações podem ser aplicadas a diferentes desafios. Em três campos, a Creation reúne experiência, linguagem e conexões específicas para compreender melhor o contexto e construir soluções mais consistentes."
@@ -22,7 +25,7 @@ export default function EspecialidadesSection() {
         {homeEspecialidades.map((esp, i) => (
           <Reveal key={esp.href} delay={i * 80}>
             <Link href={localize(esp.href)}>
-              <article className="border-l-2 border-abyss pl-6 py-1 h-full cursor-pointer group">
+              <article className="border-l-2 border-abyss hover:border-spark transition-colors pl-6 py-1 h-full cursor-pointer group">
                 <h3 className="text-h3 font-semibold text-abyss mb-2">
                   {esp.title}
                 </h3>
@@ -30,7 +33,7 @@ export default function EspecialidadesSection() {
                 <p className="text-abyss/70 leading-relaxed mb-4">
                   {esp.description}
                 </p>
-                <span className="inline-flex items-center gap-2 text-abyss font-semibold group-hover:gap-3 transition-all">
+                <span className="inline-flex items-center gap-2 text-abyss font-semibold group-hover:text-spark group-hover:gap-3 transition-all">
                   {esp.linkLabel}
                   <ArrowRight className="h-5 w-5" />
                 </span>

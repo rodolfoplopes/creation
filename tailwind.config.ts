@@ -44,6 +44,15 @@ export default {
         // Tokens novos do V6, disponiveis para uso futuro (nao usados em
         // nenhuma pagina ainda — nenhum componente precisa mudar por isso).
         mist: "#D8EEF2",
+
+        // EXPERIMENTAL — nao aprovado ainda, so para teste visual pontual
+        // (pedido do cliente apos ver bcg.com/notion.com: os dois usam uma
+        // cor de acento viva, algo que Abyss/Bone/Mist/Rhodium nao tem).
+        // Nao e cor inventada: e o "Signal" original (#1EB3C6, ciano) que
+        // existia ANTES do V6 substituir por Mist (ver comentario acima).
+        // Usar so em pontos isolados e reversiveis ate aprovacao — nao
+        // trocar o token "signal" em si (isso afetaria o site inteiro).
+        spark: "#1EB3C6",
         rhodium: {
           shadow: "#7F878B",
           flat: "#B8BEC1",
