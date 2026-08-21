@@ -18,6 +18,32 @@ export interface StubChild {
   href: string;
 }
 
+// Blocos de conteudo real das paginas (entregaveis, escopo, quando
+// contratar, como conduzimos, para quem etc.) — o conteudo aprovado nos
+// docs do cliente segue um numero pequeno de padroes recorrentes.
+export interface StubBulletBlock {
+  type: "bullets";
+  heading: string;
+  intro?: string;
+  items: string[];
+}
+
+export interface StubCardBlock {
+  type: "cards";
+  heading: string;
+  intro?: string;
+  items: { title: string; description: string }[];
+}
+
+export interface StubStepBlock {
+  type: "steps";
+  heading: string;
+  intro?: string;
+  items: { number: string; title: string; description: string }[];
+}
+
+export type StubBlock = StubBulletBlock | StubCardBlock | StubStepBlock;
+
 export interface StubPageData {
   eyebrow: string;
   title: string;
@@ -25,6 +51,7 @@ export interface StubPageData {
   lead?: string;
   parentLabel?: string;
   parentHref?: string;
+  blocks?: StubBlock[];
   childrenLabel?: string;
   children?: StubChild[];
   ctaLabel: string;
@@ -38,6 +65,30 @@ export const stubData: Record<string, StubPageData> = {
     intro:
       "A Creation combina estratégia, gestão e capacidade operacional de acordo com o contexto, o momento e a estrutura de cada projeto.",
     lead: "Podemos assumir uma frente específica ou conectar todo o percurso, do entendimento inicial à entrega e à análise dos resultados.",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Comece pelo que precisa acontecer",
+        intro: "Você não precisa conhecer o vocabulário de uma consultoria para encontrar a solução certa. O ponto de partida é reconhecer o que está impedindo o projeto de avançar.",
+        items: [
+          { title: "Preciso entender e decidir", description: "Inteligência de mercado, pesquisa, diagnóstico, planejamento e definição de prioridades." },
+          { title: "Preciso estruturar e viabilizar", description: "Estruturação de projetos, modelagem, planejamento de recursos e estratégia de viabilização." },
+          { title: "Preciso organizar e gerir", description: "Gestão de projetos e PMO, gestão de processos, governança, indicadores e coordenação de equipes." },
+          { title: "Preciso executar e operar", description: "Gestão de eventos, produção executiva, location services, fixer, receptivo, drivers e locações." },
+          { title: "Preciso mobilizar pessoas e públicos", description: "Inovação, programas de impacto, marketing de causa, branding, ativações e experiências." },
+          { title: "Preciso medir e demonstrar", description: "Desenho de indicadores, governança de dados, avaliação, relatórios e mensuração de impacto ou eventos." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Diferentes formas de trabalhar conosco",
+        items: [
+          "Projeto integrado — a Creation conecta estratégia, gestão e operação e responde pelo percurso completo definido em contrato.",
+          "Frente específica — assumimos uma etapa ou competência delimitada, integrada à estrutura já existente do cliente.",
+          "Extensão da equipe — acrescentamos capacidade temporária de gestão, produção ou coordenação a equipes internas, agências e produtoras.",
+        ],
+      },
+    ],
     childrenLabel: "Capacidades e especialidades",
     children: [
       {
@@ -95,6 +146,21 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Estratégia, para a Creation, não é um documento isolado da execução. É a definição do que precisa acontecer, por que esse caminho faz sentido e quais condições tornarão a realização possível.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Quando a Estratégia é o ponto de entrada",
+        items: [
+          "Existe uma oportunidade, mas ainda não uma decisão estruturada.",
+          "Há muitas informações e opiniões, mas falta uma leitura comum.",
+          "A organização precisa compreender mercado, público ou concorrência.",
+          "Uma ideia precisa se transformar em projeto viável.",
+          "O investimento é relevante e as premissas ainda são frágeis.",
+          "Áreas diferentes precisam concordar sobre objetivo, prioridade e caminho.",
+          "Um projeto travou e é necessário revisar o problema antes de acelerar novamente.",
+        ],
+      },
+    ],
     childrenLabel: "O que podemos assumir",
     children: [
       {
@@ -128,6 +194,44 @@ export const stubData: Record<string, StubPageData> = {
     lead: "O trabalho começa pela decisão que precisa ser tomada. A pesquisa é desenhada para reduzir incerteza útil, não para acumular informação.",
     parentLabel: "Estratégia",
     parentHref: "/solucoes/estrategia",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Quando contratar Inteligência de Mercado",
+        items: [
+          "Antes de lançar um produto, serviço, programa ou evento.",
+          "Ao entrar em um novo território, público ou segmento.",
+          "Quando a concorrência mudou e a posição da organização perdeu clareza.",
+          "Para avaliar uma oportunidade antes de investir recursos relevantes.",
+          "Quando decisões internas estão baseadas em percepções conflitantes.",
+          "Para compreender comportamento, necessidades e barreiras de um público.",
+          "Antes de redefinir posicionamento, portfólio ou proposta de valor.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Escopo possível",
+        items: [
+          { title: "Pesquisa documental e dados secundários", description: "Levantamento de estudos, bases públicas, documentos, relatórios setoriais e informações disponíveis." },
+          { title: "Benchmarking e concorrência", description: "Mapeamento de referências, ofertas, modelos de negócio, mensagens, experiências e movimentos competitivos." },
+          { title: "Públicos e demanda", description: "Entrevistas, questionários, escuta qualitativa, análise de jornada e investigação de necessidades." },
+          { title: "Tendências e cenários", description: "Identificação de forças de mudança, sinais emergentes, riscos e possíveis consequências para a decisão." },
+          { title: "Contexto territorial", description: "Leitura de atores, infraestrutura, dinâmicas locais, oportunidades e restrições do território." },
+          { title: "Síntese estratégica", description: "Organização das evidências em implicações, opções e recomendações práticas." },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Como conduzimos",
+        items: [
+          { number: "01", title: "Definição da decisão", description: "Alinhamos o que precisa ser decidido, por quem e em qual prazo." },
+          { number: "02", title: "Desenho da pesquisa", description: "Escolhemos fontes, métodos, amostra, profundidade e critérios compatíveis com a decisão e o orçamento." },
+          { number: "03", title: "Coleta e análise", description: "Reunimos dados, identificamos padrões e registramos limitações." },
+          { number: "04", title: "Interpretação", description: "Traduzimos evidências em implicações, hipóteses e opções." },
+          { number: "05", title: "Recomendação", description: "Apresentamos o que os dados permitem concluir, o que permanece incerto e quais passos reduzem o risco seguinte." },
+        ],
+      },
+    ],
     ctaLabel: "Apresente sua pergunta de negócio",
     ctaHref: "/contato",
   },
@@ -140,6 +244,43 @@ export const stubData: Record<string, StubPageData> = {
     lead: "O planejamento transforma essa leitura em prioridades, ações, responsáveis e critérios de acompanhamento.",
     parentLabel: "Estratégia",
     parentHref: "/solucoes/estrategia",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Sinais de que o diagnóstico é necessário",
+        items: [
+          "O pedido inicial descreve uma solução, mas o problema ainda não está claro.",
+          "Cada área apresenta uma leitura diferente da situação.",
+          "Existem iniciativas demais e prioridades de menos.",
+          "O projeto perdeu ritmo e ninguém consegue apontar uma única causa.",
+          "Metas foram definidas sem conexão com capacidade, recursos ou público.",
+          "Uma mudança importante precisa ser implantada, mas ainda não existe plano compartilhado.",
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Do diagnóstico ao plano",
+        items: [
+          { number: "01", title: "Enquadramento", description: "Definimos a pergunta central, os públicos envolvidos e o uso esperado do trabalho." },
+          { number: "02", title: "Escuta e coleta", description: "Analisamos documentos, dados e experiências das pessoas relevantes." },
+          { number: "03", title: "Síntese", description: "Identificamos causas, padrões, tensões, lacunas e oportunidades." },
+          { number: "04", title: "Priorização", description: "Comparamos temas por impacto, urgência, viabilidade e dependências." },
+          { number: "05", title: "Planejamento", description: "Transformamos prioridades em objetivos, iniciativas, responsáveis, prazos, recursos e indicadores." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Aplicações frequentes",
+        items: [
+          "Planejamento de novos projetos.",
+          "Revisão de iniciativas travadas.",
+          "Preparação de programas de impacto.",
+          "Organização de áreas ou frentes de trabalho.",
+          "Planejamento de eventos e experiências complexas.",
+          "Desenho de programas de inovação.",
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre o contexto",
     ctaHref: "/contato",
   },
@@ -152,6 +293,44 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Isso significa transformar intenção em objetivos, escopo, entregas, governança, recursos, cronograma, riscos e indicadores coerentes entre si.",
     parentLabel: "Estratégia",
     parentHref: "/solucoes/estrategia",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Quando uma iniciativa ainda não é um projeto",
+        items: [
+          "Objetivos amplos sem entregas definidas.",
+          "Público ou beneficiários descritos de forma genérica.",
+          "Orçamento sem memória de cálculo.",
+          "Cronograma sem dependências ou responsáveis.",
+          "Parceiros citados, mas ainda não mobilizados.",
+          "Indicadores que não podem ser medidos.",
+          "Expectativa de captação sem estratégia de financiamento.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "O que estruturamos",
+        items: [
+          { title: "Lógica do projeto", description: "Problema, justificativa, objetivos, públicos, resultados esperados e relação entre atividades e entregas." },
+          { title: "Escopo e entregas", description: "O que será feito, o que ficará fora, como cada entrega será aceita e quais dependências existem." },
+          { title: "Governança", description: "Papéis, responsabilidades, fóruns de decisão, parceiros e formas de acompanhamento." },
+          { title: "Plano de realização", description: "Etapas, cronograma, equipe, fornecedores, recursos, riscos e operação necessária." },
+          { title: "Orçamento", description: "Categorias de custo, premissas, cotações, reservas e relação entre recursos e atividades." },
+          { title: "Indicadores", description: "Como acompanhar execução, alcance, qualidade, resultado e aprendizado." },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Como trabalhamos",
+        items: [
+          { number: "01", title: "Entendimento", description: "Reunimos o que já existe e definimos as perguntas ainda sem resposta." },
+          { number: "02", title: "Arquitetura", description: "Conectamos problema, objetivos, públicos, atividades, entregas e resultados." },
+          { number: "03", title: "Modelagem", description: "Estruturamos governança, cronograma, recursos, orçamento, riscos e indicadores." },
+          { number: "04", title: "Validação", description: "Testamos coerência, capacidade de execução e aderência ao processo decisório ou mecanismo de financiamento." },
+          { number: "05", title: "Preparação", description: "Consolidamos documentos, apresentações e próximos passos para contratação, parceria ou implantação." },
+        ],
+      },
+    ],
     ctaLabel: "Estruture seu projeto",
     ctaHref: "/contato",
   },
@@ -164,6 +343,20 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation estrutura e conduz esse sistema de gestão, conectando estratégia, pessoas, processos e entregas.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Quando a Gestão precisa entrar",
+        items: [
+          "O projeto atravessa áreas e não possui uma liderança de integração.",
+          "Há muitas reuniões, mas poucas decisões registradas.",
+          "Prazos mudam sem que os impactos sejam compreendidos.",
+          "Equipes e fornecedores trabalham com versões diferentes do plano.",
+          "O cliente possui conhecimento técnico, mas não capacidade disponível para coordenar tudo.",
+          "Problemas recorrentes indicam falhas de processo, não apenas de esforço.",
+        ],
+      },
+    ],
     childrenLabel: "O que podemos assumir",
     children: [
       {
@@ -197,6 +390,29 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A gestão transforma informação dispersa em decisões visíveis e mantém o trabalho em movimento até a conclusão.",
     parentLabel: "Gestão",
     parentHref: "/solucoes/gestao",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Escopo possível",
+        items: [
+          { title: "Iniciação", description: "Objetivo, escopo, entregas, stakeholders, premissas, restrições e critérios de sucesso." },
+          { title: "Planejamento", description: "Cronograma, orçamento, equipe, aquisições, comunicação, riscos, qualidade e indicadores." },
+          { title: "Governança", description: "Papéis, fóruns, alçadas, cadência, registros e caminhos de escalonamento." },
+          { title: "Coordenação", description: "Acompanhamento de equipes, parceiros, fornecedores, dependências e decisões." },
+          { title: "Controle", description: "Monitoramento de prazo, custo, escopo, riscos, problemas, mudanças e entregas." },
+          { title: "Encerramento", description: "Aceite, documentação, prestação de contas, lições aprendidas e transição." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "A Creation pode entrar em três momentos",
+        items: [
+          "Antes do início — para estruturar o projeto e preparar governança, plano e mobilização.",
+          "Durante a execução — para assumir a coordenação, recuperar visibilidade e tratar impedimentos.",
+          "Em uma fase crítica — para reorganizar uma frente, preparar um evento, realizar uma implantação ou conduzir o encerramento.",
+        ],
+      },
+    ],
     ctaLabel: "Fale sobre seu projeto",
     ctaHref: "/contato",
   },
@@ -209,6 +425,31 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Mapeamos como o trabalho acontece, redesenhamos o que precisa mudar e acompanhamos a implantação até que o novo fluxo possa ser operado pela equipe.",
     parentLabel: "Gestão",
     parentHref: "/solucoes/gestao",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "Sinais de que o processo precisa ser revisto",
+        items: [
+          "A mesma tarefa é executada de maneiras diferentes.",
+          "Informações precisam ser digitadas ou conferidas várias vezes.",
+          "Aprovações não possuem prazo, critério ou responsável claro.",
+          "O cliente ou usuário não sabe em que etapa está.",
+          "A operação depende excessivamente de uma pessoa.",
+          "Ferramentas foram implantadas sem redesenhar o fluxo de trabalho.",
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Como conduzimos",
+        items: [
+          { number: "01", title: "Priorizar", description: "Escolhemos os processos com maior efeito sobre resultado, risco ou experiência." },
+          { number: "02", title: "Compreender", description: "Mapeamos o fluxo real, incluindo atalhos e exceções que raramente aparecem nos manuais." },
+          { number: "03", title: "Redesenhar", description: "Construímos o processo futuro com participação de quem decide e de quem executa." },
+          { number: "04", title: "Implantar", description: "Definimos responsáveis, procedimentos, ferramentas, treinamento e transição." },
+          { number: "05", title: "Acompanhar", description: "Medimos adoção, corrigimos falhas e preparamos a operação autônoma." },
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre seus processos",
     ctaHref: "/contato",
   },
@@ -221,6 +462,32 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Quando os dois elementos estão desconectados, relatórios se acumulam e problemas continuam sem responsável. Estruturamos o sistema que liga informação a decisão e decisão a acompanhamento.",
     parentLabel: "Gestão",
     parentHref: "/solucoes/gestao",
+    blocks: [
+      {
+        type: "cards",
+        heading: "O que estruturamos",
+        items: [
+          { title: "Arquitetura de governança", description: "Papéis, responsabilidades, fóruns, alçadas, escalonamento e relação entre instâncias." },
+          { title: "Matriz de decisão", description: "Quem recomenda, aprova, executa, consulta e acompanha cada tema relevante." },
+          { title: "Cadência de gestão", description: "Reuniões, ritos, pautas, preparação, registros e acompanhamento de decisões." },
+          { title: "Sistema de indicadores", description: "Objetivos, perguntas de gestão, métricas, fórmulas, fontes, periodicidade e responsáveis." },
+          { title: "Dashboards e relatórios", description: "Visualizações e sínteses adequadas a quem opera, gere ou patrocina." },
+          { title: "Prestação de contas", description: "Organização de evidências, entregas, resultados, riscos, desvios e aprendizados." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Diferentes níveis de evidência",
+        intro: "Distinguimos atividade, entrega, alcance, resultado e impacto — para que volume de atividade nunca seja apresentado como transformação comprovada.",
+        items: [
+          "Atividade: o que foi feito.",
+          "Entrega: o que foi produzido.",
+          "Alcance: quem foi envolvido.",
+          "Resultado: o que mudou de forma observável.",
+          "Impacto: mudança atribuível ou plausivelmente relacionada, conforme método e evidência disponíveis.",
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre sua governança",
     ctaHref: "/contato",
   },
@@ -233,6 +500,22 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Atuamos como núcleo de operação ou como extensão da equipe do cliente, com responsabilidade definida e acompanhamento próximo.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "O que coordenamos",
+        items: [
+          "Escopo operacional e critérios de entrega.",
+          "Orçamento, contratações e controle de custos.",
+          "Cronograma, marcos e sequenciamento.",
+          "Fornecedores, equipes técnicas e parceiros.",
+          "Infraestrutura, equipamentos e materiais.",
+          "Licenças, autorizações e requisitos locais.",
+          "Logística de pessoas, cargas e recursos.",
+          "Contingências, mudanças e comunicação de campo.",
+        ],
+      },
+    ],
     childrenLabel: "Nossas frentes de atuação",
     children: [
       {
@@ -272,6 +555,32 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation estrutura e coordena eventos do conceito ao encerramento, conectando decisão estratégica e realização.",
     parentLabel: "Operações",
     parentHref: "/operacoes",
+    blocks: [
+      {
+        type: "steps",
+        heading: "O ciclo completo",
+        items: [
+          { number: "01", title: "Conceito e objetivos", description: "Definição do papel do evento, públicos, proposta de valor, resultados esperados e critérios de sucesso." },
+          { number: "02", title: "Arquitetura da experiência", description: "Formato, programação, jornada do participante, ambientes, fluxos, ativações e pontos de contato." },
+          { number: "03", title: "Planejamento", description: "Escopo, orçamento, cronograma, governança, fornecedores, riscos, licenças e plano operacional." },
+          { number: "04", title: "Produção", description: "Infraestrutura, audiovisual, cenografia, alimentação, equipes, materiais, logística, montagem e testes." },
+          { number: "05", title: "Realização e encerramento", description: "Coordenação geral, operação de sala ou palco, desmontagem, conferência, dados e relatório." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Eventos que podemos estruturar e realizar",
+        items: [
+          "Encontros corporativos e institucionais.",
+          "Conferências, fóruns e seminários.",
+          "Hackathons e programas de inovação.",
+          "Eventos culturais e de economia criativa.",
+          "Ativações de marca e live marketing.",
+          "Eventos de responsabilidade social e impacto.",
+          "Transmissões ao vivo e formatos híbridos.",
+        ],
+      },
+    ],
     ctaLabel: "Planeje seu evento",
     ctaHref: "/contato",
   },
@@ -284,6 +593,29 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation organiza essas dependências e coordena a realização com visão de orçamento, cronograma, qualidade e risco.",
     parentLabel: "Operações",
     parentHref: "/operacoes",
+    blocks: [
+      {
+        type: "cards",
+        heading: "O que a produção executiva pode incluir",
+        items: [
+          { title: "Planejamento de produção", description: "Decomposição do escopo, cronograma, orçamento, mapa de recursos, sequência de trabalho e pontos de decisão." },
+          { title: "Orçamentos e contratações", description: "Solicitação e comparação de propostas, equalização técnica e comercial, apoio à contratação e controle de compromissos." },
+          { title: "Fornecedores e equipes", description: "Seleção, briefing, integração, acompanhamento, validação de entregas e gestão das interfaces." },
+          { title: "Infraestrutura e logística", description: "Espaços, equipamentos, materiais, transportes, hospedagem, alimentação, acessos, cargas e devoluções." },
+          { title: "Licenças e requisitos", description: "Mapeamento de autorizações, documentos, seguros e responsabilidades técnicas aplicáveis." },
+          { title: "Operação de campo", description: "Montagem, testes, passagem, realização, desmontagem, controle de ocorrências e comunicação entre as frentes." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Como nos integramos à equipe",
+        items: [
+          "Produção completa — a Creation responde pelo planejamento e pela coordenação do conjunto definido em contrato.",
+          "Frente específica — assumimos uma parte delimitada, como logística, fornecedores, produção local ou operação de campo.",
+          "Reforço temporário — entramos como extensão da agência, produtora, marca ou organização durante uma etapa crítica.",
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre sua produção",
     ctaHref: "/contato",
   },
@@ -296,6 +628,28 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation oferece pesquisa de locações e suporte de produção local para equipes que precisam realizar filmagens, campanhas, eventos e projetos no Rio de Janeiro e na Costa Verde.",
     parentLabel: "Operações",
     parentHref: "/operacoes",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Dois serviços que se complementam",
+        items: [
+          { title: "Location", description: "Pesquisa e viabilização de espaços compatíveis com a proposta criativa, as necessidades técnicas, o orçamento e a logística da produção." },
+          { title: "Fixer", description: "Articulação local para transformar o briefing em uma operação possível, conectando informações, pessoas, fornecedores, requisitos e decisões no território." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Para quais projetos",
+        items: [
+          "Publicidade e campanhas de marca.",
+          "Cinema, séries, documentários e televisão.",
+          "Fotografia e conteúdo digital.",
+          "Creators e equipes internacionais.",
+          "Eventos, experiências e ativações.",
+          "Pesquisa de campo e projetos institucionais.",
+        ],
+      },
+    ],
     ctaLabel: "Envie seu briefing",
     ctaHref: "/contato",
   },
@@ -308,6 +662,20 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation coordena a logística de chegada, permanência e deslocamento para produções, eventos e projetos especiais.",
     parentLabel: "Operações",
     parentHref: "/operacoes",
+    blocks: [
+      {
+        type: "cards",
+        heading: "O que podemos coordenar",
+        items: [
+          { title: "Chegadas e partidas", description: "Recepção em aeroportos, rodoviárias, hotéis, bases de produção e outros pontos definidos." },
+          { title: "Transfers e drivers", description: "Motoristas, veículos executivos, vans, ônibus, utilitários e outros recursos compatíveis com o deslocamento." },
+          { title: "Rotas e agendas", description: "Planejamento de trajetos, janelas de saída, pontos de encontro, tempo de margem e atualizações operacionais." },
+          { title: "Hospedagem e bases", description: "Pesquisa e coordenação de hotéis, casas, apartamentos, salas de apoio, camarins e bases operacionais." },
+          { title: "Locações de recursos", description: "Veículos, equipamentos, mobiliário, estruturas, comunicação, apoio e outros itens previstos no escopo." },
+          { title: "Suporte de permanência", description: "Informações de serviço, acompanhamento de convidados, apoio de produção e solução de necessidades durante a agenda." },
+        ],
+      },
+    ],
     ctaLabel: "Planeje sua logística",
     ctaHref: "/contato",
   },
@@ -320,6 +688,31 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation estrutura e realiza iniciativas de inovação conectadas à estratégia e à capacidade real da organização.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Frentes de atuação",
+        items: [
+          { title: "Estratégia de inovação", description: "Leitura de contexto, definição de temas prioritários, objetivos, portfólio, governança e indicadores." },
+          { title: "Desenho de desafios", description: "Formulação do problema, perguntas orientadoras, critérios, públicos, dados e condições de participação." },
+          { title: "Programas e jornadas", description: "Estruturação de hackathons, laboratórios, sprints, chamadas, ciclos de ideação, aceleração e inovação aberta." },
+          { title: "Facilitação e conteúdo", description: "Oficinas, encontros, mentorias, curadoria, materiais e condução de processos colaborativos." },
+          { title: "Experimentação", description: "Hipóteses, protótipos, planos de teste, critérios de validação e registro de aprendizados." },
+          { title: "Implantação", description: "Transformação das soluções selecionadas em projetos, com responsáveis, recursos, cronograma e governança." },
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Como trabalhamos",
+        items: [
+          { number: "01", title: "Investigar", description: "Contexto, problema, públicos, restrições e evidências." },
+          { number: "02", title: "Desenhar", description: "Formato, jornada, governança, critérios, recursos e comunicação." },
+          { number: "03", title: "Mobilizar", description: "Participantes, especialistas, parceiros, mentores e decisores." },
+          { number: "04", title: "Realizar", description: "Conteúdo, facilitação, operação, registro e acompanhamento." },
+          { number: "05", title: "Desdobrar", description: "Seleção, pilotos, projetos, aprendizados e próximos passos." },
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre seu desafio",
     ctaHref: "/contato",
   },
@@ -332,7 +725,34 @@ export const stubData: Record<string, StubPageData> = {
     lead: "Com públicos definidos, responsabilidades claras e acompanhamento compatível com o que se pretende mudar.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
-    childrenLabel: "Frentes de atuação",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Frentes de atuação",
+        items: [
+          { title: "Diagnóstico social e territorial", description: "Leitura de contexto, públicos, ativos, vulnerabilidades, atores, iniciativas existentes, dados e lacunas de conhecimento." },
+          { title: "Estratégia de impacto", description: "Definição de prioridades, públicos, objetivos, princípios, critérios e relação com a estratégia da organização." },
+          { title: "Teoria da mudança", description: "Organização das relações esperadas entre recursos, atividades, entregas, resultados e impactos, incluindo premissas e fatores externos." },
+          { title: "Desenho de programas", description: "Escopo, jornada dos participantes, parceiros, governança, orçamento, cronograma, riscos e indicadores." },
+          { title: "Gestão e operação", description: "Coordenação de equipes, parceiros, territórios, fornecedores, decisões e entregas." },
+          { title: "Monitoramento e avaliação", description: "Perguntas avaliativas, indicadores, fontes, instrumentos, análise, limitações e comunicação de resultados." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "O que diferenciamos",
+        intro: "Essa distinção reduz o risco de comunicar volume de execução como se fosse transformação comprovada.",
+        items: [
+          "Insumo: recurso utilizado.",
+          "Atividade: ação realizada.",
+          "Entrega: produto ou serviço disponibilizado.",
+          "Alcance: pessoas ou organizações envolvidas.",
+          "Resultado: mudança observada no público ou sistema.",
+          "Impacto: mudança de maior alcance ou duração, analisada com atenção à contribuição, à atribuição e ao contexto.",
+        ],
+      },
+    ],
+    childrenLabel: "Especialidade relacionada",
     children: [
       {
         title: "Marketing de Causa",
@@ -353,6 +773,32 @@ export const stubData: Record<string, StubPageData> = {
     lead: "A Creation estrutura iniciativas que conectam posicionamento, parceria, experiência e entrega concreta.",
     parentLabel: "Impacto",
     parentHref: "/impacto",
+    blocks: [
+      {
+        type: "cards",
+        heading: "O que estruturamos",
+        items: [
+          { title: "Aderência entre marca e causa", description: "Análise de história, valores, atuação, públicos, riscos e contribuição possível." },
+          { title: "Estratégia da iniciativa", description: "Objetivo, públicos, proposta, tese de atuação, resultados esperados e critérios de decisão." },
+          { title: "Mapeamento e parceria", description: "Identificação, avaliação e construção da relação com organizações, especialistas, territórios e redes." },
+          { title: "Conceito e experiência", description: "Tradução da estratégia em programa, campanha, conteúdo, evento, ativação ou jornada de engajamento." },
+          { title: "Governança", description: "Papéis, aprovações, uso de imagem, recursos, integridade, acompanhamento e resposta a riscos." },
+          { title: "Realização e evidência", description: "Produção, gestão, indicadores, registros, prestação de contas e aprendizados." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "Perguntas que precisam ser respondidas",
+        items: [
+          "Por que essa marca deve atuar nessa causa?",
+          "Qual necessidade concreta será enfrentada?",
+          "Quem participa das decisões?",
+          "Que organização possui legitimidade e capacidade no tema?",
+          "O que será entregue, para quem e em qual período?",
+          "O que acontece quando a campanha termina?",
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre sua iniciativa",
     ctaHref: "/contato",
   },
@@ -365,6 +811,30 @@ export const stubData: Record<string, StubPageData> = {
     lead: "E capazes de funcionar no mundo real.",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
+    blocks: [
+      {
+        type: "cards",
+        heading: "Frentes de atuação",
+        items: [
+          { title: "Estratégia de marca", description: "Posicionamento, proposta de valor, públicos, mensagens, territórios de expressão e critérios de coerência." },
+          { title: "Conceito criativo", description: "Ideia central, narrativa, linguagem, experiência e desdobramentos possíveis." },
+          { title: "Experiência de marca", description: "Jornada, pontos de contato, interações, ambientes, conteúdo, serviços e comportamento da equipe." },
+          { title: "Ativações e live marketing", description: "Desenho e realização de ações presenciais, híbridas ou itinerantes." },
+          { title: "Eventos e encontros", description: "Formatos proprietários, lançamentos, comunidades, experiências para públicos internos e externos." },
+          { title: "Conteúdo e parcerias", description: "Curadoria, creators, especialistas, organizações, territórios e redes compatíveis com a proposta." },
+        ],
+      },
+      {
+        type: "bullets",
+        heading: "O que precisa permanecer coerente",
+        items: [
+          "Promessa — o que a marca afirma e qual expectativa cria.",
+          "Participação — o que o público pode fazer, sentir, aprender ou levar consigo.",
+          "Operação — como espaço, equipe, fila, acesso, conteúdo, atendimento e tecnologia sustentam a experiência.",
+          "Continuidade — o que acontece depois do encontro e como a relação pode prosseguir.",
+        ],
+      },
+    ],
     ctaLabel: "Converse sobre sua marca",
     ctaHref: "/contato",
   },
@@ -375,6 +845,18 @@ export const stubData: Record<string, StubPageData> = {
     intro:
       "Projetos diferentes exigem equipes, ferramentas e percursos diferentes. O que permanece é uma forma disciplinada de transformar uma necessidade em direção, estrutura, entrega e evidência.",
     lead: "Não chamamos essa abordagem de metodologia proprietária. O valor está em escolher e aplicar o método adequado a cada decisão, não em inventar nomes para etapas conhecidas.",
+    blocks: [
+      {
+        type: "bullets",
+        heading: "O percurso não precisa começar no início",
+        items: [
+          "Um desafio ainda difuso pode começar por Entender.",
+          "Uma iniciativa aprovada pode começar por Estruturar.",
+          "Um projeto planejado pode precisar de Realizar.",
+          "Uma entrega concluída pode precisar de Comprovar.",
+        ],
+      },
+    ],
     childrenLabel: "As quatro etapas",
     children: [
       {
