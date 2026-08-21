@@ -1,10 +1,17 @@
 import Layout from "@/components/Layout";
-import heroImg from "@assets/hero-motor-sroi.jpg";
-import { Section, Grid, FeatureCard, CTAButton } from "@/components/primitives";
+import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
 /**
- * /motor-sroi — landing nova, consome c.motorSroiPage.
+ * /motor-sroi — landing nova, consome c.motorSroiPage. Ainda oculta do
+ * menu (nao publicavel ate validacao propria).
+ *
+ * REDESIGN (pedido do cliente): mesmo padrao de pagina interna do
+ * notion.com aplicado nas outras 3 Solucoes Creation ocultas — hero em
+ * coluna unica centralizada, sem foto (a hero-motor-sroi.jpg original era
+ * uma foto generica de banco de imagens sem relacao real com o produto),
+ * grid de cards arredondados (rounded-2xl) no lugar do FeatureCard com
+ * borda lateral, sem divisorias entre secoes.
  */
 export default function MotorSroi() {
   const c = useContent();
@@ -12,47 +19,41 @@ export default function MotorSroi() {
 
   return (
     <Layout>
-      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-3xl">
-              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
-                {page.eyebrow}
-              </p>
-              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
-                {page.title}
-              </h1>
-              <p className="text-xl text-abyss/70 leading-relaxed">{page.intro}</p>
-            </div>
-            <div className="hidden lg:block">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={heroImg} alt="" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
+      <section className="relative bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+            <span className="h-1.5 w-1.5 rounded-full bg-spark shrink-0" />
+            {page.eyebrow}
+          </p>
+          <h1 className="font-display text-display sm:text-6xl md:text-7xl font-extrabold text-abyss mb-6">
+            {page.title}
+          </h1>
+          <p className="text-xl text-abyss/70 leading-relaxed max-w-measure mx-auto mb-10">
+            {page.intro}
+          </p>
+          <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
         </div>
       </section>
 
       {/* O que o Motor SROI faz hoje */}
-      <Section tone="white" divider firstContent>
-        <h2 className="font-display text-h2 font-bold text-abyss mb-8">
-          {page.functions.title}
-        </h2>
-        <Grid cols={2}>
+      <Section tone="white">
+        <SectionHeader title={page.functions.title} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {page.functions.items.map((item) => (
-            <FeatureCard
+            <article
               key={item.title}
-              title={item.title}
-              description={item.description}
-            />
+              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors p-8"
+            >
+              <h3 className="text-h3 font-semibold text-abyss mb-2">{item.title}</h3>
+              <p className="text-abyss/70 leading-relaxed">{item.description}</p>
+            </article>
           ))}
-        </Grid>
+        </div>
       </Section>
 
       {/* Por que medir com dado real */}
       <Section tone="ink" size="sm">
-        <div className="max-w-measure">
+        <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.whyRealData.title}
           </h2>
@@ -61,19 +62,17 @@ export default function MotorSroi() {
       </Section>
 
       {/* Para quem + CTA */}
-      <Section tone="white" size="sm">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div className="max-w-measure">
-            <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
-              {c.labels.forWhom}
-            </p>
-            <p className="text-abyss/70 leading-relaxed">{page.forWhom}</p>
-          </div>
+      <Section tone="abyss" size="lg">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-caption font-semibold text-bone/70 mb-4 uppercase tracking-widest">
+            {c.labels.forWhom}
+          </p>
+          <p className="text-bone text-lg leading-relaxed mb-8">{page.forWhom}</p>
           <CTAButton
             label={c.cta.primary}
             href={c.cta.href}
             variant="primary"
-            className="shrink-0"
+            onDark
           />
         </div>
       </Section>

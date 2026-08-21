@@ -1,12 +1,19 @@
 import Layout from "@/components/Layout";
-import heroImg from "@assets/hero-creation-marcas.jpg";
-import { Section, Grid, FeatureCard, CTAButton } from "@/components/primitives";
+import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
 /**
- * /creation-marcas — landing nova, consome c.creationMarcasPage.
- * Mesma linguagem visual das paginas de area (hero com barra signal,
- * secoes Section/tone alternadas).
+ * /creation-marcas — landing nova, consome c.creationMarcasPage. Ainda
+ * oculta do menu (nao publicavel ate validacao propria).
+ *
+ * REDESIGN (pedido do cliente): emula o padrao de pagina interna do
+ * notion.com (ex. notion.com/enterprise) — hero em coluna unica
+ * centralizada (sem foto: a hero-creation-marcas.jpg original era uma
+ * placa de loja de "e-regulariza", outro negocio, removida por engano de
+ * asset), grids de cards arredondados (rounded-2xl) e sem hairlines
+ * divisorias entre secoes. Mesmos primitivos/classes do StubPageLayout,
+ * pra manter as 4 paginas de Solucoes Creation e as 19 paginas da
+ * Arquitetura V2 com a mesma linguagem visual.
  */
 export default function CreationMarcas() {
   const c = useContent();
@@ -14,37 +21,25 @@ export default function CreationMarcas() {
 
   return (
     <Layout>
-      <section className="relative bg-white py-14 md:py-20 overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-3xl">
-              <p className="text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
-                {page.eyebrow}
-              </p>
-              <h1 className="font-display text-display sm:text-5xl md:text-6xl font-bold text-abyss mb-6">
-                {page.title}
-              </h1>
-              <p className="text-xl text-abyss/70 leading-relaxed">
-                {page.intro}
-              </p>
-            </div>
-            <div className="hidden lg:block">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={heroImg}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+      <section className="relative bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
+            <span className="h-1.5 w-1.5 rounded-full bg-spark shrink-0" />
+            {page.eyebrow}
+          </p>
+          <h1 className="font-display text-display sm:text-6xl md:text-7xl font-extrabold text-abyss mb-6">
+            {page.title}
+          </h1>
+          <p className="text-xl text-abyss/70 leading-relaxed max-w-measure mx-auto mb-10">
+            {page.intro}
+          </p>
+          <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
         </div>
       </section>
 
       {/* Por que registrar cedo */}
-      <Section tone="white" divider firstContent>
-        <div className="max-w-measure border-l-2 border-signal pl-8">
+      <Section tone="white">
+        <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.whyEarly.title}
           </h2>
@@ -55,71 +50,61 @@ export default function CreationMarcas() {
       </Section>
 
       {/* O que fazemos */}
-      <Section tone="ink" divider>
-        <h2 className="font-display text-h2 font-bold text-bone mb-8">
-          {page.whatWeDo.title}
-        </h2>
-        <Grid cols={2}>
+      <Section tone="white">
+        <SectionHeader title={page.whatWeDo.title} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {page.whatWeDo.items.map((item) => (
-            <FeatureCard
+            <article
               key={item.title}
-              title={item.title}
-              description={item.description}
-              onDark
-            />
+              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors p-8"
+            >
+              <h3 className="text-h3 font-semibold text-abyss mb-2">{item.title}</h3>
+              <p className="text-abyss/70 leading-relaxed">{item.description}</p>
+            </article>
           ))}
-        </Grid>
+        </div>
       </Section>
 
       {/* Diferencial */}
-      <Section tone="white">
-        <div className="max-w-measure">
-          <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+      <Section tone="ink" size="sm">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.differentiator.title}
           </h2>
-          <p className="text-abyss/70 leading-relaxed">
+          <p className="text-bone/70 leading-relaxed">
             {page.differentiator.body}
           </p>
         </div>
       </Section>
 
       {/* Como funciona */}
-      <Section tone="white" divider>
-        <h2 className="font-display text-h2 font-bold text-abyss mb-10">
-          {page.howItWorks.title}
-        </h2>
+      <Section tone="white">
+        <SectionHeader title={page.howItWorks.title} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {page.howItWorks.steps.map((step, i) => (
-            <div key={step.title} className="border-t-2 border-abyss pt-4">
-              <span className="font-display text-h3 font-black text-abyss/20 tabular-nums block mb-2">
+            <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
+              <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="font-display text-h3 font-bold text-abyss mb-2">
-                {step.title}
-              </h3>
-              <p className="text-small text-abyss/70 leading-relaxed">
-                {step.description}
               </p>
+              <h3 className="text-h3 font-semibold text-abyss mb-2">{step.title}</h3>
+              <p className="text-abyss/70 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Para quem + CTA */}
-      <Section tone="abyss" size="sm">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div className="max-w-measure">
-            <p className="text-caption font-semibold text-bone/70 mb-2 uppercase tracking-widest">
-              {c.labels.forWhom}
-            </p>
-            <p className="text-bone/70 leading-relaxed">{page.forWhom}</p>
-          </div>
+      <Section tone="abyss" size="lg">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-caption font-semibold text-bone/70 mb-4 uppercase tracking-widest">
+            {c.labels.forWhom}
+          </p>
+          <p className="text-bone text-lg leading-relaxed mb-8">{page.forWhom}</p>
           <CTAButton
             label={c.cta.primary}
             href={c.cta.href}
             variant="primary"
             onDark
-            className="shrink-0"
           />
         </div>
       </Section>
