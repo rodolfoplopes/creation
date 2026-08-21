@@ -9,7 +9,7 @@ import { useContent, useLocalizedHref } from "@/content";
  * O componente antigo reproduzia c.method INTEIRO na Home (badge, subtitle,
  * description, os 4 estagios completos) — a mesma duplicacao que ja tinha
  * sido eliminada do proprio Metodo.tsx (ver comentario la: "a duplicacao
- * mais absurda do site estava aqui"). Como /metodo agora e pagina propria,
+ * mais absurda do site estava aqui"). Como /como-trabalhamos agora e pagina propria,
  * a Home so precisa de um teaser curto que aponte pra la, no mesmo padrao
  * ja usado dentro de Consultoria.tsx e Producoes.tsx.
  */

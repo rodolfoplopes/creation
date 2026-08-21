@@ -9,15 +9,8 @@ export const pt: Content = {
   },
 
   nav: {
-    home: "Início",
-    consultoria: "Consultoria",
-    producoes: "Produções",
-    impactoSocial: "Impacto Social",
-    method: "Método",
     about: "Quem Somos",
     contact: "Contato",
-    areasLabel: "Áreas",
-    companyLabel: "A Creation",
   },
 
   cta: {
@@ -38,37 +31,6 @@ export const pt: Content = {
     headline: "Pensamos e realizamos projetos inovadores.",
     subheadline:
       "Desenvolvemos projetos do início ao fim: entendemos o problema, estruturamos a solução, executamos e comprovamos o resultado.",
-  },
-
-  areas: {
-    title: "O que fazemos",
-    subtitle: "Três áreas de atuação, um mesmo método por trás.",
-    items: [
-      {
-        eyebrow: "Consultoria",
-        title: "Gestão de Projetos e Inovação",
-        description:
-          "Estruturamos e conduzimos projetos do diagnóstico à entrega, com inovação como método.",
-        href: "/consultoria",
-        linkLabel: "Ver Consultoria",
-      },
-      {
-        eyebrow: "Produções",
-        title: "Eventos e Audiovisual",
-        description:
-          "Produzimos eventos, experiências e conteúdo audiovisual, da concepção à execução no local.",
-        href: "/producoes",
-        linkLabel: "Ver Produções",
-      },
-      {
-        eyebrow: "Impacto Social",
-        title: "Estruturar, medir e provar",
-        description:
-          "Estruturamos iniciativas sociais no território e comprovamos o impacto que geram.",
-        href: "/impacto-social",
-        linkLabel: "Ver Impacto Social",
-      },
-    ],
   },
 
   method: {

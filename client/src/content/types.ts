@@ -94,15 +94,6 @@ export interface SubBrandCard {
   href: string;
 }
 
-// ---- Card de area na Home (as 3 areas) ----
-export interface AreaCard {
-  eyebrow: string;
-  title: string;
-  description: string;
-  href: string;
-  linkLabel: string;
-}
-
 // ============================================================================
 // CONTRATO PRINCIPAL
 // ============================================================================
@@ -115,18 +106,14 @@ export interface Content {
     locations: string;       // "Brasil | Estados Unidos"
   };
 
-  // Menu (mega-menu full-screen). Areas + institucionais.
+  // Nav: so os rotulos que ainda vem do content tipado (Quem Somos/Contato).
+  // A arquitetura V2 do menu (Solucoes/Estrategia/Gestao/Operacoes/
+  // Especialidades/Cases/Como Trabalhamos) e PT-only por enquanto e vive
+  // hardcoded em Header.tsx (ver stubData.ts) — nao neste contrato, que
+  // exige paridade pt/en/es e essas paginas ainda nao tem traducao.
   nav: {
-    home: string;
-    consultoria: string;
-    producoes: string;
-    impactoSocial: string;
-    method: string;
     about: string;
     contact: string;
-    // rotulos de agrupamento dentro do mega-menu
-    areasLabel: string;      // "Areas" / "Areas" / "Areas"
-    companyLabel: string;    // "A Creation"
   };
 
   cta: {
@@ -148,12 +135,6 @@ export interface Content {
     // A frase de posicionamento (a coroa).
     headline: string;        // "Pensamos e realizamos projetos inovadores."
     subheadline: string;
-  };
-
-  areas: {
-    title: string;
-    subtitle: string;
-    items: AreaCard[];       // Consultoria, Producoes, Impacto Social
   };
 
   // Metodo resumido na home + pagina (absorvido em Consultoria, mas o bloco existe).

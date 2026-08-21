@@ -9,15 +9,8 @@ export const en: Content = {
   },
 
   nav: {
-    home: "Home",
-    consultoria: "Consulting",
-    producoes: "Productions",
-    impactoSocial: "Social Impact",
-    method: "Method",
     about: "About",
     contact: "Contact",
-    areasLabel: "Areas",
-    companyLabel: "Creation",
   },
 
   cta: {
@@ -39,37 +32,6 @@ export const en: Content = {
     headline: "We think and build innovative projects.",
     subheadline:
       "We develop projects from start to finish: we understand the problem, structure the solution, execute it and prove the result.",
-  },
-
-  areas: {
-    title: "What we do",
-    subtitle: "Three areas of practice, one method behind them all.",
-    items: [
-      {
-        eyebrow: "Consulting",
-        title: "Project Management and Innovation",
-        description:
-          "We structure and lead projects from diagnosis to delivery, with innovation as method.",
-        href: "/consultoria",
-        linkLabel: "See Consulting",
-      },
-      {
-        eyebrow: "Productions",
-        title: "Events and Audiovisual",
-        description:
-          "We produce events, experiences and audiovisual content, from concept to execution on site.",
-        href: "/producoes",
-        linkLabel: "See Productions",
-      },
-      {
-        eyebrow: "Social Impact",
-        title: "Structure, measure, prove",
-        description:
-          "We structure social initiatives in the field and prove the impact they generate.",
-        href: "/impacto-social",
-        linkLabel: "See Social Impact",
-      },
-    ],
   },
 
   // LOCKED — Full Cycle / Diagnosis / Structuring / Execution / Validation (doc).

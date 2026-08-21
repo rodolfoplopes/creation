@@ -9,15 +9,8 @@ export const es: Content = {
   },
 
   nav: {
-    home: "Inicio",
-    consultoria: "Consultoría",
-    producoes: "Producciones",
-    impactoSocial: "Impacto Social",
-    method: "Método",
     about: "Nosotros",
     contact: "Contacto",
-    areasLabel: "Áreas",
-    companyLabel: "Creation",
   },
 
   cta: {
@@ -39,37 +32,6 @@ export const es: Content = {
     headline: "Pensamos y realizamos proyectos innovadores.",
     subheadline:
       "Desarrollamos proyectos de principio a fin: entendemos el problema, estructuramos la solución, ejecutamos y comprobamos el resultado.",
-  },
-
-  areas: {
-    title: "Lo que hacemos",
-    subtitle: "Tres áreas de trabajo, un mismo método detrás de todas.",
-    items: [
-      {
-        eyebrow: "Consultoría",
-        title: "Gestión de Proyectos e Innovación",
-        description:
-          "Estructuramos y conducimos proyectos desde el diagnóstico hasta la entrega, con la innovación como método.",
-        href: "/consultoria",
-        linkLabel: "Ver Consultoría",
-      },
-      {
-        eyebrow: "Producciones",
-        title: "Eventos y Audiovisual",
-        description:
-          "Producimos eventos, experiencias y contenido audiovisual, desde el concepto hasta la ejecución en el lugar.",
-        href: "/producoes",
-        linkLabel: "Ver Producciones",
-      },
-      {
-        eyebrow: "Impacto Social",
-        title: "Estructurar, medir, comprobar",
-        description:
-          "Estructuramos iniciativas sociales en el territorio y comprobamos el impacto que generan.",
-        href: "/impacto-social",
-        linkLabel: "Ver Impacto Social",
-      },
-    ],
   },
 
   // LOCKED — Ciclo Completo / Diagnostico / Estructuracion / Ejecucion /
