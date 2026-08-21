@@ -51,7 +51,7 @@ export default function WhyWeExistSection() {
   }, [emblaApi, onSelect]);
   return (
     <section
-      className="relative z-10 bg-white -mt-10 md:-mt-16 pb-10 md:pb-14"
+      className="relative z-10 bg-white -mt-3 md:-mt-10 pb-10 md:pb-14"
       data-testid="section-why-we-exist"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

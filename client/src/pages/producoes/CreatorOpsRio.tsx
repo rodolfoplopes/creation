@@ -88,10 +88,10 @@ export default function CreatorOpsRio() {
       </Section>
 
       {/* Antes / Depois */}
-      <Section tone="white" divider>
+      <Section tone="white">
         <SectionHeader title={page.whatChanges.title} />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
-          <div className="bg-ink p-8 md:p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-ink rounded-2xl p-8 md:p-10">
             <h3 className="text-h3 font-bold text-bone mb-6">Antes</h3>
             <div className="space-y-4">
               {page.whatChanges.before.map((item) => (
@@ -102,7 +102,7 @@ export default function CreatorOpsRio() {
               ))}
             </div>
           </div>
-          <div className="bg-white p-8 md:p-10">
+          <div className="bg-bone/50 border border-abyss/10 rounded-2xl p-8 md:p-10">
             <h3 className="text-h3 font-bold text-abyss mb-6">Depois</h3>
             <div className="space-y-4">
               {page.whatChanges.after.map((item) => (
@@ -117,7 +117,7 @@ export default function CreatorOpsRio() {
       </Section>
 
       {/* Pacotes */}
-      <Section tone="ink" divider>
+      <Section tone="ink">
         <SectionHeader
           title={page.packages.title}
           subtitle={page.packages.subtitle}
@@ -154,7 +154,7 @@ export default function CreatorOpsRio() {
       </div>
 
       {/* Diferencial */}
-      <Section tone="white" divider>
+      <Section tone="white">
         <div className="max-w-measure border-l-2 border-signal pl-8">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.differentiator.title}

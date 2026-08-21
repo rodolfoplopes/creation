@@ -63,7 +63,7 @@ export default function QuemSomos() {
       </section>
 
       {/* Trabalhamos como arquitetos */}
-      <Section tone="bone" divider firstContent>
+      <Section tone="bone" firstContent>
         <div className="max-w-measure border-l-2 border-signal pl-8">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {about.architectMetaphor.title}
@@ -75,7 +75,7 @@ export default function QuemSomos() {
       </Section>
 
       {/* Missão + Visão */}
-      <Section tone="bone" divider>
+      <Section tone="bone">
         <Grid cols={2}>
           <div className="bg-bone border-t-2 border-abyss p-8">
             <h2 className="text-xl font-bold text-abyss mb-4">
@@ -114,7 +114,7 @@ export default function QuemSomos() {
       </Section>
 
       {/* Para quem trabalhamos (funde texto + distincao sob um so titulo) */}
-      <Section tone="bone" divider>
+      <Section tone="bone">
         <div className="max-w-measure">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {about.forWhom.title}
@@ -155,7 +155,7 @@ export default function QuemSomos() {
         </div>
       </Section>
 
-      <Section tone="bone" size="sm" className="border-t border-abyss/14">
+      <Section tone="bone" size="sm">
         <div className="text-center">
           <CTAButton
             label={c.cta.primary}

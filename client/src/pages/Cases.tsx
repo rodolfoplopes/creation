@@ -13,6 +13,11 @@ import { useLang } from "@/content";
  * DESIGN V7.1 piloto (mesmo tratamento aprovado na Home/StubPageLayout):
  * fundo branco predominante + acento "spark" pontual. Experimental, ainda
  * sem validacao formal do time de design do cliente.
+ *
+ * DIAGRAMACAO (pedido do cliente — emular paginas internas do notion.com):
+ * grid de cases trocou o mosaico de hairline por cards soltos e
+ * arredondados (rounded-2xl, gap-6), sem linha divisoria antes da secao —
+ * mesmo ajuste feito em StubPageLayout.tsx.
  */
 export default function Cases() {
   const lang = useLang();
@@ -46,11 +51,14 @@ export default function Cases() {
         </div>
       </section>
 
-      <Section tone="white" divider>
+      <Section tone="white">
         <SectionHeader title={t("Projetos selecionados", "Selected projects", "Proyectos seleccionados")} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-abyss/14 border border-abyss/14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {casesStub.map((item) => (
-            <article key={item.title} className="bg-white hover:bg-spark/5 transition-colors p-8">
+            <article
+              key={item.title}
+              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors p-8"
+            >
               <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
                 {item.client}
               </p>

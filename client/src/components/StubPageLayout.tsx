@@ -5,9 +5,9 @@ import { ArrowLeft, Check } from "lucide-react";
 import { useLocalizedHref } from "@/content";
 import type { StubBlock, StubPageData } from "@/content/stub";
 
-function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
+function BlockRenderer({ block }: { block: StubBlock }) {
   return (
-    <Section tone="white" divider={index > 0}>
+    <Section tone="white">
       <SectionHeader title={block.heading} subtitle={block.intro} />
       {block.type === "bullets" && (
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
@@ -20,9 +20,12 @@ function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
         </ul>
       )}
       {block.type === "cards" && (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-abyss/14 border border-abyss/14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {block.items.map((item) => (
-            <article key={item.title} className="bg-white hover:bg-spark/5 transition-colors p-8">
+            <article
+              key={item.title}
+              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors p-8"
+            >
               <h3 className="text-h3 font-semibold text-abyss mb-2">{item.title}</h3>
               <p className="text-abyss/70 leading-relaxed">{item.description}</p>
             </article>
@@ -63,6 +66,17 @@ function BlockRenderer({ block, index }: { block: StubBlock; index: number }) {
  * (hoje so Inovacao/Impacto/Branding & Experiencias), renderiza logo
  * abaixo do texto do hero, no mesmo tratamento rounded-2xl + sombra leve
  * usado no carrossel da Home (WhyWeExistSection).
+ *
+ * DIAGRAMACAO DAS PAGINAS INTERNAS (pedido do cliente — emular o padrao
+ * de paginas internas do notion.com, ex. notion.com/enterprise): as
+ * hairlines divisorias entre blocos (border-t cinza a cada secao) saem —
+ * o ritmo passa a vir so do respiro (padding), como nas paginas internas
+ * do Notion, que nunca usam linha divisoria entre blocos de conteudo.
+ * Os grids de "cards" (Frentes de atuacao) e "children" (O que podemos
+ * assumir) trocam o mosaico de hairline (gap-px + bg cinza formando
+ * grade) por cards soltos, arredondados (rounded-2xl) e com respiro real
+ * entre eles (gap-6) — o padrao de card que o Notion usa em toda pagina
+ * interna.
  */
 export default function StubPageLayout({ data }: { data: StubPageData }) {
   const localize = useLocalizedHref();
@@ -109,17 +123,17 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
         </div>
       )}
 
-      {data.blocks?.map((block, i) => (
-        <BlockRenderer key={block.heading} block={block} index={i} />
+      {data.blocks?.map((block) => (
+        <BlockRenderer key={block.heading} block={block} />
       ))}
 
       {data.children && data.children.length > 0 && (
-        <Section tone="white" divider>
+        <Section tone="white">
           <SectionHeader title={data.childrenLabel ?? "O que podemos assumir"} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-abyss/14 border border-abyss/14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.children.map((child) => (
               <Link key={child.href} href={localize(child.href)}>
-                <article className="bg-white hover:bg-spark/5 p-8 h-full transition-colors cursor-pointer group">
+                <article className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 p-8 h-full transition-colors cursor-pointer group">
                   <h3 className="text-h3 font-semibold text-abyss group-hover:text-spark transition-colors mb-2">
                     {child.title}
                   </h3>
@@ -133,7 +147,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
         </Section>
       )}
 
-      <Section tone="abyss" size="lg" divider={!data.children?.length && !data.blocks?.length}>
+      <Section tone="abyss" size="lg">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display text-h2 sm:text-h1 font-bold text-bone mb-6">
             {data.title}
