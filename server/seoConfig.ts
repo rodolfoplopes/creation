@@ -109,61 +109,90 @@ export const seoConfig: Record<string, PageSEO> = {
       description: 'Desarrollamos proyectos de principio a fin: entendemos el problema, estructuramos la solución, ejecutamos y comprobamos el resultado.',
     },
   },
-  '/consultoria': {
+  // Arquitetura V2 (Manual V7.1 + indice de aprovacao do cliente): rotas
+  // antigas (/consultoria, /producoes, /impacto-social, /metodo) removidas
+  // daqui — hoje so existem como redirect client-side (App.tsx), entao cai
+  // no defaultSEO, o que e mais correto que mostrar meta tag de uma pagina
+  // que nao existe mais. Paginas novas sao stubs PT-only (stubData.ts);
+  // por isso title/description so tem PT de verdade, en/es reusam o rotulo
+  // curto ja traduzido no menu (Header.tsx).
+  '/solucoes': {
     pt: {
-      title: 'Consultoria | Creation',
-      description: 'Gestão de Projetos e Inovação. Estruturamos e conduzimos projetos do diagnóstico à entrega, com inovação como método.',
+      title: 'Soluções | Estratégia, gestão e operação de projetos | Creation',
+      description: 'Soluções que começam pelo desafio, não pelo catálogo: estratégia, gestão, operações, inovação, impacto e branding & experiências.',
     },
     en: {
-      title: 'Consulting | Creation',
-      description: 'Project Management and Innovation. We structure and lead projects from diagnosis to delivery, with innovation as method.',
+      title: 'Solutions | Creation',
+      description: 'Strategy, management, operations, innovation, impact and branding & experiences.',
     },
     es: {
-      title: 'Consultoría | Creation',
-      description: 'Gestión de Proyectos e Innovación. Estructuramos y conducimos proyectos desde el diagnóstico hasta la entrega.',
+      title: 'Soluciones | Creation',
+      description: 'Estrategia, gestión, operaciones, innovación, impacto y branding & experiencias.',
     },
   },
-  '/producoes': {
+  '/solucoes/estrategia': {
     pt: {
-      title: 'Produções | Creation',
-      description: 'Eventos, experiências e audiovisual. Da concepção à execução no local, com uma operação só, do início ao fim.',
+      title: 'Estratégia | Clareza antes da ação | Creation',
+      description: 'Inteligência de mercado, diagnóstico e planejamento, estruturação e viabilização de projetos.',
     },
-    en: {
-      title: 'Productions | Creation',
-      description: 'Events, experiences and audiovisual. From concept to on-site execution, under a single operation from start to finish.',
-    },
-    es: {
-      title: 'Producciones | Creation',
-      description: 'Eventos, experiencias y audiovisual. De la concepción a la ejecución en el lugar, con una sola operación de principio a fin.',
-    },
+    en: { title: 'Strategy | Creation', description: 'Market intelligence, diagnosis and planning, project structuring.' },
+    es: { title: 'Estrategia | Creation', description: 'Inteligencia de mercado, diagnóstico y planificación, estructuración de proyectos.' },
   },
-  '/impacto-social': {
+  '/solucoes/gestao': {
     pt: {
-      title: 'Impacto Social | Creation',
-      description: 'Estruturamos iniciativas sociais no território e comprovamos o impacto que geram.',
+      title: 'Gestão | A responsabilidade que não se transfere | Creation',
+      description: 'Gestão de Projetos e PMO, gestão de processos de negócios, governança e indicadores.',
     },
-    en: {
-      title: 'Social Impact | Creation',
-      description: 'We structure social initiatives in the field and prove the impact they generate.',
-    },
-    es: {
-      title: 'Impacto Social | Creation',
-      description: 'Estructuramos iniciativas sociales en el territorio y comprobamos el impacto que generan.',
-    },
+    en: { title: 'Management | Creation', description: 'Project management and PMO, business process management, governance and KPIs.' },
+    es: { title: 'Gestión | Creation', description: 'Gestión de proyectos y PMO, gestión de procesos, gobernanza e indicadores.' },
   },
-  '/metodo': {
+  '/operacoes': {
     pt: {
-      title: 'Método | Creation',
-      description: 'Ciclo Completo: diagnóstico, estruturação, execução e prova. O método por trás de todo projeto que conduzimos.',
+      title: 'Operações | É na execução que o projeto se decide | Creation',
+      description: 'Gestão de eventos, produção executiva, location & fixer, receptivo, drivers e locações.',
     },
-    en: {
-      title: 'Method | Creation',
-      description: 'Full Cycle: diagnosis, structuring, execution and validation. The method behind every project we lead.',
+    en: { title: 'Operations | Creation', description: 'Event management, executive production, location & fixer, ground transport.' },
+    es: { title: 'Operaciones | Creation', description: 'Gestión de eventos, producción ejecutiva, location & fixer, receptivo y choferes.' },
+  },
+  '/inovacao': {
+    pt: {
+      title: 'Inovação | Ideias ganham valor quando se tornam projetos | Creation',
+      description: 'Programas de inovação, desafios, hackathons, ideathons e jornadas.',
     },
-    es: {
-      title: 'Método | Creation',
-      description: 'Ciclo Completo: diagnóstico, estructuración, ejecución y validación. El método detrás de cada proyecto que conducimos.',
+    en: { title: 'Innovation | Creation', description: 'Innovation programs, challenges, hackathons, ideathons and journeys.' },
+    es: { title: 'Innovación | Creation', description: 'Programas de innovación, desafíos, hackathons, ideathons y jornadas.' },
+  },
+  '/impacto': {
+    pt: {
+      title: 'Impacto | Impacto que se constrói e se comprova | Creation',
+      description: 'Programas de responsabilidade social, marketing de causa e desenvolvimento territorial.',
     },
+    en: { title: 'Impact | Creation', description: 'Social responsibility programs, cause marketing and territorial development.' },
+    es: { title: 'Impacto | Creation', description: 'Programas de responsabilidad social, marketing de causa y desarrollo territorial.' },
+  },
+  '/branding-experiencias': {
+    pt: {
+      title: 'Branding & Experiências | Estratégia que pode ser vista, vivida e lembrada | Creation',
+      description: 'Identidade, narrativa, conteúdo, ativações e experiências de marca.',
+    },
+    en: { title: 'Branding & Experiences | Creation', description: 'Identity, narrative, content, activations and brand experiences.' },
+    es: { title: 'Branding y Experiencias | Creation', description: 'Identidad, narrativa, contenido, activaciones y experiencias de marca.' },
+  },
+  '/cases': {
+    pt: {
+      title: 'Cases | Projetos em que pensar e fazer fizeram parte da mesma entrega | Creation',
+      description: 'Uma seleção de trabalhos em inovação, eventos, produção executiva e desenvolvimento territorial.',
+    },
+    en: { title: 'Cases | Creation', description: 'A selection of work in innovation, events, executive production and territorial development.' },
+    es: { title: 'Cases | Creation', description: 'Una selección de trabajos en innovación, eventos, producción ejecutiva y desarrollo territorial.' },
+  },
+  '/como-trabalhamos': {
+    pt: {
+      title: 'Como Trabalhamos | Entender. Estruturar. Realizar. Comprovar. | Creation',
+      description: 'A abordagem da Creation para conduzir projetos do entendimento à prova de resultado.',
+    },
+    en: { title: 'How We Work | Creation', description: "Creation's approach to leading projects from understanding to proof of results." },
+    es: { title: 'Cómo Trabajamos | Creation', description: 'El enfoque de Creation para conducir proyectos del entendimiento a la comprobación de resultados.' },
   },
   '/quem-somos': {
     pt: {
