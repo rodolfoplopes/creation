@@ -9,6 +9,13 @@ import useEmblaCarousel from "embla-carousel-react";
  * em altura fixa (rosto cortado, foto esticada). Se voltar a tentar fotos
  * novas aqui, pre-cortar pra uma proporcao larga (perto de 16:9) antes de
  * subir evita o mesmo problema.
+ *
+ * ENTRADA DE IMAGEM (pedido explicito do cliente — emular notion.com):
+ * o carrossel deixou de ser full-bleed (py-0, borda a borda) e passou a
+ * ficar contido no mesmo grid max-w-7xl das outras secoes, com a foto em
+ * rounded-2xl e sombra leve — a curva-contraponto do manual (pag. 10/15)
+ * aplicada so na imagem. Setas e indicadores viraram pilula (rounded-full)
+ * pra ecoar a mesma linguagem, em vez dos quadrados originais.
  */
 const slides = [
   { src: "/images/story-line.jpg", alt: "Creation Pro Story" },
@@ -37,50 +44,52 @@ export default function WhyWeExistSection() {
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
   return (
-    <section 
-      className="relative py-0" 
+    <section
+      className="relative bg-white py-10 md:py-14"
       data-testid="section-why-we-exist"
     >
-      <div className="relative overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0">
-              <img
-                src={slide.src}
-                alt={slide.alt}
-                className="w-full h-[300px] md:h-[400px] object-cover"
-                data-testid={`slide-image-${index}`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      <button
-        onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-bone/90 hover:bg-bone flex items-center justify-center transition-colors border border-[rgba(0,0,0,0.1)]"
-        data-testid="button-slide-prev"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="h-6 w-6 text-abyss" />
-      </button>
-      <button
-        onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-bone/90 hover:bg-bone flex items-center justify-center transition-colors border border-[rgba(0,0,0,0.1)]"
-        data-testid="button-slide-next"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="h-6 w-6 text-abyss" />
-      </button>
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {slides.map((_, index) => (
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-2xl overflow-hidden shadow-sm" ref={emblaRef}>
+          <div className="flex">
+            {slides.map((slide, index) => (
+              <div key={index} className="flex-[0_0_100%] min-w-0">
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  className="w-full h-[300px] md:h-[420px] object-cover"
+                  data-testid={`slide-image-${index}`}
+                />
+              </div>
+            ))}
+          </div>
           <button
-            key={index}
-            onClick={() => emblaApi?.scrollTo(index)}
-            className="w-2 h-2 bg-bone/60 hover:bg-bone transition-colors"
-            data-testid={`slide-indicator-${index}`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+            onClick={scrollPrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors shadow-sm"
+            data-testid="button-slide-prev"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-5 w-5 text-abyss" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors shadow-sm"
+            data-testid="button-slide-next"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-5 w-5 text-abyss" />
+          </button>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index)}
+                className="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-colors"
+                data-testid={`slide-indicator-${index}`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

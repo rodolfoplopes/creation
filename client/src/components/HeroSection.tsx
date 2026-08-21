@@ -27,6 +27,11 @@ import heroImage from "@assets/hero-home.jpg";
  * (era bg-signal/Mist, quase invisivel em fundo branco) e o ponto dentro
  * da pilula (estilo do dot azul em notion.com). Nao mexe no token
  * "signal" nem no CTAButton (isso mudaria o site inteiro).
+ *
+ * ENTRADA DE IMAGEM (pedido explicito do cliente — emular notion.com):
+ * a moldura da foto ganhou canto arredondado (rounded-2xl) e sombra leve.
+ * E a curva-contraponto do manual (pag. 10/15) aplicada de proposito so
+ * na imagem — o resto do grid (cards, secoes) continua reto.
  */
 export default function HeroSection() {
   const c = useContent();
@@ -68,7 +73,7 @@ export default function HeroSection() {
             </div>
           </Reveal>
           <Reveal delay={120} className="hidden lg:block">
-            <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden">
+            <div className="aspect-[4/3] bg-bone border border-abyss/10 rounded-2xl overflow-hidden shadow-sm">
               <img
                 src={heroImage}
                 alt=""
