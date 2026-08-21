@@ -713,7 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impacto que se construye y se comprueba.",
     intro: "La intención social no reemplaza la estrategia, la gestión ni la evidencia. Creation ayuda a empresas, organizaciones y socios a transformar compromisos en programas estructurados.",
     lead: "Con públicos definidos, responsabilidades claras y seguimiento compatible con lo que se pretende cambiar.",
-    image: { src: "/images/impacto-hero.jpg", alt: "Programa de impacto social en territorio, realizado por Creation" },
+    image: { src: "/images/impacto-hero.webp", alt: "Programa de impacto social en territorio, realizado por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -813,7 +813,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Estrategia que puede verse, vivirse y recordarse.",
     intro: "Una marca se vuelve concreta en los encuentros que produce. Creation conecta posicionamiento, concepto y operación para crear experiencias coherentes con lo que la organización quiere representar.",
     lead: "Y capaces de funcionar en el mundo real.",
-    image: { src: "/images/reservax-lounge.jpg", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
+    image: { src: "/images/reservax-lounge.webp", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -934,7 +934,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "Diseñamos, gestionamos y realizamos programas de responsabilidad social, marketing de causa y desarrollo territorial.",
     href: "/impacto",
     linkLabel: "Conozca Impacto",
-    image: { src: "/images/impacto-hero.jpg", alt: "Programa de impacto social en territorio, realizado por Creation" },
+    image: { src: "/images/impacto-hero.webp", alt: "Programa de impacto social en territorio, realizado por Creation" },
   },
   {
     title: "Branding & Experiencias",
@@ -942,7 +942,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "Transformamos posicionamiento en identidad, narrativa, contenido, activaciones y experiencias.",
     href: "/branding-experiencias",
     linkLabel: "Conozca Branding & Experiencias",
-    image: { src: "/images/reservax-lounge.jpg", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
+    image: { src: "/images/reservax-lounge.webp", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
   },
 ];
 

@@ -713,7 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impact that is built and proven.",
     intro: "Social intention doesn't replace strategy, management or evidence. Creation helps companies, organizations and partners turn commitments into structured programs.",
     lead: "With defined audiences, clear responsibilities and follow-up compatible with the change being pursued.",
-    image: { src: "/images/impacto-hero.jpg", alt: "Social impact program on the ground, run by Creation" },
+    image: { src: "/images/impacto-hero.webp", alt: "Social impact program on the ground, run by Creation" },
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
@@ -813,7 +813,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Strategy that can be seen, lived and remembered.",
     intro: "A brand becomes concrete in the encounters it produces. Creation connects positioning, concept and operation to create experiences consistent with what the organization wants to represent.",
     lead: "And capable of working in the real world.",
-    image: { src: "/images/reservax-lounge.jpg", alt: "ReservaX Lounge brand activation, produced by Creation" },
+    image: { src: "/images/reservax-lounge.webp", alt: "ReservaX Lounge brand activation, produced by Creation" },
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
@@ -934,7 +934,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We design, manage and run social responsibility programs, cause marketing and territorial development.",
     href: "/impacto",
     linkLabel: "See Impact",
-    image: { src: "/images/impacto-hero.jpg", alt: "Social impact program on the ground, run by Creation" },
+    image: { src: "/images/impacto-hero.webp", alt: "Social impact program on the ground, run by Creation" },
   },
   {
     title: "Branding & Experiences",
@@ -942,7 +942,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We turn positioning into identity, narrative, content, activations and experiences.",
     href: "/branding-experiencias",
     linkLabel: "See Branding & Experiences",
-    image: { src: "/images/reservax-lounge.jpg", alt: "ReservaX Lounge brand activation, produced by Creation" },
+    image: { src: "/images/reservax-lounge.webp", alt: "ReservaX Lounge brand activation, produced by Creation" },
   },
 ];
 

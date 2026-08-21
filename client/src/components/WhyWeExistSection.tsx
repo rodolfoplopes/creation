@@ -18,9 +18,9 @@ import useEmblaCarousel from "embla-carousel-react";
  * pra ecoar a mesma linguagem, em vez dos quadrados originais.
  */
 const slides = [
-  { src: "/images/story-line.jpg", alt: "Creation Pro Story" },
-  { src: "/images/expo.jpg", alt: "Expo" },
-  { src: "/images/reservax.jpg", alt: "ReservaX Lounge" },
+  { src: "/images/story-line.webp", alt: "Creation Pro Story" },
+  { src: "/images/expo.webp", alt: "Expo" },
+  { src: "/images/reservax.webp", alt: "ReservaX Lounge" },
 ];
 export default function WhyWeExistSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

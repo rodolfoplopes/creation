@@ -32,7 +32,7 @@ export default function HeroSection() {
               {c.brand.microcopy}
             </span>
           </div>
-          <h1 className="font-display text-display sm:text-5xl md:text-6xl lg:text-7xl font-bold text-abyss">
+          <h1 className="font-display text-display sm:text-6xl md:text-7xl font-extrabold text-abyss">
             {c.hero.headline}
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-abyss/70 max-w-measure leading-relaxed">
