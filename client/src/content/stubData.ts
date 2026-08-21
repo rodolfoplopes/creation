@@ -407,6 +407,105 @@ export const stubData: Record<string, StubPageData> = {
   },
 };
 
+/**
+ * Blocos 03/04/05 da Home V2 (Creation Home - Conteudo V2, Drive) — substitui
+ * o antigo bloco de 3 areas de negocio (Consultoria/Producoes/Impacto
+ * Social) que a VerticalsSection mostrava. PT-only, mesmo motivo dos stubs
+ * de pagina: o material fonte so existe em portugues por enquanto.
+ */
+export interface HomeCapacidade {
+  title: string;
+  tagline: string;
+  description: string;
+  items: string[];
+  href: string;
+  linkLabel: string;
+}
+
+export const homeCapacidades: HomeCapacidade[] = [
+  {
+    title: "Estratégia",
+    tagline: "Clareza para decidir.",
+    description:
+      "Investigamos o contexto, organizamos informações e transformamos complexidade em direção.",
+    items: ["Inteligência de Mercado", "Diagnóstico e Planejamento", "Estruturação e Viabilização de Projetos"],
+    href: "/solucoes/estrategia",
+    linkLabel: "Conheça Estratégia",
+  },
+  {
+    title: "Gestão",
+    tagline: "Ritmo para avançar.",
+    description:
+      "Transformamos direção em escopo, responsabilidades e decisões, com governança, equipes, processos e indicadores.",
+    items: ["Gestão de Projetos e PMO", "Gestão de Processos de Negócio", "Governança, Indicadores e Riscos"],
+    href: "/solucoes/gestao",
+    linkLabel: "Conheça Gestão",
+  },
+  {
+    title: "Operações",
+    tagline: "Execução para realizar.",
+    description:
+      "Mobilizamos pessoas, parceiros, fornecedores, logística, espaços e recursos para transformar planejamento em entrega.",
+    items: ["Gestão e Produção de Eventos", "Produção Executiva e Logística", "Location & Fixer", "Receptivo, Drivers e Locações"],
+    href: "/operacoes",
+    linkLabel: "Conheça Operações",
+  },
+];
+
+export interface HomeEspecialidade {
+  title: string;
+  tagline: string;
+  description: string;
+  href: string;
+  linkLabel: string;
+}
+
+export const homeEspecialidades: HomeEspecialidade[] = [
+  {
+    title: "Inovação",
+    tagline: "Ideias ganham valor quando se tornam projetos.",
+    description:
+      "Estruturamos e realizamos programas de inovação, desafios, hackathons, ideathons e jornadas.",
+    href: "/inovacao",
+    linkLabel: "Conheça Inovação",
+  },
+  {
+    title: "Impacto",
+    tagline: "Impacto que se constrói e se comprova.",
+    description:
+      "Desenhamos, gerimos e realizamos programas de responsabilidade social, marketing de causa e desenvolvimento territorial.",
+    href: "/impacto",
+    linkLabel: "Conheça Impacto",
+  },
+  {
+    title: "Branding & Experiências",
+    tagline: "Estratégia que pode ser vista, vivida e lembrada.",
+    description:
+      "Transformamos posicionamento em identidade, narrativa, conteúdo, ativações e experiências.",
+    href: "/branding-experiencias",
+    linkLabel: "Conheça Branding & Experiências",
+  },
+];
+
+export interface HomeSolucao {
+  title: string;
+  description: string;
+  href: string;
+}
+
+// Regra de publicacao (Home V2, bloco 05): uma solucao so aparece quando
+// tem escopo, processo e capacidade real de contratacao. Das 5 Solucoes
+// Creation, so Creation Ops Rio esta no nucleo publicavel agora —
+// Creation Marcas/ONG.zero/BI de Eventos/Motor SROI ficam ocultas.
+export const homeSolucoes: HomeSolucao[] = [
+  {
+    title: "Creation Ops Rio",
+    description:
+      "Operação local integrada para agências, produtoras, marcas e equipes que realizam projetos no Rio de Janeiro. Location, fixer, receptivo, drivers, locações, fornecedores e logística sob uma única coordenação.",
+    href: "/creator-ops-rio",
+  },
+];
+
 export interface CaseStub {
   title: string;
   client: string;

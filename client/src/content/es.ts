@@ -24,7 +24,7 @@ export const es: Content = {
     primary: "Agendar una llamada",
     secondary: "Conocer el método",
     href: "/contato",
-    methodHref: "/metodo",
+    methodHref: "/como-trabalhamos",
   },
 
   labels: {

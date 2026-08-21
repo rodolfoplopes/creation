@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { CTAButton } from "@/components/primitives";
+import Reveal from "@/components/Reveal";
 import { useContent } from "@/content";
 import heroImage from "@assets/hero-home.jpg";
 
@@ -24,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-signal" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-abyss/20 mb-6">
               <span className="text-abyss/70 font-semibold tracking-widest text-caption uppercase">
                 {c.brand.microcopy}
@@ -48,8 +49,8 @@ export default function HeroSection() {
                 variant="secondary"
               />
             </div>
-          </div>
-          <div className="hidden lg:block">
+          </Reveal>
+          <Reveal delay={120} className="hidden lg:block">
             <div className="aspect-[4/3] bg-bone border border-abyss/14 overflow-hidden">
               <img
                 src={heroImage}
@@ -57,12 +58,14 @@ export default function HeroSection() {
                 className="w-full h-full object-cover object-bottom"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
+      {/* animate-drift substitui animate-bounce: motion com proposito, sem
+          bounce/overshoot (Manual V7.1, pag. 18). */}
       <button
         onClick={scrollToContent}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-abyss/70 hover:text-abyss transition-colors animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-abyss/70 hover:text-abyss transition-colors animate-drift"
         data-testid="button-scroll-down"
         aria-label="Rolar para baixo"
       >

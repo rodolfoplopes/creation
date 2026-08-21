@@ -24,7 +24,7 @@ export const pt: Content = {
     primary: "Agendar conversa",
     secondary: "Conhecer o método",
     href: "/contato",
-    methodHref: "/metodo",
+    methodHref: "/como-trabalhamos",
   },
 
   labels: {
