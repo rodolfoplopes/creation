@@ -6,18 +6,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import Home from "@/pages/Home";
 import QuemSomos from "@/pages/QuemSomos";
-import Consultoria from "@/pages/Consultoria";
-import Producoes from "@/pages/Producoes";
 import CreatorOpsRio from "@/pages/producoes/CreatorOpsRio";
 import CreationMarcas from "@/pages/CreationMarcas";
 import OngZero from "@/pages/OngZero";
 import MotorSroi from "@/pages/MotorSroi";
 import BiEventos from "@/pages/BiEventos";
-import ImpactoSocial from "@/pages/ImpactoSocial";
-import Metodo from "@/pages/Metodo";
 import Contato from "@/pages/Contato";
 import CreationProfile from "@/pages/CreationProfile";
+import Cases from "@/pages/Cases";
 import NotFound from "@/pages/not-found";
+import StubPageLayout from "@/components/StubPageLayout";
+import { stubData } from "@/content/stubData";
 import {
   supportedLangs,
   defaultLang,
@@ -31,14 +30,19 @@ import { resolveInitialLang } from "@/lib/detectLang";
  * `import './i18n'` REMOVIDO (Sprint 0). O idioma vem da rota e o conteudo do
  * useContent(). React puro, sem DOM overwrite.
  *
- * Mudancas de IA (3 areas):
- *   /consultoria    -> Consultoria.tsx (renomeado de Servicos.tsx; ponte encerrada)
- *   /impacto-social -> ImpactoSocial.tsx (renomeado de Impacto.tsx; ponte encerrada)
- *   /servicos/ops   -> removido (Creation OPS dissolvido; CreationOps.tsx orfao)
+ * Arquitetura V2 (Manual V7.1 + indice de aprovacao do cliente): a IA de
+ * 3 areas (Consultoria/Producoes/Impacto Social) foi substituida por
+ * Solucoes > Estrategia/Gestao/Operacoes/Inovacao/Impacto/Branding &
+ * Experiencias. Paginas novas sao STUBS PT-only (ver
+ * client/src/content/stubData.ts) — estrutura e links aprovaveis, texto e
+ * design finais ainda pendentes. Rotas antigas dissolvidas redirecionam:
+ *   /consultoria    -> /solucoes
+ *   /producoes      -> /operacoes
+ *   /impacto-social -> /impacto
+ *   /metodo         -> /como-trabalhamos
  *   /profile        -> so em EN
- *   /metodo         -> R5 ATIVADO: pagina propria (Metodo.tsx), nao mais redirect
- *   /creator-ops-rio -> URL curta (era /producoes/creator-ops-rio)
- *   /creation-marcas, /ong-zero, /motor-sroi, /bi-de-eventos -> 4 landings novas
+ *   /creator-ops-rio, /creation-marcas, /ong-zero, /motor-sroi, /bi-de-eventos
+ *     -> landings de sub-marca/produto, preservadas como estavam
  */
 
 function LanguageSync({ lang }: { lang: string }) {
@@ -96,20 +100,55 @@ function LangRouter({ lang }: { lang: string }) {
       <HrefLangTags currentPath={location} />
       <Switch>
         <Route path={`/${lang}`} component={Home} />
-        <Route path={`/${lang}/consultoria`} component={Consultoria} />
-        <Route path={`/${lang}/producoes`} component={Producoes} />
+
+        {/* Arquitetura V2 (Manual V7.1 + indice de aprovacao) — stubs PT-only,
+            ver client/src/content/stubData.ts */}
+        <Route path={`/${lang}/solucoes`} component={() => <StubPageLayout data={stubData.solucoes} />} />
+        <Route path={`/${lang}/solucoes/estrategia`} component={() => <StubPageLayout data={stubData.estrategia} />} />
+        <Route path={`/${lang}/solucoes/inteligencia-de-mercado`} component={() => <StubPageLayout data={stubData["inteligencia-de-mercado"]} />} />
+        <Route path={`/${lang}/solucoes/diagnostico-e-planejamento`} component={() => <StubPageLayout data={stubData["diagnostico-e-planejamento"]} />} />
+        <Route path={`/${lang}/solucoes/estruturacao-de-projetos`} component={() => <StubPageLayout data={stubData["estruturacao-de-projetos"]} />} />
+        <Route path={`/${lang}/solucoes/gestao`} component={() => <StubPageLayout data={stubData.gestao} />} />
+        <Route path={`/${lang}/solucoes/gestao-de-projetos`} component={() => <StubPageLayout data={stubData["gestao-de-projetos"]} />} />
+        <Route path={`/${lang}/solucoes/gestao-de-processos`} component={() => <StubPageLayout data={stubData["gestao-de-processos"]} />} />
+        <Route path={`/${lang}/solucoes/governanca-e-indicadores`} component={() => <StubPageLayout data={stubData["governanca-e-indicadores"]} />} />
+        <Route path={`/${lang}/operacoes`} component={() => <StubPageLayout data={stubData.operacoes} />} />
+        <Route path={`/${lang}/operacoes/gestao-de-eventos`} component={() => <StubPageLayout data={stubData["gestao-de-eventos"]} />} />
+        <Route path={`/${lang}/operacoes/producao-executiva`} component={() => <StubPageLayout data={stubData["producao-executiva"]} />} />
+        <Route path={`/${lang}/operacoes/location-fixer-rio-de-janeiro`} component={() => <StubPageLayout data={stubData["location-fixer-rio-de-janeiro"]} />} />
+        <Route path={`/${lang}/operacoes/receptivo-drivers-locacoes`} component={() => <StubPageLayout data={stubData["receptivo-drivers-locacoes"]} />} />
+        <Route path={`/${lang}/inovacao`} component={() => <StubPageLayout data={stubData.inovacao} />} />
+        <Route path={`/${lang}/impacto`} component={() => <StubPageLayout data={stubData.impacto} />} />
+        <Route path={`/${lang}/impacto/marketing-de-causa`} component={() => <StubPageLayout data={stubData["marketing-de-causa"]} />} />
+        <Route path={`/${lang}/branding-experiencias`} component={() => <StubPageLayout data={stubData["branding-experiencias"]} />} />
+        <Route path={`/${lang}/como-trabalhamos`} component={() => <StubPageLayout data={stubData["como-trabalhamos"]} />} />
+        <Route path={`/${lang}/cases`} component={Cases} />
+
         <Route path={`/${lang}/creator-ops-rio`} component={CreatorOpsRio} />
         <Route path={`/${lang}/creation-marcas`} component={CreationMarcas} />
         <Route path={`/${lang}/ong-zero`} component={OngZero} />
         <Route path={`/${lang}/motor-sroi`} component={MotorSroi} />
         <Route path={`/${lang}/bi-de-eventos`} component={BiEventos} />
-        <Route path={`/${lang}/impacto-social`} component={ImpactoSocial} />
         <Route path={`/${lang}/quem-somos`} component={QuemSomos} />
         <Route path={`/${lang}/contato`} component={Contato} />
-        <Route path={`/${lang}/metodo`} component={Metodo} />
         {lang === "en" && (
           <Route path={`/${lang}/profile`} component={CreationProfile} />
         )}
+
+        {/* Redirects: rotas dissolvidas na Arquitetura V2 */}
+        <Route path={`/${lang}/consultoria`}>
+          <Redirect to={`/${lang}/solucoes`} />
+        </Route>
+        <Route path={`/${lang}/producoes`}>
+          <Redirect to={`/${lang}/operacoes`} />
+        </Route>
+        <Route path={`/${lang}/impacto-social`}>
+          <Redirect to={`/${lang}/impacto`} />
+        </Route>
+        <Route path={`/${lang}/metodo`}>
+          <Redirect to={`/${lang}/como-trabalhamos`} />
+        </Route>
+
         <Route component={NotFound} />
       </Switch>
     </>

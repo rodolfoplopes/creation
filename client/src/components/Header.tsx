@@ -11,34 +11,37 @@ import { storeLang } from "@/lib/detectLang";
  * "Hamburguer em todos os dispositivos; overlay full-screen em Abyss."
  * Cabecalho fica so com logo + hamburguer — minimalista, como o V6 pede.
  *
- * CORRECAO (apos feedback real): a primeira versao do menu so listava os
- * PRODUTOS/sub-marcas com pagina propria (Creation Marcas, Creation Ops
- * Rio, BI de Eventos, ONG.zero, Motor SROI), escondendo os SERVICOS reais
- * de cada area (Gestao de Projetos, Eventos e Experiencias, Fixer etc.),
- * que so existem como secao dentro da pagina da area. Isso fazia o menu
- * comunicar errado — como se as ferramentas fossem o produto principal.
- *
- * Agora cada coluna lista os 4 servicos reais (link com #ancora pra secao
- * dentro da pagina) + os 2 produtos com pagina propria (kind:"product",
- * estilo visual distinto: caixa alta). O scroll ate a ancora e feito na
- * mao (handleMenuClick) porque o wouter nao rola sozinho ao navegar.
- *
  * ESTAGIO 3 (Manual V7) — cabecalho fixo virou dinamico: branco puro no
  * topo da pagina (igual o fundo do hero, sem nenhuma linha de separacao),
  * e transiciona pra Abyss solido com logo branco assim que a pagina rola
  * além de 20px. Estado via useEffect + scroll listener (isScrolled).
  *
- * Tentativa anterior usava uma borda inferior fina (hairline) pra dar
- * alguma definicao ao branco-sobre-branco — feedback real: nao ficou bom,
- * removida. A transicao de cor ao rolar resolve a definicao de um jeito
- * mais dinamico, sem precisar de linha nenhuma.
- *
- * O overlay full-screen do menu CONTINUA escuro
- * de proposito — foi decisao explicita manter "a caixa" quando abre.
+ * O overlay full-screen do menu CONTINUA escuro de proposito — decisao
+ * explicita manter "a caixa" quando abre.
  *
  * Logo: cabecalho fixo usa a variante Abyss (escura, contraste sobre
  * branco); o overlay continua com a variante branca (contraste sobre
  * Abyss). Dois arquivos SVG diferentes, cada um no contexto certo.
+ *
+ * ESTAGIO 4 (Arquitetura V2 — Manual V7.1 + indice de aprovacao do
+ * cliente) — a IA de 3 areas de negocio (Consultoria/Producoes/Impacto
+ * Social) foi substituida pela estrutura recomendada no indice mestre:
+ *
+ *   Solucoes (submenu: Estrategia · Gestao · Operacoes · Especialidades
+ *   [Inovacao/Impacto/Branding & Experiencias] · Creation Ops Rio) · Cases ·
+ *   Como Trabalhamos · Quem Somos · Contato
+ *
+ * Insights fica FORA por enquanto — o indice classifica a pagina como
+ * "dependente de validacao adicional", ainda sem acervo minimo publicavel.
+ * Creation Marcas/ONG.zero/BI de Eventos/Motor SROI tambem ficam fora do
+ * menu principal (regra explicita do indice: seguem existindo como
+ * landing, sem destaque na navegacao, ate validacao propria).
+ *
+ * As paginas novas (Estrategia, Gestao, Operacoes, Inovacao, Impacto,
+ * Branding & Experiencias, Cases, Como Trabalhamos) sao STUBS PT-only por
+ * enquanto (ver client/src/content/stubData.ts) — os rotulos do menu abaixo
+ * tem traducao EN/ES (sao curtos), mas o CONTEUDO das paginas ainda so
+ * existe em portugues.
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
@@ -108,69 +111,61 @@ export default function Header() {
     }
   };
 
-  // Cada area lista os SERVICOS reais (ancora dentro da propria pagina) +
-  // os PRODUTOS/sub-marcas que tem pagina propria (kind:"product"). Antes
-  // so os produtos apareciam, escondendo o conteudo principal do menu.
-  const areas = [
+  // Traducoes curtas dos rotulos de menu (arquitetura V2). As PAGINAS por
+  // tras desses links ainda sao stubs PT-only (client/src/content/stubData.ts)
+  // — so o rotulo do menu em si tem EN/ES.
+  const t = (pt: string, en: string, es: string) =>
+    currentLang === "en" ? en : currentLang === "es" ? es : pt;
+
+  // Cada grupo de Solucoes lista os SERVICOS reais (pagina propria) + os
+  // PRODUTOS/sub-marcas com pagina propria (kind:"product"). Substitui a IA
+  // antiga de 3 areas de negocio por Estrategia/Gestao/Operacoes +
+  // Especialidades, conforme indice mestre da Arquitetura V2.
+  const solutionGroups = [
     {
-      href: "/consultoria",
-      label: c.nav.consultoria,
+      href: "/solucoes/estrategia",
+      label: t("Estratégia", "Strategy", "Estrategia"),
       subItems: [
-        { label: c.consultoria.services[0].title, href: "/consultoria#gestao-de-projetos", kind: "service" as const },
-        { label: c.consultoria.services[2].title, href: "/consultoria#branding-e-identidade", kind: "service" as const },
-        { label: c.consultoria.services[1].title, href: "/consultoria#inteligencia-e-estrategia", kind: "service" as const },
-        { label: c.consultoria.services[3].title, href: "/consultoria#processos", kind: "service" as const },
-        {
-          label: currentLang === "en" ? "Innovation" : currentLang === "es" ? "Innovación" : "Inovação",
-          href: "/consultoria#inovacao",
-          kind: "service" as const,
-        },
-        {
-          // Nome de menu diferente do nome da pagina/produto ("Creation
-          // Marcas"), a pedido: rotulo generico do servico no menu.
-          label:
-            currentLang === "en"
-              ? "Trademark Registration & Protection"
-              : currentLang === "es"
-                ? "Registro y Protección de Marcas"
-                : "Registro e Proteção de Marcas",
-          href: c.consultoria.creationMarcas.href,
-          kind: "product" as const,
-        },
+        { label: t("Inteligência de Mercado", "Market Intelligence", "Inteligencia de Mercado"), href: "/solucoes/inteligencia-de-mercado", kind: "service" as const },
+        { label: t("Diagnóstico e Planejamento", "Diagnosis & Planning", "Diagnóstico y Planificación"), href: "/solucoes/diagnostico-e-planejamento", kind: "service" as const },
+        { label: t("Estruturação de Projetos", "Project Structuring", "Estructuración de Proyectos"), href: "/solucoes/estruturacao-de-projetos", kind: "service" as const },
       ],
     },
     {
-      href: "/producoes",
-      label: c.nav.producoes,
+      href: "/solucoes/gestao",
+      label: t("Gestão", "Management", "Gestión"),
       subItems: [
-        { label: c.producoes.events.title, href: "/producoes#eventos", kind: "service" as const },
-        { label: c.producoes.audiovisual.title, href: "/producoes#audiovisual", kind: "service" as const },
-        { label: c.producoes.operational.fixer.title, href: "/producoes#fixer", kind: "service" as const },
-        { label: c.producoes.operational.hosting.title, href: "/producoes#host", kind: "service" as const },
-        { label: "Creation Ops Rio", href: c.producoes.creatorOpsRio.href, kind: "product" as const },
-        {
-          label: currentLang === "en" ? "BI for Events" : "BI de Eventos",
-          href: c.producoes.biEventos.href,
-          kind: "product" as const,
-        },
+        { label: t("Gestão de Projetos e PMO", "Project Management & PMO", "Gestión de Proyectos y PMO"), href: "/solucoes/gestao-de-projetos", kind: "service" as const },
+        { label: t("Gestão de Processos", "Business Process Management", "Gestión de Procesos"), href: "/solucoes/gestao-de-processos", kind: "service" as const },
+        { label: t("Governança e Indicadores", "Governance & KPIs", "Gobernanza e Indicadores"), href: "/solucoes/governanca-e-indicadores", kind: "service" as const },
       ],
     },
     {
-      href: "/impacto-social",
-      label: c.nav.impactoSocial,
+      href: "/operacoes",
+      label: t("Operações", "Operations", "Operaciones"),
       subItems: [
-        { label: c.impactoSocial.services[0].title, href: "/impacto-social#estruturacao-de-ongs", kind: "service" as const },
-        { label: c.impactoSocial.services[1].title, href: "/impacto-social#programas-de-impacto-social", kind: "service" as const },
-        { label: c.impactoSocial.services[2].title, href: "/impacto-social#relatorios-de-impacto-e-esg", kind: "service" as const },
-        { label: c.impactoSocial.services[3].title, href: "/impacto-social#gestao-de-projetos-sociais", kind: "service" as const },
-        { label: c.impactoSocial.ongZero.eyebrow, href: c.impactoSocial.ongZero.href, kind: "product" as const },
-        { label: "Motor SROI", href: c.impactoSocial.motorSroi.href, kind: "product" as const },
+        { label: t("Gestão de Eventos", "Event Management", "Gestión de Eventos"), href: "/operacoes/gestao-de-eventos", kind: "service" as const },
+        { label: t("Produção Executiva", "Executive Production", "Producción Ejecutiva"), href: "/operacoes/producao-executiva", kind: "service" as const },
+        { label: "Location & Fixer", href: "/operacoes/location-fixer-rio-de-janeiro", kind: "service" as const },
+        { label: t("Receptivo, Drivers & Locações", "Ground Transport & Rentals", "Receptivo, Choferes y Locaciones"), href: "/operacoes/receptivo-drivers-locacoes", kind: "service" as const },
+      ],
+    },
+    {
+      href: "/solucoes",
+      label: t("Especialidades", "Specialties", "Especialidades"),
+      subItems: [
+        { label: t("Inovação", "Innovation", "Innovación"), href: "/inovacao", kind: "service" as const },
+        { label: t("Impacto", "Impact", "Impacto"), href: "/impacto", kind: "service" as const },
+        { label: t("Branding & Experiências", "Branding & Experiences", "Branding y Experiencias"), href: "/branding-experiencias", kind: "service" as const },
+        { label: "Creation Ops Rio", href: "/creator-ops-rio", kind: "product" as const },
       ],
     },
   ];
 
   const institutional = [
-    { label: c.nav.method, href: "/metodo" },
+    { label: t("Soluções", "Solutions", "Soluciones"), href: "/solucoes" },
+    { label: "Cases", href: "/cases" },
+    { label: t("Como Trabalhamos", "How We Work", "Cómo Trabajamos"), href: "/como-trabalhamos" },
     { label: c.nav.about, href: "/quem-somos" },
     { label: c.nav.contact, href: "/contato" },
     ...(showCreationProfile ? [{ label: "Creation Profile", href: "/profile" }] : []),
@@ -246,12 +241,13 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Corpo: 3 areas + institucional */}
+            {/* Corpo: grupos de Solucoes (Estrategia/Gestao/Operacoes/
+                Especialidades) + institucional */}
             <nav
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-10 md:py-16"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10 md:py-16"
               data-testid="nav-overlay"
             >
-              {areas.map((area) => (
+              {solutionGroups.map((area) => (
                 <div key={area.href}>
                   <Link href={localize(area.href)} onClick={() => handleMenuClick(area.href)}>
                     <span
@@ -292,7 +288,7 @@ export default function Header() {
 
               <div>
                 <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
-                  {c.nav.companyLabel}
+                  {t("Navegação", "Navigation", "Navegación")}
                 </p>
                 <ul className="space-y-3">
                   {institutional.map((item) => (
