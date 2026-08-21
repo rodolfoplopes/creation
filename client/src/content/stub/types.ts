@@ -70,6 +70,7 @@ export interface HomeEspecialidade {
   description: string;
   href: string;
   linkLabel: string;
+  image: StubPageImage;
 }
 
 export interface HomeSolucao {

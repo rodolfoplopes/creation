@@ -12,6 +12,11 @@ import { stubPages } from "@/content/stub";
  *
  * TESTE EXPERIMENTAL (nao aprovado): borda esquerda vira "spark" no hover
  * (era abyss estatico) — mesmo racional do teste em CapacidadesSection.
+ *
+ * ENTRADA DE IMAGEM (pedido do cliente — emular notion.com, secao de
+ * "confiado por equipes que..."): cada uma das 3 especialidades ganhou
+ * uma foto real (esp.image) acima do texto, rounded-2xl + sombra leve,
+ * mesmo tratamento usado no carrossel da Home (WhyWeExistSection).
  */
 export default function EspecialidadesSection() {
   const localize = useLocalizedHref();
@@ -33,18 +38,27 @@ export default function EspecialidadesSection() {
         {homeEspecialidades.map((esp, i) => (
           <Reveal key={esp.href} delay={i * 80}>
             <Link href={localize(esp.href)}>
-              <article className="border-l-2 border-abyss hover:border-spark transition-colors pl-6 py-1 h-full cursor-pointer group">
-                <h3 className="text-h3 font-semibold text-abyss mb-2">
-                  {esp.title}
-                </h3>
-                <p className="text-abyss font-semibold mb-2">{esp.tagline}</p>
-                <p className="text-abyss/70 leading-relaxed mb-4">
-                  {esp.description}
-                </p>
-                <span className="inline-flex items-center gap-2 text-abyss font-semibold group-hover:text-spark group-hover:gap-3 transition-all">
-                  {esp.linkLabel}
-                  <ArrowRight className="h-5 w-5" />
-                </span>
+              <article className="h-full cursor-pointer group">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm mb-6">
+                  <img
+                    src={esp.image.src}
+                    alt={esp.image.alt}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="border-l-2 border-abyss group-hover:border-spark transition-colors pl-6 py-1">
+                  <h3 className="text-h3 font-semibold text-abyss mb-2">
+                    {esp.title}
+                  </h3>
+                  <p className="text-abyss font-semibold mb-2">{esp.tagline}</p>
+                  <p className="text-abyss/70 leading-relaxed mb-4">
+                    {esp.description}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-abyss font-semibold group-hover:text-spark group-hover:gap-3 transition-all">
+                    {esp.linkLabel}
+                    <ArrowRight className="h-5 w-5" />
+                  </span>
+                </div>
               </article>
             </Link>
           </Reveal>

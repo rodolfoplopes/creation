@@ -926,6 +926,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We structure and run innovation programs, challenges, hackathons, ideathons and journeys.",
     href: "/inovacao",
     linkLabel: "See Innovation",
+    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — innovation program run by Creation" },
   },
   {
     title: "Impact",
@@ -933,6 +934,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We design, manage and run social responsibility programs, cause marketing and territorial development.",
     href: "/impacto",
     linkLabel: "See Impact",
+    image: { src: "/images/impacto-hero.jpg", alt: "Social impact program on the ground, run by Creation" },
   },
   {
     title: "Branding & Experiences",
@@ -940,6 +942,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We turn positioning into identity, narrative, content, activations and experiences.",
     href: "/branding-experiencias",
     linkLabel: "See Branding & Experiences",
+    image: { src: "/images/reservax-lounge.jpg", alt: "ReservaX Lounge brand activation, produced by Creation" },
   },
 ];
 
