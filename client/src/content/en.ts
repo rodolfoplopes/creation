@@ -4,7 +4,7 @@ export const en: Content = {
   brand: {
     name: "Creation",
     microcopy: "Clarity. Rhythm. Execution.",
-    footerTagline: "We think and build innovative projects.",
+    footerTagline: "Thinking and doing are the same responsibility.",
     locations: "Brazil | United States",
   },
 
@@ -29,9 +29,9 @@ export const en: Content = {
 
   // LOCKED — frase-mae, fechada no doc.
   hero: {
-    headline: "We think and build innovative projects.",
+    headline: "Thinking and doing are the same responsibility.",
     subheadline:
-      "We develop projects from start to finish: we understand the problem, structure the solution, execute it and prove the result.",
+      "Creation brings together strategy, management and operational capacity to turn challenges into clear, viable and well-executed projects, from understanding to delivery.",
   },
 
   // LOCKED — Full Cycle / Diagnosis / Structuring / Execution / Validation (doc).
@@ -371,7 +371,7 @@ export const en: Content = {
   },
 
   footer: {
-    description: "We think and build innovative projects.",
+    description: "Thinking and doing are the same responsibility.",
     locations: "Brazil | United States",
     companyTitle: "Creation",
     companyLinks: [

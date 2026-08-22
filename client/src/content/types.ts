@@ -76,7 +76,7 @@ export interface Content {
   // ---- HOME ----
   hero: {
     // A frase de posicionamento (a coroa).
-    headline: string;        // "Pensamos e realizamos projetos inovadores."
+    headline: string;        // "Pensar e fazer sao a mesma responsabilidade."
     subheadline: string;
   };
 

@@ -896,7 +896,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Strategy",
     tagline: "Clarity to decide.",
-    description: "We investigate the context, organize information and turn complexity into direction.",
+    description: "We investigate the context, organize information and turn complexity into direction. Strategy defines the problem, guides choices and builds a viable path for the project.",
     items: ["Market Intelligence", "Diagnosis and Planning", "Project Structuring and Viability"],
     href: "/solucoes/estrategia",
     linkLabel: "See Strategy",
@@ -904,7 +904,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Management",
     tagline: "Rhythm to move forward.",
-    description: "We turn direction into scope, responsibilities and decisions, with governance, teams, processes and indicators.",
+    description: "We turn direction into scope, responsibilities and decisions. We structure governance, teams, processes and indicators so the project moves forward with rhythm, control and transparency.",
     items: ["Project Management and PMO", "Business Process Management", "Governance, KPIs and Risk"],
     href: "/solucoes/gestao",
     linkLabel: "See Management",
@@ -912,7 +912,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Operations",
     tagline: "Execution to deliver.",
-    description: "We mobilize people, partners, vendors, logistics, spaces and resources to turn planning into delivery.",
+    description: "We mobilize people, partners, vendors, logistics, spaces and resources to turn planning into delivery, coordinating the operation from preparation through completion.",
     items: ["Event Management and Production", "Executive Production and Logistics", "Location & Fixer", "Ground Transport, Drivers and Rentals"],
     href: "/operacoes",
     linkLabel: "See Operations",

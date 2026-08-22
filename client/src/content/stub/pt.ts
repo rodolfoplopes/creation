@@ -896,7 +896,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Estratégia",
     tagline: "Clareza para decidir.",
-    description: "Investigamos o contexto, organizamos informações e transformamos complexidade em direção.",
+    description: "Investigamos o contexto, organizamos informações e transformamos complexidade em direção. A estratégia define o problema, orienta as escolhas e constrói um caminho viável para o projeto.",
     items: ["Inteligência de Mercado", "Diagnóstico e Planejamento", "Estruturação e Viabilização de Projetos"],
     href: "/solucoes/estrategia",
     linkLabel: "Conheça Estratégia",
@@ -904,7 +904,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Gestão",
     tagline: "Ritmo para avançar.",
-    description: "Transformamos direção em escopo, responsabilidades e decisões, com governança, equipes, processos e indicadores.",
+    description: "Transformamos direção em escopo, responsabilidades e decisões. Estruturamos governança, equipes, processos e indicadores para que o projeto avance com ritmo, controle e transparência.",
     items: ["Gestão de Projetos e PMO", "Gestão de Processos de Negócio", "Governança, Indicadores e Riscos"],
     href: "/solucoes/gestao",
     linkLabel: "Conheça Gestão",
@@ -912,7 +912,7 @@ export const homeCapacidades: HomeCapacidade[] = [
   {
     title: "Operações",
     tagline: "Execução para realizar.",
-    description: "Mobilizamos pessoas, parceiros, fornecedores, logística, espaços e recursos para transformar planejamento em entrega.",
+    description: "Mobilizamos pessoas, parceiros, fornecedores, logística, espaços e recursos para transformar planejamento em entrega, coordenando a operação da preparação à conclusão.",
     items: ["Gestão e Produção de Eventos", "Produção Executiva e Logística", "Location & Fixer", "Receptivo, Drivers e Locações"],
     href: "/operacoes",
     linkLabel: "Conheça Operações",

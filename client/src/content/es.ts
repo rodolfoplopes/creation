@@ -4,7 +4,7 @@ export const es: Content = {
   brand: {
     name: "Creation",
     microcopy: "Claridad. Ritmo. Ejecución.",
-    footerTagline: "Pensamos y realizamos proyectos innovadores.",
+    footerTagline: "Pensar y hacer son la misma responsabilidad.",
     locations: "Brasil | Estados Unidos",
   },
 
@@ -29,9 +29,9 @@ export const es: Content = {
 
   // LOCKED — frase-mae, fechada no doc.
   hero: {
-    headline: "Pensamos y realizamos proyectos innovadores.",
+    headline: "Pensar y hacer son la misma responsabilidad.",
     subheadline:
-      "Desarrollamos proyectos de principio a fin: entendemos el problema, estructuramos la solución, ejecutamos y comprobamos el resultado.",
+      "Creation reúne estrategia, gestión y capacidad operativa para transformar desafíos en proyectos claros, viables y bien ejecutados, desde el entendimiento hasta la entrega.",
   },
 
   // LOCKED — Ciclo Completo / Diagnostico / Estructuracion / Ejecucion /
@@ -371,7 +371,7 @@ export const es: Content = {
   },
 
   footer: {
-    description: "Pensamos y realizamos proyectos innovadores.",
+    description: "Pensar y hacer son la misma responsabilidad.",
     locations: "Brasil | Estados Unidos",
     companyTitle: "Creation",
     companyLinks: [

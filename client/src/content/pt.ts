@@ -4,7 +4,7 @@ export const pt: Content = {
   brand: {
     name: "Creation",
     microcopy: "Clareza. Ritmo. Execução.",
-    footerTagline: "Pensamos e realizamos projetos inovadores.",
+    footerTagline: "Pensar e fazer são a mesma responsabilidade.",
     locations: "Brasil | Estados Unidos",
   },
 
@@ -28,9 +28,9 @@ export const pt: Content = {
   },
 
   hero: {
-    headline: "Pensamos e realizamos projetos inovadores.",
+    headline: "Pensar e fazer são a mesma responsabilidade.",
     subheadline:
-      "Desenvolvemos projetos do início ao fim: entendemos o problema, estruturamos a solução, executamos e comprovamos o resultado.",
+      "A Creation reúne estratégia, gestão e capacidade operacional para transformar desafios em projetos claros, viáveis e bem executados, do entendimento à entrega.",
   },
 
   method: {
@@ -378,7 +378,7 @@ export const pt: Content = {
   },
 
   footer: {
-    description: "Pensamos e realizamos projetos inovadores.",
+    description: "Pensar e fazer são a mesma responsabilidade.",
     locations: "Brasil | Estados Unidos",
     companyTitle: "A Creation",
     companyLinks: [
