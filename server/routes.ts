@@ -9,7 +9,17 @@ export async function registerRoutes(
 
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, email, organization, projectType, message } = req.body;
+      const {
+        name,
+        email,
+        whatsapp,
+        organization,
+        projectType,
+        projectStage,
+        location,
+        deadline,
+        message,
+      } = req.body;
 
       if (!name || !email || !message) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -23,10 +33,14 @@ export async function registerRoutes(
         text: [
           `Nome: ${name}`,
           `E-mail: ${email}`,
-          `Organizacao: ${organization || "-"}`,
-          `Tipo de projeto: ${projectType || "-"}`,
+          `WhatsApp/telefone: ${whatsapp || "-"}`,
+          `Organizacao ou projeto: ${organization || "-"}`,
+          `Com o que podemos ajudar: ${projectType || "-"}`,
+          `Momento do projeto: ${projectStage || "-"}`,
+          `Onde acontecera: ${location || "-"}`,
+          `Prazo importante: ${deadline || "-"}`,
           "",
-          "Mensagem:",
+          "Desafio:",
           message,
         ].join("\n"),
       });

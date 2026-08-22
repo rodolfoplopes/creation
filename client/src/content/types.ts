@@ -165,6 +165,7 @@ export interface Content {
   };
 
   // ---- CONTATO (preservado, ajustado projectTypes) ----
+  // Reconstruido fiel ao doc 31-Contato.md (agosto/2026).
   contact: {
     title: string;
     description: string;
@@ -173,15 +174,26 @@ export interface Content {
       namePlaceholder: string;
       email: string;
       emailPlaceholder: string;
+      whatsapp: string;              // campo opcional, novo
+      whatsappPlaceholder: string;
       organization: string;
       organizationPlaceholder: string;
-      projectType: string;
+      projectType: string;           // "Com o que podemos ajudar?"
       projectTypePlaceholder: string;
-      projectTypes: string[];        // atualizado p/ as novas areas
-      message: string;
+      projectTypes: string[];        // 12 opcoes reais do doc + "Outro"
+      projectStage: string;          // "Em que momento o projeto esta?" — novo
+      projectStagePlaceholder: string;
+      projectStages: string[];
+      location: string;              // "Onde o projeto acontecera?" — novo
+      locationPlaceholder: string;
+      deadline: string;              // "Existe uma data ou prazo importante?" — novo
+      deadlinePlaceholder: string;
+      message: string;               // "Conte o desafio"
       messagePlaceholder: string;
+      consent: string;               // texto de consentimento — novo
       submit: string;
       sending: string;
+      confirmationMessage: string;   // mensagem pos-envio — novo
     };
     aside: {
       title: string;
@@ -190,6 +202,11 @@ export interface Content {
       email: string;
       whatsapp: string;
       whatsappNumber: string;
+      note: string;
+    };
+    process: {                       // "O que acontece depois do contato?" — novo
+      title: string;
+      steps: string[];
       note: string;
     };
   };
