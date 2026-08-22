@@ -8,6 +8,7 @@
  */
 
 import type { ReactNode } from "react";
+import PhotoFrame from "@/components/PhotoFrame";
 
 interface RichText {
   plain_text: string;
@@ -122,7 +123,12 @@ function Block({ block }: { block: any }) {
       if (!src) return null;
       return (
         <figure className="my-8">
-          <img src={src} alt={caption ?? ""} className="w-full rounded-2xl object-cover" />
+          <PhotoFrame
+            src={src}
+            alt={caption ?? ""}
+            className="w-full rounded-2xl"
+            imgClassName="w-full h-auto"
+          />
           {caption && (
             <figcaption className="text-small text-abyss/50 text-center mt-2">{caption}</figcaption>
           )}
