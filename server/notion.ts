@@ -22,10 +22,11 @@ const DATA_SOURCE_ID =
 
 const notion = process.env.NOTION_TOKEN ? new Client({ auth: process.env.NOTION_TOKEN }) : null;
 
-// Cache simples em memoria (o Notion rate-limita ~3 req/s; um blog
-// institucional nao precisa de dado em tempo real, 5 min de cache
-// evita bater na API a cada carregamento de pagina).
-const CACHE_TTL_MS = 5 * 60 * 1000;
+// Cache simples em memoria (o Notion rate-limita ~3 req/s; 60s de
+// cache evita bater na API a cada carregamento de pagina, mas ainda
+// reflete uma publicacao nova rapido — reduzido de 5min depois que o
+// cliente notou demora ao publicar os primeiros artigos).
+const CACHE_TTL_MS = 60 * 1000;
 let listCache: { data: InsightListItem[]; expiresAt: number } | null = null;
 const articleCache = new Map<string, { data: InsightArticle | null; expiresAt: number }>();
 
