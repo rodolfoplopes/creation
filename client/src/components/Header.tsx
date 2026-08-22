@@ -177,7 +177,7 @@ export default function Header() {
         }`}
         data-testid="header"
       >
-        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
+        <div className="w-full px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between py-4">
             <Link href={localize("/")} data-testid="link-logo">
               <img
@@ -219,8 +219,8 @@ export default function Header() {
         data-testid="overlay-menu"
       >
         <div className="h-full overflow-y-auto">
-          <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
-            {/* Topo do overlay: logo + fechar */}
+          <div className="w-full px-6 sm:px-8 lg:px-10">
+            {/* Topo do overlay: logo + fechar (mesmo gutter do header, edge-to-edge) */}
             <div className="flex items-center justify-between py-4">
               <Link href={localize("/")} data-testid="link-logo-overlay">
                 <img
@@ -238,7 +238,11 @@ export default function Header() {
                 <X className="h-6 w-6" />
               </button>
             </div>
+          </div>
 
+          {/* Corpo do overlay: largura de conteudo (max-w-6xl), mesma
+              proporcao das paginas internas */}
+          <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
             {/* Corpo: grupos de Solucoes (Estrategia/Gestao/Operacoes/
                 Especialidades) + institucional */}
             <nav
