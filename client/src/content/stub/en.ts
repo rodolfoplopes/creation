@@ -889,6 +889,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Innovating to produce change, not just motion", items: [
+        "Innovation programs can generate a lot of ideas and very little decision. That happens when the challenge is too broad, criteria aren't clear, participants lack access to the information they need, or no one takes on continuity.",
+        "Our work links research, program design, mobilization, experimentation, governance and execution.",
+      ]},
       { type: "cards", heading: "Fronts of work", items: [
         { title: "Innovation strategy", description: "Reading context, defining priority themes, objectives, portfolio, governance and indicators." },
         { title: "Challenge design", description: "Formulating the problem, guiding questions, criteria, audiences, data and participation conditions." },
@@ -905,13 +909,8 @@ export const stubData: Record<string, StubPageData> = {
         "How will proposals be compared?",
         "What resources will exist to test and implement?",
         "Who takes on continuity after the program?",
-      ]},
-      { type: "steps", heading: "How we work", items: [
-        { number: "01", title: "Investigate", description: "Context, problem, audiences, constraints and evidence." },
-        { number: "02", title: "Design", description: "Format, journey, governance, criteria, resources and communication." },
-        { number: "03", title: "Mobilize", description: "Participants, specialists, partners, mentors and decision-makers." },
-        { number: "04", title: "Run", description: "Content, facilitation, operation, records and follow-up." },
-        { number: "05", title: "Unfold", description: "Selection, pilots, projects, learnings and next steps." },
+        "What evidence will indicate progress?",
+        "Without at least these answers, innovation risks becoming an event disconnected from the organization.",
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
         "Innovation diagnosis.",
@@ -921,10 +920,27 @@ export const stubData: Record<string, StubPageData> = {
         "Rules and selection criteria.",
         "Mobilization plan.",
         "Participant journey.",
+        "Facilitation content and materials.",
+        "Mentoring and evaluation plan.",
         "Backlog of hypotheses and experiments.",
         "Pilot plan.",
         "Governance model.",
         "Results report and recommendations.",
+      ]},
+      { type: "bullets", heading: "Formats suited to the problem", items: [
+        "Hackathon, sprint, lab, open call, workshop and acceleration program are different means. The choice depends on the type of challenge, available knowledge, the diversity needed, the decision timeline and the organization's capacity to absorb it.",
+        "We don't recommend a format before understanding the question it needs to answer.",
+      ]},
+      { type: "bullets", heading: "From participation to continuity", items: [
+        "A well-designed program makes clear what will happen to proposals, which decisions are possible, and what resources will be available after the mobilization stage.",
+        "When continuity depends on future validations, that also needs to be disclosed. Transparency preserves the trust of participants and partners.",
+      ]},
+      { type: "steps", heading: "How we work", items: [
+        { number: "01", title: "Investigate", description: "Context, problem, audiences, constraints and evidence." },
+        { number: "02", title: "Design", description: "Format, journey, governance, criteria, resources and communication." },
+        { number: "03", title: "Mobilize", description: "Participants, specialists, partners, mentors and decision-makers." },
+        { number: "04", title: "Run", description: "Content, facilitation, operation, records and follow-up." },
+        { number: "05", title: "Unfold", description: "Selection, pilots, projects, learnings and next steps." },
       ]},
     ],
     ctaLabel: "Talk about your challenge",
@@ -940,6 +956,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "From commitment to observable change", items: [
+        "Impact projects operate in complex contexts. Results depend on external factors, trust relationships, continuity, audience participation and the capacity of the organizations involved.",
+        "That's why we start by understanding the territory and gaining clarity on the contribution the program can actually make. From there, we connect design, feasibility, execution, monitoring and learning.",
+      ]},
       { type: "cards", heading: "Fronts of work", items: [
         { title: "Social and territorial diagnosis", description: "Reading context, audiences, assets, vulnerabilities, actors, existing initiatives, data and knowledge gaps." },
         { title: "Impact strategy", description: "Defining priorities, audiences, objectives, principles, criteria and alignment with the organization's strategy." },
@@ -968,8 +988,26 @@ export const stubData: Record<string, StubPageData> = {
         "Risk matrix.",
         "Monitoring and evaluation plan.",
         "Indicator catalog.",
+        "Collection instruments.",
         "Dashboard or report.",
         "Results evaluation.",
+        "Continuity recommendations.",
+        "The method and level of evidence are defined based on the question, the program's stage, available data and expected investment.",
+      ]},
+      { type: "bullets", heading: "Corporate social responsibility, connected to management", items: [
+        "For corporate social responsibility, sustainability and private social investment areas, we can help structure programs, select and manage partners, set up governance, track portfolios, handle accountability and manage responsible communication.",
+        "We don't replace audit, assurance, legal opinion or certification. When those functions are needed, we bring in licensed professionals.",
+      ]},
+      { type: "bullets", heading: "Participation isn't a checklist item", items: [
+        "People affected by a program have knowledge about the problem, the territory and the consequences of the choices made. We define ways of listening and participation suited to the context, respecting consent, data protection, accessibility and power asymmetries.",
+        "Not every decision can be shared, but every promise of participation must be genuine.",
+      ]},
+      { type: "steps", heading: "How we work", items: [
+        { number: "01", title: "Understand", description: "Context, audiences, data, existing initiatives and necessary decisions." },
+        { number: "02", title: "Formulate", description: "Intended change, hypotheses, strategy, scope and criteria." },
+        { number: "03", title: "Structure", description: "Governance, partners, resources, plan, risks and indicators." },
+        { number: "04", title: "Execute", description: "Coordination, follow-up, learning and adjustments." },
+        { number: "05", title: "Evaluate", description: "Evidence, limitations, results, contribution and recommendations." },
       ]},
     ],
     childrenLabel: "Related specialty",

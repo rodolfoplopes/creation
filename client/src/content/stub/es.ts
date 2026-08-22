@@ -889,6 +889,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Innovar para producir cambio, no solo movimiento", items: [
+        "Los programas de innovación pueden generar muchas ideas y poca decisión. Eso sucede cuando el desafío es demasiado amplio, los criterios no están claros, los participantes no tienen acceso a la información necesaria o nadie asume la continuidad.",
+        "Nuestro trabajo conecta investigación, diseño de programa, movilización, experimentación, gobernanza y ejecución.",
+      ]},
       { type: "cards", heading: "Frentes de actuación", items: [
         { title: "Estrategia de innovación", description: "Lectura de contexto, definición de temas prioritarios, objetivos, portafolio, gobernanza e indicadores." },
         { title: "Diseño de desafíos", description: "Formulación del problema, preguntas orientadoras, criterios, públicos, datos y condiciones de participación." },
@@ -905,13 +909,8 @@ export const stubData: Record<string, StubPageData> = {
         "¿Cómo se compararán las propuestas?",
         "¿Qué recursos existirán para probar e implementar?",
         "¿Quién asume la continuidad después del programa?",
-      ]},
-      { type: "steps", heading: "Cómo trabajamos", items: [
-        { number: "01", title: "Investigar", description: "Contexto, problema, públicos, restricciones y evidencias." },
-        { number: "02", title: "Diseñar", description: "Formato, recorrido, gobernanza, criterios, recursos y comunicación." },
-        { number: "03", title: "Movilizar", description: "Participantes, especialistas, socios, mentores y tomadores de decisión." },
-        { number: "04", title: "Realizar", description: "Contenido, facilitación, operación, registro y seguimiento." },
-        { number: "05", title: "Desdoblar", description: "Selección, pilotos, proyectos, aprendizajes y próximos pasos." },
+        "¿Qué evidencias indicarán avance?",
+        "Sin respuestas mínimas, la innovación corre el riesgo de convertirse en un evento desconectado de la organización.",
       ]},
       { type: "bullets", heading: "Entregables posibles", items: [
         "Diagnóstico de innovación.",
@@ -921,10 +920,27 @@ export const stubData: Record<string, StubPageData> = {
         "Reglamento y criterios de selección.",
         "Plan de movilización.",
         "Recorrido de participantes.",
+        "Contenido y materiales de facilitación.",
+        "Plan de mentorías y evaluación.",
         "Backlog de hipótesis y experimentos.",
         "Plan de pilotos.",
         "Modelo de gobernanza.",
         "Informe de resultados y recomendaciones.",
+      ]},
+      { type: "bullets", heading: "Formatos adecuados al problema", items: [
+        "Hackathon, sprint, laboratorio, convocatoria abierta, taller y programa de aceleración son medios diferentes. La elección depende del tipo de desafío, el conocimiento disponible, la diversidad necesaria, el tiempo de decisión y la capacidad de absorción de la organización.",
+        "No recomendamos un formato antes de comprender la pregunta que necesita responder.",
+      ]},
+      { type: "bullets", heading: "De la participación a la continuidad", items: [
+        "Un programa bien diseñado deja claro qué sucederá con las propuestas, qué decisiones son posibles y qué recursos estarán disponibles después de la etapa de movilización.",
+        "Cuando la continuidad depende de validaciones futuras, eso también debe informarse. La transparencia preserva la confianza de participantes y socios.",
+      ]},
+      { type: "steps", heading: "Cómo trabajamos", items: [
+        { number: "01", title: "Investigar", description: "Contexto, problema, públicos, restricciones y evidencias." },
+        { number: "02", title: "Diseñar", description: "Formato, recorrido, gobernanza, criterios, recursos y comunicación." },
+        { number: "03", title: "Movilizar", description: "Participantes, especialistas, socios, mentores y tomadores de decisión." },
+        { number: "04", title: "Realizar", description: "Contenido, facilitación, operación, registro y seguimiento." },
+        { number: "05", title: "Desdoblar", description: "Selección, pilotos, proyectos, aprendizajes y próximos pasos." },
       ]},
     ],
     ctaLabel: "Conversemos sobre su desafío",
@@ -940,6 +956,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Del compromiso al cambio observable", items: [
+        "Los proyectos de impacto operan en contextos complejos. Los resultados dependen de factores externos, relaciones de confianza, continuidad, participación de los públicos y capacidad de las organizaciones involucradas.",
+        "Por eso empezamos por comprender el territorio y tener claridad sobre la contribución que el programa puede producir. A partir de ahí, conectamos diseño, viabilización, ejecución, monitoreo y aprendizaje.",
+      ]},
       { type: "cards", heading: "Frentes de actuación", items: [
         { title: "Diagnóstico social y territorial", description: "Lectura de contexto, públicos, activos, vulnerabilidades, actores, iniciativas existentes, datos y brechas de conocimiento." },
         { title: "Estrategia de impacto", description: "Definición de prioridades, públicos, objetivos, principios, criterios y relación con la estrategia de la organización." },
@@ -968,8 +988,26 @@ export const stubData: Record<string, StubPageData> = {
         "Matriz de riesgos.",
         "Plan de monitoreo y evaluación.",
         "Catálogo de indicadores.",
+        "Instrumentos de recolección.",
         "Panel o informe.",
         "Evaluación de resultados.",
+        "Recomendaciones de continuidad.",
+        "El método y el grado de evidencia se definen según la pregunta, la etapa del programa, los datos disponibles y la inversión prevista.",
+      ]},
+      { type: "bullets", heading: "Responsabilidad social conectada a la gestión", items: [
+        "Para áreas corporativas de responsabilidad social, sostenibilidad e inversión social privada, podemos actuar en la estructuración de programas, selección y gestión de socios, gobernanza, seguimiento de portafolio, rendición de cuentas y comunicación responsable.",
+        "No sustituimos auditoría, aseguramiento, dictamen jurídico o certificación. Cuando esas funciones sean necesarias, integramos profesionales habilitados al trabajo.",
+      ]},
+      { type: "bullets", heading: "La participación no es un ítem de checklist", items: [
+        "Las personas afectadas por un programa tienen conocimiento sobre el problema, el territorio y las consecuencias de las decisiones. Definimos formas de escucha y participación compatibles con el contexto, respetando el consentimiento, la protección de datos, la accesibilidad y las asimetrías de poder.",
+        "No toda decisión puede compartirse, pero toda promesa de participación debe ser verdadera.",
+      ]},
+      { type: "steps", heading: "Cómo trabajamos", items: [
+        { number: "01", title: "Comprender", description: "Contexto, públicos, datos, iniciativas existentes y decisiones necesarias." },
+        { number: "02", title: "Formular", description: "Cambio pretendido, hipótesis, estrategia, alcance y criterios." },
+        { number: "03", title: "Estructurar", description: "Gobernanza, socios, recursos, plan, riesgos e indicadores." },
+        { number: "04", title: "Realizar", description: "Coordinación, seguimiento, aprendizaje y ajustes." },
+        { number: "05", title: "Evaluar", description: "Evidencias, limitaciones, resultados, contribución y recomendaciones." },
       ]},
     ],
     childrenLabel: "Especialidad relacionada",
