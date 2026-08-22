@@ -163,7 +163,7 @@ export default function Header() {
     },
     {
       href: "/solucoes",
-      label: t("Soluções Creation", "Creation Solutions", "Soluciones Creation"),
+      label: t("Soluções", "Solutions", "Soluciones"),
       subItems: [
         { label: "Creation Ops Rio", href: "/creator-ops-rio", kind: "product" as const },
         { label: "Creation Marcas", href: "/creation-marcas", kind: "product" as const },
@@ -175,7 +175,6 @@ export default function Header() {
   ];
 
   const institutional = [
-    { label: t("Soluções", "Solutions", "Soluciones"), href: "/solucoes" },
     { label: "Cases", href: "/cases" },
     { label: t("Como Trabalhamos", "How We Work", "Cómo Trabajamos"), href: "/como-trabalhamos" },
     { label: c.nav.about, href: "/quem-somos" },
