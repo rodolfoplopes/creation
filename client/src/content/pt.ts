@@ -175,66 +175,88 @@ export const pt: Content = {
   },
 
   creatorOpsRioPage: {
-    eyebrow: "PRODUÇÃO EXECUTIVA NO RIO",
-    title: "Creation Ops Rio",
+    eyebrow: "CREATION OPS RIO",
+    title: "Seu projeto no Rio, com uma operação local responsável.",
     intro:
-      "Cuidamos da operação inteira de uma produção no Rio de Janeiro, da estratégia à execução: autorizações, locações, equipe e logística. Você chega com o projeto e encontra a cidade já resolvida.",
-    experienceStatement:
-      "Mais de 15 anos de experiência em receptivo e segurança de dignitários, organizações e grandes eventos.",
-    whatChanges: {
-      title: "O que muda quando a operação é nossa",
-      before: [
-        "Barreira de língua e cultura",
-        "Burocracia de autorizações",
-        "Não saber onde filmar",
-        "Fornecedores incertos",
-        "Logística e segurança",
-      ],
-      after: [
-        "Equipe trilíngue no local",
-        "Permits resolvidos antes de gravar",
-        "Mais de 150 locações mapeadas",
-        "Rede verificada e de confiança",
-        "Operação e deslocamento resolvidos",
+      "Uma frente da Creation para marcas, agências, produtoras e creators que precisam realizar campanhas, conteúdos, eventos e experiências no Rio de Janeiro. Pesquisa local, fornecedores, logística, produção e coordenação reunidos em um único ponto de contato.",
+    territory: {
+      title: "Conhecimento de território com disciplina de projeto",
+      paragraphs: [
+        "Produzir no Rio exige mais do que uma lista de contatos. Datas, deslocamentos, acessos, clima, licenças, disponibilidade e características de cada região alteram o plano.",
+        "A Creation Ops Rio combina leitura local e gestão para transformar o briefing em uma operação dimensionada, com responsabilidades, custos e decisões visíveis.",
       ],
     },
-    packages: {
-      title: "Pacotes",
-      subtitle: "Cada público tem uma necessidade diferente. Cada pacote responde a uma.",
+    whatWeCanTake: {
+      title: "O que podemos assumir",
+      items: [
+        "pesquisa de locações e visitas técnicas",
+        "suporte fixer e produção local",
+        "levantamento e coordenação de fornecedores",
+        "orçamento e cronograma operacional",
+        "licenças, autorizações e interfaces locais",
+        "contratação de equipes e recursos, conforme o modelo acordado",
+        "receptivo, motoristas, veículos e hospedagem",
+        "equipamentos, espaços, alimentação e apoio",
+        "produção de conteúdo, campanhas e ativações",
+        "gestão e produção de eventos",
+        "operação de campo e fechamento",
+      ],
+      note: "Serviços regulados ou sujeitos a responsabilidade técnica são realizados por profissionais e empresas habilitados.",
+    },
+    formats: {
+      title: "Formatos de contratação",
       items: [
         {
           title: "Content Sprint",
-          description:
-            "3 a 5 dias, para creators e influenciadores. Consultoria de pré-produção, scout de locações, equipe local, transporte, autorizações e suporte. Edição básica opcional.",
+          description: "Suporte concentrado para uma produção de conteúdo com janela definida, incluindo pesquisa, recursos locais, agenda e operação contratada.",
+          indicatedFor: "creators, equipes de conteúdo, fotografia, entrevistas e pequenas produções.",
         },
         {
           title: "Brand Campaign",
-          description:
-            "1 a 2 semanas, para marcas e agências. Tudo do Content Sprint, com direção de arte, casting local, equipamento profissional, pós-produção completa e relatório de entrega.",
+          description: "Estrutura de produção local para campanhas e ativações com múltiplos fornecedores, locações ou dias de execução.",
+          indicatedFor: "marcas, agências e produtoras.",
         },
         {
-          title: "Business Tourism VIP",
-          description:
-            "Sob medida, para executivos e investidores. Concierge executivo, transfers, reservas, agenda de reuniões e networking local, com suporte multilíngue.",
+          title: "Production Support",
+          description: "Frente operacional específica integrada a uma produção já estruturada, como location, transporte, fornecedores, licenças ou coordenação local.",
+          indicatedFor: "equipes que já possuem direção, produção geral ou planejamento central.",
         },
         {
-          title: "Expatriados",
-          description: "Apoio para quem se muda para o Rio. Em breve.",
+          title: "Operação sob medida",
+          description: "Desenho completo para projetos que não se encaixam em um pacote, com escopo, equipe e modelo de gestão próprios.",
         },
       ],
+      note: "Os nomes organizam a conversa inicial. O escopo, o prazo e o investimento são sempre formalizados em proposta.",
     },
-    differentiator: {
-      title: "Conhecer o Rio por dentro",
-      body:
-        "Conhecer a cidade por dentro é o que separa uma produção que acontece de uma que trava na burocracia ou no imprevisto. Sabemos onde se pode filmar e onde não se deve, quem entrega e quem promete, que caminho evita o problema antes dele existir. Esse conhecimento não se improvisa.",
+    territories: {
+      title: "Territórios prioritários",
+      paragraphs: [
+        "Atuamos no Rio de Janeiro e avaliamos projetos na Costa Verde e em outros municípios conforme necessidade, prazo, disponibilidade e rede adequada.",
+        "A área de atendimento é confirmada antes da proposta. Conhecimento local não elimina a necessidade de licenças, visitas técnicas e validações específicas.",
+      ],
     },
-    howWeWork: {
-      title: "Como conduzimos",
-      body:
-        "Começamos por um briefing que esclarece o objetivo do projeto. Em seguida desenhamos o plano: roteiro de locações, cronograma e equipe. Conduzimos a produção no local e entregamos o material combinado. É o mesmo arco de qualquer projeto que assumimos, aplicado ao ritmo de uma produção.",
+    process: {
+      title: "Como o briefing vira operação",
+      steps: [
+        { title: "Recebimento", description: "Objetivo, referências, datas, locais desejados, equipe, necessidades técnicas e orçamento de referência." },
+        { title: "Viabilidade inicial", description: "Lacunas, dependências, riscos, opções e informações adicionais." },
+        { title: "Plano e proposta", description: "Escopo, responsabilidades, equipe, fornecedores, cronograma, custos e premissas." },
+        { title: "Preparação", description: "Contratações, confirmações, visitas, documentos, logística e plano de campo." },
+        { title: "Realização", description: "Coordenação, comunicação, registro de mudanças e fechamento." },
+      ],
     },
-    forWhom:
-      "Para content creators, marcas e executivos de fora do Brasil que precisam produzir ou operar no Rio sem transformar a viagem em um problema de logística.",
+    forTeams: {
+      title: "Para equipes de fora e para quem já está no Rio",
+      paragraphs: [
+        "A Creation Ops Rio pode funcionar como base local de uma produção nacional ou internacional e também como reforço para empresas e profissionais da própria cidade.",
+        "O modelo se adapta ao que já está definido e ao que ainda precisa ser construído.",
+      ],
+    },
+    closing: {
+      title: "O que você quer realizar no Rio?",
+      body: "Envie o briefing disponível, mesmo que ainda esteja incompleto. Indicaremos quais informações faltam para avaliar a operação.",
+      ctaLabel: "Fale com a Creation Ops Rio",
+    },
   },
 
   creationMarcasPage: {

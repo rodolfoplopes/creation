@@ -108,16 +108,22 @@ export interface Content {
   };
 
   // ---- SUB-MARCAS / LANDINGS (paginas proprias) ----
+  // Reconstruida fiel ao doc 20-Creation-Ops-Rio.md (agosto/2026).
   creatorOpsRioPage: {
     eyebrow: string;
     title: string;
     intro: string;
-    experienceStatement: string; // credencial real ("+15 anos de experiencia..."), nao numero de projeto
-    whatChanges: { title: string; before: string[]; after: string[] };
-    packages: { title: string; subtitle: string; items: TitledItem[] }; // Content Sprint, Brand Campaign, Business Tourism VIP, Expatriates(em breve)
-    differentiator: { title: string; body: string };
-    howWeWork: { title: string; body: string };
-    forWhom: string;
+    territory: { title: string; paragraphs: string[] };            // "Conhecimento de territorio com disciplina de projeto"
+    whatWeCanTake: { title: string; items: string[]; note: string }; // "O que podemos assumir" (11 itens)
+    formats: {
+      title: string;
+      items: { title: string; description: string; indicatedFor?: string }[]; // Content Sprint, Brand Campaign, Production Support, Operacao sob medida
+      note: string;
+    };
+    territories: { title: string; paragraphs: string[] };           // "Territorios prioritarios"
+    process: { title: string; steps: TitledItem[] };                 // "Como o briefing vira operacao" (5 passos)
+    forTeams: { title: string; paragraphs: string[] };                // "Para equipes de fora e para quem ja esta no Rio"
+    closing: { title: string; body: string; ctaLabel: string };
   };
 
   creationMarcasPage: {
