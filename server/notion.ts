@@ -18,7 +18,7 @@ import type { InsightListItem, InsightArticle } from "@shared/insights";
  *                                     criada nesta sessao)
  */
 const DATA_SOURCE_ID =
-  process.env.NOTION_INSIGHTS_DATA_SOURCE_ID || "9c3b2841-f44c-4f40-af16-306e8d128001";
+  process.env.NOTION_INSIGHTS_DATA_SOURCE_ID || "3e57a531-ca24-4ed2-8bbe-b4e19cc94c39";
 
 const notion = process.env.NOTION_TOKEN ? new Client({ auth: process.env.NOTION_TOKEN }) : null;
 
