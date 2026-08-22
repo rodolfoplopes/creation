@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useContent, useLang } from "@/content";
 import { getPathWithoutLang, type SupportedLang } from "@/lib/lang";
 import { storeLang } from "@/lib/detectLang";
@@ -49,6 +49,19 @@ export default function Header() {
   const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // Acordeao do mega-menu no mobile (achado da auditoria UX/UI
+  // 22/08/2026): a lista flat de 5 grupos + subitens exigia rolar por
+  // 25+ links antes de chegar no seletor de idioma. No desktop (md+) os
+  // subitens continuam sempre visiveis, ignorando este estado.
+  const [openGroups, setOpenGroups] = useState<Set<string>>(new Set());
+  const toggleGroup = (href: string) => {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(href)) next.delete(href);
+      else next.add(href);
+      return next;
+    });
+  };
   const c = useContent();
   const currentLang = useLang();
 
@@ -263,20 +276,37 @@ export default function Header() {
               data-testid="nav-overlay"
             >
               {solutionGroups.map((area) => (
-                <div key={area.href}>
-                  <Link href={localize(area.href)} onClick={() => handleMenuClick(area.href)}>
-                    <span
-                      className={`block text-h2 font-bold mb-4 cursor-pointer transition-colors ${
-                        isCurrentPath(area.href)
-                          ? "text-signal"
-                          : "text-bone hover:text-signal"
-                      }`}
-                    >
-                      {area.label}
-                    </span>
-                  </Link>
+                <div key={area.label}>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <Link href={localize(area.href)} onClick={() => handleMenuClick(area.href)}>
+                      <span
+                        className={`block text-h2 font-bold cursor-pointer transition-colors ${
+                          isCurrentPath(area.href)
+                            ? "text-signal"
+                            : "text-bone hover:text-signal"
+                        }`}
+                      >
+                        {area.label}
+                      </span>
+                    </Link>
+                    {area.subItems.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => toggleGroup(area.label)}
+                        className="md:hidden text-bone/60 hover:text-bone p-1 -mr-1 transition-transform"
+                        style={{ transform: openGroups.has(area.label) ? "rotate(180deg)" : "none" }}
+                        aria-expanded={openGroups.has(area.label)}
+                        aria-label={t("Expandir", "Expand", "Expandir")}
+                        data-testid={`button-toggle-group-${area.label}`}
+                      >
+                        <ChevronDown className="h-5 w-5" />
+                      </button>
+                    )}
+                  </div>
                   {area.subItems.length > 0 && (
-                    <ul className="space-y-3">
+                    <ul
+                      className={`space-y-3 ${openGroups.has(area.label) ? "block" : "hidden"} md:block`}
+                    >
                       {area.subItems.map((item) => (
                         <li key={item.href}>
                           <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>
