@@ -2,10 +2,41 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { Resend } from "resend";
+import { listPublishedInsights, getInsightBySlug, isNotionConfigured } from "./notion";
+
+const langToNotion: Record<string, string> = { pt: "PT", en: "EN", es: "ES" };
+
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+
+  // Insights (blog) — Notion como CMS. Ver server/notion.ts para o
+  // racional completo. Sem NOTION_TOKEN configurado, retorna lista
+  // vazia (o site trata isso como "ainda sem artigos publicados", nao
+  // como erro).
+  app.get("/api/insights", async (req, res) => {
+    try {
+      const lang = langToNotion[String(req.query.lang ?? "pt")] ?? "PT";
+      const items = await listPublishedInsights(lang);
+      res.json({ items, configured: isNotionConfigured() });
+    } catch (error) {
+      console.error("Insights list error:", error);
+      res.status(500).json({ error: "Failed to load insights" });
+    }
+  });
+
+  app.get("/api/insights/:slug", async (req, res) => {
+    try {
+      const lang = langToNotion[String(req.query.lang ?? "pt")] ?? "PT";
+      const article = await getInsightBySlug(req.params.slug, lang);
+      if (!article) return res.status(404).json({ error: "Not found" });
+      res.json(article);
+    } catch (error) {
+      console.error("Insight article error:", error);
+      res.status(500).json({ error: "Failed to load insight" });
+    }
+  });
 
   app.post("/api/contact", async (req, res) => {
     try {

@@ -14,6 +14,8 @@ import BiEventos from "@/pages/BiEventos";
 import Contato from "@/pages/Contato";
 import CreationProfile from "@/pages/CreationProfile";
 import Cases from "@/pages/Cases";
+import Insights from "@/pages/Insights";
+import InsightArticle from "@/pages/InsightArticle";
 import NotFound from "@/pages/not-found";
 import StubPageLayout from "@/components/StubPageLayout";
 import { stubPages } from "@/content/stub";
@@ -125,6 +127,8 @@ function LangRouter({ lang }: { lang: SupportedLang }) {
         <Route path={`/${lang}/branding-experiencias`} component={() => <StubPageLayout data={s["branding-experiencias"]} />} />
         <Route path={`/${lang}/como-trabalhamos`} component={() => <StubPageLayout data={s["como-trabalhamos"]} />} />
         <Route path={`/${lang}/cases`} component={Cases} />
+        <Route path={`/${lang}/insights`} component={Insights} />
+        <Route path={`/${lang}/insights/:slug`} component={InsightArticle} />
 
         <Route path={`/${lang}/creator-ops-rio`} component={CreatorOpsRio} />
         <Route path={`/${lang}/creation-marcas`} component={CreationMarcas} />

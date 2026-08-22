@@ -692,6 +692,7 @@ export const es: Content = {
     companyLinks: [
       { label: "Nosotros", href: "/quem-somos" },
       { label: "Cómo Trabajamos", href: "/como-trabalhamos" },
+      { label: "Insights", href: "/insights" },
       { label: "Contacto", href: "/contato" },
     ],
     solutionsTitle: "Soluciones",
