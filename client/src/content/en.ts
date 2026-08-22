@@ -411,22 +411,100 @@ export const en: Content = {
   },
 
   // LOCKED — titulo travado no doc.
+  // Rebuilt to match doc 23-BI-de-Eventos.md (August 2026).
   biEventosPage: {
-    eyebrow: "INTELLIGENCE",
-    title: "Every event produces data",
+    eyebrow: "EVENT BI",
+    title: "Event data only has value when it improves a decision.",
     intro:
-      "An event happens once, but the data it produces can inform the next ones. Today that data tends to get lost, scattered across different vendors; BI for Events brings it all together in a single dashboard.",
-    whatWeMeasure: {
-      title: "What we measure",
-      body:
-        "Attendance and flow, engagement, return and reach, and performance by area. A decision-making instrument, not a descriptive report.",
+      "Every event generates data: registrations, attendance, engagement, cost, return. The question isn't whether that data exists. It's whether anyone will turn it into a decision.",
+    body:
+      "It's not just another dashboard full of numbers. It's a system of questions, indicators and responsibilities suited to the event.",
+    measuringStarts: {
+      title: "Measuring starts before registration opens",
+      paragraphs: [
+        "Event BI isn't a report delivered after everything is over. It's a structure defined beforehand: which questions the event needs to answer, which indicators make sense for this format and this goal, who will look at those numbers and what will be decided with them.",
+        "Without that upfront definition, what's left is what almost every event ends up with: a list of loose numbers, with no hierarchy and no owner.",
+      ],
     },
-    externalRead: {
-      title: "An external, independent measure",
-      body:
-        "We don't need to have produced the event to measure it. It's a read from someone who has nothing to prove about their own work, the kind of independence that gives the number credibility.",
+    questions: {
+      title: "Questions the work can answer",
+      items: [
+        "Does this event format deliver what it promises?",
+        "Did the investment in a given action generate proportional return?",
+        "What audience profile actually showed up, compared to the planned audience?",
+        "At what point in the journey do people drop off or engage more?",
+        "Did a specific sponsorship or partnership generate the expected return?",
+        "Should this event repeat, change format, or be discontinued?",
+        "Are costs per participant or per result within expectations?",
+        "What was learned this edition that should become a criterion for the next one?",
+      ],
     },
-    forWhom: "For organizers, sponsors and brands who want to know, with data, what worked at the event.",
+    scope: {
+      title: "Possible scope",
+      items: [
+        { title: "Goals and questions", description: "Defining what this event needs to prove, and for whom that answer matters." },
+        { title: "Data architecture", description: "Mapping what data exists, what data is missing, and how to connect it." },
+        { title: "Indicators", description: "Selecting the indicators relevant to this specific format and goal." },
+        { title: "Instruments", description: "Defining how each data point will be collected — form, check-in, survey, third-party system." },
+        { title: "Monitoring", description: "Reading the numbers during the event itself, when the format allows real-time adjustment." },
+        { title: "Analysis and visualization", description: "Post-event consolidation in a format that supports decisions, not just description." },
+      ],
+    },
+    dimensions: {
+      title: "Dimensions that can be considered",
+      items: [
+        "Attendance and presence",
+        "Participant profile and origin",
+        "Engagement during the event",
+        "Cost per participant",
+        "Cost per result",
+        "Sponsorship or partnership return",
+        "Reach and repercussion",
+        "Satisfaction and perception",
+        "Post-event conversion",
+        "Performance by vendor or operational area",
+        "Comparison across editions",
+        "Impact indicators, when applicable",
+      ],
+      note: "It's not necessary to measure every dimension. It's necessary to measure the ones that answer the question that motivated the event.",
+    },
+    deliverables: {
+      title: "Possible deliverables",
+      items: [
+        "Indicator structure defined before the event",
+        "Data collection instruments configured",
+        "Monitoring dashboard during the event, when applicable",
+        "Post-event data consolidation",
+        "Analytical read with recommendations",
+        "Comparison with previous editions, when they exist",
+        "Report for sponsors or partners, when needed",
+        "Documentation of what should be kept, adjusted or dropped in the next edition",
+        "Recommendation on continuity, format change, or discontinuation",
+      ],
+      note: "The work is technology-agnostic: it doesn't assume a proprietary platform, and adapts to the tools the client already uses or intends to use.",
+    },
+    dataPrivacy: {
+      title: "Personal data and consent",
+      paragraphs: [
+        "When collection involves participants' personal data, the client is the data controller and is responsible for appropriate handling, including consent and purpose.",
+        "Creation doesn't recommend collecting data just because a tool allows it. Every data point collected needs a question that justifies it.",
+      ],
+    },
+    process: {
+      title: "How we work",
+      steps: [
+        { title: "Decisions", description: "Mapping which decisions this event needs to support." },
+        { title: "Metrics", description: "Selecting the indicators that answer those decisions." },
+        { title: "Collection", description: "Defining and configuring the collection instruments." },
+        { title: "Reading", description: "Consolidating and analyzing the data after the event." },
+        { title: "Action", description: "Concrete recommendations for the next decision or edition." },
+      ],
+    },
+    closing: {
+      title: "What does the next event need to know about this one?",
+      body: "If this event will repeat, this edition's data is the starting point for the next one. Let's talk about what to measure.",
+      ctaLabel: "Talk about my event",
+    },
   },
 
   contact: {

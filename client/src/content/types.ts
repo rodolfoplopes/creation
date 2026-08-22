@@ -162,13 +162,20 @@ export interface Content {
     closing: { title: string; body: string; ctaLabel: string };
   };
 
+  // Reconstruida fiel ao doc 23-BI-de-Eventos.md (agosto/2026).
   biEventosPage: {
     eyebrow: string;
-    title: string;                   // "Todo evento produz dados"
+    title: string;
     intro: string;
-    whatWeMeasure: { title: string; body: string };
-    externalRead: { title: string; body: string };      // medidor externo independente
-    forWhom: string;
+    body: string; // "Nao e mais um painel cheio de numeros..."
+    measuringStarts: { title: string; paragraphs: string[] };
+    questions: { title: string; items: string[] };
+    scope: { title: string; items: TitledItem[] };
+    dimensions: { title: string; items: string[]; note: string };
+    deliverables: { title: string; items: string[]; note: string };
+    dataPrivacy: { title: string; paragraphs: string[] };
+    process: { title: string; steps: TitledItem[] };
+    closing: { title: string; body: string; ctaLabel: string };
   };
 
   // ---- CONTATO (preservado, ajustado projectTypes) ----

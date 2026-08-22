@@ -403,23 +403,100 @@ export const pt: Content = {
     },
   },
 
+  // Reconstruida fiel ao doc 23-BI-de-Eventos.md (agosto/2026).
   biEventosPage: {
     eyebrow: "BI DE EVENTOS",
-    title: "Todo evento produz dados",
+    title: "Dados de evento só têm valor quando melhoram uma decisão.",
     intro:
-      "Um evento acontece uma vez, mas os dados que ele produz podem informar todos os próximos. Na maioria das vezes, esses dados se perdem no dia seguinte, espalhados entre fornecedores e planilhas. O BI de Eventos reúne essa informação em um painel único e a transforma em leitura de desempenho.",
-    whatWeMeasure: {
-      title: "O que medimos",
-      body:
-        "Consolidamos as métricas do evento em um retrato completo: público e fluxo, engajamento e participação, retorno e repercussão, desempenho por área da operação. O resultado não é um relatório descritivo do que aconteceu, e sim um instrumento de decisão para o que vem depois.",
+      "Todo evento gera dados: inscrições, presença, engajamento, custo, retorno. A pergunta não é se esses dados existem. É se alguém vai transformá-los em decisão.",
+    body:
+      "Não é mais um painel cheio de números. É um sistema de perguntas, indicadores e responsabilidades adequado ao evento.",
+    measuringStarts: {
+      title: "Medir começa antes da abertura das inscrições",
+      paragraphs: [
+        "BI de evento não é um relatório entregue depois que tudo terminou. É uma estrutura definida antes: quais perguntas o evento precisa responder, quais indicadores fazem sentido para este formato e este objetivo, quem vai olhar para esses números e o que vai decidir com eles.",
+        "Sem essa definição prévia, sobra o que quase todo evento tem: uma lista de números soltos, sem hierarquia e sem dono.",
+      ],
     },
-    externalRead: {
-      title: "Uma leitura de fora, sem interesse na resposta",
-      body:
-        "Não é preciso ter contratado a produção do evento conosco para medi-lo. O BI de Eventos funciona como uma leitura independente, o que significa que avaliamos a performance com o distanciamento de quem não precisa provar o próprio trabalho. Um organizador que quer entender os números do seu evento com isenção encontra aqui essa leitura.",
+    questions: {
+      title: "Perguntas que o trabalho pode responder",
+      items: [
+        "Este formato de evento entrega o que promete?",
+        "O investimento em determinada ação teve retorno proporcional?",
+        "Que perfil de público realmente compareceu, comparado ao público planejado?",
+        "Em que ponto da jornada as pessoas desistem ou se engajam mais?",
+        "Um patrocínio ou parceria específica gerou o retorno esperado?",
+        "Este evento deve se repetir, mudar de formato ou ser encerrado?",
+        "Os custos por participante ou por resultado estão dentro do esperado?",
+        "O que aprendido nesta edição deve virar critério para a próxima?",
+      ],
     },
-    forWhom:
-      "Para organizadores, patrocinadores e marcas que realizam eventos e querem sair de cada edição sabendo o que funcionou e o que ajustar.",
+    scope: {
+      title: "Escopo possível",
+      items: [
+        { title: "Objetivos e perguntas", description: "Definição do que este evento precisa provar e para quem essa resposta importa." },
+        { title: "Arquitetura de dados", description: "Desenho de que dados existem, que dados faltam e como conectá-los." },
+        { title: "Indicadores", description: "Seleção dos indicadores relevantes para este formato e objetivo específicos." },
+        { title: "Instrumentos", description: "Definição de como cada dado será coletado — formulário, check-in, pesquisa, sistema de terceiro." },
+        { title: "Acompanhamento", description: "Leitura dos números durante o próprio evento, quando o formato permite ajuste em tempo real." },
+        { title: "Análise e visualização", description: "Consolidação pós-evento em um formato que permita decisão, não apenas descrição." },
+      ],
+    },
+    dimensions: {
+      title: "Dimensões que podem ser consideradas",
+      items: [
+        "Público e presença",
+        "Perfil e origem do participante",
+        "Engajamento durante o evento",
+        "Custo por participante",
+        "Custo por resultado",
+        "Retorno de patrocínio ou parceria",
+        "Repercussão e alcance",
+        "Satisfação e percepção",
+        "Conversão pós-evento",
+        "Desempenho por fornecedor ou área da operação",
+        "Comparação entre edições",
+        "Indicadores de impacto, quando aplicável",
+      ],
+      note: "Não é preciso medir todas as dimensões. É preciso medir as que respondem à pergunta que motivou o evento.",
+    },
+    deliverables: {
+      title: "Entregáveis possíveis",
+      items: [
+        "Estrutura de indicadores definida antes do evento",
+        "Instrumentos de coleta configurados",
+        "Painel de acompanhamento durante o evento, quando aplicável",
+        "Consolidação de dados pós-evento",
+        "Leitura analítica com recomendações",
+        "Comparação com edições anteriores, quando existirem",
+        "Relatório para patrocinadores ou parceiros, quando necessário",
+        "Documentação do que deve ser mantido, ajustado ou descartado na próxima edição",
+        "Recomendação sobre continuidade, mudança de formato ou encerramento",
+      ],
+      note: "O trabalho é agnóstico de tecnologia: não pressupõe uma plataforma proprietária, e se adapta às ferramentas que o cliente já usa ou pretende usar.",
+    },
+    dataPrivacy: {
+      title: "Dados pessoais e consentimento",
+      paragraphs: [
+        "Quando a coleta envolve dados pessoais de participantes, o cliente é o controlador desses dados e responde pelo tratamento adequado, incluindo consentimento e finalidade.",
+        "A Creation não recomenda coletar dados apenas porque uma ferramenta permite. Cada dado coletado precisa de uma pergunta que o justifique.",
+      ],
+    },
+    process: {
+      title: "Como trabalhamos",
+      steps: [
+        { title: "Decisões", description: "Mapeamento de que decisões este evento precisa embasar." },
+        { title: "Métricas", description: "Seleção dos indicadores que respondem a essas decisões." },
+        { title: "Coleta", description: "Definição e configuração dos instrumentos de coleta." },
+        { title: "Leitura", description: "Consolidação e análise dos dados após o evento." },
+        { title: "Ação", description: "Recomendações concretas para a próxima decisão ou edição." },
+      ],
+    },
+    closing: {
+      title: "O que o próximo evento precisa saber sobre o atual?",
+      body: "Se este evento vai se repetir, os dados da edição atual são o ponto de partida da próxima. Vamos conversar sobre o que medir.",
+      ctaLabel: "Falar sobre o meu evento",
+    },
   },
 
   contact: {
