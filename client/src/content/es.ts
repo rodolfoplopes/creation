@@ -264,45 +264,93 @@ export const es: Content = {
   },
 
   // LOCKED — titulo travado no doc.
+  // Reconstruida fiel al doc 21-Creation-Marcas.md (agosto/2026).
   creationMarcasPage: {
-    eyebrow: "MARCA",
-    title: "Registrar antes es proteger primero",
-    intro:
-      "Una marca es de quien la registra primero. Cuanto más temprano el registro, menor el riesgo de que otra empresa reivindique el nombre antes que usted.",
-    whyEarly: {
-      title: "Por qué registrar temprano",
-      body:
-        "El derecho sobre una marca en Brasil nace del registro ante el INPI, no del uso. Esperar expone la marca al riesgo de que otra empresa la registre primero, aunque usted ya esté en el mercado.",
+    eyebrow: "CREATION MARCAS",
+    title: "Su marca necesita estrategia también a la hora de buscar protección.",
+    paragraphs: [
+      "Creation Marcas organiza las etapas administrativas para quien pretende solicitar el registro de una marca ante el Instituto Nacional de la Propiedad Industrial, el INPI.",
+      "Desde el triaje inicial hasta el seguimiento del proceso, usted entiende qué se hará, qué decisiones dependen de usted y qué resultados dependen del examen del Instituto.",
+    ],
+    heroCtaLabel: "Solicite una evaluación inicial",
+    process: {
+      title: "Registrar es un proceso, no una promesa de aprobación.",
+      paragraphs: [
+        "La solicitud pasa por clasificaciones, requisitos formales, publicaciones y análisis del INPI. La existencia de un depósito no significa que el registro será concedido, y una búsqueda previa reduce incertidumbres sin eliminar todos los riesgos.",
+        "Nuestro servicio organiza información, documentos, plazos y seguimiento. El INPI es la autoridad responsable de examinar y decidir la solicitud.",
+      ],
     },
-    whatWeDo: {
-      title: "Lo que hacemos",
+    steps: {
+      title: "Etapas que pueden formar parte del servicio.",
       items: [
-        {
-          title: "Registro ante el INPI",
-          description: "Solicitud de registro conducida de principio a fin, con seguimiento del proceso.",
-        },
-        {
-          title: "Monitoreo continuo",
-          description: "Seguimiento permanente para identificar intentos de registro conflictivos.",
-        },
+        { title: "Conversación inicial", description: "Comprensión de la marca, del titular pretendido, de las actividades y de los productos o servicios relacionados." },
+        { title: "Búsqueda preliminar", description: "Consulta a las bases disponibles para identificar signos anteriores que merezcan análisis, sin equivaler a un dictamen definitivo de registrabilidad." },
+        { title: "Encuadramiento", description: "Organización de los productos y servicios y apoyo en la elección de la clase o las clases aplicables." },
+        { title: "Preparación de la solicitud", description: "Revisión de datos, documentos, presentación de la marca e información necesaria para el protocolo." },
+        { title: "Protocolo", description: "Emisión u orientación para el pago de las tasas y envío de la solicitud en el sistema oficial, conforme al modelo de representación validado." },
+        { title: "Seguimiento", description: "Monitoreo de las publicaciones y comunicación de los movimientos incluidos en el alcance contratado." },
+        { title: "Próximas gestiones", description: "Orientación sobre etapas administrativas y activación de un profesional jurídico habilitado cuando haya oposición, manifestación, recurso, nulidad, conflicto u otro asunto jurídico." },
       ],
     },
-    differentiator: {
-      title: "Registrar con quien entiende de marca completa",
-      body:
-        "Además del registro, nos ocupamos de branding, identidad y contenido. Quien se ocupa del registro también entiende del resto de la marca, no solo del proceso jurídico.",
-    },
-    howItWorks: {
-      title: "Cómo funciona",
-      steps: [
-        { title: "Consulta", description: "Verificación de disponibilidad de la marca en las clases relevantes." },
-        { title: "Estrategia", description: "Definición de las clases y la estrategia de protección." },
-        { title: "Solicitud", description: "Presentación de la solicitud de registro ante el INPI." },
-        { title: "Seguimiento", description: "Monitoreo del proceso hasta la concesión del registro." },
+    deliverables: {
+      title: "Lo que usted recibe.",
+      items: [
+        "Checklist de información y documentos",
+        "Resumen de la búsqueda preliminar",
+        "Indicación de las clases consideradas en el alcance",
+        "Revisión de los datos de la solicitud",
+        "Comprobante y número del proceso, tras el protocolo",
+        "Canal definido para actualizaciones",
+        "Alertas sobre movimientos cubiertos por el contrato",
+        "Orientación para renovación o expansión futura, cuando corresponda",
       ],
+      note: "El registro de marca concedido por el INPI tiene vigencia de diez años contados desde la concesión y puede prorrogarse por períodos iguales y sucesivos, conforme a las reglas y pagos aplicables.",
     },
-    forWhom:
-      "Para empresas brasileñas y extranjeras que necesitan proteger la marca en Brasil, especialmente antes de expandir la operación en el país.",
+    fees: {
+      title: "Honorarios, tasas y servicios adicionales.",
+      intro: "La propuesta debe presentar por separado:",
+      items: [
+        "Honorarios de Creation o del socio responsable",
+        "Tasas oficiales del INPI",
+        "Cantidad de clases y solicitudes",
+        "Alcance y período de seguimiento",
+        "Manifestaciones, oposiciones, recursos y otras medidas no incluidas",
+        "Servicios jurídicos, cuando sean necesarios",
+        "Renovación, transferencia, licenciamiento o cambios posteriores",
+      ],
+      note: "Los valores y reglas oficiales pueden cambiar. La referencia válida es la tabla vigente del INPI en la fecha del servicio.",
+    },
+    doesNotGuarantee: {
+      title: "Lo que este servicio no garantiza.",
+      items: [
+        "Disponibilidad definitiva del signo",
+        "Ausencia de cuestionamientos de terceros",
+        "Concesión del registro",
+        "Plazo exacto para la decisión",
+        "Protección fuera de las clases, el territorio o la forma concedida",
+        "Exclusividad sobre elementos que la legislación no admita proteger",
+      ],
+      note: "Cuando la situación exija interpretación o actuación jurídica, el caso debe remitirse a un profesional habilitado.",
+    },
+    howToStart: {
+      title: "Cómo empezar.",
+      intro: "Envíe:",
+      items: [
+        "Nombre o signo que pretende registrar",
+        "Forma de presentación, si hay logotipo",
+        "Productos y servicios asociados",
+        "Datos básicos del titular pretendido",
+        "Países o territorios de interés",
+        "Solicitudes o registros anteriores relacionados",
+        "Plazo o lanzamiento previsto",
+      ],
+      note: "Esta información permite definir el alcance inicial. No sustituye un análisis posterior ni asegura viabilidad.",
+    },
+    closing: {
+      title: "¿Su marca ya está lista para la solicitud?",
+      body: "Cuéntenos qué pretende proteger y en qué actividades se utilizará la marca. Organizamos el próximo paso con transparencia sobre alcance, costos y límites.",
+      ctaLabel: "Hablar sobre su marca",
+    },
   },
 
   ongZeroPage: {

@@ -126,15 +126,19 @@ export interface Content {
     closing: { title: string; body: string; ctaLabel: string };
   };
 
+  // Reconstruida fiel ao doc 21-Creation-Marcas.md (agosto/2026).
   creationMarcasPage: {
     eyebrow: string;
     title: string;
-    intro: string;
-    whyEarly: { title: string; body: string };
-    whatWeDo: { title: string; items: TitledItem[] };  // Registro INPI, Monitoramento
-    differentiator: { title: string; body: string };
-    howItWorks: { title: string; steps: TitledItem[] };
-    forWhom: string;
+    paragraphs: string[];
+    heroCtaLabel: string;
+    process: { title: string; paragraphs: string[] };        // "Registrar e um processo, nao uma promessa de aprovacao"
+    steps: { title: string; items: TitledItem[] };            // "Etapas que podem fazer parte do atendimento" (7)
+    deliverables: { title: string; items: string[]; note: string }; // "O que voce recebe" + validade de 10 anos
+    fees: { title: string; intro: string; items: string[]; note: string }; // "Honorarios, retribuicoes e servicos adicionais"
+    doesNotGuarantee: { title: string; items: string[]; note: string };
+    howToStart: { title: string; intro: string; items: string[]; note: string };
+    closing: { title: string; body: string; ctaLabel: string };
   };
 
   ongZeroPage: {

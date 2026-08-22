@@ -259,47 +259,93 @@ export const pt: Content = {
     },
   },
 
+  // Reconstruida fiel ao doc 21-Creation-Marcas.md (agosto/2026).
   creationMarcasPage: {
-    eyebrow: "REGISTRO E PROTEÇÃO DE MARCA",
-    title: "Creation Marcas",
-    intro:
-      "Registrar uma marca é garantir que o nome, o logo e a reputação que você construiu pertençam a você, e não a quem chegar primeiro ao INPI. Cuidamos do registro e da proteção da sua marca, do pedido à vigilância contínua.",
-    whyEarly: {
-      title: "Por que registrar cedo importa",
-      body:
-        "No Brasil, a marca não pertence a quem usa primeiro, e sim a quem registra primeiro. Uma empresa pode operar por anos com um nome e perdê-lo porque outra o depositou antes. Quanto antes o pedido entra, menor o risco de descobrir, tarde demais, que a marca já é de outro.",
+    eyebrow: "CREATION MARCAS",
+    title: "Sua marca precisa de estratégia também na hora de buscar proteção.",
+    paragraphs: [
+      "A Creation Marcas organiza as etapas administrativas para quem pretende solicitar o registro de uma marca no Instituto Nacional da Propriedade Industrial, o INPI.",
+      "Da triagem inicial ao acompanhamento do processo, você entende o que será feito, quais decisões dependem de você e quais resultados dependem do exame do Instituto.",
+    ],
+    heroCtaLabel: "Solicite uma avaliação inicial",
+    process: {
+      title: "Registrar é um processo, não uma promessa de aprovação.",
+      paragraphs: [
+        "O pedido passa por classificações, requisitos formais, publicações e análise do INPI. A existência de um depósito não significa que o registro será concedido, e uma busca prévia reduz incertezas sem eliminar todos os riscos.",
+        "Nosso serviço organiza informações, documentos, prazos e acompanhamento. O INPI é a autoridade responsável por examinar e decidir o pedido.",
+      ],
     },
-    whatWeDo: {
-      title: "O que fazemos",
+    steps: {
+      title: "Etapas que podem fazer parte do atendimento.",
       items: [
-        {
-          title: "Registro no INPI",
-          description:
-            "Consulta de disponibilidade, definição das classes, elaboração e protocolo do pedido, e acompanhamento do processo até a decisão.",
-        },
-        {
-          title: "Monitoramento contínuo",
-          description:
-            "Acompanhamos o uso indevido da marca no INPI e além dele, e avisamos quando algo exige atenção.",
-        },
+        { title: "Conversa inicial", description: "Entendimento da marca, do titular pretendido, das atividades e dos produtos ou serviços relacionados." },
+        { title: "Pesquisa preliminar", description: "Consulta às bases disponíveis para identificar sinais anteriores que mereçam análise, sem equivaler a parecer definitivo de registrabilidade." },
+        { title: "Enquadramento", description: "Organização dos produtos e serviços e apoio à escolha da classe ou das classes aplicáveis." },
+        { title: "Preparação do pedido", description: "Conferência de dados, documentos, apresentação da marca e informações necessárias ao protocolo." },
+        { title: "Protocolo", description: "Emissão ou orientação para pagamento das retribuições e envio do pedido no sistema oficial, conforme o modelo de representação validado." },
+        { title: "Acompanhamento", description: "Monitoramento das publicações e comunicação das movimentações incluídas no escopo contratado." },
+        { title: "Próximas providências", description: "Orientação sobre etapas administrativas e acionamento de profissional jurídico habilitado quando houver oposição, manifestação, recurso, nulidade, conflito ou outra matéria jurídica." },
       ],
     },
-    differentiator: {
-      title: "A diferença de registrar com quem entende de marca inteira",
-      body:
-        "A maioria das empresas de registro cuida apenas do depósito. A Creation faz a marca nascer e crescer: identidade, narrativa e posicionamento. Registrar aqui é o passo seguinte de quem já pensa a marca por inteiro, e não um serviço solto. Isso não torna o registro mais caro nem mais lento, torna a proteção mais bem informada por quem conhece a marca de dentro.",
-    },
-    howItWorks: {
-      title: "Como funciona",
-      steps: [
-        { title: "Consulta", description: "Verificamos se a marca está disponível e qual o risco de conflito." },
-        { title: "Estratégia", description: "Definimos as classes e o melhor caminho de proteção." },
-        { title: "Pedido", description: "Elaboramos e protocolamos o registro no INPI." },
-        { title: "Acompanhamento", description: "Conduzimos o processo até a decisão e seguimos monitorando depois." },
+    deliverables: {
+      title: "O que você recebe.",
+      items: [
+        "Checklist de informações e documentos",
+        "Resumo da pesquisa preliminar",
+        "Indicação das classes consideradas no escopo",
+        "Conferência dos dados do pedido",
+        "Comprovante e número do processo, após protocolo",
+        "Canal definido para atualizações",
+        "Alertas sobre movimentações abrangidas pelo contrato",
+        "Orientação para renovação ou expansão futura, quando aplicável",
       ],
+      note: "O registro de marca concedido pelo INPI vigora por dez anos contados da concessão e pode ser prorrogado por períodos iguais e sucessivos, observadas as regras e os pagamentos aplicáveis.",
     },
-    forWhom:
-      "Para empreendedores, empresas e criadores que construíram uma marca e querem garantir que ela continue sendo deles.",
+    fees: {
+      title: "Honorários, retribuições e serviços adicionais.",
+      intro: "A proposta deve apresentar separadamente:",
+      items: [
+        "Honorários da Creation ou do parceiro responsável",
+        "Retribuições oficiais do INPI",
+        "Quantidade de classes e pedidos",
+        "Escopo e período de acompanhamento",
+        "Manifestações, oposições, recursos e outras medidas não incluídas",
+        "Serviços jurídicos, quando necessários",
+        "Renovação, transferência, licenciamento ou alterações posteriores",
+      ],
+      note: "Valores e regras oficiais podem mudar. A referência válida é a tabela vigente do INPI na data do serviço.",
+    },
+    doesNotGuarantee: {
+      title: "O que este serviço não garante.",
+      items: [
+        "Disponibilidade definitiva do sinal",
+        "Ausência de questionamentos de terceiros",
+        "Concessão do registro",
+        "Prazo exato para decisão",
+        "Proteção fora das classes, do território ou da forma concedida",
+        "Exclusividade sobre elementos que a legislação não admita proteger",
+      ],
+      note: "Quando a situação exigir interpretação ou atuação jurídica, o caso deve ser encaminhado a profissional habilitado.",
+    },
+    howToStart: {
+      title: "Como começar.",
+      intro: "Envie:",
+      items: [
+        "Nome ou sinal que pretende registrar",
+        "Forma de apresentação, se houver logotipo",
+        "Produtos e serviços associados",
+        "Dados básicos do titular pretendido",
+        "Países ou territórios de interesse",
+        "Pedidos ou registros anteriores relacionados",
+        "Prazo ou lançamento previsto",
+      ],
+      note: "Essas informações permitem definir o escopo inicial. Elas não substituem análise posterior nem asseguram viabilidade.",
+    },
+    closing: {
+      title: "Sua marca já está pronta para o pedido?",
+      body: "Conte o que você pretende proteger e em quais atividades a marca será utilizada. Organizamos o próximo passo com transparência sobre alcance, custos e limites.",
+      ctaLabel: "Fale sobre sua marca",
+    },
   },
 
   ongZeroPage: {

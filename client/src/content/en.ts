@@ -263,45 +263,93 @@ export const en: Content = {
   },
 
   // LOCKED — titulo travado no doc.
+  // Rebuilt to match doc 21-Creation-Marcas.md (August 2026).
   creationMarcasPage: {
-    eyebrow: "BRAND",
-    title: "Registering early is protecting first",
-    intro:
-      "A brand belongs to whoever registers it first. The earlier the registration, the lower the risk of another company claiming the name before you.",
-    whyEarly: {
-      title: "Why register early",
-      body:
-        "Trademark rights in Brazil are born from registration with INPI, not from use. Waiting exposes the brand to the risk of another company registering it first, even if you're already in the market.",
+    eyebrow: "CREATION MARCAS",
+    title: "Your brand needs strategy when seeking protection too.",
+    paragraphs: [
+      "Creation Marcas organizes the administrative steps for anyone seeking to file a trademark registration with Brazil's National Institute of Industrial Property, INPI.",
+      "From initial screening to case follow-up, you understand what will be done, which decisions depend on you, and which outcomes depend on the Institute's examination.",
+    ],
+    heroCtaLabel: "Request an initial assessment",
+    process: {
+      title: "Registering is a process, not a promise of approval.",
+      paragraphs: [
+        "The application goes through classification, formal requirements, publications and INPI's examination. Filing a request doesn't mean the registration will be granted, and a prior search reduces uncertainty without eliminating all risk.",
+        "Our service organizes information, documents, deadlines and follow-up. INPI is the authority responsible for examining and deciding the application.",
+      ],
     },
-    whatWeDo: {
-      title: "What we do",
+    steps: {
+      title: "Steps that may be part of the service.",
       items: [
-        {
-          title: "INPI Registration",
-          description: "The registration application handled from start to finish, with process follow-up.",
-        },
-        {
-          title: "Continuous Monitoring",
-          description: "Ongoing monitoring to identify conflicting registration attempts.",
-        },
+        { title: "Initial conversation", description: "Understanding the brand, the intended owner, the activities and the related goods or services." },
+        { title: "Preliminary search", description: "Checking available databases to identify prior marks worth analyzing, without amounting to a definitive opinion on registrability." },
+        { title: "Classification", description: "Organizing the goods and services and supporting the choice of applicable class or classes." },
+        { title: "Application preparation", description: "Reviewing data, documents, the brand's presentation and information needed for filing." },
+        { title: "Filing", description: "Issuing or guiding payment of official fees and submitting the application on the official system, per the validated representation model." },
+        { title: "Follow-up", description: "Monitoring publications and communicating developments included in the contracted scope." },
+        { title: "Next steps", description: "Guidance on administrative steps and engaging a qualified legal professional when opposition, objection, appeal, invalidation, conflict or other legal matters arise." },
       ],
     },
-    differentiator: {
-      title: "Registering with people who understand the whole brand",
-      body:
-        "Beyond registration, we handle branding, identity and content. Whoever handles the registration also understands the rest of the brand, not just the legal process.",
-    },
-    howItWorks: {
-      title: "How it works",
-      steps: [
-        { title: "Search", description: "Checking brand availability across the relevant classes." },
-        { title: "Strategy", description: "Defining the classes and the protection strategy." },
-        { title: "Filing", description: "Filing the registration application with INPI." },
-        { title: "Follow-up", description: "Monitoring the process through to registration approval." },
+    deliverables: {
+      title: "What you receive.",
+      items: [
+        "Checklist of information and documents",
+        "Summary of the preliminary search",
+        "Indication of the classes considered in scope",
+        "Review of the application data",
+        "Proof and process number, after filing",
+        "Defined channel for updates",
+        "Alerts on developments covered by the contract",
+        "Guidance on future renewal or expansion, when applicable",
       ],
+      note: "A trademark registration granted by INPI is valid for ten years from the grant date and can be renewed for equal, successive periods, subject to applicable rules and fees.",
     },
-    forWhom:
-      "For Brazilian and foreign companies that need to protect their brand in Brazil, especially before expanding operations in the country.",
+    fees: {
+      title: "Fees, official charges and additional services.",
+      intro: "The proposal should present separately:",
+      items: [
+        "Creation's or the responsible partner's fees",
+        "INPI's official fees",
+        "Number of classes and applications",
+        "Scope and duration of follow-up",
+        "Objections, oppositions, appeals and other measures not included",
+        "Legal services, when necessary",
+        "Renewal, transfer, licensing or later changes",
+      ],
+      note: "Official values and rules may change. The valid reference is INPI's current fee table on the date of service.",
+    },
+    doesNotGuarantee: {
+      title: "What this service does not guarantee.",
+      items: [
+        "Definitive availability of the sign",
+        "Absence of third-party challenges",
+        "Registration being granted",
+        "An exact timeline for a decision",
+        "Protection outside the granted classes, territory or form",
+        "Exclusivity over elements the law doesn't allow to be protected",
+      ],
+      note: "When the situation requires legal interpretation or action, the case should be referred to a qualified professional.",
+    },
+    howToStart: {
+      title: "How to start.",
+      intro: "Send us:",
+      items: [
+        "The name or sign you intend to register",
+        "The presentation form, if there's a logo",
+        "Associated goods and services",
+        "Basic details of the intended owner",
+        "Countries or territories of interest",
+        "Any related prior applications or registrations",
+        "Expected deadline or launch",
+      ],
+      note: "This information allows the initial scope to be defined. It doesn't replace later analysis or guarantee feasibility.",
+    },
+    closing: {
+      title: "Is your brand ready for filing?",
+      body: "Tell us what you intend to protect and in which activities the brand will be used. We organize the next step with transparency about scope, costs and limits.",
+      ctaLabel: "Talk about your brand",
+    },
   },
 
   ongZeroPage: {
