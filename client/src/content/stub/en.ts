@@ -2,6 +2,7 @@ import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, Case
 
 export const stubData: Record<string, StubPageData> = {
   solucoes: {
+    imageHint: "Photo of the Creation team in a planning meeting or collaborative work session",
     eyebrow: "SOLUTIONS",
     title: "Solutions that start with the challenge, not the catalog.",
     intro:
@@ -48,6 +49,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   estrategia: {
+    imageHint: "Photo of a strategic planning session, whiteboard or diagnosis meeting",
     eyebrow: "STRATEGY",
     title: "Clarity before action.",
     intro: "We investigate the context, organize information and structure the choices that let the project move forward with direction.",
@@ -98,6 +100,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
+    imageHint: "Photo of research and data analysis, or a team reviewing reports and charts",
     eyebrow: "MARKET INTELLIGENCE",
     title: "Deciding better starts with understanding the real market.",
     intro: "Internal opinions, trends and isolated data don't form a strategy. Market intelligence connects evidence to answer specific questions about demand, competition, audiences, context and opportunity.",
@@ -167,6 +170,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "diagnostico-e-planejamento": {
+    imageHint: "Photo of a diagnosis meeting or planning workshop with the client",
     eyebrow: "DIAGNOSIS AND PLANNING",
     title: "Before the plan, the right problem.",
     intro: "Planning too early can organize the wrong answer. Diagnosis clarifies what's happening, why it matters and what conditions need to change.",
@@ -229,6 +233,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "estruturacao-de-projetos": {
+    imageHint: "Photo of a project timeline, project board, or team structuring a plan",
     eyebrow: "PROJECT STRUCTURING AND VIABILITY",
     title: "An idea only becomes a project when it can be executed.",
     intro: "We structure initiatives so they can be understood, decided on, financed, managed and realized.",
@@ -295,6 +300,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   gestao: {
+    imageHint: "Photo of a team in a management routine, status meeting or indicator dashboard",
     eyebrow: "MANAGEMENT",
     title: "The responsibility that doesn't get handed off.",
     intro: "A plan doesn't create momentum on its own. Projects move forward when decisions have owners, information flows, risks are handled and teams know what needs to happen next.",
@@ -357,6 +363,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-projetos": {
+    imageHint: "Photo of a PMO in action: follow-up meeting, backlog or project dashboard",
     eyebrow: "PROJECT MANAGEMENT AND PMO",
     title: "Projects move forward when decisions have an owner.",
     intro: "We coordinate the system that connects objective, scope, teams, budget, deadline, risks and deliverables.",
@@ -429,6 +436,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-processos": {
+    imageHint: "Photo of process mapping, a flowchart, or an operational meeting",
     eyebrow: "BUSINESS PROCESS MANAGEMENT",
     title: "The work needs to function beyond the people who sustain it.",
     intro: "When a process only exists in the memory of whoever runs it, the organization becomes vulnerable to delays, rework, information loss and inconsistent decisions.",
@@ -495,6 +503,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "governanca-e-indicadores": {
+    imageHint: "Photo of an indicator panel, dashboard, or governance meeting",
     eyebrow: "GOVERNANCE AND KPIS",
     title: "Decision, responsibility and evidence in the same system.",
     intro: "Governance defines who decides, based on what information and within what limits. Indicators show what needs attention.",
@@ -566,6 +575,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   operacoes: {
+    imageHint: "Photo of an operation in the field: event, production, or team executing work",
     eyebrow: "OPERATIONS",
     title: "Execution is where the project gets decided.",
     intro: "A good plan needs to work within real time, budget and territory. Creation coordinates people, vendors, resources, permits, travel and decisions so every front moves forward clearly to delivery.",
@@ -623,6 +633,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-eventos": {
+    imageHint: "Photo of an event in production: setup, accreditation, or operational team",
     eyebrow: "EVENT MANAGEMENT",
     title: "An event starts long before setup.",
     intro: "Objective, audience, experience, content, budget and operation all need to point in the same direction.",
@@ -690,6 +701,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "producao-executiva": {
+    imageHint: "Photo of executive production in the field: team, equipment, or live operation",
     eyebrow: "EXECUTIVE PRODUCTION",
     title: "Executive production is turning many dependencies into one delivery.",
     intro: "When a project needs to leave the page, every contract, deadline, access point and decision starts affecting the whole.",
@@ -748,6 +760,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "location-fixer-rio-de-janeiro": {
+    imageHint: "Photo of a filming location in Rio de Janeiro (beach, favela, landmark, or urban scene)",
     eyebrow: "LOCATION & FIXER",
     title: "You arrive with the project. The local operation already knows the way.",
     intro: "Locations, permits, access, teams and travel change from one territory to another.",
@@ -822,6 +835,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "receptivo-drivers-locacoes": {
+    imageHint: "Photo of a vehicle, driver, or team/production transfer",
     eyebrow: "GROUND TRANSPORT, DRIVERS & RENTALS",
     title: "Logistics start before arrival.",
     intro: "Teams, guests and resources need to be in the right place, at the right time, with enough information to follow the plan.",
@@ -1019,6 +1033,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "marketing-de-causa": {
+    imageHint: "Photo of a brand activation tied to a social cause, event, or campaign",
     eyebrow: "CAUSE MARKETING",
     title: "A cause can't be just a campaign.",
     intro: "When a brand associates itself with a social issue, it takes on responsibility for what it promises, how it acts, and who it involves.",

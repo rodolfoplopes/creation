@@ -46,6 +46,10 @@ export interface StubPageData {
   intro: string;
   lead?: string;
   image?: StubPageImage;
+  // Descricao do tipo de foto que deve entrar aqui, quando ainda nao ha
+  // uma foto real definida (data.image). Renderizado como uma caixa de
+  // placeholder visivel na pagina, pra facilitar a selecao de fotos.
+  imageHint?: string;
   parentLabel?: string;
   parentHref?: string;
   blocks?: StubBlock[];

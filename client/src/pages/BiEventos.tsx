@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
-import { useContent } from "@/content";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { useContent, useLang } from "@/content";
 
 /**
  * /bi-de-eventos — landing nova, consome c.biEventosPage. Ainda oculta do
@@ -20,6 +21,13 @@ import { useContent } from "@/content";
 export default function BiEventos() {
   const c = useContent();
   const page = c.biEventosPage;
+  const lang = useLang();
+  const heroImageHint =
+    lang === "en"
+      ? "Photo of an event data dashboard or a team monitoring an event"
+      : lang === "es"
+        ? "Foto de un panel de datos de evento o un equipo monitoreando un evento"
+        : "Foto de painel de dados de evento ou equipe acompanhando um evento";
 
   return (
     <Layout>
@@ -41,6 +49,10 @@ export default function BiEventos() {
           <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <ImagePlaceholder hint={heroImageHint} />
+      </div>
 
       {/* Medir começa antes da abertura das inscrições */}
       <Section tone="white">

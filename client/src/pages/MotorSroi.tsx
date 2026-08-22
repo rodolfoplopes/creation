@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
-import { useContent } from "@/content";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { useContent, useLang } from "@/content";
 
 /**
  * /motor-sroi — landing nova, consome c.motorSroiPage. Ainda oculta do
@@ -19,6 +20,13 @@ import { useContent } from "@/content";
 export default function MotorSroi() {
   const c = useContent();
   const page = c.motorSroiPage;
+  const lang = useLang();
+  const heroImageHint =
+    lang === "en"
+      ? "Photo of a team analyzing social impact data or in a stakeholder session"
+      : lang === "es"
+        ? "Foto de un equipo analizando datos de impacto social o en una sesión con partes interesadas"
+        : "Foto de equipe analisando dados de impacto social ou em sessão com stakeholders";
 
   return (
     <Layout>
@@ -37,6 +45,10 @@ export default function MotorSroi() {
           <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <ImagePlaceholder hint={heroImageHint} />
+      </div>
 
       {/* O que é SROI */}
       <Section tone="white">

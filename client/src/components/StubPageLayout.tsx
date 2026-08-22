@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { Link } from "wouter";
 import { ArrowLeft, Check } from "lucide-react";
 import { useLocalizedHref } from "@/content";
@@ -111,7 +112,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
         </div>
       </section>
 
-      {data.image && (
+      {data.image ? (
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
           <div className="rounded-2xl overflow-hidden shadow-sm">
             <img
@@ -121,7 +122,11 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
             />
           </div>
         </div>
-      )}
+      ) : data.imageHint ? (
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+          <ImagePlaceholder hint={data.imageHint} />
+        </div>
+      ) : null}
 
       {data.blocks?.map((block) => (
         <BlockRenderer key={block.heading} block={block} />

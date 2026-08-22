@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
-import { useContent } from "@/content";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { useContent, useLang } from "@/content";
 
 /**
  * /ong-zero — landing nova, consome c.ongZeroPage. Ainda oculta do menu
@@ -20,6 +21,13 @@ import { useContent } from "@/content";
 export default function OngZero() {
   const c = useContent();
   const page = c.ongZeroPage;
+  const lang = useLang();
+  const heroImageHint =
+    lang === "en"
+      ? "Photo of a community/social initiative team in action"
+      : lang === "es"
+        ? "Foto de un equipo de comunidad/iniciativa social en acción"
+        : "Foto de equipe ou comunidade de uma iniciativa social em atividade";
 
   return (
     <Layout>
@@ -38,6 +46,10 @@ export default function OngZero() {
           <CTAButton label={page.heroCtaLabel} href={c.cta.href} variant="primary" />
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <ImagePlaceholder hint={heroImageHint} />
+      </div>
 
       {/* O começo costuma reunir urgência e pouca estrutura */}
       <Section tone="white">

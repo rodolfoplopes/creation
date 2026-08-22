@@ -33,9 +33,13 @@ import { storeLang } from "@/lib/detectLang";
  *
  * Insights fica FORA por enquanto — o indice classifica a pagina como
  * "dependente de validacao adicional", ainda sem acervo minimo publicavel.
- * Creation Marcas/ONG.zero/BI de Eventos/Motor SROI tambem ficam fora do
- * menu principal (regra explicita do indice: seguem existindo como
- * landing, sem destaque na navegacao, ate validacao propria).
+ *
+ * Creation Marcas/ONG.zero/Motor SROI/BI de Eventos — os 4 docs originais
+ * pediam para ficar fora do menu ate validacao juridica/operacional
+ * formal. Decisao do cliente (22/08/2026): publicar as 4 em Especialidades
+ * mesmo assim, mantendo os disclaimers de "o que este servico nao
+ * garante/promete" bem visiveis em cada pagina como protecao ate a
+ * validacao formal terminar.
  *
  * As paginas novas (Estrategia, Gestao, Operacoes, Inovacao, Impacto,
  * Branding & Experiencias, Cases, Como Trabalhamos) ja tem conteudo nos 3
@@ -156,6 +160,10 @@ export default function Header() {
         { label: t("Impacto", "Impact", "Impacto"), href: "/impacto", kind: "service" as const },
         { label: t("Branding & Experiências", "Branding & Experiences", "Branding y Experiencias"), href: "/branding-experiencias", kind: "service" as const },
         { label: "Creation Ops Rio", href: "/creator-ops-rio", kind: "product" as const },
+        { label: "Creation Marcas", href: "/creation-marcas", kind: "product" as const },
+        { label: "ONG.zero", href: "/ong-zero", kind: "product" as const },
+        { label: "Motor SROI", href: "/motor-sroi", kind: "product" as const },
+        { label: "BI de Eventos", href: "/bi-de-eventos", kind: "product" as const },
       ],
     },
   ];

@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
-import { useContent } from "@/content";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { useContent, useLang } from "@/content";
 
 /**
  * /creation-marcas — landing nova, consome c.creationMarcasPage. Ainda
@@ -21,6 +22,13 @@ import { useContent } from "@/content";
 export default function CreationMarcas() {
   const c = useContent();
   const page = c.creationMarcasPage;
+  const lang = useLang();
+  const heroImageHint =
+    lang === "en"
+      ? "Photo of a document/brand review or office setting"
+      : lang === "es"
+        ? "Foto de una revisión de documentos/marca o entorno de oficina"
+        : "Foto de análise de documentos/marca ou ambiente de escritório";
 
   return (
     <Layout>
@@ -43,6 +51,10 @@ export default function CreationMarcas() {
           <CTAButton label={page.heroCtaLabel} href={c.cta.href} variant="primary" />
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <ImagePlaceholder hint={heroImageHint} />
+      </div>
 
       {/* Registrar é um processo, não uma promessa de aprovação */}
       <Section tone="white">

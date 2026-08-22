@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { useContent, useLang, useLocalizedHref } from "@/content";
 import { Link } from "wouter";
 import { Check } from "lucide-react";
@@ -33,6 +34,18 @@ export default function QuemSomos() {
   const localize = useLocalizedHref();
   const { about } = c;
   const eyebrow = lang === "en" ? "ABOUT US" : lang === "es" ? "QUIÉNES SOMOS" : "QUEM SOMOS";
+  const heroImageHint =
+    lang === "en"
+      ? "Photo of the Creation team or office"
+      : lang === "es"
+        ? "Foto del equipo o la oficina de Creation"
+        : "Foto da equipe ou do escritório da Creation";
+  const leadershipImageHint =
+    lang === "en"
+      ? "Portrait of Rodolfo Lopes"
+      : lang === "es"
+        ? "Retrato de Rodolfo Lopes"
+        : "Foto/retrato de Rodolfo Lopes";
 
   return (
     <Layout>
@@ -58,6 +71,10 @@ export default function QuemSomos() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <ImagePlaceholder hint={heroImageHint} />
+      </div>
 
       {/* Uma trajetória construída entre disciplinas */}
       <Section tone="white">
@@ -110,10 +127,13 @@ export default function QuemSomos() {
       {/* Liderança */}
       <Section tone="white">
         <SectionHeader title={about.leadership.title} />
-        <div className="rounded-2xl border border-abyss/10 bg-bone/50 p-8 md:p-10 max-w-3xl">
-          <h3 className="text-h3 font-bold text-abyss">{about.leadership.name}</h3>
-          <p className="text-abyss font-semibold mb-4">{about.leadership.role}</p>
-          <p className="text-abyss/70 leading-relaxed">{about.leadership.bio}</p>
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-6 max-w-4xl">
+          <ImagePlaceholder hint={leadershipImageHint} className="h-[220px] md:h-full" />
+          <div className="rounded-2xl border border-abyss/10 bg-bone/50 p-8 md:p-10">
+            <h3 className="text-h3 font-bold text-abyss">{about.leadership.name}</h3>
+            <p className="text-abyss font-semibold mb-4">{about.leadership.role}</p>
+            <p className="text-abyss/70 leading-relaxed">{about.leadership.bio}</p>
+          </div>
         </div>
       </Section>
 
