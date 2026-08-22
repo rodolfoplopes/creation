@@ -1026,6 +1026,11 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Impact",
     parentHref: "/impacto",
     blocks: [
+      { type: "bullets", heading: "Relevance for the brand, legitimacy for the cause", intro: "Cause marketing can mobilize attention, resources and participation. It can also breed distrust when the narrative outweighs the action, when social partners appear only as an endorsement, or when there's no transparency about results. Our work seeks coherence across three dimensions:", items: [
+        "The brand's legitimate role.",
+        "The need and knowledge of the audiences involved.",
+        "The real capacity to deliver and demonstrate results.",
+      ]},
       { type: "cards", heading: "What we structure", items: [
         { title: "Brand-cause fit", description: "Analysis of history, values, track record, audiences, risks and possible contribution." },
         { title: "Initiative strategy", description: "Objective, audiences, proposal, thesis of action, expected results and decision criteria." },
@@ -1043,13 +1048,17 @@ export const stubData: Record<string, StubPageData> = {
         "Sales-linked donations, with transparent rules.",
         "Content and education platforms.",
         "Territorial partnerships.",
+        "Initiatives with creators and communities.",
+        "The format is a consequence of the strategy, not its starting point.",
       ]},
       { type: "bullets", heading: "Questions that need answering", items: [
         "Why should this brand act on this cause?",
         "What concrete need will be addressed?",
         "Who takes part in the decisions?",
         "Which organization has legitimacy and capacity on the topic?",
+        "What resources and responsibilities will the brand take on?",
         "What will be delivered, to whom and over what period?",
+        "How will results and limitations be communicated?",
         "What happens when the campaign ends?",
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
@@ -1061,8 +1070,21 @@ export const stubData: Record<string, StubPageData> = {
         "Program or campaign design.",
         "Governance model.",
         "Mobilization and content plan.",
+        "Production plan.",
         "Indicator matrix.",
         "Transparency protocol.",
+        "Execution and learnings report.",
+      ]},
+      { type: "bullets", heading: "Communication proportional to evidence", items: [
+        "A deliverable can be relevant without being called impact. We distinguish commitment, resources mobilized, activity, reach, observed result and evaluated impact.",
+        "This precision protects the cause, the audiences, the partners and the brand's reputation.",
+      ]},
+      { type: "steps", heading: "How we work", items: [
+        { number: "01", title: "Fit", description: "Brand, cause, audiences, track record and risks." },
+        { number: "02", title: "Co-creation", description: "Listening, partners, contribution and initiative design." },
+        { number: "03", title: "Structure", description: "Scope, governance, resources, indicators and communication." },
+        { number: "04", title: "Execution", description: "Management, production, mobilization and follow-up." },
+        { number: "05", title: "Transparency", description: "Results, limitations, accountability and continuity." },
       ]},
     ],
     ctaLabel: "Talk about your initiative",
@@ -1078,6 +1100,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "From brand intent to delivered experience", items: [
+        "Campaigns, events, activations and content can each be well executed in isolation and still send disconnected messages. The problem usually shows up when strategy and production work at separate times.",
+        "We integrate both perspectives from the start: what the brand needs to express, what the audience should perceive or do, and what the operation can actually sustain.",
+      ]},
       { type: "cards", heading: "Fronts of work", items: [
         { title: "Brand strategy", description: "Positioning, value proposition, audiences, messaging, territories of expression and coherence criteria." },
         { title: "Creative concept", description: "Central idea, narrative, language, experience and possible extensions." },
@@ -1095,12 +1121,15 @@ export const stubData: Record<string, StubPageData> = {
         "Fairs, exhibits and brand spaces.",
         "Employee experiences.",
         "Campaigns with territorial presence.",
+        "Special projects with creators.",
+        "Cause-linked initiatives.",
       ]},
       { type: "bullets", heading: "What needs to stay coherent", items: [
         "Promise — what the brand states and what expectation it creates.",
         "Participation — what the audience can do, feel, learn or take with them.",
         "Operation — how space, staff, queue, access, content, service and technology sustain the experience.",
         "Continuity — what happens after the encounter, and how the relationship can continue.",
+        "An experience loses value when communication promises something the journey doesn't deliver.",
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
         "Brand and context diagnosis.",
@@ -1112,7 +1141,16 @@ export const stubData: Record<string, StubPageData> = {
         "Content and partner curation.",
         "Activation plan.",
         "Budget and timeline.",
+        "Management and executive production.",
         "Indicators and report.",
+        "Visual identity, design, set design, technology and other specialties can be brought in through partners defined per project.",
+      ]},
+      { type: "steps", heading: "How we work", items: [
+        { number: "01", title: "Direction", description: "Brand objective, audiences, context, message and expected result." },
+        { number: "02", title: "Concept", description: "Central idea, narrative, format and experience criteria." },
+        { number: "03", title: "Feasibility", description: "Scope, resources, budget, territory, timeline and risks." },
+        { number: "04", title: "Production", description: "Partners, content, vendors, operations and execution." },
+        { number: "05", title: "Reading", description: "Participation, records, indicators, learnings and next steps." },
       ]},
     ],
     ctaLabel: "Talk about your brand",

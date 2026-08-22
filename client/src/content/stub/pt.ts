@@ -1026,6 +1026,11 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Impacto",
     parentHref: "/impacto",
     blocks: [
+      { type: "bullets", heading: "Relevância para a marca, legitimidade para a causa", intro: "Marketing de causa pode mobilizar atenção, recursos e participação. Também pode gerar desconfiança quando a narrativa é maior que a ação, quando parceiros sociais aparecem apenas como endosso ou quando não há transparência sobre resultados. Nosso trabalho busca coerência entre três dimensões:", items: [
+        "O papel legítimo da marca.",
+        "A necessidade e o conhecimento dos públicos envolvidos.",
+        "A capacidade real de realizar e demonstrar entregas.",
+      ]},
       { type: "cards", heading: "O que estruturamos", items: [
         { title: "Aderência entre marca e causa", description: "Análise de história, valores, atuação, públicos, riscos e contribuição possível." },
         { title: "Estratégia da iniciativa", description: "Objetivo, públicos, proposta, tese de atuação, resultados esperados e critérios de decisão." },
@@ -1043,13 +1048,17 @@ export const stubData: Record<string, StubPageData> = {
         "Doações associadas a vendas, com regras transparentes.",
         "Plataformas de conteúdo e educação.",
         "Parcerias territoriais.",
+        "Iniciativas com creators e comunidades.",
+        "O formato é consequência da estratégia, não seu ponto de partida.",
       ]},
       { type: "bullets", heading: "Perguntas que precisam ser respondidas", items: [
         "Por que essa marca deve atuar nessa causa?",
         "Qual necessidade concreta será enfrentada?",
         "Quem participa das decisões?",
         "Que organização possui legitimidade e capacidade no tema?",
+        "Que recursos e responsabilidades a marca assumirá?",
         "O que será entregue, para quem e em qual período?",
+        "Como resultados e limitações serão comunicados?",
         "O que acontece quando a campanha termina?",
       ]},
       { type: "bullets", heading: "Entregáveis possíveis", items: [
@@ -1061,8 +1070,21 @@ export const stubData: Record<string, StubPageData> = {
         "Desenho de programa ou campanha.",
         "Modelo de governança.",
         "Plano de mobilização e conteúdo.",
+        "Plano de produção.",
         "Matriz de indicadores.",
         "Protocolo de transparência.",
+        "Relatório de execução e aprendizados.",
+      ]},
+      { type: "bullets", heading: "Comunicação proporcional à evidência", items: [
+        "Uma entrega pode ser relevante sem ser chamada de impacto. Diferenciamos compromisso, recurso mobilizado, atividade, alcance, resultado observado e impacto avaliado.",
+        "Essa precisão protege a causa, os públicos, os parceiros e a reputação da marca.",
+      ]},
+      { type: "steps", heading: "Como trabalhamos", items: [
+        { number: "01", title: "Aderência", description: "Marca, causa, públicos, histórico e riscos." },
+        { number: "02", title: "Cocriação", description: "Escuta, parceiros, contribuição e desenho da iniciativa." },
+        { number: "03", title: "Estrutura", description: "Escopo, governança, recursos, indicadores e comunicação." },
+        { number: "04", title: "Realização", description: "Gestão, produção, mobilização e acompanhamento." },
+        { number: "05", title: "Transparência", description: "Resultados, limitações, prestação de contas e continuidade." },
       ]},
     ],
     ctaLabel: "Converse sobre sua iniciativa",
@@ -1078,6 +1100,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Soluções",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Da intenção de marca à experiência entregue", items: [
+        "Campanhas, eventos, ativações e conteúdos podem ter boa execução isolada e ainda assim transmitir mensagens desconectadas. O problema costuma surgir quando estratégia e produção trabalham em momentos separados.",
+        "Integramos as duas perspectivas desde o início: o que a marca precisa expressar, o que o público deve perceber ou fazer e o que a operação consegue sustentar.",
+      ]},
       { type: "cards", heading: "Frentes de atuação", items: [
         { title: "Estratégia de marca", description: "Posicionamento, proposta de valor, públicos, mensagens, territórios de expressão e critérios de coerência." },
         { title: "Conceito criativo", description: "Ideia central, narrativa, linguagem, experiência e desdobramentos possíveis." },
@@ -1095,12 +1121,15 @@ export const stubData: Record<string, StubPageData> = {
         "Feiras, mostras e espaços de marca.",
         "Experiências para colaboradores.",
         "Campanhas com presença territorial.",
+        "Projetos especiais com creators.",
+        "Iniciativas ligadas a causas.",
       ]},
       { type: "bullets", heading: "O que precisa permanecer coerente", items: [
         "Promessa — o que a marca afirma e qual expectativa cria.",
         "Participação — o que o público pode fazer, sentir, aprender ou levar consigo.",
         "Operação — como espaço, equipe, fila, acesso, conteúdo, atendimento e tecnologia sustentam a experiência.",
         "Continuidade — o que acontece depois do encontro e como a relação pode prosseguir.",
+        "Uma experiência perde valor quando a comunicação promete algo que a jornada não entrega.",
       ]},
       { type: "bullets", heading: "Entregáveis possíveis", items: [
         "Diagnóstico de marca e contexto.",
@@ -1112,7 +1141,16 @@ export const stubData: Record<string, StubPageData> = {
         "Curadoria de conteúdo e parceiros.",
         "Plano de ativação.",
         "Orçamento e cronograma.",
+        "Gestão e produção executiva.",
         "Indicadores e relatório.",
+        "Identidade visual, design, cenografia, tecnologia e outras especialidades podem ser integradas por meio de parceiros definidos conforme o projeto.",
+      ]},
+      { type: "steps", heading: "Como trabalhamos", items: [
+        { number: "01", title: "Direção", description: "Objetivo da marca, públicos, contexto, mensagem e resultado esperado." },
+        { number: "02", title: "Conceito", description: "Ideia central, narrativa, formato e critérios de experiência." },
+        { number: "03", title: "Viabilidade", description: "Escopo, recursos, orçamento, território, cronograma e riscos." },
+        { number: "04", title: "Produção", description: "Parceiros, conteúdo, fornecedores, operação e realização." },
+        { number: "05", title: "Leitura", description: "Participação, registros, indicadores, aprendizados e próximos passos." },
       ]},
     ],
     ctaLabel: "Converse sobre sua marca",
