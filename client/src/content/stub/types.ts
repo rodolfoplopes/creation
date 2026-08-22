@@ -84,6 +84,7 @@ export interface CaseStub {
   client: string;
   context: string;
   numbers: string[];
+  note?: string; // disclaimer de atribuicao/evidencia (ex: avaliacao conduzida por terceiro, resultado abaixo da projecao)
 }
 
 export interface StubLangPack {

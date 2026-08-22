@@ -102,7 +102,7 @@ export const en: Content = {
       eyebrow: "CREATION",
       title: "We started by doing. We grew by structuring.",
       paragraphs: [
-        "Creation was founded in 2009 by Rodolfo Lopes, growing out of the hands-on experience of turning ideas into productions, events and real projects.",
+        "Creation was founded more than 10 years ago, growing out of the hands-on experience of turning ideas into productions, events and real projects.",
         "Over time, execution revealed a simple truth: a project's biggest problems usually surface before delivery day. They live in the lack of clarity, scope, governance, rhythm and connection between who decides and who does.",
         "That's how Creation became a multidisciplinary project company.",
       ],
@@ -151,7 +151,7 @@ export const en: Content = {
       title: "Leadership",
       name: "Rodolfo Lopes",
       role: "Founder and executive lead",
-      bio: "An advertiser, entrepreneur and project manager, Rodolfo Lopes works on structuring and running initiatives connected to innovation, the creative economy, events, communications and impact. His experience combines concept development, partner engagement, management, executive production and operations, connecting strategic design to the work needed to make it happen.",
+      bio: "An advertiser, entrepreneur and project manager, he works on structuring and running initiatives connected to innovation, the creative economy, events, communications and impact. His experience combines concept development, partner engagement, management, executive production and strong operational expertise, connecting strategic design to the work needed to make it happen.",
     },
     structure: {
       title: "A structure that forms around the project",
@@ -171,7 +171,7 @@ export const en: Content = {
       note: "We also work on projects that connect organizations, brands, people and territories, whenever there's alignment between challenge, scope and delivery capacity.",
     },
     closing: {
-      title: "What has remained since 2009",
+      title: "What has remained over time",
       body: "Creation has changed in scale, language and repertoire. The core commitment has stayed the same: understanding what needs to happen and taking on the work required to turn decision into reality.",
       casesLabel: "See our Cases",
     },

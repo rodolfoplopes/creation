@@ -978,12 +978,14 @@ export const casesStub: CaseStub[] = [
     client: "Rede Asta y Porto Sudeste",
     context: "Coordinación territorial de una escuela de negocios y ferias de comercialización para fortalecer a emprendedores locales.",
     numbers: ["2 frentes de actuación", "6 eventos de comercialización", "R$19.649 en ventas acompañadas"],
+    note: "La evaluación de impacto fue realizada por Rede Asta. Los números presentados describen entregas y resultados comerciales informados para el período, no una atribución integral de impacto a Creation.",
   },
   {
     title: "Pertinho de Casa — Plataforma",
     client: "Rede Asta y Porto Sudeste",
     context: "Reclutamiento de vendedores, articulación del Comité por la Economía Local y seguimiento trimestral de la plataforma.",
     numbers: ["241 emprendedores", "56 barrios de Itaguaí y Seropédica", "R$30.650,11 en facturación registrada"],
+    note: "El crecimiento quedó por debajo de la proyección inicial indicada en los materiales. La evaluación de impacto fue realizada por Rede Asta. Registrar esta diferencia es importante porque un case también debe mostrar lo que la ejecución enseñó y qué hipótesis necesitan revisarse.",
   },
   {
     title: "World Creativity Day",

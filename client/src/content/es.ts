@@ -103,7 +103,7 @@ export const es: Content = {
       eyebrow: "CREATION",
       title: "Empezamos haciendo. Crecimos estructurando.",
       paragraphs: [
-        "Creation nació en 2009, fundada por Rodolfo Lopes, a partir de la experiencia práctica de transformar ideas en producciones, eventos y proyectos reales.",
+        "Creation fue fundada hace más de 10 años, a partir de la experiencia práctica de transformar ideas en producciones, eventos y proyectos reales.",
         "Con el tiempo, la ejecución reveló una verdad simple: los mayores problemas de un proyecto suelen surgir antes del día de la entrega. Están en la falta de claridad, alcance, gobernanza, ritmo y conexión entre quien decide y quien hace.",
         "Así fue como Creation se convirtió en una empresa multidisciplinaria de proyectos.",
       ],
@@ -152,7 +152,7 @@ export const es: Content = {
       title: "Liderazgo",
       name: "Rodolfo Lopes",
       role: "Fundador y liderazgo ejecutivo",
-      bio: "Publicista, emprendedor y gestor de proyectos, Rodolfo Lopes actúa en la estructuración y realización de iniciativas ligadas a la innovación, la economía creativa, eventos, comunicación e impacto. Su experiencia combina desarrollo de conceptos, articulación de socios, gestión, producción ejecutiva y operación, conectando el diseño estratégico con el trabajo necesario para hacerlo realidad.",
+      bio: "Publicista, emprendedor y gestor de proyectos, actúa en la estructuración y realización de iniciativas ligadas a la innovación, la economía creativa, eventos, comunicación e impacto. Su experiencia combina desarrollo de conceptos, articulación de socios, gestión, producción ejecutiva y una sólida experiencia operativa, conectando el diseño estratégico con el trabajo necesario para hacerlo realidad.",
     },
     structure: {
       title: "Una estructura que se forma alrededor del proyecto",
@@ -172,7 +172,7 @@ export const es: Content = {
       note: "También trabajamos en proyectos que conectan organizaciones, marcas, personas y territorios, cuando existe alineación entre desafío, alcance y capacidad de entrega.",
     },
     closing: {
-      title: "Lo que permanece desde 2009",
+      title: "Lo que permanece a lo largo del tiempo",
       body: "Creation cambió de escala, lenguaje y repertorio. El compromiso central permaneció: comprender qué necesita suceder y asumir el trabajo necesario para transformar decisión en realización.",
       casesLabel: "Vea nuestros Cases",
     },

@@ -99,7 +99,7 @@ export const pt: Content = {
       eyebrow: "A CREATION",
       title: "Começamos fazendo. Crescemos estruturando.",
       paragraphs: [
-        "A Creation nasceu em 2009, fundada por Rodolfo Lopes, a partir da experiência prática de transformar ideias em produções, eventos e projetos reais.",
+        "A Creation foi fundada há mais de 10 anos, a partir da experiência prática de transformar ideias em produções, eventos e projetos reais.",
         "Com o tempo, a execução revelou uma verdade simples: os maiores problemas de um projeto costumam surgir antes do dia da entrega. Estão na falta de clareza, escopo, governança, ritmo e conexão entre quem decide e quem faz.",
         "Foi assim que a Creation se tornou uma empresa multidisciplinar de projetos.",
       ],
@@ -148,7 +148,7 @@ export const pt: Content = {
       title: "Liderança",
       name: "Rodolfo Lopes",
       role: "Fundador e liderança executiva",
-      bio: "Publicitário, empreendedor e gestor de projetos, Rodolfo Lopes atua na estruturação e realização de iniciativas ligadas à inovação, economia criativa, eventos, comunicação e impacto. Sua experiência combina desenvolvimento de conceitos, articulação de parceiros, gestão, produção executiva e operação, conectando o desenho estratégico ao trabalho necessário para fazê-lo acontecer.",
+      bio: "Publicitário, empreendedor e gestor de projetos, atua na estruturação e realização de iniciativas ligadas à inovação, economia criativa, eventos, comunicação e impacto. Sua experiência combina desenvolvimento de conceitos, articulação de parceiros, gestão, produção executiva e forte experiência operacional, conectando o desenho estratégico ao trabalho necessário para fazer acontecer.",
     },
     structure: {
       title: "Uma estrutura que se forma em torno do projeto",
@@ -168,7 +168,7 @@ export const pt: Content = {
       note: "Também atuamos em projetos que conectam organizações, marcas, pessoas e territórios, quando existe alinhamento entre desafio, escopo e capacidade de entrega.",
     },
     closing: {
-      title: "O que permanece desde 2009",
+      title: "O que permanece ao longo do tempo",
       body: "A Creation mudou de escala, linguagem e repertório. O compromisso central permaneceu: compreender o que precisa acontecer e assumir o trabalho necessário para transformar decisão em realização.",
       casesLabel: "Veja nossos Cases",
     },

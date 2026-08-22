@@ -68,7 +68,7 @@ export default function Cases() {
               <p className="text-abyss/70 leading-relaxed mb-4">
                 {item.context}
               </p>
-              <ul className="flex flex-wrap gap-x-4 gap-y-1">
+              <ul className="flex flex-wrap gap-x-4 gap-y-1 mb-4">
                 {item.numbers.map((n) => (
                   <li
                     key={n}
@@ -78,6 +78,11 @@ export default function Cases() {
                   </li>
                 ))}
               </ul>
+              {item.note && (
+                <p className="text-small text-abyss/60 leading-relaxed border-t border-abyss/10 pt-4">
+                  {item.note}
+                </p>
+              )}
             </article>
           ))}
         </div>

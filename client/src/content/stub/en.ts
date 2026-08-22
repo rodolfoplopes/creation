@@ -978,12 +978,14 @@ export const casesStub: CaseStub[] = [
     client: "Rede Asta and Porto Sudeste",
     context: "Territorial coordination of a business school and sales fairs to strengthen local entrepreneurs.",
     numbers: ["2 fronts of work", "6 sales events", "R$19,649 in tracked sales"],
+    note: "Impact evaluation was conducted by Rede Asta. The figures shown describe deliverables and commercial results reported for the period, not a full attribution of impact to Creation.",
   },
   {
     title: "Pertinho de Casa — Platform",
     client: "Rede Asta and Porto Sudeste",
     context: "Recruiting sellers, coordinating the Local Economy Committee, and quarterly follow-up on the platform.",
     numbers: ["241 entrepreneurs", "56 neighborhoods across Itaguaí and Seropédica", "R$30,650.11 in registered revenue"],
+    note: "Growth came in below the initial projection stated in the materials. Impact evaluation was conducted by Rede Asta. Recording this gap matters because a case should also show what execution taught us and which assumptions need revisiting.",
   },
   {
     title: "World Creativity Day",
