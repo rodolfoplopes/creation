@@ -86,7 +86,7 @@ export default function InsightArticlePage() {
                     <span>
                       {new Date(article.publishedDate).toLocaleDateString(
                         lang === "en" ? "en-US" : lang === "es" ? "es-ES" : "pt-BR",
-                        { day: "numeric", month: "long", year: "numeric" },
+                        { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" },
                       )}
                     </span>
                   </>
