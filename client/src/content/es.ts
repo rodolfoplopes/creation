@@ -99,62 +99,82 @@ export const es: Content = {
   },
 
   about: {
-    // LOCKED — titulo travado no doc.
     hero: {
-      title: "Desarrollamos proyectos y los hacemos realidad",
-      subtitle:
-        "Creation es una casa que desarrolla proyectos de principio a fin. Entramos cuando una iniciativa necesita pasar de la idea a la forma, y conducimos el camino completo: entender, estructurar, ejecutar y comprobar el resultado.",
+      eyebrow: "CREATION",
+      title: "Empezamos haciendo. Crecimos estructurando.",
+      paragraphs: [
+        "Creation nació en 2009, fundada por Rodolfo Lopes, a partir de la experiencia práctica de transformar ideas en producciones, eventos y proyectos reales.",
+        "Con el tiempo, la ejecución reveló una verdad simple: los mayores problemas de un proyecto suelen surgir antes del día de la entrega. Están en la falta de claridad, alcance, gobernanza, ritmo y conexión entre quien decide y quien hace.",
+        "Así fue como Creation se convirtió en una empresa multidisciplinaria de proyectos.",
+      ],
     },
-    architectMetaphor: {
-      title: "Trabajamos como arquitectos",
-      body:
-        "Un arquitecto no entrega el plano y desaparece. Diseña la estructura y responde por ella hasta que queda en pie. Así conducimos un proyecto: creamos la estructura que permite que todo lo demás suceda, y permanecemos hasta que sucede. El diseño y la obra son la misma responsabilidad, no dos etapas que se pasan de una mano a otra.",
+    journey: {
+      title: "Una trayectoria construida entre disciplinas",
+      paragraphs: [
+        "Nuestro origen está en la realización. Producción, comunicación, eventos y operación nos enseñaron que una buena idea solo gana valor cuando logra atravesar presupuesto, plazo, equipo, proveedores, territorio e imprevistos.",
+        "A la capacidad de hacer, sumamos estrategia, inteligencia, gestión de proyectos, procesos, innovación y medición. No para abandonar la práctica, sino para llegar a la ejecución con mejores decisiones y estructuras más consistentes.",
+        "Hoy, trabajamos principalmente en gestión y economía creativa, con repertorio en innovación, impacto, branding, experiencias, eventos y operaciones.",
+      ],
     },
-    mission: {
-      title: "Misión",
-      text: "Transformar iniciativas paralizadas en proyectos que suceden, con método, ritmo y propósito.",
+    orgCharts: {
+      title: "Los proyectos no respetan organigramas",
+      paragraphs: [
+        "Un mismo desafío puede exigir investigación, estrategia, gobernanza, contenido, producción, articulación territorial y logística. Rara vez todas estas capacidades están disponibles en la misma área o equipo.",
+        "Creation trabaja como extensión de las organizaciones, reuniendo las competencias necesarias en torno a un alcance común. Podemos conducir el proyecto entero o asumir un frente específico, siempre con responsabilidades y entregas definidas.",
+      ],
     },
-    vision: {
-      title: "Visión",
-      text: "Ser la casa detrás de los proyectos que cambian territorios, marcas y comunidades, en Brasil y fuera de él.",
-    },
-    // LOCKED — versao final dos 6 valores, frase por frase, travada no doc.
-    values: {
-      title: "Valores",
-      subtitle: "Principios que nos mueven. Cada uno implica una elección que ya hicimos.",
+    beliefs: {
+      title: "En qué creemos",
       items: [
-        { title: "Excelencia", description: "Buscamos ser y hacer mejor cada día." },
         {
-          title: "Innovación",
-          description: "Elegimos el camino nuevo aun cuando el obvio costaría menos.",
+          title: "Claridad antes que velocidad",
+          description: "No aceleramos una iniciativa que todavía no fue comprendida. Definir el problema y el resultado esperado evita que la eficiencia se confunda con la prisa.",
         },
         {
-          title: "Método",
-          description: "Una operación que depende de una persona no es una operación.",
+          title: "Gestión como responsabilidad",
+          description: "Los planes no se coordinan solos. Decisiones, personas, riesgos y dependencias necesitan seguimiento hasta la conclusión.",
         },
-        { title: "Ejecución", description: "Entregamos lo que funciona, no lo que impresiona." },
         {
-          title: "Impacto",
-          description: "Si no se mide, no es impacto: es intención.",
+          title: "Creatividad con función",
+          description: "La creatividad no es un adjetivo para hacer las propuestas más atractivas. Es la capacidad de encontrar caminos relevantes dentro de restricciones reales.",
         },
-        { title: "Claridad", description: "No aceleramos lo que nadie entiende." },
+        {
+          title: "Ejecución con respeto al contexto",
+          description: "Una solución necesita funcionar para la organización, para quien la opera y para los públicos o territorios involucrados.",
+        },
+        {
+          title: "Evidencia sin maquillaje",
+          description: "Los resultados deben documentarse con honestidad, incluso cuando quedan por debajo de lo planeado. El aprendizaje real vale más que un número sin contexto.",
+        },
+      ],
+    },
+    leadership: {
+      title: "Liderazgo",
+      name: "Rodolfo Lopes",
+      role: "Fundador y liderazgo ejecutivo",
+      bio: "Publicista, emprendedor y gestor de proyectos, Rodolfo Lopes actúa en la estructuración y realización de iniciativas ligadas a la innovación, la economía creativa, eventos, comunicación e impacto. Su experiencia combina desarrollo de conceptos, articulación de socios, gestión, producción ejecutiva y operación, conectando el diseño estratégico con el trabajo necesario para hacerlo realidad.",
+    },
+    structure: {
+      title: "Una estructura que se forma alrededor del proyecto",
+      paragraphs: [
+        "Creation trabaja con un núcleo de liderazgo y una red de especialistas, productores, investigadores, creadores, técnicos y socios movilizados según la naturaleza de cada entrega.",
+        "No simulamos un equipo fijo mayor del que existe. Presentamos con claridad quién lidera, quién ejecuta y qué socios asumen responsabilidades en cada proyecto.",
       ],
     },
     forWhom: {
       title: "Para quién trabajamos",
-      text: "Trabajamos donde el propósito y el resultado se encuentran: institutos, fundaciones, empresas en expansión, organizaciones culturales y creativas, y el sector público. Cada uno llega con un proyecto en mente y la misma necesidad: alguien que lo haga existir.",
-      distinction:
-        "Lo que nos distingue no es diagnosticar. Es conducir. Unimos el rigor de quien estructura con la mano de quien ejecuta, y entregamos proyectos pensados para funcionar después de que nos vamos.",
-    },
-    partnersTitle: "Nuestros socios",
-    // LOCKED — fecho do manifesto travado no doc.
-    manifesto: {
-      title: "Manifiesto",
-      paragraphs: [
-        "Creemos que el mundo se mueve cuando las personas y las organizaciones recuperan la capacidad de imaginar, y de ejecutar. Es entre esas dos cosas, la idea y su realización, que existimos.",
-        "La innovación no es un privilegio, es una herramienta. El impacto no es discurso, es resultado. Por eso construimos puentes entre la estrategia y la operación, entre la tecnología y las personas, entre quien decide y el territorio que necesita ser escuchado.",
+      items: [
+        "PyMEs y empresas en expansión",
+        "áreas corporativas de Responsabilidad Social, ESG e Innovación",
+        "creators y negocios de la economía creativa",
+        "agencias, productoras y equipos socios",
       ],
-      closing: "El futuro no se espera. El futuro se construye.",
+      note: "También trabajamos en proyectos que conectan organizaciones, marcas, personas y territorios, cuando existe alineación entre desafío, alcance y capacidad de entrega.",
+    },
+    closing: {
+      title: "Lo que permanece desde 2009",
+      body: "Creation cambió de escala, lenguaje y repertorio. El compromiso central permaneció: comprender qué necesita suceder y asumir el trabajo necesario para transformar decisión en realización.",
+      casesLabel: "Vea nuestros Cases",
     },
   },
 

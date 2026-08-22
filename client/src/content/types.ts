@@ -95,22 +95,16 @@ export interface Content {
     audiences: TitledItem[];
   };
 
-  // ---- SOBRE ----
+  // ---- SOBRE (reconstruida fiel ao doc 30-Quem-Somos.md, agosto/2026) ----
   about: {
-    hero: { title: string; subtitle: string };
-    architectMetaphor: { title: string; body: string };   // "Trabalhamos como arquitetos"
-    mission: { title: string; text: string };
-    vision: { title: string; text: string };
-    values: { title: string; subtitle: string; items: TitledItem[] };  // 6 valores
-    forWhom: { title: string; text: string; distinction: string };
-    partnersTitle: string;
-    manifesto: {
-      title: string;
-      paragraphs: string[];
-      closing: string;       // "O futuro nao se espera. O futuro se constroi."
-    };
-    // presenca (Sobre EN menciona Brasil+EUA de leve)
-    presenceNote?: string;
+    hero: { eyebrow: string; title: string; paragraphs: string[] };       // fundacao 2009, Rodolfo Lopes
+    journey: { title: string; paragraphs: string[] };                     // "Uma trajetoria construida entre disciplinas"
+    orgCharts: { title: string; paragraphs: string[] };                   // "Projetos nao respeitam organogramas"
+    beliefs: { title: string; items: TitledItem[] };                     // "No que acreditamos" (5 crencas)
+    leadership: { title: string; name: string; role: string; bio: string }; // Rodolfo Lopes
+    structure: { title: string; paragraphs: string[] };                  // "Uma estrutura que se forma em torno do projeto"
+    forWhom: { title: string; items: string[]; note: string };
+    closing: { title: string; body: string; casesLabel: string };        // "O que permanece desde 2009"
   };
 
   // ---- SUB-MARCAS / LANDINGS (paginas proprias) ----

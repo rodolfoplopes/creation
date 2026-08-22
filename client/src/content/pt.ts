@@ -96,67 +96,81 @@ export const pt: Content = {
 
   about: {
     hero: {
-      title: "Desenvolvemos projetos e os fazemos acontecer",
-      subtitle:
-        "A Creation é uma casa que desenvolve projetos do início ao fim. Entramos quando uma iniciativa precisa sair da ideia e ganhar forma, e conduzimos o caminho inteiro: entender, estruturar, executar e comprovar o resultado.",
+      eyebrow: "A CREATION",
+      title: "Começamos fazendo. Crescemos estruturando.",
+      paragraphs: [
+        "A Creation nasceu em 2009, fundada por Rodolfo Lopes, a partir da experiência prática de transformar ideias em produções, eventos e projetos reais.",
+        "Com o tempo, a execução revelou uma verdade simples: os maiores problemas de um projeto costumam surgir antes do dia da entrega. Estão na falta de clareza, escopo, governança, ritmo e conexão entre quem decide e quem faz.",
+        "Foi assim que a Creation se tornou uma empresa multidisciplinar de projetos.",
+      ],
     },
-    architectMetaphor: {
-      title: "Trabalhamos como arquitetos",
-      body:
-        "Um arquiteto não entrega a planta e desaparece. Desenha a estrutura e responde por ela até ficar de pé. É assim que conduzimos um projeto: criamos a estrutura que permite que todo o resto aconteça, e permanecemos até que aconteça. O desenho e a obra são a mesma responsabilidade, não duas etapas que se passam de mão em mão.",
+    journey: {
+      title: "Uma trajetória construída entre disciplinas",
+      paragraphs: [
+        "Nossa origem está na realização. Produção, comunicação, eventos e operação ensinaram que uma boa ideia só ganha valor quando consegue atravessar orçamento, prazo, equipe, fornecedores, território e imprevistos.",
+        "À capacidade de fazer, somamos estratégia, inteligência, gestão de projetos, processos, inovação e mensuração. Não para abandonar a prática, mas para chegar à execução com decisões melhores e estruturas mais consistentes.",
+        "Hoje, trabalhamos principalmente em gestão e economia criativa, com repertório em inovação, impacto, branding, experiências, eventos e operações.",
+      ],
     },
-    mission: {
-      title: "Missão",
-      text: "Transformar iniciativas travadas em projetos que acontecem, com método, ritmo e propósito.",
+    orgCharts: {
+      title: "Projetos não respeitam organogramas",
+      paragraphs: [
+        "Um mesmo desafio pode exigir pesquisa, estratégia, governança, conteúdo, produção, articulação territorial e logística. Raramente todas essas capacidades estão disponíveis na mesma área ou equipe.",
+        "A Creation trabalha como extensão das organizações, reunindo as competências necessárias em torno de um escopo comum. Podemos conduzir o projeto inteiro ou assumir uma frente específica, sempre com responsabilidades e entregas definidas.",
+      ],
     },
-    vision: {
-      title: "Visão",
-      text: "Ser a casa por trás dos projetos que mudam territórios, marcas e comunidades, no Brasil e fora dele.",
-    },
-    values: {
-      title: "Valores",
-      subtitle: "Princípios que nos movem. Cada um implica uma escolha que já fizemos.",
+    beliefs: {
+      title: "No que acreditamos",
       items: [
         {
-          title: "Excelência",
-          description: "Buscamos ser e fazer melhor a cada dia.",
+          title: "Clareza antes da velocidade",
+          description: "Não aceleramos uma iniciativa que ainda não foi compreendida. Definir o problema e o resultado esperado evita que eficiência seja confundida com pressa.",
         },
         {
-          title: "Inovação",
-          description: "Escolhemos o caminho novo mesmo quando o óbvio custaria menos.",
+          title: "Gestão como responsabilidade",
+          description: "Planos não se coordenam sozinhos. Decisões, pessoas, riscos e dependências precisam de acompanhamento até a conclusão.",
         },
         {
-          title: "Método",
-          description: "Uma operação que depende de uma pessoa não é uma operação.",
+          title: "Criatividade com função",
+          description: "Criatividade não é um adjetivo para tornar propostas mais atraentes. É a capacidade de encontrar caminhos relevantes dentro de restrições reais.",
         },
         {
-          title: "Execução",
-          description: "Entregamos o que roda, não o que impressiona.",
+          title: "Execução com respeito ao contexto",
+          description: "Uma solução precisa funcionar para a organização, para quem opera e para os públicos ou territórios envolvidos.",
         },
         {
-          title: "Impacto",
-          description: "Se não é medido, não é impacto: é intenção.",
+          title: "Evidência sem maquiagem",
+          description: "Resultados devem ser documentados com honestidade, inclusive quando ficam abaixo do planejado. Aprendizado real vale mais do que um número sem contexto.",
         },
-        {
-          title: "Clareza",
-          description: "Não aceleramos o que ninguém entende.",
-        },
+      ],
+    },
+    leadership: {
+      title: "Liderança",
+      name: "Rodolfo Lopes",
+      role: "Fundador e liderança executiva",
+      bio: "Publicitário, empreendedor e gestor de projetos, Rodolfo Lopes atua na estruturação e realização de iniciativas ligadas à inovação, economia criativa, eventos, comunicação e impacto. Sua experiência combina desenvolvimento de conceitos, articulação de parceiros, gestão, produção executiva e operação, conectando o desenho estratégico ao trabalho necessário para fazê-lo acontecer.",
+    },
+    structure: {
+      title: "Uma estrutura que se forma em torno do projeto",
+      paragraphs: [
+        "A Creation trabalha com um núcleo de liderança e uma rede de especialistas, produtores, pesquisadores, criadores, técnicos e parceiros mobilizados conforme a natureza de cada entrega.",
+        "Não simulamos uma equipe fixa maior do que a existente. Apresentamos com clareza quem lidera, quem executa e quais parceiros assumem responsabilidades em cada projeto.",
       ],
     },
     forWhom: {
       title: "Para quem trabalhamos",
-      text: "Atuamos onde propósito e resultado se encontram: institutos, fundações, empresas em expansão, organizações culturais e criativas, e o setor público. Cada um chega com um projeto na cabeça e a mesma necessidade, alguém que o faça existir.",
-      distinction:
-        "O que nos distingue não é diagnosticar. É conduzir. Unimos o rigor de quem estrutura à mão de quem executa, e entregamos projetos pensados para funcionar depois que saímos.",
-    },
-    partnersTitle: "Nossos parceiros",
-    manifesto: {
-      title: "Manifesto",
-      paragraphs: [
-        "Acreditamos que o mundo se move quando pessoas e organizações recuperam a capacidade de imaginar e de executar. É entre essas duas coisas, a ideia e a realização, que existimos.",
-        "Inovação não é privilégio, é ferramenta. Impacto não é discurso, é resultado. Por isso construímos pontes entre estratégia e operação, entre a tecnologia e as pessoas, entre quem decide e o território que precisa ser ouvido.",
+      items: [
+        "PMEs e empresas em expansão",
+        "áreas corporativas de Responsabilidade Social, ESG e Inovação",
+        "creators e negócios da economia criativa",
+        "agências, produtoras e equipes parceiras",
       ],
-      closing: "O futuro não se espera. O futuro se constrói.",
+      note: "Também atuamos em projetos que conectam organizações, marcas, pessoas e territórios, quando existe alinhamento entre desafio, escopo e capacidade de entrega.",
+    },
+    closing: {
+      title: "O que permanece desde 2009",
+      body: "A Creation mudou de escala, linguagem e repertório. O compromisso central permaneceu: compreender o que precisa acontecer e assumir o trabalho necessário para transformar decisão em realização.",
+      casesLabel: "Veja nossos Cases",
     },
   },
 

@@ -98,63 +98,82 @@ export const en: Content = {
   },
 
   about: {
-    // LOCKED — titulo travado no doc.
     hero: {
-      title: "We develop projects and make them happen",
-      subtitle:
-        "Creation is a house that develops projects from start to finish. We step in when an initiative needs to move from idea to shape, and we lead the whole path: understand, structure, execute and prove the result.",
+      eyebrow: "CREATION",
+      title: "We started by doing. We grew by structuring.",
+      paragraphs: [
+        "Creation was founded in 2009 by Rodolfo Lopes, growing out of the hands-on experience of turning ideas into productions, events and real projects.",
+        "Over time, execution revealed a simple truth: a project's biggest problems usually surface before delivery day. They live in the lack of clarity, scope, governance, rhythm and connection between who decides and who does.",
+        "That's how Creation became a multidisciplinary project company.",
+      ],
     },
-    architectMetaphor: {
-      title: "We work like architects",
-      body:
-        "An architect doesn't hand over the blueprint and disappear. They design the structure and answer for it until it stands. That's how we lead a project: we create the structure that lets everything else happen, and we stay until it does. The design and the build are the same responsibility, not two stages handed off from one team to another.",
+    journey: {
+      title: "A path built across disciplines",
+      paragraphs: [
+        "Our origin is in making things happen. Production, communications, events and operations taught us that a good idea only gains value when it survives budget, deadline, team, vendors, territory and the unexpected.",
+        "To our capacity to execute, we added strategy, intelligence, project management, processes, innovation and measurement — not to abandon practice, but to arrive at execution with better decisions and more consistent structures.",
+        "Today, we work mainly in management and the creative economy, with expertise in innovation, impact, branding, experiences, events and operations.",
+      ],
     },
-    mission: {
-      title: "Mission",
-      text: "To turn stalled initiatives into projects that happen, with method, rhythm and purpose.",
+    orgCharts: {
+      title: "Projects don't respect org charts",
+      paragraphs: [
+        "The same challenge can require research, strategy, governance, content, production, territorial coordination and logistics. Rarely are all these capabilities available in the same department or team.",
+        "Creation works as an extension of organizations, bringing together the necessary competencies around a shared scope. We can lead the whole project or take on one specific front, always with defined responsibilities and deliverables.",
+      ],
     },
-    vision: {
-      title: "Vision",
-      text: "To be the house behind the projects that change territories, brands and communities, in Brazil and beyond.",
-    },
-    // DRAFT — traducao das 6 frases travadas em PT (nomes dos valores: doc
-    // confirma Excellence/Innovation/Method/Execution/Impact/Clarity).
-    values: {
-      title: "Values",
-      subtitle: "Principles that move us. Each one implies a choice we've already made.",
+    beliefs: {
+      title: "What we believe",
       items: [
-        { title: "Excellence", description: "We strive to be and do better every day." },
         {
-          title: "Innovation",
-          description: "We choose the new path even when the obvious one would cost less.",
+          title: "Clarity before speed",
+          description: "We don't accelerate an initiative that hasn't been understood yet. Defining the problem and the expected outcome keeps efficiency from being confused with rushing.",
         },
         {
-          title: "Method",
-          description: "An operation that depends on one person is not an operation.",
+          title: "Management as responsibility",
+          description: "Plans don't coordinate themselves. Decisions, people, risks and dependencies need follow-through until completion.",
         },
-        { title: "Execution", description: "We deliver what runs, not what impresses." },
         {
-          title: "Impact",
-          description: "If it isn't measured, it isn't impact: it's intention.",
+          title: "Creativity with purpose",
+          description: "Creativity isn't an adjective to make proposals more appealing. It's the ability to find relevant paths within real constraints.",
         },
-        { title: "Clarity", description: "We don't accelerate what nobody understands." },
+        {
+          title: "Execution that respects context",
+          description: "A solution needs to work for the organization, for whoever operates it, and for the audiences or territories involved.",
+        },
+        {
+          title: "Evidence without makeup",
+          description: "Results should be documented honestly, including when they fall short of the plan. Real learning is worth more than a number without context.",
+        },
+      ],
+    },
+    leadership: {
+      title: "Leadership",
+      name: "Rodolfo Lopes",
+      role: "Founder and executive lead",
+      bio: "An advertiser, entrepreneur and project manager, Rodolfo Lopes works on structuring and running initiatives connected to innovation, the creative economy, events, communications and impact. His experience combines concept development, partner engagement, management, executive production and operations, connecting strategic design to the work needed to make it happen.",
+    },
+    structure: {
+      title: "A structure that forms around the project",
+      paragraphs: [
+        "Creation works with a leadership core and a network of specialists, producers, researchers, creators, technicians and partners mobilized according to the nature of each deliverable.",
+        "We don't simulate a fixed team larger than the one that exists. We're clear about who leads, who executes and which partners take on responsibilities in each project.",
       ],
     },
     forWhom: {
       title: "Who we work with",
-      text: "We work where purpose and results meet: institutes, foundations, expanding businesses, cultural and creative organizations, and the public sector. Each one arrives with a project in mind and the same need: someone to make it real.",
-      distinction:
-        "What sets us apart isn't diagnosing. It's leading. We combine the rigor of those who structure with the hand of those who execute, and we deliver projects built to keep working after we leave.",
-    },
-    partnersTitle: "Our partners",
-    // LOCKED — fecho do manifesto travado no doc.
-    manifesto: {
-      title: "Manifesto",
-      paragraphs: [
-        "We believe the world moves when people and organizations regain the ability to imagine, and to execute. It's between those two things, the idea and its realization, that we exist.",
-        "Innovation is not a privilege, it's a tool. Impact is not rhetoric, it's a result. That's why we build bridges between strategy and operation, between technology and people, between those who decide and the territory that needs to be heard.",
+      items: [
+        "SMEs and expanding businesses",
+        "corporate Social Responsibility, ESG and Innovation areas",
+        "creators and creative-economy businesses",
+        "agencies, production companies and partner teams",
       ],
-      closing: "The future is not awaited. The future is built.",
+      note: "We also work on projects that connect organizations, brands, people and territories, whenever there's alignment between challenge, scope and delivery capacity.",
+    },
+    closing: {
+      title: "What has remained since 2009",
+      body: "Creation has changed in scale, language and repertoire. The core commitment has stayed the same: understanding what needs to happen and taking on the work required to turn decision into reality.",
+      casesLabel: "See our Cases",
     },
   },
 
