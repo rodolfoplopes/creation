@@ -90,6 +90,8 @@ export interface CaseStub {
   context: string;
   numbers: string[];
   note?: string; // disclaimer de atribuicao/evidencia (ex: avaliacao conduzida por terceiro, resultado abaixo da projecao)
+  image?: StubPageImage;
+  imageHint?: string; // usado quando ainda nao ha foto real (ver ImagePlaceholder)
 }
 
 export interface StubLangPack {

@@ -7,13 +7,28 @@ import { useLang } from "@/content";
  * claro pro cliente o que falta selecionar/enviar — pedido explicito
  * dele em vez de deixar o gap invisivel.
  */
-export default function ImagePlaceholder({ hint, className }: { hint: string; className?: string }) {
+export default function ImagePlaceholder({
+  hint,
+  className,
+  rounded = true,
+  bordered = true,
+}: {
+  hint: string;
+  /** Classes de tamanho/posicao (ex.: "h-32", "mb-4 h-48"). Nao inclua
+   * classes de rounded ou border aqui — use as props "rounded"/"bordered",
+   * que evitam conflito de especificidade do Tailwind com as classes base. */
+  className?: string;
+  rounded?: boolean;
+  bordered?: boolean;
+}) {
   const lang = useLang();
   const label = lang === "en" ? "Suggested photo: " : lang === "es" ? "Foto sugerida: " : "Foto sugerida: ";
 
   return (
     <div
-      className={`rounded-2xl border-2 border-dashed border-abyss/20 bg-bone/40 flex flex-col items-center justify-center gap-3 px-8 text-center ${
+      className={`${rounded ? "rounded-2xl" : ""} ${
+        bordered ? "border-2 border-dashed border-abyss/20" : ""
+      } bg-bone/40 flex flex-col items-center justify-center gap-3 px-8 text-center ${
         className ?? "h-[280px] md:h-[420px]"
       }`}
     >

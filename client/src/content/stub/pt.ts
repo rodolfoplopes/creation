@@ -1,4 +1,10 @@
 import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub } from "./types";
+import caseHackingRio from "@assets/case-hacking-rio.jpg";
+import caseHackingHelp from "@assets/case-hacking-help.jpg";
+import caseHrTalks from "@assets/case-hr-talks.jpg";
+import casePertinhoEscola from "@assets/case-pertinho-escola.jpg";
+import casePertinhoPlataforma from "@assets/case-pertinho-plataforma.jpg";
+import caseWorldCreativity from "@assets/case-world-creativity-day..jpg";
 
 export const stubData: Record<string, StubPageData> = {
   solucoes: {
@@ -1276,18 +1282,21 @@ export const casesStub: CaseStub[] = [
     client: "Íons Innovation",
     context: "Produção e operação executiva de quatro edições em três formatos diferentes (presencial, digital e metaverso), integrando participantes, mentores, parceiros e fornecedores.",
     numbers: ["4 edições", "3 formatos", "+5 mil competidores", "+170 mil pessoas alcançadas"],
+    image: { src: caseHackingRio, alt: "Palco do Hacking.Rio, o maior hackathon da América Latina" },
   },
   {
     title: "Hacking.Help",
     client: "Íons Innovation",
     context: "Concepção e produção executiva de uma maratona on-line criada rapidamente para manter a mobilização de propósito social durante a pandemia.",
     numbers: ["1.533 competidores", "5 países de língua portuguesa", "R$ 500 mil em mídia espontânea estimada"],
+    image: { src: caseHackingHelp, alt: "Programação da maratona on-line Hacking.Help" },
   },
   {
     title: "HR Talks",
     client: "Íons Innovation",
     context: "Produção executiva de uma programação digital internacional de longa duração, coordenando agenda, palestrantes e transmissão ao vivo.",
     numbers: ["15.500 inscritos", "172 palestrantes globais", "40 horas de conteúdo ao vivo"],
+    image: { src: caseHrTalks, alt: "Programação digital HR Talks" },
   },
   {
     title: "Pertinho de Casa — Escola e Feiras",
@@ -1295,6 +1304,7 @@ export const casesStub: CaseStub[] = [
     context: "Coordenação territorial de uma escola de negócios e feiras de comercialização para fortalecer empreendedores locais.",
     numbers: ["2 frentes de atuação", "6 eventos de comercialização", "R$ 19.649 em vendas acompanhadas"],
     note: "A avaliação de impacto foi conduzida pela Rede Asta. Os números apresentados descrevem entregas e resultados comerciais informados para o período, não uma atribuição integral de impacto à Creation.",
+    image: { src: casePertinhoEscola, alt: "Feira de comercialização Pertinho de Casa em Itaguaí" },
   },
   {
     title: "Pertinho de Casa — Plataforma",
@@ -1302,11 +1312,13 @@ export const casesStub: CaseStub[] = [
     context: "Recrutamento de vendedores, articulação do Comitê pela Economia Local e acompanhamento trimestral da plataforma.",
     numbers: ["241 empreendedores", "56 bairros de Itaguaí e Seropédica", "R$ 30.650,11 em faturamento registrado"],
     note: "O crescimento ficou abaixo da projeção inicial indicada nos materiais. A avaliação de impacto foi conduzida pela Rede Asta. Registrar essa diferença é importante porque um case também deve mostrar o que a execução ensinou e quais hipóteses precisam ser revistas.",
+    image: { src: casePertinhoPlataforma, alt: "Empreendedora local vendendo produtos têxteis na plataforma Pertinho de Casa" },
   },
   {
     title: "World Creativity Day",
     client: "Centro Cultural Banco do Brasil Rio de Janeiro",
     context: "Concepção e execução de programação presencial e on-line sobre criatividade, distribuída por espaços e dias diferentes.",
     numbers: ["3 dias de programação", "2 espaços", "+1 mil pessoas alcançadas", "+50 inspiradores on-line"],
+    image: { src: caseWorldCreativity, alt: "Apresentação do World Creativity Day no Centro Cultural Banco do Brasil Rio de Janeiro" },
   },
 ];

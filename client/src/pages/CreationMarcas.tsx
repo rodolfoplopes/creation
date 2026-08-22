@@ -87,7 +87,7 @@ export default function CreationMarcas() {
               {/* Processo mostrado, nao so descrito (pedido do cliente,
                   emula notion.com): a etapa "Conversa inicial" ganha foto. */}
               {i === 0 && (
-                <ImagePlaceholder hint={stepImageHint} className="rounded-xl mb-4 h-32" />
+                <ImagePlaceholder hint={stepImageHint} className="mb-4 h-32" />
               )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}

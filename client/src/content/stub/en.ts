@@ -1,4 +1,10 @@
 import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub } from "./types";
+import caseHackingRio from "@assets/case-hacking-rio.jpg";
+import caseHackingHelp from "@assets/case-hacking-help.jpg";
+import caseHrTalks from "@assets/case-hr-talks.jpg";
+import casePertinhoEscola from "@assets/case-pertinho-escola.jpg";
+import casePertinhoPlataforma from "@assets/case-pertinho-plataforma.jpg";
+import caseWorldCreativity from "@assets/case-world-creativity-day..jpg";
 
 export const stubData: Record<string, StubPageData> = {
   solucoes: {
@@ -1276,18 +1282,21 @@ export const casesStub: CaseStub[] = [
     client: "Íons Innovation",
     context: "Executive production and operation of four editions across three different formats (in-person, digital and metaverse), integrating participants, mentors, partners and vendors.",
     numbers: ["4 editions", "3 formats", "5,000+ competitors", "170,000+ people reached"],
+    image: { src: caseHackingRio, alt: "Hacking.Rio stage, Latin America's largest hackathon" },
   },
   {
     title: "Hacking.Help",
     client: "Íons Innovation",
     context: "Concept and executive production of an online marathon created quickly to keep social-purpose mobilization going during the pandemic.",
     numbers: ["1,533 competitors", "5 Portuguese-speaking countries", "R$500K in estimated earned media"],
+    image: { src: caseHackingHelp, alt: "Hacking.Help online marathon programming" },
   },
   {
     title: "HR Talks",
     client: "Íons Innovation",
     context: "Executive production of a long-form international digital program, coordinating agenda, speakers and live broadcast.",
     numbers: ["15,500 registrants", "172 global speakers", "40 hours of live content"],
+    image: { src: caseHrTalks, alt: "HR Talks digital program" },
   },
   {
     title: "Pertinho de Casa — School and Fairs",
@@ -1295,6 +1304,7 @@ export const casesStub: CaseStub[] = [
     context: "Territorial coordination of a business school and sales fairs to strengthen local entrepreneurs.",
     numbers: ["2 fronts of work", "6 sales events", "R$19,649 in tracked sales"],
     note: "Impact evaluation was conducted by Rede Asta. The figures shown describe deliverables and commercial results reported for the period, not a full attribution of impact to Creation.",
+    image: { src: casePertinhoEscola, alt: "Pertinho de Casa sales fair in Itaguaí" },
   },
   {
     title: "Pertinho de Casa — Platform",
@@ -1302,11 +1312,13 @@ export const casesStub: CaseStub[] = [
     context: "Recruiting sellers, coordinating the Local Economy Committee, and quarterly follow-up on the platform.",
     numbers: ["241 entrepreneurs", "56 neighborhoods across Itaguaí and Seropédica", "R$30,650.11 in registered revenue"],
     note: "Growth came in below the initial projection stated in the materials. Impact evaluation was conducted by Rede Asta. Recording this gap matters because a case should also show what execution taught us and which assumptions need revisiting.",
+    image: { src: casePertinhoPlataforma, alt: "Local entrepreneur selling textile products on the Pertinho de Casa platform" },
   },
   {
     title: "World Creativity Day",
     client: "Centro Cultural Banco do Brasil Rio de Janeiro",
     context: "Concept and execution of in-person and online programming on creativity, spread across different venues and days.",
     numbers: ["3 days of programming", "2 venues", "1,000+ people reached", "50+ online speakers"],
+    image: { src: caseWorldCreativity, alt: "World Creativity Day performance at Centro Cultural Banco do Brasil Rio de Janeiro" },
   },
 ];
