@@ -16,7 +16,7 @@ export default function TargetAudienceSection() {
   const c = useContent();
 
   return (
-    <Section tone="white" divider>
+    <Section id="para-quem" tone="white" divider>
       <SectionHeader
         title={c.targetAudience.title}
         subtitle={c.targetAudience.subtitle}

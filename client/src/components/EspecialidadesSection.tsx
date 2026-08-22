@@ -26,7 +26,7 @@ export default function EspecialidadesSection() {
   const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
 
   return (
-    <Section tone="white" divider>
+    <Section id="especialidades" tone="white" divider>
       <SectionHeader
         title={t("Onde combinamos capacidade com repertório.", "Where we combine capability with expertise.", "Donde combinamos capacidad con repertorio.")}
         subtitle={t(

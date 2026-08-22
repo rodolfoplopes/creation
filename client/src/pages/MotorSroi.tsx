@@ -1,7 +1,35 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import SectionNav from "@/components/SectionNav";
 import { useContent, useLang } from "@/content";
+
+const navLabels = {
+  pt: [
+    { id: "o-que-e-sroi", label: "O que é" },
+    { id: "prontidao", label: "Prontidão" },
+    { id: "jornada", label: "Jornada" },
+    { id: "entregaveis", label: "Entregáveis" },
+    { id: "limites", label: "Limites" },
+    { id: "consultivo", label: "Consultivo" },
+  ],
+  en: [
+    { id: "o-que-e-sroi", label: "What it is" },
+    { id: "prontidao", label: "Readiness" },
+    { id: "jornada", label: "Journey" },
+    { id: "entregaveis", label: "Deliverables" },
+    { id: "limites", label: "Limits" },
+    { id: "consultivo", label: "Advisory" },
+  ],
+  es: [
+    { id: "o-que-e-sroi", label: "Qué es" },
+    { id: "prontidao", label: "Preparación" },
+    { id: "jornada", label: "Recorrido" },
+    { id: "entregaveis", label: "Entregables" },
+    { id: "limites", label: "Límites" },
+    { id: "consultivo", label: "Consultivo" },
+  ],
+};
 
 /**
  * /motor-sroi — landing nova, consome c.motorSroiPage. Ainda oculta do
@@ -56,8 +84,10 @@ export default function MotorSroi() {
         <ImagePlaceholder hint={heroImageHint} />
       </div>
 
+      <SectionNav items={navLabels[lang]} />
+
       {/* O que é SROI */}
-      <Section tone="white">
+      <Section id="o-que-e-sroi" tone="white">
         <div className="max-w-measure">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.whatIsSroi.title}
@@ -73,7 +103,7 @@ export default function MotorSroi() {
       </Section>
 
       {/* Antes do cálculo, uma pergunta de prontidão */}
-      <Section tone="white">
+      <Section id="prontidao" tone="white">
         <SectionHeader title={page.readiness.title} subtitle={page.readiness.intro} />
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mb-6">
           {page.readiness.items.map((item) => (
@@ -87,7 +117,7 @@ export default function MotorSroi() {
       </Section>
 
       {/* Uma jornada possível */}
-      <Section tone="white">
+      <Section id="jornada" tone="white">
         <SectionHeader title={page.journey.title} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.journey.steps.map((step, i) => (
@@ -108,7 +138,7 @@ export default function MotorSroi() {
       </Section>
 
       {/* Entregáveis possíveis */}
-      <Section tone="white">
+      <Section id="entregaveis" tone="white">
         <SectionHeader title={page.deliverables.title} />
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
           {page.deliverables.items.map((item) => (
@@ -121,7 +151,7 @@ export default function MotorSroi() {
       </Section>
 
       {/* O que a razão não pode esconder */}
-      <Section tone="ink" size="sm">
+      <Section id="limites" tone="ink" size="sm">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.whatRatioCantHide.title}
@@ -137,7 +167,7 @@ export default function MotorSroi() {
       </Section>
 
       {/* Serviço consultivo, não cálculo automático */}
-      <Section tone="white">
+      <Section id="consultivo" tone="white">
         <div className="max-w-measure border-l-2 border-spark pl-8">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.consultiveDisclaimer.title}

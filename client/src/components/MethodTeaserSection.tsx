@@ -28,7 +28,7 @@ export default function MethodTeaserSection() {
   const localize = useLocalizedHref();
 
   return (
-    <Section tone="bone" size="sm">
+    <Section id="metodo" tone="bone" size="sm">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div className="max-w-measure">
           <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">

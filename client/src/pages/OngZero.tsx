@@ -1,7 +1,35 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import SectionNav from "@/components/SectionNav";
 import { useContent, useLang } from "@/content";
+
+const navLabels = {
+  pt: [
+    { id: "comeco", label: "O começo" },
+    { id: "para-quem", label: "Para quem" },
+    { id: "jornada", label: "Jornada" },
+    { id: "entregaveis", label: "Entregáveis" },
+    { id: "nao-promete", label: "Não promete" },
+    { id: "proporcional", label: "Estrutura" },
+  ],
+  en: [
+    { id: "comeco", label: "The start" },
+    { id: "para-quem", label: "Who it's for" },
+    { id: "jornada", label: "Journey" },
+    { id: "entregaveis", label: "Deliverables" },
+    { id: "nao-promete", label: "Doesn't promise" },
+    { id: "proporcional", label: "Structure" },
+  ],
+  es: [
+    { id: "comeco", label: "El comienzo" },
+    { id: "para-quem", label: "Para quién" },
+    { id: "jornada", label: "Recorrido" },
+    { id: "entregaveis", label: "Entregables" },
+    { id: "nao-promete", label: "No promete" },
+    { id: "proporcional", label: "Estructura" },
+  ],
+};
 
 /**
  * /ong-zero — landing nova, consome c.ongZeroPage. Ainda oculta do menu
@@ -57,8 +85,10 @@ export default function OngZero() {
         <ImagePlaceholder hint={heroImageHint} />
       </div>
 
+      <SectionNav items={navLabels[lang]} />
+
       {/* O começo costuma reunir urgência e pouca estrutura */}
-      <Section tone="white">
+      <Section id="comeco" tone="white">
         <div className="max-w-measure">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.beginning.title}
@@ -74,7 +104,7 @@ export default function OngZero() {
       </Section>
 
       {/* Para quem */}
-      <Section tone="white">
+      <Section id="para-quem" tone="white">
         <SectionHeader title={page.forWhom.title} />
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mb-6">
           {page.forWhom.items.map((item) => (
@@ -88,7 +118,7 @@ export default function OngZero() {
       </Section>
 
       {/* Uma jornada possível (7 etapas) */}
-      <Section tone="white">
+      <Section id="jornada" tone="white">
         <SectionHeader title={page.journey.title} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.journey.steps.map((step, i) => (
@@ -109,7 +139,7 @@ export default function OngZero() {
       </Section>
 
       {/* Entregáveis possíveis */}
-      <Section tone="white">
+      <Section id="entregaveis" tone="white">
         <SectionHeader title={page.deliverables.title} />
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl mb-6">
           {page.deliverables.items.map((item) => (
@@ -123,7 +153,7 @@ export default function OngZero() {
       </Section>
 
       {/* O que a ONG.zero não promete */}
-      <Section tone="ink" size="sm">
+      <Section id="nao-promete" tone="ink" size="sm">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="font-display text-h2 font-bold text-bone mb-4">
             {page.doesNotPromise.title}
@@ -141,7 +171,7 @@ export default function OngZero() {
       </Section>
 
       {/* Estrutura proporcional ao estágio */}
-      <Section tone="white">
+      <Section id="proporcional" tone="white">
         <div className="max-w-measure">
           <h2 className="font-display text-h2 font-bold text-abyss mb-4">
             {page.proportionalStructure.title}

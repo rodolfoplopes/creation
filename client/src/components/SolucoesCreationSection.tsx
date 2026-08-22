@@ -32,7 +32,7 @@ export default function SolucoesCreationSection() {
   if (homeSolucoes.length === 0) return null;
 
   return (
-    <Section tone="white" divider>
+    <Section id="solucoes-creation" tone="white" divider>
       <SectionHeader
         title={t(
           "Repertório transformado em soluções mais fáceis de contratar.",
