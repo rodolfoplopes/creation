@@ -16,7 +16,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
-import { useContent } from "@/content";
+import { useContent, useLang } from "@/content";
 
 /**
  * REMOVIDO: um MutationObserver que observava o <body> inteiro (childList,
@@ -38,12 +38,23 @@ import { useContent } from "@/content";
  * "O que acontece depois do contato?" (ausente) e a mensagem de
  * confirmacao pos-envio (era um toast generico).
  */
+// Mensagens de erro por idioma — a validacao nativa do navegador (bolha
+// cinza padrao) destoava do design do resto do site (achado da auditoria
+// UX/UI 22/08/2026). Validacao proaria em JS com mensagem estilizada,
+// consistente com a tipografia/cor do site.
+const errorMessages: Record<string, { required: string; email: string; consent: string }> = {
+  pt: { required: "Este campo é obrigatório.", email: "Digite um e-mail válido.", consent: "É preciso aceitar para enviar." },
+  en: { required: "This field is required.", email: "Enter a valid email.", consent: "You must accept to submit." },
+  es: { required: "Este campo es obligatorio.", email: "Ingrese un correo válido.", consent: "Debe aceptar para enviar." },
+};
+
 export default function Contato() {
   const { toast } = useToast();
   const c = useContent();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,8 +67,28 @@ export default function Contato() {
     message: "",
   });
 
+  const lang = useLang();
+  const em = errorMessages[lang] ?? errorMessages.pt;
+
+  const validate = () => {
+    const next: Record<string, string> = {};
+    if (!formData.name.trim()) next.name = em.required;
+    if (!formData.email.trim()) next.email = em.required;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) next.email = em.email;
+    if (!formData.organization.trim()) next.organization = em.required;
+    if (!formData.message.trim()) next.message = em.required;
+    if (!consent) next.consent = em.consent;
+    return next;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
     setIsSubmitting(true);
 
     try {
@@ -95,7 +126,15 @@ export default function Contato() {
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
   };
+
+  const fieldError = (field: string) =>
+    errors[field] ? (
+      <p className="text-small text-destructive" role="alert">
+        {errors[field]}
+      </p>
+    ) : null;
 
   return (
     <Layout>
@@ -123,31 +162,35 @@ export default function Contato() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">{c.contact.form.name}</Label>
                         <Input
                           id="name"
                           type="text"
-                          required
                           value={formData.name}
                           onChange={(e) => handleChange("name", e.target.value)}
                           placeholder={c.contact.form.namePlaceholder}
+                          aria-invalid={!!errors.name}
+                          className={errors.name ? "border-destructive focus-visible:ring-destructive" : undefined}
                           data-testid="input-name"
                         />
+                        {fieldError("name")}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">{c.contact.form.email}</Label>
                         <Input
                           id="email"
                           type="email"
-                          required
                           value={formData.email}
                           onChange={(e) => handleChange("email", e.target.value)}
                           placeholder={c.contact.form.emailPlaceholder}
+                          aria-invalid={!!errors.email}
+                          className={errors.email ? "border-destructive focus-visible:ring-destructive" : undefined}
                           data-testid="input-email"
                         />
+                        {fieldError("email")}
                       </div>
                     </div>
 
@@ -168,12 +211,14 @@ export default function Contato() {
                         <Input
                           id="organization"
                           type="text"
-                          required
                           value={formData.organization}
                           onChange={(e) => handleChange("organization", e.target.value)}
                           placeholder={c.contact.form.organizationPlaceholder}
+                          aria-invalid={!!errors.organization}
+                          className={errors.organization ? "border-destructive focus-visible:ring-destructive" : undefined}
                           data-testid="input-organization"
                         />
+                        {fieldError("organization")}
                       </div>
                     </div>
 
@@ -245,33 +290,41 @@ export default function Contato() {
                       <Label htmlFor="message">{c.contact.form.message}</Label>
                       <Textarea
                         id="message"
-                        required
                         rows={5}
                         value={formData.message}
                         onChange={(e) => handleChange("message", e.target.value)}
                         placeholder={c.contact.form.messagePlaceholder}
-                        className="resize-none"
+                        aria-invalid={!!errors.message}
+                        className={`resize-none ${errors.message ? "border-destructive focus-visible:ring-destructive" : ""}`}
                         data-testid="textarea-message"
                       />
+                      {fieldError("message")}
                     </div>
 
-                    <div className="flex items-start gap-3">
-                      <Checkbox
-                        id="consent"
-                        required
-                        checked={consent}
-                        onCheckedChange={(checked) => setConsent(checked === true)}
-                        data-testid="checkbox-consent"
-                      />
-                      <Label htmlFor="consent" className="font-normal text-small text-abyss/70 leading-relaxed">
-                        {c.contact.form.consent}
-                      </Label>
+                    <div>
+                      <div className="flex items-start gap-3">
+                        <Checkbox
+                          id="consent"
+                          checked={consent}
+                          onCheckedChange={(checked) => {
+                            setConsent(checked === true);
+                            if (errors.consent) setErrors((prev) => ({ ...prev, consent: "" }));
+                          }}
+                          aria-invalid={!!errors.consent}
+                          className={errors.consent ? "border-destructive" : undefined}
+                          data-testid="checkbox-consent"
+                        />
+                        <Label htmlFor="consent" className="font-normal text-small text-abyss/70 leading-relaxed">
+                          {c.contact.form.consent}
+                        </Label>
+                      </div>
+                      {fieldError("consent")}
                     </div>
 
                     <Button
                       type="submit"
                       size="lg"
-                      disabled={isSubmitting || !consent}
+                      disabled={isSubmitting}
                       className="w-full md:w-auto bg-abyss text-bone hover:bg-ink font-semibold"
                       data-testid="button-submit"
                     >
