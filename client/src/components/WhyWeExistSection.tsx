@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import PhotoFrame from "@/components/PhotoFrame";
 
 /**
  * Voltou para as 3 fotos originais que sobraram do primeiro corte
@@ -59,10 +60,10 @@ export default function WhyWeExistSection() {
           <div className="flex">
             {slides.map((slide, index) => (
               <div key={index} className="flex-[0_0_100%] min-w-0">
-                <img
+                <PhotoFrame
                   src={slide.src}
                   alt={slide.alt}
-                  className="w-full h-[300px] md:h-[420px] object-cover"
+                  className="h-[300px] md:h-[420px]"
                   data-testid={`slide-image-${index}`}
                 />
               </div>

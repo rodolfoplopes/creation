@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
+import PhotoFrame from "@/components/PhotoFrame";
 import { useContent } from "@/content";
 
 import galleryImg1 from "@assets/agustin-diaz-gargiulo-GTLJklnjn-E-unsplash_1767535792240.jpg";
@@ -52,7 +53,7 @@ export default function CreatorOpsRio() {
         {[galleryImg1, galleryImg5, galleryImg6, galleryImg3, galleryImg4, galleryImg2, galleryImg7, galleryImg8].map(
           (img, i) => (
             <div key={i} className="aspect-square overflow-hidden">
-              <img src={img} alt="" className="w-full h-full object-cover" />
+              <PhotoFrame src={img} alt="" className="w-full h-full" />
             </div>
           ),
         )}

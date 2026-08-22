@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
 import Reveal from "@/components/Reveal";
+import PhotoFrame from "@/components/PhotoFrame";
 import { useLocalizedHref, useLang } from "@/content";
 import { stubPages } from "@/content/stub";
 
@@ -40,10 +41,11 @@ export default function EspecialidadesSection() {
             <Link href={localize(esp.href)}>
               <article className="h-full cursor-pointer group">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm mb-6">
-                  <img
+                  <PhotoFrame
                     src={esp.image.src}
                     alt={esp.image.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full"
+                    imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="border-l-2 border-abyss group-hover:border-spark transition-colors pl-6 py-1">
