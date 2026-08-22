@@ -442,7 +442,17 @@ export const stubData: Record<string, StubPageData> = {
         "Aprovações não possuem prazo, critério ou responsável claro.",
         "O cliente ou usuário não sabe em que etapa está.",
         "A operação depende excessivamente de uma pessoa.",
+        "Erros recorrentes são tratados individualmente, sem correção da causa.",
         "Ferramentas foram implantadas sem redesenhar o fluxo de trabalho.",
+        "Indicadores mostram o resultado final, mas não onde o problema começa.",
+      ]},
+      { type: "cards", heading: "O que fazemos", items: [
+        { title: "Diagnóstico do processo atual", description: "Entrevistas, observação, documentos, sistemas, volumes, tempos, exceções e pontos de decisão." },
+        { title: "Mapeamento", description: "Representação do fluxo atual, das responsabilidades, entradas, saídas, regras e dependências." },
+        { title: "Análise", description: "Identificação de gargalos, retrabalho, riscos, controles, desperdícios e falhas de experiência." },
+        { title: "Redesenho", description: "Construção do fluxo futuro com simplificações, papéis, critérios e controles adequados." },
+        { title: "Implantação", description: "Planos de mudança, procedimentos, treinamentos, indicadores e acompanhamento da adoção." },
+        { title: "Requisitos para tecnologia", description: "Definição funcional do que uma ferramenta, automação ou integração precisa resolver, antes da escolha ou configuração." },
       ]},
       { type: "steps", heading: "Como conduzimos", items: [
         { number: "01", title: "Priorizar", description: "Escolhemos os processos com maior efeito sobre resultado, risco ou experiência." },
@@ -462,6 +472,11 @@ export const stubData: Record<string, StubPageData> = {
         "Requisitos funcionais para sistemas.",
         "Indicadores de processo.",
         "Plano de implantação.",
+        "Materiais de treinamento.",
+        "Acompanhamento de adoção.",
+      ]},
+      { type: "bullets", heading: "O diagrama não é a entrega final", items: [
+        "Um processo bem desenhado que ninguém consegue operar continua sendo apenas um desenho. Por isso, o trabalho considera capacidade da equipe, tecnologia disponível, cultura, volume, exceções e governança. Quando a mudança exige sistema, jurídico, contabilidade, segurança da informação ou outra especialidade, essas competências são integradas ao projeto de forma explícita.",
       ]},
       { type: "bullets", heading: "Aplicações frequentes", items: [
         "Atendimento e jornada do cliente.",
@@ -472,6 +487,7 @@ export const stubData: Record<string, StubPageData> = {
         "Operação de programas sociais.",
         "Criação e publicação de conteúdo.",
         "Prestação de contas.",
+        "Integração entre áreas e parceiros.",
       ]},
     ],
     ctaLabel: "Converse sobre seus processos",
@@ -486,6 +502,15 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Gestão",
     parentHref: "/solucoes/gestao",
     blocks: [
+      { type: "bullets", heading: "Quando essa frente é necessária", items: [
+        "Projetos atravessam várias áreas e as alçadas não estão claras.",
+        "Decisões importantes acontecem fora dos fóruns formais.",
+        "Indicadores existem, mas não orientam ações.",
+        "Reuniões consomem tempo sem produzir encaminhamentos.",
+        "A liderança recebe informação tarde demais.",
+        "Parceiros e fornecedores não possuem critérios comuns de prestação de contas.",
+        "Um programa precisa demonstrar execução, resultado ou impacto.",
+      ]},
       { type: "cards", heading: "O que estruturamos", items: [
         { title: "Arquitetura de governança", description: "Papéis, responsabilidades, fóruns, alçadas, escalonamento e relação entre instâncias." },
         { title: "Matriz de decisão", description: "Quem recomenda, aprova, executa, consulta e acompanha cada tema relevante." },
@@ -504,7 +529,12 @@ export const stubData: Record<string, StubPageData> = {
         "Fichas técnicas das métricas.",
         "Modelo de dashboard.",
         "Modelo de relatório executivo.",
+        "Fluxo de decisão e escalonamento.",
         "Plano de implantação e adoção.",
+      ]},
+      { type: "bullets", heading: "Menos indicadores, melhores perguntas", items: [
+        "Um painel extenso não é necessariamente um painel útil. Começamos pelas decisões que precisam ser apoiadas e pelas perguntas que a gestão precisa responder.",
+        "Cada indicador deve ter definição, fonte, responsável, frequência e consequência. Se um número muda e nada acontece, talvez ele seja apenas informação, não um indicador de gestão.",
       ]},
       { type: "bullets", heading: "Diferentes níveis de evidência", intro: "Distinguimos atividade, entrega, alcance, resultado e impacto — para que volume de atividade nunca seja apresentado como transformação comprovada.", items: [
         "Atividade: o que foi feito.",
@@ -512,6 +542,13 @@ export const stubData: Record<string, StubPageData> = {
         "Alcance: quem foi envolvido.",
         "Resultado: o que mudou de forma observável.",
         "Impacto: mudança atribuível ou plausivelmente relacionada, conforme método e evidência disponíveis.",
+      ]},
+      { type: "steps", heading: "Como implantamos", items: [
+        { number: "01", title: "Decisões", description: "Identificamos o que precisa ser decidido e onde a governança atual falha." },
+        { number: "02", title: "Papéis", description: "Definimos responsabilidades, fóruns e alçadas." },
+        { number: "03", title: "Informação", description: "Desenhamos indicadores, fontes e formatos de leitura." },
+        { number: "04", title: "Rotina", description: "Implantamos cadência, pautas, registros e acompanhamento." },
+        { number: "05", title: "Ajuste", description: "Observamos uso real, eliminamos excessos e corrigimos lacunas." },
       ]},
       { type: "bullets", heading: "Para projetos, programas e operações", items: [
         "Projetos corporativos.",

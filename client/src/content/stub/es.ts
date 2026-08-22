@@ -442,7 +442,17 @@ export const stubData: Record<string, StubPageData> = {
         "Las aprobaciones no tienen plazo, criterio o responsable claro.",
         "El cliente o usuario no sabe en qué etapa está.",
         "La operación depende excesivamente de una persona.",
+        "Los errores recurrentes se tratan individualmente, sin corregir la causa.",
         "Se implementaron herramientas sin rediseñar el flujo de trabajo.",
+        "Los indicadores muestran el resultado final, pero no dónde empieza el problema.",
+      ]},
+      { type: "cards", heading: "Lo que hacemos", items: [
+        { title: "Diagnóstico del proceso actual", description: "Entrevistas, observación, documentos, sistemas, volúmenes, tiempos, excepciones y puntos de decisión." },
+        { title: "Mapeo", description: "Representación del flujo actual, las responsabilidades, entradas, salidas, reglas y dependencias." },
+        { title: "Análisis", description: "Identificación de cuellos de botella, retrabajo, riesgos, controles, desperdicios y fallas de experiencia." },
+        { title: "Rediseño", description: "Construcción del flujo futuro con simplificaciones, roles, criterios y controles adecuados." },
+        { title: "Implementación", description: "Planes de cambio, procedimientos, capacitaciones, indicadores y seguimiento de la adopción." },
+        { title: "Requisitos para tecnología", description: "Definición funcional de lo que una herramienta, automatización o integración necesita resolver, antes de elegirla o configurarla." },
       ]},
       { type: "steps", heading: "Cómo lo conducimos", items: [
         { number: "01", title: "Priorizar", description: "Elegimos los procesos con mayor efecto sobre resultado, riesgo o experiencia." },
@@ -462,6 +472,11 @@ export const stubData: Record<string, StubPageData> = {
         "Requisitos funcionales para sistemas.",
         "Indicadores de proceso.",
         "Plan de implementación.",
+        "Materiales de capacitación.",
+        "Seguimiento de la adopción.",
+      ]},
+      { type: "bullets", heading: "El diagrama no es la entrega final", items: [
+        "Un proceso bien diseñado que nadie puede operar sigue siendo solo un dibujo. Por eso, el trabajo considera la capacidad del equipo, la tecnología disponible, la cultura, el volumen, las excepciones y la gobernanza. Cuando el cambio requiere sistemas, aspectos legales, contabilidad, seguridad de la información u otra especialidad, esas competencias se integran al proyecto de forma explícita.",
       ]},
       { type: "bullets", heading: "Aplicaciones frecuentes", items: [
         "Atención y recorrido del cliente.",
@@ -472,6 +487,7 @@ export const stubData: Record<string, StubPageData> = {
         "Operación de programas sociales.",
         "Creación y publicación de contenido.",
         "Rendición de cuentas.",
+        "Integración entre áreas y socios.",
       ]},
     ],
     ctaLabel: "Conversemos sobre sus procesos",
@@ -486,6 +502,15 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Gestión",
     parentHref: "/solucoes/gestao",
     blocks: [
+      { type: "bullets", heading: "Cuándo este frente es necesario", items: [
+        "Los proyectos atraviesan varias áreas y los niveles de decisión no están claros.",
+        "Decisiones importantes ocurren fuera de los foros formales.",
+        "Los indicadores existen, pero no orientan acciones.",
+        "Las reuniones consumen tiempo sin producir encaminamientos.",
+        "El liderazgo recibe información demasiado tarde.",
+        "Socios y proveedores no tienen criterios comunes de rendición de cuentas.",
+        "Un programa necesita demostrar ejecución, resultado o impacto.",
+      ]},
       { type: "cards", heading: "Lo que estructuramos", items: [
         { title: "Arquitectura de gobernanza", description: "Roles, responsabilidades, foros, niveles de decisión, escalamiento y relación entre instancias." },
         { title: "Matriz de decisión", description: "Quién recomienda, aprueba, ejecuta, consulta y hace seguimiento a cada tema relevante." },
@@ -504,7 +529,12 @@ export const stubData: Record<string, StubPageData> = {
         "Fichas técnicas de las métricas.",
         "Modelo de dashboard.",
         "Modelo de informe ejecutivo.",
+        "Flujo de decisión y escalamiento.",
         "Plan de implementación y adopción.",
+      ]},
+      { type: "bullets", heading: "Menos indicadores, mejores preguntas", items: [
+        "Un panel extenso no es necesariamente un panel útil. Empezamos por las decisiones que necesitan apoyo y por las preguntas que la gestión necesita responder.",
+        "Cada indicador debe tener definición, fuente, responsable, frecuencia y consecuencia. Si un número cambia y no pasa nada, tal vez sea solo información, no un indicador de gestión.",
       ]},
       { type: "bullets", heading: "Diferentes niveles de evidencia", intro: "Distinguimos actividad, entrega, alcance, resultado e impacto — para que el volumen de actividad nunca se presente como transformación comprobada.", items: [
         "Actividad: lo que se hizo.",
@@ -512,6 +542,13 @@ export const stubData: Record<string, StubPageData> = {
         "Alcance: quién se vio involucrado.",
         "Resultado: lo que cambió de forma observable.",
         "Impacto: cambio atribuible o plausiblemente relacionado, según el método y la evidencia disponibles.",
+      ]},
+      { type: "steps", heading: "Cómo lo implementamos", items: [
+        { number: "01", title: "Decisiones", description: "Identificamos qué necesita decidirse y dónde falla la gobernanza actual." },
+        { number: "02", title: "Roles", description: "Definimos responsabilidades, foros y niveles de decisión." },
+        { number: "03", title: "Información", description: "Diseñamos indicadores, fuentes y formatos de lectura." },
+        { number: "04", title: "Rutina", description: "Implementamos cadencia, agendas, registros y seguimiento." },
+        { number: "05", title: "Ajuste", description: "Observamos el uso real, eliminamos excesos y corregimos vacíos." },
       ]},
       { type: "bullets", heading: "Para proyectos, programas y operaciones", items: [
         "Proyectos corporativos.",

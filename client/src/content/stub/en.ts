@@ -442,7 +442,17 @@ export const stubData: Record<string, StubPageData> = {
         "Approvals have no deadline, criteria or clear owner.",
         "The client or user doesn't know what stage they're at.",
         "The operation depends excessively on one person.",
+        "Recurring errors are handled one at a time, without fixing the root cause.",
         "Tools were rolled out without redesigning the workflow.",
+        "Indicators show the final result, but not where the problem starts.",
+      ]},
+      { type: "cards", heading: "What we do", items: [
+        { title: "Current-process diagnosis", description: "Interviews, observation, documents, systems, volumes, times, exceptions and decision points." },
+        { title: "Mapping", description: "Representing the current flow, responsibilities, inputs, outputs, rules and dependencies." },
+        { title: "Analysis", description: "Identifying bottlenecks, rework, risks, controls, waste and experience failures." },
+        { title: "Redesign", description: "Building the future flow with the right simplifications, roles, criteria and controls." },
+        { title: "Rollout", description: "Change plans, procedures, training, indicators and adoption follow-up." },
+        { title: "Technology requirements", description: "Defining functionally what a tool, automation or integration needs to solve, before selecting or configuring it." },
       ]},
       { type: "steps", heading: "How we conduct it", items: [
         { number: "01", title: "Prioritize", description: "We choose the processes with the greatest effect on results, risk or experience." },
@@ -462,6 +472,11 @@ export const stubData: Record<string, StubPageData> = {
         "Functional requirements for systems.",
         "Process indicators.",
         "Implementation plan.",
+        "Training materials.",
+        "Adoption follow-up.",
+      ]},
+      { type: "bullets", heading: "The diagram isn't the final deliverable", items: [
+        "A well-designed process that no one can operate is still just a drawing. That's why the work considers team capacity, available technology, culture, volume, exceptions and governance. When the change requires systems, legal, accounting, information security or another specialty, those competencies are explicitly brought into the project.",
       ]},
       { type: "bullets", heading: "Frequent applications", items: [
         "Customer service and journey.",
@@ -472,6 +487,7 @@ export const stubData: Record<string, StubPageData> = {
         "Social program operations.",
         "Content creation and publishing.",
         "Accountability reporting.",
+        "Integration between areas and partners.",
       ]},
     ],
     ctaLabel: "Talk about your processes",
@@ -486,6 +502,15 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Management",
     parentHref: "/solucoes/gestao",
     blocks: [
+      { type: "bullets", heading: "When this front is needed", items: [
+        "Projects span several areas and authority levels aren't clear.",
+        "Important decisions happen outside formal forums.",
+        "Indicators exist but don't guide action.",
+        "Meetings consume time without producing next steps.",
+        "Leadership gets information too late.",
+        "Partners and vendors don't share common accountability criteria.",
+        "A program needs to demonstrate execution, results or impact.",
+      ]},
       { type: "cards", heading: "What we structure", items: [
         { title: "Governance architecture", description: "Roles, responsibilities, forums, authority levels, escalation and the relationship between instances." },
         { title: "Decision matrix", description: "Who recommends, approves, executes, consults and follows up on each relevant topic." },
@@ -504,7 +529,12 @@ export const stubData: Record<string, StubPageData> = {
         "Metric fact sheets.",
         "Dashboard template.",
         "Executive report template.",
+        "Decision and escalation flow.",
         "Implementation and adoption plan.",
+      ]},
+      { type: "bullets", heading: "Fewer indicators, better questions", items: [
+        "An extensive dashboard isn't necessarily a useful one. We start from the decisions that need support and the questions management needs answered.",
+        "Every indicator should have a definition, source, owner, frequency and consequence. If a number changes and nothing happens, it may just be information, not a management indicator.",
       ]},
       { type: "bullets", heading: "Different levels of evidence", intro: "We distinguish activity, output, reach, result and impact — so that volume of activity is never presented as proven transformation.", items: [
         "Activity: what was done.",
@@ -512,6 +542,13 @@ export const stubData: Record<string, StubPageData> = {
         "Reach: who was involved.",
         "Result: what changed in an observable way.",
         "Impact: change attributable or plausibly related, according to available method and evidence.",
+      ]},
+      { type: "steps", heading: "How we implement it", items: [
+        { number: "01", title: "Decisions", description: "We identify what needs to be decided and where current governance falls short." },
+        { number: "02", title: "Roles", description: "We define responsibilities, forums and authority levels." },
+        { number: "03", title: "Information", description: "We design indicators, sources and reading formats." },
+        { number: "04", title: "Routine", description: "We roll out cadence, agendas, records and follow-up." },
+        { number: "05", title: "Adjustment", description: "We observe real usage, cut excess and fix gaps." },
       ]},
       { type: "bullets", heading: "For projects, programs and operations", items: [
         "Corporate projects.",
