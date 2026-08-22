@@ -573,6 +573,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Soluções",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Capacidade operacional para projetos com muitas partes móveis", items: [
+        "Operações se tornam críticas quando há múltiplos fornecedores, prazos curtos, circulação de equipes, exigências técnicas, atividades simultâneas ou interfaces com diferentes instituições.",
+        "Nesses contextos, não basta contratar recursos isolados. É preciso integrar o conjunto, antecipar dependências e manter a tomada de decisão perto de quem executa.",
+      ]},
       { type: "bullets", heading: "O que coordenamos", items: [
         "Escopo operacional e critérios de entrega.",
         "Orçamento, contratações e controle de custos.",
@@ -581,7 +585,17 @@ export const stubData: Record<string, StubPageData> = {
         "Infraestrutura, equipamentos e materiais.",
         "Licenças, autorizações e requisitos locais.",
         "Logística de pessoas, cargas e recursos.",
+        "Montagem, operação, desmontagem e devoluções.",
         "Contingências, mudanças e comunicação de campo.",
+        "Registros, comprovações e fechamento.",
+        "O escopo final é definido conforme o projeto. Serviços sujeitos a habilitação, autorização ou responsabilidade técnica são realizados por profissionais e fornecedores qualificados.",
+      ]},
+      { type: "steps", heading: "Um modelo de operação visível para o cliente", items: [
+        { number: "01", title: "Leitura operacional", description: "Entendemos objetivo, formato, local, públicos, restrições, decisões tomadas e lacunas existentes." },
+        { number: "02", title: "Plano de realização", description: "Organizamos frentes de trabalho, responsáveis, orçamento, cronograma, fornecedores, riscos e critérios de aceite." },
+        { number: "03", title: "Preparação", description: "Confirmamos recursos, contratos, licenças, acessos, equipes, roteiros, plantas, listas e planos de contingência." },
+        { number: "04", title: "Operação", description: "Coordenamos o trabalho em campo, acompanhamos ocorrências e mantemos decisões e mudanças registradas." },
+        { number: "05", title: "Encerramento", description: "Conferimos entregas, custos, devoluções, documentos, evidências e aprendizados." },
       ]},
       { type: "bullets", heading: "Onde entramos", intro: "A Creation pode assumir toda a operação ou uma frente delimitada. Também pode integrar estruturas já existentes, incluindo:", items: [
         "Equipes de marketing e comunicação.",
@@ -590,6 +604,11 @@ export const stubData: Record<string, StubPageData> = {
         "Organizações culturais e sociais.",
         "Produtoras audiovisuais.",
         "Marcas, creators e projetos independentes.",
+        "A proposta explicita o que fica sob nossa responsabilidade, o que depende do cliente e quais entregas exigem terceiros.",
+      ]},
+      { type: "bullets", heading: "Operar bem também é saber quando escalar uma decisão", items: [
+        "Imprevistos fazem parte de qualquer execução. O que diferencia uma operação madura é a capacidade de identificar o problema cedo, avaliar impacto, apresentar opções e registrar a decisão.",
+        "Nosso papel não é esconder a complexidade. É administrá-la para que ela não interrompa a entrega.",
       ]},
     ],
     childrenLabel: "Nossas frentes de atuação",
@@ -611,12 +630,9 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operações",
     parentHref: "/operacoes",
     blocks: [
-      { type: "steps", heading: "O ciclo completo", items: [
-        { number: "01", title: "Conceito e objetivos", description: "Definição do papel do evento, públicos, proposta de valor, resultados esperados e critérios de sucesso." },
-        { number: "02", title: "Arquitetura da experiência", description: "Formato, programação, jornada do participante, ambientes, fluxos, ativações e pontos de contato." },
-        { number: "03", title: "Planejamento", description: "Escopo, orçamento, cronograma, governança, fornecedores, riscos, licenças e plano operacional." },
-        { number: "04", title: "Produção", description: "Infraestrutura, audiovisual, cenografia, alimentação, equipes, materiais, logística, montagem e testes." },
-        { number: "05", title: "Realização e encerramento", description: "Coordenação geral, operação de sala ou palco, desmontagem, conferência, dados e relatório." },
+      { type: "bullets", heading: "Um evento não é apenas uma data", items: [
+        "É um projeto temporário com uma promessa clara para o público e uma rede extensa de dependências. Quando essas dependências não são tratadas de forma integrada, a experiência perde coerência e a equipe trabalha apenas para reagir.",
+        "Nossa gestão organiza o evento como sistema: propósito, formato, conteúdo, produção, comunicação, jornada, segurança, dados e fechamento.",
       ]},
       { type: "bullets", heading: "Eventos que podemos estruturar e realizar", items: [
         "Encontros corporativos e institucionais.",
@@ -624,8 +640,20 @@ export const stubData: Record<string, StubPageData> = {
         "Hackathons e programas de inovação.",
         "Eventos culturais e de economia criativa.",
         "Ativações de marca e live marketing.",
+        "Feiras, mostras e experiências territoriais.",
         "Eventos de responsabilidade social e impacto.",
         "Transmissões ao vivo e formatos híbridos.",
+        "Encontros para comunidades, creators e parceiros.",
+        "Formato, capacidade e território são confirmados em cada proposta.",
+      ]},
+      { type: "steps", heading: "O ciclo completo", items: [
+        { number: "01", title: "Conceito e objetivos", description: "Definição do papel do evento, públicos, proposta de valor, resultados esperados e critérios de sucesso." },
+        { number: "02", title: "Arquitetura da experiência", description: "Formato, programação, jornada do participante, ambientes, fluxos, ativações e pontos de contato." },
+        { number: "03", title: "Planejamento", description: "Escopo, orçamento, cronograma, governança, fornecedores, riscos, licenças e plano operacional." },
+        { number: "04", title: "Conteúdo e participantes", description: "Curadoria, convites, briefing, agenda, roteiros, apresentações, credenciamento e comunicação de serviço, conforme escopo." },
+        { number: "05", title: "Produção", description: "Infraestrutura, audiovisual, cenografia, alimentação, equipes, materiais, logística, montagem e testes." },
+        { number: "06", title: "Realização", description: "Coordenação geral, operação de sala ou palco, acompanhamento de fornecedores, gestão de ocorrências e comunicação de campo." },
+        { number: "07", title: "Encerramento", description: "Desmontagem, conferência, pagamentos, dados, registros, relatório e recomendações." },
       ]},
       { type: "bullets", heading: "Entregáveis possíveis", items: [
         "Conceito e desenho do evento.",
@@ -634,9 +662,27 @@ export const stubData: Record<string, StubPageData> = {
         "Matriz de responsabilidades.",
         "Programação e roteiro técnico.",
         "Plano de espaços, fluxos e acessos.",
+        "Plano de comunicação de serviço.",
+        "Manual de produção.",
         "Plano de riscos e contingências.",
         "Operação de credenciamento.",
+        "Coordenação de montagem, realização e desmontagem.",
         "Relatório de execução e indicadores.",
+      ]},
+      { type: "bullets", heading: "Gestão de eventos e produção executiva: qual é a diferença?", items: [
+        "Na Gestão de Eventos, a Creation pode responder pela arquitetura do projeto como um todo, alinhando objetivo, público, conteúdo, experiência, operação e indicadores.",
+        "Na Produção Executiva, o conceito ou parte das definições pode já existir, e nossa responsabilidade se concentra em viabilizar e coordenar a realização.",
+        "As duas frentes podem ser contratadas juntas ou separadamente.",
+      ]},
+      { type: "bullets", heading: "Eventos presenciais, híbridos e digitais", items: [
+        "O formato deve responder ao objetivo e à forma como o público participa. Avaliamos alcance, qualidade da interação, infraestrutura, acessibilidade, registro, dados e custo total antes de recomendar uma configuração.",
+        "Tecnologia amplia possibilidades, mas não substitui desenho de experiência nem operação disciplinada.",
+      ]},
+      { type: "steps", heading: "Como começamos", items: [
+        { number: "01", title: "Briefing", description: "Objetivo, data, público, local, histórico, orçamento de referência e decisões já tomadas." },
+        { number: "02", title: "Diagnóstico", description: "Lacunas, dependências, riscos, viabilidade e alternativas de formato." },
+        { number: "03", title: "Proposta", description: "Escopo, responsabilidades, entregas, cronograma, premissas e investimento." },
+        { number: "04", title: "Mobilização", description: "Governança, equipe, fornecedores, ritos e início da execução." },
       ]},
     ],
     ctaLabel: "Planeje seu evento",

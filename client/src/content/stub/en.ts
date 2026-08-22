@@ -573,6 +573,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [
+      { type: "bullets", heading: "Operational capacity for projects with many moving parts", items: [
+        "Operations become critical when there are multiple vendors, tight deadlines, teams moving around, technical requirements, simultaneous activities or interfaces with different institutions.",
+        "In these contexts, contracting isolated resources isn't enough. The whole set needs to be integrated, dependencies anticipated, and decision-making kept close to those executing.",
+      ]},
       { type: "bullets", heading: "What we coordinate", items: [
         "Operational scope and delivery criteria.",
         "Budget, contracting and cost control.",
@@ -581,7 +585,17 @@ export const stubData: Record<string, StubPageData> = {
         "Infrastructure, equipment and materials.",
         "Permits, authorizations and local requirements.",
         "Logistics for people, cargo and resources.",
+        "Setup, operation, teardown and returns.",
         "Contingencies, changes and field communication.",
+        "Records, proof of delivery and close-out.",
+        "The final scope is defined per project. Services subject to licensing, authorization or technical liability are carried out by qualified professionals and vendors.",
+      ]},
+      { type: "steps", heading: "An operating model that's visible to the client", items: [
+        { number: "01", title: "Operational read", description: "We understand objective, format, location, audiences, constraints, decisions already made and existing gaps." },
+        { number: "02", title: "Delivery plan", description: "We organize work fronts, owners, budget, timeline, vendors, risks and acceptance criteria." },
+        { number: "03", title: "Preparation", description: "We confirm resources, contracts, permits, access, teams, scripts, floor plans, lists and contingency plans." },
+        { number: "04", title: "Operation", description: "We coordinate the work on the ground, follow up on incidents and keep decisions and changes logged." },
+        { number: "05", title: "Close-out", description: "We check deliverables, costs, returns, documents, evidence and learnings." },
       ]},
       { type: "bullets", heading: "Where we plug in", intro: "Creation can take on the whole operation or a delimited front. We can also integrate into existing structures, including:", items: [
         "Marketing and communications teams.",
@@ -590,6 +604,11 @@ export const stubData: Record<string, StubPageData> = {
         "Cultural and social organizations.",
         "Audiovisual production companies.",
         "Brands, creators and independent projects.",
+        "The proposal spells out what falls under our responsibility, what depends on the client, and which deliverables require third parties.",
+      ]},
+      { type: "bullets", heading: "Operating well also means knowing when to escalate a decision", items: [
+        "The unexpected is part of any execution. What sets a mature operation apart is the ability to spot the problem early, assess impact, present options and log the decision.",
+        "Our role isn't to hide complexity. It's to manage it so it doesn't interrupt delivery.",
       ]},
     ],
     childrenLabel: "Our fronts of work",
@@ -611,12 +630,9 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operations",
     parentHref: "/operacoes",
     blocks: [
-      { type: "steps", heading: "The full cycle", items: [
-        { number: "01", title: "Concept and objectives", description: "Defining the event's role, audiences, value proposition, expected results and success criteria." },
-        { number: "02", title: "Experience architecture", description: "Format, program, attendee journey, environments, flows, activations and touchpoints." },
-        { number: "03", title: "Planning", description: "Scope, budget, timeline, governance, vendors, risks, permits and operational plan." },
-        { number: "04", title: "Production", description: "Infrastructure, audiovisual, set design, catering, teams, materials, logistics, setup and testing." },
-        { number: "05", title: "Execution and closeout", description: "Overall coordination, stage or floor operation, teardown, reconciliation, data and report." },
+      { type: "bullets", heading: "An event isn't just a date", items: [
+        "It's a temporary project with a clear promise to its audience and an extensive web of dependencies. When those dependencies aren't handled as a whole, the experience loses coherence and the team ends up just reacting.",
+        "Our management organizes the event as a system: purpose, format, content, production, communications, journey, security, data and close-out.",
       ]},
       { type: "bullets", heading: "Events we can structure and run", items: [
         "Corporate and institutional gatherings.",
@@ -624,8 +640,20 @@ export const stubData: Record<string, StubPageData> = {
         "Hackathons and innovation programs.",
         "Cultural and creative economy events.",
         "Brand activations and live marketing.",
+        "Fairs, exhibits and territorial experiences.",
         "Social responsibility and impact events.",
         "Live broadcasts and hybrid formats.",
+        "Gatherings for communities, creators and partners.",
+        "Format, capacity and territory are confirmed in each proposal.",
+      ]},
+      { type: "steps", heading: "The full cycle", items: [
+        { number: "01", title: "Concept and objectives", description: "Defining the event's role, audiences, value proposition, expected results and success criteria." },
+        { number: "02", title: "Experience architecture", description: "Format, program, attendee journey, environments, flows, activations and touchpoints." },
+        { number: "03", title: "Planning", description: "Scope, budget, timeline, governance, vendors, risks, permits and operational plan." },
+        { number: "04", title: "Content and participants", description: "Curation, invitations, briefing, agenda, scripts, presentations, check-in and service communication, as scoped." },
+        { number: "05", title: "Production", description: "Infrastructure, audiovisual, set design, catering, teams, materials, logistics, setup and testing." },
+        { number: "06", title: "Execution", description: "Overall coordination, stage or floor operation, vendor follow-up, incident management and field communication." },
+        { number: "07", title: "Closeout", description: "Teardown, reconciliation, payments, data, records, report and recommendations." },
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
         "Event concept and design.",
@@ -634,9 +662,27 @@ export const stubData: Record<string, StubPageData> = {
         "Responsibility matrix.",
         "Program and technical run-of-show.",
         "Space, flow and access plan.",
+        "Service communication plan.",
+        "Production manual.",
         "Risk and contingency plan.",
         "Check-in operation.",
+        "Setup, execution and teardown coordination.",
         "Execution report and indicators.",
+      ]},
+      { type: "bullets", heading: "Event management vs. executive production: what's the difference?", items: [
+        "In Event Management, Creation can answer for the project's architecture as a whole, aligning objective, audience, content, experience, operations and indicators.",
+        "In Executive Production, the concept or part of the definitions may already exist, and our responsibility focuses on making the execution viable and coordinating it.",
+        "Both fronts can be contracted together or separately.",
+      ]},
+      { type: "bullets", heading: "In-person, hybrid and digital events", items: [
+        "The format should respond to the objective and how the audience takes part. We assess reach, interaction quality, infrastructure, accessibility, recording, data and total cost before recommending a setup.",
+        "Technology expands possibilities, but doesn't replace experience design or disciplined operations.",
+      ]},
+      { type: "steps", heading: "How we start", items: [
+        { number: "01", title: "Briefing", description: "Objective, date, audience, venue, history, reference budget and decisions already made." },
+        { number: "02", title: "Diagnosis", description: "Gaps, dependencies, risks, feasibility and format alternatives." },
+        { number: "03", title: "Proposal", description: "Scope, responsibilities, deliverables, timeline, assumptions and investment." },
+        { number: "04", title: "Mobilization", description: "Governance, team, vendors, rituals and the start of execution." },
       ]},
     ],
     ctaLabel: "Plan your event",
