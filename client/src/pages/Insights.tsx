@@ -16,19 +16,21 @@ export default function Insights() {
   const lang = useLang();
   const localize = useLocalizedHref();
   const [items, setItems] = useState<InsightListItem[] | null>(null);
-  const [configured, setConfigured] = useState(true);
+  const [configured, setConfigured] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
     fetch(`/api/insights?lang=${lang}`)
-      .then((res) => res.json())
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
       .then((data) => {
         if (cancelled) return;
         setItems(data.items ?? []);
         setConfigured(data.configured ?? false);
       })
       .catch(() => {
-        if (!cancelled) setItems([]);
+        if (cancelled) return;
+        setItems([]);
+        setConfigured(false);
       });
     return () => {
       cancelled = true;

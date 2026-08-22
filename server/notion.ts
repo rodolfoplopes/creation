@@ -1,5 +1,5 @@
 import { Client } from "@notionhq/client";
-import type { InsightListItem, InsightArticle } from "@shared/insights";
+import type { InsightListItem, InsightArticle } from "../shared/insights";
 
 /**
  * Insights (blog) usa o Notion como CMS — decisao do cliente (22/08/2026):
