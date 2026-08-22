@@ -141,13 +141,19 @@ export interface Content {
     closing: { title: string; body: string; ctaLabel: string };
   };
 
+  // Reconstruida fiel ao doc 22-ONG-zero.md (agosto/2026).
   ongZeroPage: {
     eyebrow: string;
     title: string;
     intro: string;
-    buildTogether: { title: string; body: string };    // constroi junto, nao chave-na-mao
-    stages: { title: string; items: TitledItem[] };    // Conceito, Abertura, Organizacao, Marca, Captacao
-    forWhom: string;
+    heroCtaLabel: string;
+    beginning: { title: string; paragraphs: string[] };        // "O comeco costuma reunir urgencia e pouca estrutura"
+    forWhom: { title: string; items: string[]; note: string };
+    journey: { title: string; steps: TitledItem[] };            // "Uma jornada possivel" (7 etapas)
+    deliverables: { title: string; items: string[]; note: string };
+    doesNotPromise: { title: string; items: string[]; note: string };
+    proportionalStructure: { title: string; paragraphs: string[] };
+    closing: { title: string; body: string; ctaLabel: string };
   };
 
   // Reconstruida fiel ao doc 24-Motor-SROI.md (agosto/2026). O nome

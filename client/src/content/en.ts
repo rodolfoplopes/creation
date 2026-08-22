@@ -352,32 +352,88 @@ export const en: Content = {
     },
   },
 
+  // Rebuilt to match doc 22-ONG-zero.md (August 2026).
   ongZeroPage: {
-    eyebrow: "NGO STRUCTURING",
-    title: "ONG.zero",
-    intro: "We build the NGO together with the person behind it. We don't hand over something ready-made to run.",
-    buildTogether: {
-      title: "We build together, we don't hand over ready-made",
-      body:
-        "The founder takes part in every stage and comes out able to lead what was created. An organization that depends on Creation to exist is not a structured organization.",
-    },
-    stages: {
-      title: "The five stages",
-      items: [
-        { title: "Concept", description: "Defining the cause, the theory of impact and the operating model." },
-        { title: "Formation", description: "Bylaws, registration and tax ID: the legal side of the foundation." },
-        { title: "Organization", description: "Governance, internal structure and processes." },
-        {
-          title: "Brand and Identity",
-          description: "Name, logo and narrative, with Creation Marcas support when needed.",
-        },
-        {
-          title: "Fundraising and Sustainability",
-          description: "Grants, donors and incentive laws, so the organization sustains itself after setup.",
-        },
+    eyebrow: "ONG.ZERO",
+    title: "A cause needs structure to keep existing.",
+    intro:
+      "ONG.zero is a Creation proposal to support social initiatives through the passage from intention to organization: clarity of purpose, operating model, governance, processes, sustainability plan and readiness to operate.",
+    heroCtaLabel: "Talk about your initiative",
+    beginning: {
+      title: "The beginning tends to combine urgency and little structure.",
+      paragraphs: [
+        "Many initiatives are born from a concrete problem, a mobilizing leader, or a community that decides to act. Questions soon arise about legal format, responsibilities, resources, accountability, team, partners and continuity.",
+        "ONG.zero organizes these decisions into a single journey, integrating strategy and management. Legal, accounting and tax acts are carried out by qualified professionals engaged according to scope.",
       ],
     },
-    forWhom: "For those structuring an NGO, foundation or institute from the ground up.",
+    forWhom: {
+      title: "Who it's for.",
+      items: [
+        "Collectives assessing formalization",
+        "Social projects that need to structure their operation",
+        "Leaders who want to turn an initiative into an organization",
+        "Institutes and associations in an early stage",
+        "Sponsored projects that need governance and controls",
+        "Companies supporting the creation or strengthening of a partner organization",
+      ],
+      note: "Forming a legal entity isn't always the first or best path. The initial stage assesses alternatives before recommending a structure.",
+    },
+    journey: {
+      title: "A possible journey.",
+      steps: [
+        { title: "Purpose and context", description: "Problem, audiences, territory, existing activity, legitimacy, goals and limits." },
+        { title: "Operating model", description: "Programs, services, audiences, partnerships, social value proposition and priorities." },
+        { title: "Governance", description: "Bodies, roles, decision-making, integrity, participation and accountability." },
+        { title: "Formal structure", description: "Guidance and coordination for legal, accounting and tax documents and procedures, carried out by qualified professionals." },
+        { title: "Management", description: "Processes, budget, controls, indicators, team, data and monitoring routine." },
+        { title: "Sustainability", description: "Resource strategy, relationships with supporters, partnerships, communication and institutional development plan." },
+        { title: "Implementation", description: "Prioritization, timeline, responsibilities, first operating cycles and adjustments." },
+      ],
+    },
+    deliverables: {
+      title: "Possible deliverables.",
+      items: [
+        "Readiness diagnosis",
+        "Stakeholder map",
+        "Strategy and operating model",
+        "Theory of change",
+        "Program design",
+        "Governance architecture",
+        "Implementation plan",
+        "Essential process map",
+        "Initial budget and controls",
+        "Indicator matrix",
+        "Priority policy or guidelines",
+        "Financial sustainability plan",
+        "Institutional narrative",
+        "Coordination of legal and accounting specialists",
+      ],
+      note: "The final set depends on maturity, organizational form and the decisions made during the diagnosis.",
+    },
+    doesNotPromise: {
+      title: "What ONG.zero does not promise.",
+      items: [
+        "Granting of qualification, certification or tax benefit",
+        "Guaranteed fundraising",
+        "Automatic approval in public calls",
+        "Replacement of legal or accounting counsel",
+        "Financial sustainability within a set deadline",
+        "Implementation without participation from the initiative's leaders",
+      ],
+      note: "Our commitment is to structure decisions and capabilities, making the requirements and responsibilities of each party clear.",
+    },
+    proportionalStructure: {
+      title: "Structure proportional to the stage.",
+      paragraphs: [
+        "A small organization doesn't need to copy the bureaucracy of a large institution. It does need controls compatible with the resources it manages, the commitments it takes on and the risks of its activity.",
+        "We build a foundation that can be used, revised and expanded as it grows.",
+      ],
+    },
+    closing: {
+      title: "What stage is your initiative at?",
+      body: "Tell us how it started, what it already does, who's involved and what decision needs to be made now. The initial stage identifies whether the best next step is to structure, formalize, strengthen or reorganize.",
+      ctaLabel: "Request an initial conversation",
+    },
   },
 
   // LOCKED — titulo travado no doc.

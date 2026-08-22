@@ -353,32 +353,88 @@ export const es: Content = {
     },
   },
 
+  // Reconstruida fiel al doc 22-ONG-zero.md (agosto/2026).
   ongZeroPage: {
-    eyebrow: "ESTRUCTURACIÓN DE ONGS",
-    title: "ONG.zero",
-    intro: "Construimos la ONG junto con quien la idealiza. No entregamos algo listo para operar.",
-    buildTogether: {
-      title: "Construimos juntos, no entregamos algo hecho",
-      body:
-        "El fundador participa en cada etapa y sale capaz de conducir lo que se creó. Una organización que depende de Creation para existir no es una organización estructurada.",
-    },
-    stages: {
-      title: "Las cinco etapas",
-      items: [
-        { title: "Concepto", description: "Definición de la causa, la tesis de impacto y el modelo de actuación." },
-        { title: "Constitución", description: "Estatuto, registro y RUT: la parte jurídica de la fundación." },
-        { title: "Organización", description: "Gobernanza, estructura interna y procesos." },
-        {
-          title: "Marca e Identidad",
-          description: "Nombre, logo y narrativa, con apoyo de Creation Marcas cuando sea necesario.",
-        },
-        {
-          title: "Captación y Sostenibilidad",
-          description: "Convocatorias, donantes y leyes de incentivo, para que la organización se sostenga después del montaje.",
-        },
+    eyebrow: "ONG.ZERO",
+    title: "Una causa necesita estructura para seguir existiendo.",
+    intro:
+      "ONG.zero es una propuesta de Creation para apoyar iniciativas sociales en el paso de la intención a la organización: claridad de propósito, modelo de actuación, gobernanza, procesos, plan de sostenibilidad y preparación para operar.",
+    heroCtaLabel: "Hable sobre su iniciativa",
+    beginning: {
+      title: "El comienzo suele reunir urgencia y poca estructura.",
+      paragraphs: [
+        "Muchas iniciativas nacen de un problema concreto, de un liderazgo movilizador o de una comunidad que decide actuar. Pronto surgen preguntas sobre formato jurídico, responsabilidades, recursos, rendición de cuentas, equipo, socios y continuidad.",
+        "ONG.zero organiza esas decisiones en un recorrido único, integrando estrategia y gestión. Los actos jurídicos, contables y fiscales son realizados por profesionales habilitados y contratados según el alcance.",
       ],
     },
-    forWhom: "Para quienes están estructurando una ONG, fundación o instituto desde cero.",
+    forWhom: {
+      title: "Para quién.",
+      items: [
+        "Colectivos que evalúan una formalización",
+        "Proyectos sociales que necesitan estructurar su operación",
+        "Liderazgos que desean transformar una iniciativa en organización",
+        "Institutos y asociaciones en fase inicial",
+        "Proyectos patrocinados que necesitan gobernanza y controles",
+        "Empresas que apoyan la creación o el fortalecimiento de una organización aliada",
+      ],
+      note: "La constitución de una persona jurídica no siempre es el primer ni el mejor camino. La etapa inicial evalúa alternativas antes de recomendar una estructura.",
+    },
+    journey: {
+      title: "Un recorrido posible.",
+      steps: [
+        { title: "Propósito y contexto", description: "Problema, públicos, territorio, actuación existente, legitimidad, objetivos y límites." },
+        { title: "Modelo de actuación", description: "Programas, servicios, públicos, alianzas, propuesta de valor social y prioridades." },
+        { title: "Gobernanza", description: "Instancias, roles, toma de decisiones, integridad, participación y rendición de cuentas." },
+        { title: "Estructura formal", description: "Orientación y coordinación de documentos y procedimientos jurídicos, contables y fiscales, realizados por responsables habilitados." },
+        { title: "Gestión", description: "Procesos, presupuesto, controles, indicadores, equipo, datos y rutina de seguimiento." },
+        { title: "Sostenibilidad", description: "Estrategia de recursos, relación con aliados, alianzas, comunicación y plan de desarrollo institucional." },
+        { title: "Implementación", description: "Priorización, cronograma, responsabilidades, primeros ciclos de operación y ajustes." },
+      ],
+    },
+    deliverables: {
+      title: "Entregables posibles.",
+      items: [
+        "Diagnóstico de preparación",
+        "Mapa de partes interesadas",
+        "Estrategia y modelo de actuación",
+        "Teoría del cambio",
+        "Diseño de programas",
+        "Arquitectura de gobernanza",
+        "Plan de implementación",
+        "Mapa de procesos esenciales",
+        "Presupuesto y controles iniciales",
+        "Matriz de indicadores",
+        "Política o directrices prioritarias",
+        "Plan de sostenibilidad financiera",
+        "Narrativa institucional",
+        "Coordinación de especialistas jurídicos y contables",
+      ],
+      note: "El conjunto depende de la madurez, la forma de organización y las decisiones tomadas durante el diagnóstico.",
+    },
+    doesNotPromise: {
+      title: "Lo que ONG.zero no promete.",
+      items: [
+        "Concesión de calificación, certificación o beneficio fiscal",
+        "Captación garantizada de recursos",
+        "Aprobación automática en convocatorias",
+        "Sustitución de asesoría jurídica o contable",
+        "Sostenibilidad financiera en un plazo predeterminado",
+        "Implementación sin participación de los liderazgos de la iniciativa",
+      ],
+      note: "Nuestro compromiso es estructurar decisiones y capacidades, dejando claros los requisitos y las responsabilidades de cada parte.",
+    },
+    proportionalStructure: {
+      title: "Estructura proporcional a la etapa.",
+      paragraphs: [
+        "Una organización pequeña no necesita copiar la burocracia de una gran institución. Necesita, sin embargo, controles compatibles con los recursos que administra, los compromisos que asume y los riesgos de su actuación.",
+        "Construimos una base que pueda ser utilizada, revisada y ampliada con el crecimiento.",
+      ],
+    },
+    closing: {
+      title: "¿En qué punto está su iniciativa?",
+      body: "Cuéntenos cómo nació, qué realiza actualmente, quién participa y qué decisión necesita tomar ahora. La etapa inicial identifica si el mejor próximo paso es estructurar, formalizar, fortalecer o reorganizar.",
+      ctaLabel: "Solicite una conversación inicial",
+    },
   },
 
   // LOCKED — titulo travado no doc.
