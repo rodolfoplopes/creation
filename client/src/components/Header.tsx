@@ -159,6 +159,12 @@ export default function Header() {
         { label: t("Inovação", "Innovation", "Innovación"), href: "/inovacao", kind: "service" as const },
         { label: t("Impacto", "Impact", "Impacto"), href: "/impacto", kind: "service" as const },
         { label: t("Branding & Experiências", "Branding & Experiences", "Branding y Experiencias"), href: "/branding-experiencias", kind: "service" as const },
+      ],
+    },
+    {
+      href: "/solucoes",
+      label: t("Soluções Creation", "Creation Solutions", "Soluciones Creation"),
+      subItems: [
         { label: "Creation Ops Rio", href: "/creator-ops-rio", kind: "product" as const },
         { label: "Creation Marcas", href: "/creation-marcas", kind: "product" as const },
         { label: "ONG.zero", href: "/ong-zero", kind: "product" as const },
