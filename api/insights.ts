@@ -1,4 +1,4 @@
-import { listPublishedInsights, isNotionConfigured } from "../server/notion";
+import { listPublishedInsights, isNotionConfigured } from "../server/notion.js";
 
 /**
  * Funcao serverless do Vercel (convencao de pasta api/ na raiz) — ver

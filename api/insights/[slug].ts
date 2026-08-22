@@ -1,4 +1,4 @@
-import { getInsightBySlug } from "../../server/notion";
+import { getInsightBySlug } from "../../server/notion.js";
 
 /**
  * Funcao serverless do Vercel — ver api/contact.ts pro racional. Rota
