@@ -55,6 +55,12 @@ export default function MotorSroi() {
       : lang === "es"
         ? "Foto de un equipo analizando datos de impacto social o en una sesión con partes interesadas"
         : "Foto de equipe analisando dados de impacto social ou em sessão com stakeholders";
+  const whatIsSroiImageHint =
+    lang === "en"
+      ? "Illustration or photo explaining the social return on investment concept"
+      : lang === "es"
+        ? "Ilustración o foto explicando el concepto de retorno social sobre la inversión"
+        : "Ilustração ou foto explicando o conceito de retorno social sobre investimento";
   const stepImageHint =
     lang === "en"
       ? "Photo of a stakeholder session defining SROI scope"
@@ -86,19 +92,23 @@ export default function MotorSroi() {
 
       <SectionNav items={navLabels[lang]} />
 
-      {/* O que é SROI */}
+      {/* O que é SROI — layout alternado (texto + imagem), emula
+          notion.com: quebra o ritmo de secoes sempre iguais */}
       <Section id="o-que-e-sroi" tone="white">
-        <div className="max-w-measure">
-          <h2 className="font-display text-h2 font-bold text-abyss mb-4">
-            {page.whatIsSroi.title}
-          </h2>
-          <div className="space-y-4">
-            {page.whatIsSroi.paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-abyss/70 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+              {page.whatIsSroi.title}
+            </h2>
+            <div className="space-y-4">
+              {page.whatIsSroi.paragraphs.map((paragraph, i) => (
+                <p key={i} className="text-abyss/70 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
+          <ImagePlaceholder hint={whatIsSroiImageHint} className="h-64 lg:h-80" />
         </div>
       </Section>
 

@@ -62,6 +62,18 @@ export default function OngZero() {
       : lang === "es"
         ? "Foto de los primeros ciclos de operación de la implementación"
         : "Foto dos primeiros ciclos de operação da implantação";
+  const beginningImageHint =
+    lang === "en"
+      ? "Photo of an initial conversation with the leaders of a social initiative"
+      : lang === "es"
+        ? "Foto de una conversación inicial con los líderes de una iniciativa social"
+        : "Foto de uma conversa inicial com lideranças de uma iniciativa social";
+  const proportionalImageHint =
+    lang === "en"
+      ? "Photo of a team organizing internal processes or controls"
+      : lang === "es"
+        ? "Foto de un equipo organizando procesos o controles internos"
+        : "Foto de equipe organizando processos ou controles internos";
 
   return (
     <Layout>
@@ -87,18 +99,22 @@ export default function OngZero() {
 
       <SectionNav items={navLabels[lang]} />
 
-      {/* O começo costuma reunir urgência e pouca estrutura */}
+      {/* O começo costuma reunir urgência e pouca estrutura — layout
+          alternado (imagem + texto), emula notion.com */}
       <Section id="comeco" tone="white">
-        <div className="max-w-measure">
-          <h2 className="font-display text-h2 font-bold text-abyss mb-4">
-            {page.beginning.title}
-          </h2>
-          <div className="space-y-4">
-            {page.beginning.paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-abyss/70 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <ImagePlaceholder hint={beginningImageHint} className="h-64 lg:h-80 order-2 lg:order-1" />
+          <div className="order-1 lg:order-2">
+            <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+              {page.beginning.title}
+            </h2>
+            <div className="space-y-4">
+              {page.beginning.paragraphs.map((paragraph, i) => (
+                <p key={i} className="text-abyss/70 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
@@ -170,19 +186,23 @@ export default function OngZero() {
         </div>
       </Section>
 
-      {/* Estrutura proporcional ao estágio */}
+      {/* Estrutura proporcional ao estágio — layout alternado (texto +
+          imagem), lado invertido em relacao a secao "comeco" acima */}
       <Section id="proporcional" tone="white">
-        <div className="max-w-measure">
-          <h2 className="font-display text-h2 font-bold text-abyss mb-4">
-            {page.proportionalStructure.title}
-          </h2>
-          <div className="space-y-4">
-            {page.proportionalStructure.paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-abyss/70 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div>
+            <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+              {page.proportionalStructure.title}
+            </h2>
+            <div className="space-y-4">
+              {page.proportionalStructure.paragraphs.map((paragraph, i) => (
+                <p key={i} className="text-abyss/70 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
+          <ImagePlaceholder hint={proportionalImageHint} className="h-64 lg:h-80" />
         </div>
       </Section>
 
