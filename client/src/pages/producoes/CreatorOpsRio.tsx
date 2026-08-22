@@ -134,6 +134,16 @@ export default function CreatorOpsRio() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {page.process.steps.map((step, i) => (
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
+              {/* Processo mostrado, nao so descrito (pedido do cliente,
+                  emula notion.com): a etapa "Realizacao" ganha uma foto
+                  real da operacao acontecendo, em vez de so numero. */}
+              {i === 4 && (
+                <PhotoFrame
+                  src={galleryImg7}
+                  alt="Equipe da Creation Ops Rio em execução"
+                  className="rounded-xl mb-4 h-32"
+                />
+              )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}
               </p>

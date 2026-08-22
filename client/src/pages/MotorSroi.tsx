@@ -27,6 +27,12 @@ export default function MotorSroi() {
       : lang === "es"
         ? "Foto de un equipo analizando datos de impacto social o en una sesión con partes interesadas"
         : "Foto de equipe analisando dados de impacto social ou em sessão com stakeholders";
+  const stepImageHint =
+    lang === "en"
+      ? "Photo of a stakeholder session defining SROI scope"
+      : lang === "es"
+        ? "Foto de una sesión con partes interesadas definiendo el alcance del SROI"
+        : "Foto de sessão com stakeholders definindo o escopo do SROI";
 
   return (
     <Layout>
@@ -86,6 +92,11 @@ export default function MotorSroi() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.journey.steps.map((step, i) => (
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
+              {/* Processo mostrado, nao so descrito (pedido do cliente,
+                  emula notion.com): a etapa "Escopo e stakeholders" ganha foto. */}
+              {i === 0 && (
+                <ImagePlaceholder hint={stepImageHint} className="rounded-xl mb-4 h-32" />
+              )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}
               </p>

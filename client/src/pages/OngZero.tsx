@@ -28,6 +28,12 @@ export default function OngZero() {
       : lang === "es"
         ? "Foto de un equipo de comunidad/iniciativa social en acción"
         : "Foto de equipe ou comunidade de uma iniciativa social em atividade";
+  const stepImageHint =
+    lang === "en"
+      ? "Photo of the first operating cycles of the implementation"
+      : lang === "es"
+        ? "Foto de los primeros ciclos de operación de la implementación"
+        : "Foto dos primeiros ciclos de operação da implantação";
 
   return (
     <Layout>
@@ -87,6 +93,11 @@ export default function OngZero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.journey.steps.map((step, i) => (
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
+              {/* Processo mostrado, nao so descrito (pedido do cliente,
+                  emula notion.com): a etapa "Implantacao" ganha foto. */}
+              {i === 6 && (
+                <ImagePlaceholder hint={stepImageHint} className="rounded-xl mb-4 h-32" />
+              )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}
               </p>

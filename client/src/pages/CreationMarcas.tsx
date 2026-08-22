@@ -29,6 +29,12 @@ export default function CreationMarcas() {
       : lang === "es"
         ? "Foto de una revisión de documentos/marca o entorno de oficina"
         : "Foto de análise de documentos/marca ou ambiente de escritório";
+  const stepImageHint =
+    lang === "en"
+      ? "Photo of the initial kickoff conversation with the client"
+      : lang === "es"
+        ? "Foto de la conversación inicial con el cliente"
+        : "Foto da conversa inicial com o cliente";
 
   return (
     <Layout>
@@ -78,6 +84,11 @@ export default function CreationMarcas() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {page.steps.items.map((step, i) => (
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
+              {/* Processo mostrado, nao so descrito (pedido do cliente,
+                  emula notion.com): a etapa "Conversa inicial" ganha foto. */}
+              {i === 0 && (
+                <ImagePlaceholder hint={stepImageHint} className="rounded-xl mb-4 h-32" />
+              )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">
                 {String(i + 1).padStart(2, "0")}
               </p>
