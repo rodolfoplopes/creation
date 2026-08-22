@@ -73,7 +73,7 @@ export function Section({
       )}
       data-first-content={firstContent ? "true" : undefined}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">{children}</div>
     </section>
   );
 }

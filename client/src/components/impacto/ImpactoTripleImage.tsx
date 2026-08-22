@@ -25,7 +25,7 @@ const images = [
 export default function ImpactoTripleImage() {
   return (
     <section className="py-12 md:py-16 bg-bone">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((img, index) => (
             <div 

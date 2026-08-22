@@ -22,7 +22,7 @@ export default function Footer() {
   const localize = useLocalizedHref();
   return (
     <footer className="bg-abyss text-bone" data-testid="footer">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="py-14 md:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             <div className="lg:col-span-2">

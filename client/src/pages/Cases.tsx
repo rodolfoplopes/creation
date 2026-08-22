@@ -27,7 +27,7 @@ export default function Cases() {
   return (
     <Layout>
       <section className="relative bg-white py-14 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <div className="max-w-measure">
             <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-4 uppercase tracking-widest">
               <span className="h-1.5 w-1.5 rounded-full bg-spark shrink-0" />

@@ -84,7 +84,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
   return (
     <Layout>
       <section className="relative bg-white py-14 md:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           {data.parentHref && data.parentLabel && (
             <Link href={localize(data.parentHref)}>
               <span className="inline-flex items-center gap-2 text-small font-semibold text-abyss/60 hover:text-spark mb-6 cursor-pointer transition-colors">
@@ -112,7 +112,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
       </section>
 
       {data.image && (
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
           <div className="rounded-2xl overflow-hidden shadow-sm">
             <img
               src={data.image.src}

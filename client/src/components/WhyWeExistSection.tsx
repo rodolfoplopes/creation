@@ -54,7 +54,7 @@ export default function WhyWeExistSection() {
       className="relative z-10 bg-white -mt-3 md:-mt-10 pb-10 md:pb-14"
       data-testid="section-why-we-exist"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="relative rounded-2xl overflow-hidden shadow-md" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => (

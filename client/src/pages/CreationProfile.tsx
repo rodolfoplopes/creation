@@ -82,7 +82,7 @@ export default function CreationProfile() {
       <section className="relative min-h-[80vh] flex items-center bg-abyss overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-2 bg-signal" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-3xl">
             <Badge 
@@ -152,7 +152,7 @@ export default function CreationProfile() {
 
       {/* What is Creation Profile */}
       <section className="py-20 bg-bone">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <div className="max-w-3xl mx-auto text-center">
             <h2 
               className="text-3xl sm:text-4xl font-bold text-foreground mb-8"
@@ -172,7 +172,7 @@ export default function CreationProfile() {
 
       {/* What You Get */}
       <section className="py-20 bg-bone">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <h2 
             className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12"
             data-testid="text-get-title"
@@ -212,7 +212,7 @@ export default function CreationProfile() {
 
       {/* How It Works - Timeline Infographic */}
       <section className="py-20 bg-bone">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <h2 
             className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-16"
             data-testid="text-how-title"
@@ -263,7 +263,7 @@ export default function CreationProfile() {
 
       {/* Who It's For */}
       <section className="py-20 bg-bone">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <h2 
             className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12"
             data-testid="text-who-title"
@@ -301,7 +301,7 @@ export default function CreationProfile() {
 
       {/* Packages */}
       <section className="py-20 bg-bone">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
           <h2 
             className="text-3xl sm:text-4xl font-bold text-foreground text-center mb-12"
             data-testid="text-packages-title"
@@ -344,7 +344,7 @@ export default function CreationProfile() {
 
       {/* Final CTA */}
       <section className="py-20 cta-gradient">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 text-center">
           <h2 
             className="text-3xl sm:text-4xl font-bold text-bone mb-8 max-w-2xl mx-auto leading-tight"
             data-testid="text-final-title"

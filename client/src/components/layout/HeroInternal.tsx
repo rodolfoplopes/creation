@@ -50,7 +50,7 @@ export default function HeroInternal({
     <section className="relative bg-bone py-14 md:py-20 overflow-hidden">
       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-signal" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="order-2 lg:order-1">
             {badge && (
