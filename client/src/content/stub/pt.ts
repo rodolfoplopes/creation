@@ -114,6 +114,15 @@ export const stubData: Record<string, StubPageData> = {
         "Para compreender comportamento, necessidades e barreiras de um público.",
         "Antes de redefinir posicionamento, portfólio ou proposta de valor.",
       ]},
+      { type: "bullets", heading: "Perguntas que podemos ajudar a responder", items: [
+        "Qual é o tamanho e a configuração possível da oportunidade?",
+        "Quem já oferece respostas semelhantes e como se posiciona?",
+        "O que os públicos valorizam, rejeitam ou ainda não encontram?",
+        "Que tendências realmente afetam o projeto e quais são apenas ruído?",
+        "Que barreiras de adoção, operação ou regulação precisam ser consideradas?",
+        "Que segmentos merecem prioridade?",
+        "O que precisa ser testado antes de uma decisão maior?",
+      ]},
       { type: "cards", heading: "Escopo possível", items: [
         { title: "Pesquisa documental e dados secundários", description: "Levantamento de estudos, bases públicas, documentos, relatórios setoriais e informações disponíveis." },
         { title: "Benchmarking e concorrência", description: "Mapeamento de referências, ofertas, modelos de negócio, mensagens, experiências e movimentos competitivos." },
@@ -149,6 +158,9 @@ export const stubData: Record<string, StubPageData> = {
         "Agências e produtoras preparando projetos para clientes.",
         "Organizações que precisam entender um território antes de atuar.",
       ]},
+      { type: "bullets", heading: "O que uma pesquisa responsável não promete", items: [
+        "Inteligência de mercado reduz incerteza, mas não elimina risco nem prevê o futuro com exatidão. Toda conclusão depende da qualidade das fontes, do recorte, do acesso aos públicos e do momento analisado. Premissas, limitações e lacunas são apresentadas junto com as recomendações.",
+      ]},
     ],
     ctaLabel: "Apresente sua pergunta de negócio",
     ctaHref: "/contato",
@@ -169,6 +181,16 @@ export const stubData: Record<string, StubPageData> = {
         "O projeto perdeu ritmo e ninguém consegue apontar uma única causa.",
         "Metas foram definidas sem conexão com capacidade, recursos ou público.",
         "Uma mudança importante precisa ser implantada, mas ainda não existe plano compartilhado.",
+      ]},
+      { type: "bullets", heading: "O que investigamos", items: [
+        "contexto organizacional e histórico;",
+        "objetivos, resultados e indicadores existentes;",
+        "estrutura, papéis e governança;",
+        "processos e fluxos de decisão;",
+        "públicos, clientes, usuários ou comunidades;",
+        "equipe, competências e capacidade disponível;",
+        "recursos, restrições e dependências;",
+        "riscos, conflitos e iniciativas anteriores.",
       ]},
       { type: "steps", heading: "Do diagnóstico ao plano", items: [
         { number: "01", title: "Enquadramento", description: "Definimos a pergunta central, os públicos envolvidos e o uso esperado do trabalho." },
@@ -195,6 +217,11 @@ export const stubData: Record<string, StubPageData> = {
         "Organização de áreas ou frentes de trabalho.",
         "Planejamento de eventos e experiências complexas.",
         "Desenho de programas de inovação.",
+        "Preparação para expansão ou mudança de posicionamento.",
+        "Definição de prioridades em PMEs.",
+      ]},
+      { type: "bullets", heading: "Planejamento que reconhece limites", items: [
+        "Um plano responsável não presume equipe, orçamento ou dados que não existem. Ele explicita dependências, escolhas e renúncias. Quando o diagnóstico aponta que a organização ainda não possui condições para executar determinada iniciativa, o planejamento deve incluir como construir essa capacidade, e não apenas estabelecer uma data otimista.",
       ]},
     ],
     ctaLabel: "Converse sobre o contexto",
@@ -225,6 +252,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Plano de realização", description: "Etapas, cronograma, equipe, fornecedores, recursos, riscos e operação necessária." },
         { title: "Orçamento", description: "Categorias de custo, premissas, cotações, reservas e relação entre recursos e atividades." },
         { title: "Indicadores", description: "Como acompanhar execução, alcance, qualidade, resultado e aprendizado." },
+        { title: "Viabilização", description: "Possíveis modelos de contratação, patrocínio, parceria, edital ou incentivo, quando compatíveis com o projeto." },
       ]},
       { type: "bullets", heading: "Entregáveis possíveis", items: [
         "Documento estruturado do projeto.",
@@ -238,6 +266,7 @@ export const stubData: Record<string, StubPageData> = {
         "Plano de indicadores.",
         "Estratégia de parcerias e recursos.",
         "Apresentação institucional ou comercial.",
+        "Adaptação para edital, patrocinador ou processo decisório específico.",
       ]},
       { type: "steps", heading: "Como trabalhamos", items: [
         { number: "01", title: "Entendimento", description: "Reunimos o que já existe e definimos as perguntas ainda sem resposta." },
@@ -255,6 +284,10 @@ export const stubData: Record<string, StubPageData> = {
         "Projetos territoriais.",
         "Iniciativas autorais.",
         "Projetos para contratação direta, patrocínio, editais ou leis de incentivo.",
+        "A natureza do projeto define quais especialistas, documentos e validações adicionais serão necessários.",
+      ]},
+      { type: "bullets", heading: "Viabilizar não é prometer aprovação ou captação", items: [
+        "A Creation pode estruturar o projeto, identificar caminhos, preparar materiais e apoiar a interlocução. A decisão de contratar, patrocinar, aprovar ou financiar pertence a terceiros e depende de critérios que não controlamos. Nossa responsabilidade é aumentar a consistência, a clareza e a capacidade de execução da proposta, sem transformar possibilidade em garantia.",
       ]},
     ],
     ctaLabel: "Estruture seu projeto",

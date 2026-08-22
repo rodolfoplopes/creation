@@ -114,6 +114,15 @@ export const stubData: Record<string, StubPageData> = {
         "To understand the behavior, needs and barriers of an audience.",
         "Before redefining positioning, portfolio or value proposition.",
       ]},
+      { type: "bullets", heading: "Questions we can help answer", items: [
+        "What's the size and possible shape of the opportunity?",
+        "Who already offers similar answers, and how are they positioned?",
+        "What do audiences value, reject, or still can't find?",
+        "Which trends really affect the project, and which are just noise?",
+        "What adoption, operational or regulatory barriers need consideration?",
+        "Which segments deserve priority?",
+        "What needs to be tested before a bigger decision?",
+      ]},
       { type: "cards", heading: "Possible scope", items: [
         { title: "Desk research and secondary data", description: "Gathering studies, public databases, documents, industry reports and available information." },
         { title: "Benchmarking and competition", description: "Mapping references, offerings, business models, messaging, experiences and competitive moves." },
@@ -149,6 +158,9 @@ export const stubData: Record<string, StubPageData> = {
         "Agencies and production companies preparing projects for clients.",
         "Organizations that need to understand a territory before acting.",
       ]},
+      { type: "bullets", heading: "What a responsible research effort doesn't promise", items: [
+        "Market intelligence reduces uncertainty, but doesn't eliminate risk or predict the future with precision. Every conclusion depends on the quality of the sources, the scope, access to audiences and the moment analyzed. Assumptions, limitations and gaps are presented alongside the recommendations.",
+      ]},
     ],
     ctaLabel: "Bring us your business question",
     ctaHref: "/contato",
@@ -169,6 +181,16 @@ export const stubData: Record<string, StubPageData> = {
         "The project has lost momentum and no one can point to a single cause.",
         "Goals were set without connection to capacity, resources or audience.",
         "An important change needs to be rolled out, but there's no shared plan yet.",
+      ]},
+      { type: "bullets", heading: "What we investigate", items: [
+        "organizational context and history;",
+        "existing objectives, results and indicators;",
+        "structure, roles and governance;",
+        "processes and decision flows;",
+        "audiences, clients, users or communities;",
+        "team, competencies and available capacity;",
+        "resources, constraints and dependencies;",
+        "risks, conflicts and previous initiatives.",
       ]},
       { type: "steps", heading: "From diagnosis to plan", items: [
         { number: "01", title: "Framing", description: "We define the central question, the audiences involved and the expected use of the work." },
@@ -195,6 +217,11 @@ export const stubData: Record<string, StubPageData> = {
         "Organizing areas or work fronts.",
         "Planning complex events and experiences.",
         "Designing innovation programs.",
+        "Preparing for expansion or a positioning change.",
+        "Defining priorities for SMEs.",
+      ]},
+      { type: "bullets", heading: "Planning that acknowledges limits", items: [
+        "A responsible plan doesn't assume a team, budget or data that don't exist. It makes dependencies, choices and trade-offs explicit. When the diagnosis shows the organization doesn't yet have the conditions to execute a given initiative, the plan should include how to build that capacity, not just set an optimistic date.",
       ]},
     ],
     ctaLabel: "Talk about the context",
@@ -225,6 +252,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Delivery plan", description: "Stages, timeline, team, vendors, resources, risks and required operation." },
         { title: "Budget", description: "Cost categories, assumptions, quotes, reserves and the relationship between resources and activities." },
         { title: "Indicators", description: "How to track execution, reach, quality, results and learning." },
+        { title: "Viability", description: "Possible contracting, sponsorship, partnership, public-call or incentive models, when compatible with the project." },
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
         "Structured project document.",
@@ -238,6 +266,7 @@ export const stubData: Record<string, StubPageData> = {
         "Indicator plan.",
         "Partnership and resource strategy.",
         "Institutional or commercial presentation.",
+        "Adaptation for a specific public call, sponsor or decision process.",
       ]},
       { type: "steps", heading: "How we work", items: [
         { number: "01", title: "Understanding", description: "We gather what already exists and define the questions still without answers." },
@@ -255,6 +284,10 @@ export const stubData: Record<string, StubPageData> = {
         "Territorial projects.",
         "Author-driven initiatives.",
         "Projects for direct contracting, sponsorship, public calls or incentive laws.",
+        "The nature of the project defines which specialists, documents and additional approvals will be needed.",
+      ]},
+      { type: "bullets", heading: "Making viable isn't promising approval or funding", items: [
+        "Creation can structure the project, identify paths, prepare materials and support the conversation with third parties. The decision to contract, sponsor, approve or fund belongs to others and depends on criteria we don't control. Our responsibility is to increase the consistency, clarity and execution capacity of the proposal, without turning possibility into a guarantee.",
       ]},
     ],
     ctaLabel: "Structure your project",
