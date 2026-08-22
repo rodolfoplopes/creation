@@ -24,7 +24,7 @@ export default function HeroSection() {
       className="relative bg-white py-20 md:py-28"
       data-testid="section-hero"
     >
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         <Reveal className="flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-abyss/20 mb-8">
             <span className="h-1.5 w-1.5 rounded-full bg-spark shrink-0" />
