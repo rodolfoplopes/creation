@@ -17,13 +17,18 @@ import { useContent, useLocalizedHref } from "@/content";
  * unico da Home (4 secoes finais, cada uma com uma cor). Fundo branco
  * agora, com o mesmo acento "spark" pontual das outras secoes claras — o
  * unico fundo escuro que resta na Home e o fechamento (CTASection).
+ *
+ * FIX (auditoria UX/UI 22/08/2026): tone="bone" (em vez de "white")
+ * distingue esta faixa das secoes brancas vizinhas — sem isso, a
+ * desproporcao de altura (uma faixa fina entre duas secoes de 800px+)
+ * lia como um bloco inacabado em vez de uma pausa deliberada de ritmo.
  */
 export default function MethodTeaserSection() {
   const c = useContent();
   const localize = useLocalizedHref();
 
   return (
-    <Section tone="white" size="sm" divider>
+    <Section tone="bone" size="sm">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         <div className="max-w-measure">
           <p className="inline-flex items-center gap-2 text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">

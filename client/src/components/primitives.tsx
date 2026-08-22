@@ -254,7 +254,7 @@ export function CTAButton({
     <Link href={localize(href)}>
       <span
         className={cn(
-          "inline-flex items-center gap-2 font-semibold transition-all cursor-pointer",
+          "inline-flex items-center gap-2 font-semibold transition-all cursor-pointer active:scale-[0.97]",
           styles,
           className,
         )}

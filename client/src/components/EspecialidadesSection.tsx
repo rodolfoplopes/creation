@@ -30,16 +30,16 @@ export default function EspecialidadesSection() {
       <SectionHeader
         title={t("Onde combinamos capacidade com repertório.", "Where we combine capability with expertise.", "Donde combinamos capacidad con repertorio.")}
         subtitle={t(
-          "Estratégia, gestão e operações podem ser aplicadas a diferentes desafios. Em três campos, a Creation reúne experiência, linguagem e conexões específicas para compreender melhor o contexto e construir soluções mais consistentes.",
-          "Strategy, management and operations can be applied to different challenges. In three fields, Creation brings together specific experience, language and connections to better understand context and build more consistent solutions.",
-          "Estrategia, gestión y operaciones pueden aplicarse a diferentes desafíos. En tres campos, Creation reúne experiencia, lenguaje y conexiones específicas para comprender mejor el contexto y construir soluciones más consistentes.",
+          "Alguns desafios pedem repertório específico, além da competência geral. Nesses três campos, reunimos experiência, linguagem e conexões que tornam a solução mais consistente.",
+          "Some challenges call for specific expertise, beyond general capability. In these three fields, we bring together experience, language and connections that make the solution more consistent.",
+          "Algunos desafíos piden repertorio específico, además de la capacidad general. En estos tres campos, reunimos experiencia, lenguaje y conexiones que hacen la solución más consistente.",
         )}
       />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {homeEspecialidades.map((esp, i) => (
           <Reveal key={esp.href} delay={i * 80}>
             <Link href={localize(esp.href)}>
-              <article className="h-full cursor-pointer group">
+              <article className="h-full cursor-pointer group transition-transform active:scale-[0.98]">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm mb-6">
                   <PhotoFrame
                     src={esp.image.src}

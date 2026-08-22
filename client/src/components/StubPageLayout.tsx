@@ -137,7 +137,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.children.map((child) => (
               <Link key={child.href} href={localize(child.href)}>
-                <article className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 p-8 h-full transition-colors cursor-pointer group">
+                <article className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 active:scale-[0.98] p-8 h-full transition-all cursor-pointer group">
                   <h3 className="text-h3 font-semibold text-abyss group-hover:text-spark transition-colors mb-2">
                     {child.title}
                   </h3>

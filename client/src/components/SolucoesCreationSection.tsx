@@ -56,7 +56,7 @@ export default function SolucoesCreationSection() {
             <Link href={localize(sol.href)}>
               <article
                 className={cn(
-                  "bg-spark/5 border border-spark/20 p-8 md:p-10 h-full cursor-pointer group",
+                  "bg-spark/5 border border-spark/20 p-8 md:p-10 h-full cursor-pointer group transition-transform active:scale-[0.98]",
                   homeSolucoes.length === 1 &&
                     "md:flex md:items-center md:justify-between md:gap-12",
                 )}
