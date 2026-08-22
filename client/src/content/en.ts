@@ -334,30 +334,80 @@ export const en: Content = {
 
   // LOCKED — titulo travado no doc.
   motorSroiPage: {
-    eyebrow: "INTELLIGENCE",
-    title: "Measure your social impact and prove its value",
+    eyebrow: "MOTOR SROI",
+    title: "Social value needs method, evidence and context.",
     intro:
-      "The SROI Engine calculates your project's social return using primary data and an auditable methodology, and turns that data into a presentable report.",
-    functions: {
-      title: "What the SROI Engine does today",
-      items: [
-        {
-          title: "SROI Calculation",
-          description: "Social return calculated from primary data, with an auditable methodology.",
-        },
-        {
-          title: "Impact Reports",
-          description: "The data becomes a presentable document for accountability and fundraising.",
-        },
+      "Motor SROI is a consulting offer from Creation to help organizations analyze the social value associated with programs and projects. The work organizes stakeholders, changes, evidence, valuation and assumptions to produce a transparent reading, useful for decision-making and proportional to the quality of the data.",
+    whatIsSroi: {
+      title: "What SROI is",
+      paragraphs: [
+        "SROI stands for Social Return on Investment. It's an analytical framework that seeks to understand and value relevant changes experienced by stakeholders relative to the resources invested.",
+        "The result can include a monetary ratio, but the value of the process isn't reduced to that number. Theory of change, participation, evidence, hypotheses, materiality and sensitivity are all essential to interpreting the analysis.",
       ],
     },
-    whyRealData: {
-      title: "Why measure with real data",
-      body:
-        "Made-up numbers don't survive an investor's or partner's first question. That's why the SROI Engine works only with primary data, collected on the project itself.",
+    readiness: {
+      title: "Before the calculation, a readiness question",
+      intro: "A robust analysis depends on scope, data, access to stakeholders and the ability to sustain assumptions. That's why the first stage checks:",
+      items: [
+        "The objective and expected use of the evaluation.",
+        "The program's stage and duration.",
+        "Audiences and intended changes.",
+        "The existing theory of change.",
+        "Available indicators and baselines.",
+        "Data quality and coverage.",
+        "The possibility of involving stakeholders.",
+        "Resources and timeline for the analysis.",
+      ],
+      note: "When these requirements don't yet exist, the best work may be to prepare the measurement system before calculating an SROI ratio.",
     },
-    forWhom:
-      "For institutes, foundations and companies that need to prove, with an auditable methodology, the social return of their projects.",
+    journey: {
+      title: "A possible journey",
+      steps: [
+        { title: "Scope and stakeholders", description: "Defining the object, period, boundaries, audiences, users of the analysis and the decisions it should support." },
+        { title: "Changes", description: "Building or reviewing the theory of change and identifying relevant outcomes, including unintended or negative changes." },
+        { title: "Evidence and value", description: "Selecting indicators, the quantity and duration of changes, and justifiable ways to estimate their importance or value." },
+        { title: "Impact", description: "Analyzing what would have happened anyway and the contribution of other factors, including deadweight, attribution, displacement and drop-off assumptions when applicable." },
+        { title: "Calculation and sensitivity", description: "The relationship between valued benefits and investment, accompanied by scenarios and tests on the assumptions that most affect the result." },
+        { title: "Reporting and use", description: "Conclusions, limitations, recommendations, communication proportional to the evidence, and incorporating learnings into management." },
+      ],
+    },
+    deliverables: {
+      title: "Possible deliverables",
+      items: [
+        "Readiness diagnosis.",
+        "Evaluation plan.",
+        "Stakeholder map.",
+        "Theory of change.",
+        "Outcomes map.",
+        "Collection plan and instruments.",
+        "Evidence base and assumptions.",
+        "Record of proxies and justifications.",
+        "Calculation model.",
+        "Sensitivity analysis.",
+        "Technical report.",
+        "Executive summary.",
+        "Recommendations for management and data.",
+      ],
+    },
+    whatRatioCantHide: {
+      title: "What the ratio can't hide",
+      paragraphs: [
+        "An SROI ratio depends on the boundaries, period, stakeholders, data and assumptions used. Results from different projects shouldn't be compared without assessing these conditions.",
+        "We don't present an estimate as absolute truth, nor do we use numerical precision to cover up fragile evidence. When uncertainty is high, it shows up in the method, the scenarios and the communication.",
+      ],
+    },
+    consultiveDisclaimer: {
+      title: "A consulting service, not an automated calculation",
+      paragraphs: [
+        "The name Motor SROI represents an organized journey of work. In this version, it doesn't describe an automated tool or a certification.",
+        "Any independent assurance, methodological certification or expert opinion should be contracted with the appropriate institution or professional, and isn't implied by this service.",
+      ],
+    },
+    closing: {
+      title: "Is your project ready for an SROI analysis?",
+      body: "Share the theory of change, the indicators, the period evaluated and the purpose of the analysis. The first conversation identifies the level of readiness and the appropriate methodological path.",
+      ctaLabel: "Request a readiness diagnosis",
+    },
   },
 
   // LOCKED — titulo travado no doc.

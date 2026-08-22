@@ -335,30 +335,80 @@ export const es: Content = {
 
   // LOCKED — titulo travado no doc.
   motorSroiPage: {
-    eyebrow: "INTELIGENCIA",
-    title: "Mida el impacto social y compruebe su valor",
+    eyebrow: "MOTOR SROI",
+    title: "El valor social necesita método, evidencia y contexto.",
     intro:
-      "El Motor SROI calcula el retorno social de su proyecto con datos primarios y metodología auditable, y transforma esos datos en un informe presentable.",
-    functions: {
-      title: "Lo que hace el Motor SROI hoy",
-      items: [
-        {
-          title: "Cálculo de SROI",
-          description: "Retorno social calculado a partir de datos primarios, con metodología auditable.",
-        },
-        {
-          title: "Informes de Impacto",
-          description: "El dato se convierte en documento presentable para rendición de cuentas y captación.",
-        },
+      "Motor SROI es una propuesta consultiva de Creation para apoyar a las organizaciones en el análisis del valor social asociado a programas y proyectos. El trabajo organiza stakeholders, cambios, evidencias, valoración y premisas para producir una lectura transparente, útil para la decisión y proporcional a la calidad de los datos.",
+    whatIsSroi: {
+      title: "Qué es el SROI",
+      paragraphs: [
+        "SROI significa Social Return on Investment, o Retorno Social sobre la Inversión. Es una estructura de análisis que busca comprender y valorar los cambios relevantes experimentados por los stakeholders en relación con los recursos invertidos.",
+        "El resultado puede incluir una razón monetaria, pero el valor del proceso no se reduce a ese número. La teoría del cambio, la participación, las evidencias, las hipótesis, la materialidad y la sensibilidad son esenciales para interpretar el análisis.",
       ],
     },
-    whyRealData: {
-      title: "Por qué medir con datos reales",
-      body:
-        "Los números ficticios no sobreviven a la primera pregunta de un inversor o socio. Por eso el Motor SROI trabaja solo con datos primarios, recolectados en el propio proyecto.",
+    readiness: {
+      title: "Antes del cálculo, una pregunta de preparación",
+      intro: "Un análisis robusto depende del alcance, los datos, el acceso a los stakeholders y la capacidad de sostener premisas. Por eso, la primera etapa verifica:",
+      items: [
+        "Objetivo y uso esperado de la evaluación.",
+        "Etapa y duración del programa.",
+        "Públicos y cambios pretendidos.",
+        "Teoría del cambio existente.",
+        "Indicadores y bases disponibles.",
+        "Calidad y cobertura de los datos.",
+        "Posibilidad de involucrar a los stakeholders.",
+        "Recursos y plazo para el análisis.",
+      ],
+      note: "Cuando los requisitos todavía no existen, el mejor trabajo puede ser preparar el sistema de medición antes de calcular una razón SROI.",
     },
-    forWhom:
-      "Para institutos, fundaciones y empresas que necesitan comprobar, con metodología auditable, el retorno social de sus proyectos.",
+    journey: {
+      title: "Una jornada posible",
+      steps: [
+        { title: "Alcance y stakeholders", description: "Definición del objeto, período, fronteras, públicos, usuarios del análisis y decisiones que debe apoyar." },
+        { title: "Cambios", description: "Construcción o revisión de la teoría del cambio e identificación de los resultados relevantes, incluidos cambios no previstos o negativos." },
+        { title: "Evidencias y valor", description: "Selección de indicadores, cantidad y duración de los cambios y formas justificables de estimar su importancia o valor." },
+        { title: "Impacto", description: "Análisis de lo que habría sucedido de todos modos y de la contribución de otros factores, incluyendo premisas de deadweight, atribución, desplazamiento y drop-off cuando corresponda." },
+        { title: "Cálculo y sensibilidad", description: "Relación entre beneficios valorados e inversión, acompañada de escenarios y pruebas sobre las premisas que más afectan el resultado." },
+        { title: "Informe y uso", description: "Conclusiones, limitaciones, recomendaciones, comunicación proporcional a la evidencia e incorporación de los aprendizajes a la gestión." },
+      ],
+    },
+    deliverables: {
+      title: "Entregables posibles",
+      items: [
+        "Diagnóstico de preparación.",
+        "Plan de evaluación.",
+        "Mapa de stakeholders.",
+        "Teoría del cambio.",
+        "Mapa de resultados.",
+        "Plan e instrumentos de recolección.",
+        "Base de evidencias y premisas.",
+        "Registro de proxies y justificaciones.",
+        "Modelo de cálculo.",
+        "Análisis de sensibilidad.",
+        "Informe técnico.",
+        "Resumen ejecutivo.",
+        "Recomendaciones para gestión y datos.",
+      ],
+    },
+    whatRatioCantHide: {
+      title: "Lo que la razón no puede esconder",
+      paragraphs: [
+        "Una razón SROI depende de las fronteras, el período, los stakeholders, los datos y las premisas utilizadas. Los resultados de proyectos diferentes no deben compararse sin evaluar estas condiciones.",
+        "No presentamos una estimación como verdad absoluta ni usamos precisión numérica para encubrir evidencia frágil. Cuando la incertidumbre es alta, aparece en el método, los escenarios y la comunicación.",
+      ],
+    },
+    consultiveDisclaimer: {
+      title: "Servicio consultivo, no cálculo automático",
+      paragraphs: [
+        "El nombre Motor SROI representa una jornada organizada de trabajo. En esta versión, no describe una herramienta automatizada ni una certificación.",
+        "Cualquier aseguramiento independiente, certificación metodológica o dictamen especializado debe contratarse con la institución o el profesional competente, y no está implícito en el servicio.",
+      ],
+    },
+    closing: {
+      title: "¿Su proyecto está listo para un análisis SROI?",
+      body: "Comparta la teoría del cambio, los indicadores, el período evaluado y la finalidad del análisis. La primera conversación identifica el grado de preparación y el camino metodológico adecuado.",
+      ctaLabel: "Solicite un diagnóstico de preparación",
+    },
   },
 
   // LOCKED — titulo travado no doc.

@@ -328,31 +328,79 @@ export const pt: Content = {
 
   motorSroiPage: {
     eyebrow: "MOTOR SROI",
-    title: "Meça o impacto social e comprove o seu valor",
+    title: "Valor social precisa de método, evidência e contexto.",
     intro:
-      "Uma ferramenta para ONGs, fundações e negócios sociais medirem o retorno social de seus projetos e transformarem esse resultado em relatórios prontos para apresentar.",
-    functions: {
-      title: "O que a ferramenta faz",
-      items: [
-        {
-          title: "Cálculo de SROI",
-          description:
-            "Calcula o Social Return on Investment da iniciativa: quanto de valor social é gerado para cada real investido. A medição parte de dados reais, não de estimativas, e segue uma metodologia clara e auditável.",
-        },
-        {
-          title: "Relatórios de impacto",
-          description:
-            "Transforma os dados da medição em relatórios profissionais, prontos para prestação de contas, captação e comunicação institucional.",
-        },
+      "Motor SROI é uma proposta consultiva da Creation para apoiar organizações na análise do valor social associado a programas e projetos. O trabalho organiza stakeholders, mudanças, evidências, valoração e premissas para produzir uma leitura transparente, útil à decisão e proporcional à qualidade dos dados.",
+    whatIsSroi: {
+      title: "O que é SROI",
+      paragraphs: [
+        "SROI significa Social Return on Investment, ou Retorno Social sobre o Investimento. É uma estrutura de análise que busca compreender e valorar mudanças relevantes experimentadas por stakeholders em relação aos recursos investidos.",
+        "O resultado pode incluir uma razão monetária, mas o valor do processo não se resume a esse número. Teoria da mudança, participação, evidências, hipóteses, materialidade e sensibilidade são essenciais para interpretar a análise.",
       ],
     },
-    whyRealData: {
-      title: "Por que medir com dado real",
-      body:
-        "Um número de impacto só vale se sustenta uma decisão. É mais trabalhoso medir com dado primário do que apresentar uma estimativa genérica, e é essa a diferença entre um relatório que impressiona por um momento e um indicador que sustenta a confiança de quem investe. A ferramenta foi construída sobre o primeiro caminho.",
+    readiness: {
+      title: "Antes do cálculo, uma pergunta de prontidão",
+      intro: "Uma análise robusta depende de escopo, dados, acesso a stakeholders e capacidade de sustentar premissas. Por isso, a primeira etapa verifica:",
+      items: [
+        "Objetivo e uso esperado da avaliação.",
+        "Estágio e duração do programa.",
+        "Públicos e mudanças pretendidas.",
+        "Teoria da mudança existente.",
+        "Indicadores e bases disponíveis.",
+        "Qualidade e cobertura dos dados.",
+        "Possibilidade de envolver stakeholders.",
+        "Recursos e prazo para a análise.",
+      ],
+      note: "Quando os requisitos ainda não existem, o melhor trabalho pode ser preparar o sistema de mensuração antes de calcular uma razão SROI.",
     },
-    forWhom:
-      "Para ONGs, fundações, institutos e negócios sociais que precisam comprovar seu impacto com precisão e credibilidade.",
+    journey: {
+      title: "Uma jornada possível",
+      steps: [
+        { title: "Escopo e stakeholders", description: "Definição do objeto, período, fronteiras, públicos, usuários da análise e decisões que ela deve apoiar." },
+        { title: "Mudanças", description: "Construção ou revisão da teoria da mudança e identificação dos resultados relevantes, inclusive mudanças não previstas ou negativas." },
+        { title: "Evidências e valor", description: "Seleção de indicadores, quantidade e duração das mudanças e formas justificáveis de estimar sua importância ou valor." },
+        { title: "Impacto", description: "Análise do que teria acontecido de qualquer forma e da contribuição de outros fatores, incluindo premissas de deadweight, atribuição, displacement e drop-off quando aplicáveis." },
+        { title: "Cálculo e sensibilidade", description: "Relação entre benefícios valorados e investimento, acompanhada de cenários e testes sobre as premissas que mais afetam o resultado." },
+        { title: "Relato e uso", description: "Conclusões, limitações, recomendações, comunicação proporcional à evidência e incorporação dos aprendizados à gestão." },
+      ],
+    },
+    deliverables: {
+      title: "Entregáveis possíveis",
+      items: [
+        "Diagnóstico de prontidão.",
+        "Plano de avaliação.",
+        "Mapa de stakeholders.",
+        "Teoria da mudança.",
+        "Mapa de resultados.",
+        "Plano e instrumentos de coleta.",
+        "Base de evidências e premissas.",
+        "Registro de proxies e justificativas.",
+        "Modelo de cálculo.",
+        "Análise de sensibilidade.",
+        "Relatório técnico.",
+        "Resumo executivo.",
+        "Recomendações para gestão e dados.",
+      ],
+    },
+    whatRatioCantHide: {
+      title: "O que a razão não pode esconder",
+      paragraphs: [
+        "Uma razão SROI depende das fronteiras, do período, dos stakeholders, dos dados e das premissas utilizadas. Resultados de projetos diferentes não devem ser comparados sem avaliar essas condições.",
+        "Não apresentamos uma estimativa como verdade absoluta nem usamos precisão numérica para encobrir evidência frágil. Quando a incerteza for alta, ela aparece no método, nos cenários e na comunicação.",
+      ],
+    },
+    consultiveDisclaimer: {
+      title: "Serviço consultivo, não cálculo automático",
+      paragraphs: [
+        "O nome Motor SROI representa uma jornada organizada de trabalho. Nesta versão, não descreve uma ferramenta automatizada nem uma certificação.",
+        "Eventual asseguração independente, certificação metodológica ou parecer especializado deve ser contratado com a instituição ou o profissional competente e não está implícito no serviço.",
+      ],
+    },
+    closing: {
+      title: "Seu projeto está pronto para uma análise SROI?",
+      body: "Compartilhe a teoria da mudança, os indicadores, o período avaliado e a finalidade da análise. A primeira conversa identifica o grau de prontidão e o caminho metodológico adequado.",
+      ctaLabel: "Solicite um diagnóstico de prontidão",
+    },
   },
 
   biEventosPage: {

@@ -146,13 +146,20 @@ export interface Content {
     forWhom: string;
   };
 
+  // Reconstruida fiel ao doc 24-Motor-SROI.md (agosto/2026). O nome
+  // Motor SROI representa uma jornada consultiva, NAO uma ferramenta
+  // automatizada ou certificacao — ver consultiveDisclaimer.
   motorSroiPage: {
     eyebrow: string;
-    title: string;                   // "Meca o impacto social e comprove o seu valor"
+    title: string;
     intro: string;
-    functions: { title: string; items: TitledItem[] };  // Calculo SROI, Relatorios (SO o presente)
-    whyRealData: { title: string; body: string };
-    forWhom: string;
+    whatIsSroi: { title: string; paragraphs: string[] };
+    readiness: { title: string; intro: string; items: string[]; note: string };
+    journey: { title: string; steps: TitledItem[] };
+    deliverables: { title: string; items: string[] };
+    whatRatioCantHide: { title: string; paragraphs: string[] };
+    consultiveDisclaimer: { title: string; paragraphs: string[] };
+    closing: { title: string; body: string; ctaLabel: string };
   };
 
   biEventosPage: {
