@@ -697,6 +697,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operations",
     parentHref: "/operacoes",
     blocks: [
+      { type: "bullets", heading: "From intent to real execution", items: [
+        "Executive production isn't just following up with vendors. It's translating a creative or strategic proposal into resources, responsibilities, sequences and delivery criteria.",
+        "We step in to structure the production plan, build the necessary network and carry the work through to close-out.",
+      ]},
       { type: "bullets", heading: "Where we work", items: [
         "Corporate, cultural and institutional events.",
         "Brand campaigns and activations.",
@@ -705,14 +709,16 @@ export const stubData: Record<string, StubPageData> = {
         "Filming, content and audiovisual production.",
         "Fairs, exhibitions and experiences.",
         "Special projects with multiple partners.",
+        "Each scope is sized according to format, territory, deadline and responsibility taken on.",
       ]},
       { type: "cards", heading: "What executive production can include", items: [
         { title: "Production planning", description: "Scope breakdown, timeline, budget, resource map, work sequence and decision points." },
         { title: "Budgets and contracting", description: "Requesting and comparing proposals, technical and commercial equalization, contracting support and commitment control." },
         { title: "Vendors and teams", description: "Selection, briefing, integration, follow-up, deliverable validation and interface management." },
         { title: "Infrastructure and logistics", description: "Spaces, equipment, materials, transport, lodging, catering, access, cargo and returns." },
-        { title: "Permits and requirements", description: "Mapping authorizations, documents, insurance and applicable technical responsibilities." },
+        { title: "Permits and requirements", description: "Mapping authorizations, documents, insurance and applicable technical responsibilities, engaging licensed professionals when needed." },
         { title: "Field operation", description: "Setup, testing, run-through, execution, teardown, incident control and communication across fronts." },
+        { title: "Closeout", description: "Reconciling deliverables, costs, documents, records, pending items and learnings." },
       ]},
       { type: "bullets", heading: "Controls that sustain delivery", items: [
         "Base budget and closing projection.",
@@ -723,12 +729,18 @@ export const stubData: Record<string, StubPageData> = {
         "Equipment and materials list.",
         "Access and check-in plan.",
         "Risk and contingency map.",
+        "Technical run-of-show or day plan.",
         "Incident and closeout report.",
+        "Instruments are sized to the project's scale and complexity. A useful control supports the operation — it doesn't just pile up documentation.",
       ]},
       { type: "bullets", heading: "How we integrate with the team", items: [
         "Full production — Creation is responsible for planning and coordinating the whole set defined in the contract.",
         "Specific front — we take on a delimited part, such as logistics, vendors, local production or field operation.",
         "Temporary reinforcement — we come in as an extension of the agency, production company, brand or organization during a critical stage.",
+        "In any model, authority levels, approvals and dependencies are clear before the start.",
+      ]},
+      { type: "bullets", heading: "Presence in the field, information to decide", items: [
+        "Whoever coordinates needs to stay close to the reality of execution while also consolidating information for the client. That's why we keep a cadence that fits the project and quickly escalate decisions that affect timeline, cost, scope or safety.",
       ]},
     ],
     ctaLabel: "Talk about your production",
@@ -743,7 +755,7 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operations",
     parentHref: "/operacoes",
     blocks: [
-      { type: "cards", heading: "Two services that complement each other", items: [
+      { type: "cards", heading: "Two services that complement each other", intro: "One engagement can include either front, or both.", items: [
         { title: "Location", description: "Research and viability of spaces compatible with the creative brief, technical needs, budget and production logistics." },
         { title: "Fixer", description: "Local liaison to turn a brief into a workable operation, connecting information, people, vendors, requirements and decisions on the ground." },
       ]},
@@ -753,9 +765,13 @@ export const stubData: Record<string, StubPageData> = {
         "In-person scouting, as scoped.",
         "Photos, videos and operational information.",
         "Analysis of access, noise, power, support and circulation.",
+        "Checking availability and commercial terms.",
         "Liaison with owners, administrators and responsible authorities.",
         "Support with negotiation and documentation.",
         "Coordinating technical visits.",
+        "Follow-up during preparation and use of the location.",
+        "Move-in and move-out inspection, when applicable.",
+        "Creative, technical and contractual approval of the location remains with the parties responsible for the project.",
       ]},
       { type: "bullets", heading: "Fixer services", items: [
         "Local research and information gathering.",
@@ -765,7 +781,10 @@ export const stubData: Record<string, StubPageData> = {
         "Hiring teams and resources, as defined by the model.",
         "Field production and schedule follow-up.",
         "Cultural translation and operational guidance.",
+        "Support with interviews, subjects and access, with consent and applicable requirements.",
         "Logistics, security and travel plans.",
+        "Resolving needs during execution.",
+        "Journalistic, documentary or vulnerable-audience requests require specific consent, protection and image-use protocols.",
       ]},
       { type: "bullets", heading: "For which projects", items: [
         "Advertising and brand campaigns.",
@@ -774,6 +793,28 @@ export const stubData: Record<string, StubPageData> = {
         "Creators and international teams.",
         "Events, experiences and activations.",
         "Field research and institutional projects.",
+        "Technical visits and special productions.",
+      ]},
+      { type: "bullets", heading: "Information that helps kick off the search", intro: "The clearer the brief, the more precise the shortlisting of options.", items: [
+        "Visual references and description of the setting.",
+        "Format and purpose of the production.",
+        "Expected dates and flexibility.",
+        "Approximate number of people and vehicles.",
+        "Equipment, structures and power needs.",
+        "Schedule, scenes and expected interference.",
+        "Support, dressing room, cargo and parking requirements.",
+        "Budget range.",
+        "Who's responsible for approval.",
+      ]},
+      { type: "steps", heading: "How we conduct it", items: [
+        { number: "01", title: "Briefing", description: "We align creative need, technical requirements, dates, territory and budget." },
+        { number: "02", title: "Research", description: "We gather options and rule out obvious mismatches." },
+        { number: "03", title: "Validation", description: "We gather information, do site visits and confirm terms with the parties involved." },
+        { number: "04", title: "Viability", description: "We support negotiation, documents, permits, resources and the operational plan." },
+        { number: "05", title: "Local production", description: "We coordinate the contracted fronts before, during and after execution." },
+      ]},
+      { type: "bullets", heading: "Local knowledge doesn't replace formal authorization", items: [
+        "We guide the path, identify who's responsible and follow the process. Permit timelines and approvals depend on the relevant agencies, owners and other competent authorities. No authorization is considered complete before its formal issuance.",
       ]},
     ],
     ctaLabel: "Send us your brief",
@@ -788,6 +829,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operations",
     parentHref: "/operacoes",
     blocks: [
+      { type: "bullets", heading: "An operational journey, not a list of bookings", items: [
+        "Tickets, vehicles, lodging, spaces and equipment affect one another. One schedule change can shift routes, day rates, access, cargo and crew.",
+        "That's why we treat ground logistics as an integrated operation, with itineraries, owners, confirmations, contacts and contingencies.",
+      ]},
       { type: "cards", heading: "What we can coordinate", items: [
         { title: "Arrivals and departures", description: "Reception at airports, bus stations, hotels, production bases and other defined points." },
         { title: "Transfers and drivers", description: "Drivers, executive vehicles, vans, buses, utility vehicles and other resources compatible with travel." },
@@ -803,6 +848,8 @@ export const stubData: Record<string, StubPageData> = {
         "Brand, agency and production company teams.",
         "Delegations and institutional groups.",
         "Technical teams and vendors.",
+        "Participants in visits, events and experiences.",
+        "Services are provided by regulated partners, selected according to need, availability and the project's requirements.",
       ]},
       { type: "bullets", heading: "Information we organize", items: [
         "Names, contacts and owners.",
@@ -810,9 +857,23 @@ export const stubData: Record<string, StubPageData> = {
         "Lodging and addresses.",
         "Consolidated schedule.",
         "Vehicles, capacity and luggage.",
+        "Accessibility needs.",
         "Credentials, access and authorizations.",
         "Emergency and escalation contacts.",
+        "Dietary or mobility restrictions, when relevant and authorized.",
         "Backup plan for delays and changes.",
+        "Personal data is handled only for the defined operational purposes and only for as long as the service requires.",
+      ]},
+      { type: "steps", heading: "How it works", items: [
+        { number: "01", title: "Mapping", description: "We receive the schedule, people, resources, constraints and service points." },
+        { number: "02", title: "Logistics plan", description: "We organize routes, vendors, bookings, buffers, owners and contingencies." },
+        { number: "03", title: "Confirmation", description: "We review data, times, contacts and terms before the operation." },
+        { number: "04", title: "Follow-up", description: "We monitor arrivals, travel and changes during the contracted window." },
+        { number: "05", title: "Close-out", description: "We check services, incidents, additional costs and documentation." },
+      ]},
+      { type: "bullets", heading: "Clear contracting, traceable costs", items: [
+        "The proposal distinguishes Creation's coordination, third-party services, extra hours or day rates, tolls, parking, meals, waiting time, cancellations and other relevant conditions.",
+        "Availability and prices are only confirmed after acceptance and booking with vendors.",
       ]},
     ],
     ctaLabel: "Plan your logistics",

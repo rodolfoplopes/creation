@@ -697,6 +697,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operaciones",
     parentHref: "/operacoes",
     blocks: [
+      { type: "bullets", heading: "De la intención a la condición real de ejecutar", items: [
+        "La producción ejecutiva no es solo hacer seguimiento a proveedores. Es traducir una propuesta creativa o estratégica en recursos, responsabilidades, secuencias y criterios de entrega.",
+        "Entramos para estructurar el plan de producción, montar la red necesaria y conducir el trabajo hasta el cierre.",
+      ]},
       { type: "bullets", heading: "Dónde actuamos", items: [
         "Eventos corporativos, culturales e institucionales.",
         "Campañas y activaciones de marca.",
@@ -705,14 +709,16 @@ export const stubData: Record<string, StubPageData> = {
         "Grabaciones, contenidos y producciones audiovisuales.",
         "Ferias, exposiciones y experiencias.",
         "Proyectos especiales con múltiples socios.",
+        "Cada alcance se dimensiona según el formato, el territorio, el plazo y la responsabilidad asumida.",
       ]},
       { type: "cards", heading: "Lo que puede incluir la producción ejecutiva", items: [
         { title: "Planificación de producción", description: "Descomposición del alcance, cronograma, presupuesto, mapa de recursos, secuencia de trabajo y puntos de decisión." },
         { title: "Presupuestos y contrataciones", description: "Solicitud y comparación de propuestas, equiparación técnica y comercial, apoyo a la contratación y control de compromisos." },
         { title: "Proveedores y equipos", description: "Selección, briefing, integración, seguimiento, validación de entregas y gestión de las interfaces." },
         { title: "Infraestructura y logística", description: "Espacios, equipos, materiales, transportes, hospedaje, alimentación, accesos, cargas y devoluciones." },
-        { title: "Permisos y requisitos", description: "Mapeo de autorizaciones, documentos, seguros y responsabilidades técnicas aplicables." },
+        { title: "Permisos y requisitos", description: "Mapeo de autorizaciones, documentos, seguros y responsabilidades técnicas aplicables, con intervención de profesionales habilitados cuando sea necesario." },
         { title: "Operación de campo", description: "Montaje, pruebas, paso de sonido, realización, desmontaje, control de incidencias y comunicación entre los frentes." },
+        { title: "Cierre", description: "Verificación de entregas, costos, documentos, registros, pendientes y aprendizajes." },
       ]},
       { type: "bullets", heading: "Controles que sostienen la entrega", items: [
         "Presupuesto base y proyección de cierre.",
@@ -723,12 +729,18 @@ export const stubData: Record<string, StubPageData> = {
         "Lista de equipos y materiales.",
         "Plan de accesos y acreditación.",
         "Mapa de riesgos y contingencias.",
+        "Guion técnico u orden del día.",
         "Informe de incidencias y cierre.",
+        "Los instrumentos se adecuan al tamaño y la complejidad del proyecto. Un control útil apoya la operación, no solo aumenta la documentación.",
       ]},
       { type: "bullets", heading: "Cómo nos integramos al equipo", items: [
         "Producción completa — Creation responde por la planificación y la coordinación del conjunto definido en el contrato.",
         "Frente específico — asumimos una parte delimitada, como logística, proveedores, producción local u operación de campo.",
         "Refuerzo temporal — entramos como extensión de la agencia, productora, marca u organización durante una etapa crítica.",
+        "En cualquier modelo, los niveles de decisión, aprobaciones y dependencias quedan claros antes del inicio.",
+      ]},
+      { type: "bullets", heading: "Presencia en el campo, información para decidir", items: [
+        "Quien coordina necesita estar cerca de la realidad de la ejecución y, al mismo tiempo, consolidar información para el cliente. Por eso mantenemos una cadencia compatible con el proyecto y escalamos rápidamente las decisiones que afecten plazo, costo, alcance o seguridad.",
       ]},
     ],
     ctaLabel: "Conversemos sobre su producción",
@@ -743,7 +755,7 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operaciones",
     parentHref: "/operacoes",
     blocks: [
-      { type: "cards", heading: "Dos servicios que se complementan", items: [
+      { type: "cards", heading: "Dos servicios que se complementan", intro: "Una contratación puede incluir uno de los frentes o los dos.", items: [
         { title: "Location", description: "Investigación y viabilización de espacios compatibles con la propuesta creativa, las necesidades técnicas, el presupuesto y la logística de la producción." },
         { title: "Fixer", description: "Articulación local para transformar el briefing en una operación posible, conectando información, personas, proveedores, requisitos y decisiones en el territorio." },
       ]},
@@ -753,9 +765,13 @@ export const stubData: Record<string, StubPageData> = {
         "Scouting presencial, según el alcance.",
         "Fotos, videos e información operativa.",
         "Análisis de acceso, ruido, energía, apoyo y circulación.",
+        "Consulta de disponibilidad y condiciones comerciales.",
         "Interfaz con propietarios, administradores y órganos responsables.",
         "Apoyo a la negociación y documentación.",
         "Coordinación de visitas técnicas.",
+        "Seguimiento de la preparación y el uso de la locación.",
+        "Inspección de entrada y salida, cuando corresponda.",
+        "La aprobación creativa, técnica y contractual de la locación permanece sujeta a las partes responsables del proyecto.",
       ]},
       { type: "bullets", heading: "Servicios de fixer", items: [
         "Investigación local y relevamiento de información.",
@@ -765,7 +781,10 @@ export const stubData: Record<string, StubPageData> = {
         "Contratación de equipos y recursos, según el modelo definido.",
         "Producción de campo y seguimiento de agenda.",
         "Traducción cultural y orientación operativa.",
+        "Apoyo en entrevistas, personajes y accesos, con consentimiento y requisitos aplicables.",
         "Logística, seguridad y planes de traslado.",
+        "Solución de necesidades durante la realización.",
+        "Las demandas periodísticas, documentales o con públicos vulnerables exigen protocolos específicos de consentimiento, protección y uso de imagen.",
       ]},
       { type: "bullets", heading: "Para qué proyectos", items: [
         "Publicidad y campañas de marca.",
@@ -774,6 +793,28 @@ export const stubData: Record<string, StubPageData> = {
         "Creators y equipos internacionales.",
         "Eventos, experiencias y activaciones.",
         "Investigación de campo y proyectos institucionales.",
+        "Visitas técnicas y producciones especiales.",
+      ]},
+      { type: "bullets", heading: "Información que ayuda a iniciar la búsqueda", intro: "Cuanto más claro sea el briefing, más precisa será la selección de opciones.", items: [
+        "Referencias visuales y descripción del ambiente.",
+        "Formato y finalidad de la producción.",
+        "Fechas previstas y flexibilidad.",
+        "Número aproximado de personas y vehículos.",
+        "Equipos, estructuras y necesidades de energía.",
+        "Horarios, escenas e interferencias previstas.",
+        "Exigencias de apoyo, camerino, carga y estacionamiento.",
+        "Rango de presupuesto.",
+        "Responsables de la aprobación.",
+      ]},
+      { type: "steps", heading: "Cómo lo conducimos", items: [
+        { number: "01", title: "Briefing", description: "Alineamos necesidad creativa, requisitos técnicos, fechas, territorio y presupuesto." },
+        { number: "02", title: "Investigación", description: "Relevamos opciones y descartamos incompatibilidades evidentes." },
+        { number: "03", title: "Validación", description: "Recopilamos información, realizamos visitas y confirmamos condiciones con las partes involucradas." },
+        { number: "04", title: "Viabilización", description: "Apoyamos negociación, documentos, permisos, recursos y plan operativo." },
+        { number: "05", title: "Producción local", description: "Coordinamos los frentes contratados antes, durante y después de la realización." },
+      ]},
+      { type: "bullets", heading: "El conocimiento local no sustituye la autorización formal", items: [
+        "Orientamos el camino, identificamos a los responsables y acompañamos el proceso. Los plazos y aprobaciones de permisos dependen de los organismos, propietarios y demás autoridades competentes. Ninguna autorización se considera concluida antes de su emisión formal.",
       ]},
     ],
     ctaLabel: "Envíe su briefing",
@@ -788,6 +829,10 @@ export const stubData: Record<string, StubPageData> = {
     parentLabel: "Operaciones",
     parentHref: "/operacoes",
     blocks: [
+      { type: "bullets", heading: "Un recorrido operativo, no una lista de reservas", items: [
+        "Pasajes, vehículos, hospedaje, espacios y equipos se afectan entre sí. Un cambio de agenda puede modificar ruta, tarifa diaria, acceso, carga y equipo.",
+        "Por eso tratamos el receptivo como una operación integrada, con itinerarios, responsables, confirmaciones, contactos y contingencias.",
+      ]},
       { type: "cards", heading: "Lo que podemos coordinar", items: [
         { title: "Llegadas y salidas", description: "Recepción en aeropuertos, terminales, hoteles, bases de producción y otros puntos definidos." },
         { title: "Transfers y choferes", description: "Choferes, vehículos ejecutivos, vans, buses, utilitarios y otros recursos compatibles con el traslado." },
@@ -803,6 +848,8 @@ export const stubData: Record<string, StubPageData> = {
         "Equipos de marcas, agencias y productoras.",
         "Delegaciones y grupos institucionales.",
         "Equipos técnicos y proveedores.",
+        "Participantes de visitas, eventos y experiencias.",
+        "Los servicios son prestados por socios regularizados y seleccionados según la necesidad, la disponibilidad y las exigencias del proyecto.",
       ]},
       { type: "bullets", heading: "Información que organizamos", items: [
         "Nombres, contactos y responsables.",
@@ -810,9 +857,23 @@ export const stubData: Record<string, StubPageData> = {
         "Hospedajes y direcciones.",
         "Agenda consolidada.",
         "Vehículos, capacidad y equipaje.",
+        "Necesidades de accesibilidad.",
         "Credenciales, accesos y autorizaciones.",
         "Contactos de emergencia y escalamiento.",
+        "Restricciones alimentarias o de movilidad, cuando sean pertinentes y estén autorizadas.",
         "Plan alternativo para atrasos y cambios.",
+        "Los datos personales se tratan solo para las finalidades operativas definidas y por el período necesario para el servicio.",
+      ]},
+      { type: "steps", heading: "Cómo funciona", items: [
+        { number: "01", title: "Mapeo", description: "Recibimos agenda, personas, recursos, restricciones y puntos de atención." },
+        { number: "02", title: "Plan logístico", description: "Organizamos rutas, proveedores, reservas, márgenes, responsables y contingencias." },
+        { number: "03", title: "Confirmación", description: "Revisamos datos, horarios, contactos y condiciones antes de la operación." },
+        { number: "04", title: "Seguimiento", description: "Monitoreamos llegadas, traslados y cambios durante la ventana contratada." },
+        { number: "05", title: "Cierre", description: "Verificamos servicios, incidencias, costos adicionales y documentación." },
+      ]},
+      { type: "bullets", heading: "Contrataciones claras, costos rastreables", items: [
+        "La propuesta distingue la coordinación de Creation, los servicios de terceros, horas o tarifas diarias adicionales, peajes, estacionamiento, alimentación, espera, cancelaciones y otras condiciones relevantes.",
+        "La disponibilidad y los valores solo se confirman después de la aceptación y la reserva con los proveedores.",
       ]},
     ],
     ctaLabel: "Planifique su logística",
