@@ -51,6 +51,7 @@ export interface StubPageData {
   blocks?: StubBlock[];
   childrenLabel?: string;
   children?: StubChild[];
+  ctaBody?: string;
   ctaLabel: string;
   ctaHref: string;
 }

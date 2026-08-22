@@ -152,6 +152,9 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
           <h2 className="font-display text-h2 sm:text-h1 font-bold text-bone mb-6">
             {data.title}
           </h2>
+          {data.ctaBody && (
+            <p className="text-bone/70 leading-relaxed mb-8">{data.ctaBody}</p>
+          )}
           <CTAButton label={data.ctaLabel} href={data.ctaHref} onDark />
         </div>
       </Section>
