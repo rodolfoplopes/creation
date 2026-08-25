@@ -29,14 +29,6 @@ export interface LinkItem {
   href: string;
 }
 
-// Os quatro tempos do metodo Ciclo Completo.
-export interface MethodStage {
-  number: string;      // "01".."04"
-  name: string;        // Diagnostico / Estruturacao / Execucao / Validacao
-  tagline: string;     // frase curta ("entender antes de agir")
-  description: string;
-}
-
 // ============================================================================
 // CONTRATO PRINCIPAL
 // ============================================================================
@@ -78,15 +70,6 @@ export interface Content {
     // A frase de posicionamento (a coroa).
     headline: string;        // "Pensar e fazer sao a mesma responsabilidade."
     subheadline: string;
-  };
-
-  // Metodo resumido na home + pagina (absorvido em Consultoria, mas o bloco existe).
-  method: {
-    badge: string;
-    title: string;           // "Ciclo Completo"
-    intro: string;
-    stages: MethodStage[];   // 4 tempos
-    loopNote: string;        // "a prova alimenta o proximo diagnostico"
   };
 
   targetAudience: {

@@ -116,21 +116,21 @@ function LangRouter({ lang }: { lang: SupportedLang }) {
         <Route path={`/${lang}/solucoes/gestao-de-projetos`} component={() => <StubPageLayout data={s["gestao-de-projetos"]} />} />
         <Route path={`/${lang}/solucoes/gestao-de-processos`} component={() => <StubPageLayout data={s["gestao-de-processos"]} />} />
         <Route path={`/${lang}/solucoes/governanca-e-indicadores`} component={() => <StubPageLayout data={s["governanca-e-indicadores"]} />} />
-        <Route path={`/${lang}/operacoes`} component={() => <StubPageLayout data={s.operacoes} />} />
-        <Route path={`/${lang}/operacoes/gestao-de-eventos`} component={() => <StubPageLayout data={s["gestao-de-eventos"]} />} />
-        <Route path={`/${lang}/operacoes/producao-executiva`} component={() => <StubPageLayout data={s["producao-executiva"]} />} />
-        <Route path={`/${lang}/operacoes/location-fixer-rio-de-janeiro`} component={() => <StubPageLayout data={s["location-fixer-rio-de-janeiro"]} />} />
-        <Route path={`/${lang}/operacoes/receptivo-drivers-locacoes`} component={() => <StubPageLayout data={s["receptivo-drivers-locacoes"]} />} />
-        <Route path={`/${lang}/inovacao`} component={() => <StubPageLayout data={s.inovacao} />} />
-        <Route path={`/${lang}/impacto`} component={() => <StubPageLayout data={s.impacto} />} />
-        <Route path={`/${lang}/impacto/marketing-de-causa`} component={() => <StubPageLayout data={s["marketing-de-causa"]} />} />
-        <Route path={`/${lang}/branding-experiencias`} component={() => <StubPageLayout data={s["branding-experiencias"]} />} />
+        <Route path={`/${lang}/solucoes/operacoes`} component={() => <StubPageLayout data={s.operacoes} />} />
+        <Route path={`/${lang}/solucoes/operacoes/gestao-de-eventos`} component={() => <StubPageLayout data={s["gestao-de-eventos"]} />} />
+        <Route path={`/${lang}/solucoes/operacoes/producao-executiva`} component={() => <StubPageLayout data={s["producao-executiva"]} />} />
+        <Route path={`/${lang}/solucoes/operacoes/location-fixer-rio-de-janeiro`} component={() => <StubPageLayout data={s["location-fixer-rio-de-janeiro"]} />} />
+        <Route path={`/${lang}/solucoes/operacoes/receptivo-drivers-locacoes`} component={() => <StubPageLayout data={s["receptivo-drivers-locacoes"]} />} />
+        <Route path={`/${lang}/solucoes/inovacao`} component={() => <StubPageLayout data={s.inovacao} />} />
+        <Route path={`/${lang}/solucoes/impacto`} component={() => <StubPageLayout data={s.impacto} />} />
+        <Route path={`/${lang}/solucoes/impacto/marketing-de-causa`} component={() => <StubPageLayout data={s["marketing-de-causa"]} />} />
+        <Route path={`/${lang}/solucoes/branding-experiencias`} component={() => <StubPageLayout data={s["branding-experiencias"]} />} />
         <Route path={`/${lang}/como-trabalhamos`} component={() => <StubPageLayout data={s["como-trabalhamos"]} />} />
         <Route path={`/${lang}/cases`} component={Cases} />
         <Route path={`/${lang}/insights`} component={Insights} />
         <Route path={`/${lang}/insights/:slug`} component={InsightArticle} />
 
-        <Route path={`/${lang}/creator-ops-rio`} component={CreatorOpsRio} />
+        <Route path={`/${lang}/creation-ops-rio`} component={CreatorOpsRio} />
         <Route path={`/${lang}/creation-marcas`} component={CreationMarcas} />
         <Route path={`/${lang}/ong-zero`} component={OngZero} />
         <Route path={`/${lang}/motor-sroi`} component={MotorSroi} />
@@ -146,13 +146,51 @@ function LangRouter({ lang }: { lang: SupportedLang }) {
           <Redirect to={`/${lang}/solucoes`} />
         </Route>
         <Route path={`/${lang}/producoes`}>
-          <Redirect to={`/${lang}/operacoes`} />
+          <Redirect to={`/${lang}/solucoes/operacoes`} />
         </Route>
         <Route path={`/${lang}/impacto-social`}>
-          <Redirect to={`/${lang}/impacto`} />
+          <Redirect to={`/${lang}/solucoes/impacto`} />
         </Route>
         <Route path={`/${lang}/metodo`}>
           <Redirect to={`/${lang}/como-trabalhamos`} />
+        </Route>
+
+        {/* Redirects: rotas renomeadas para bater com o Blueprint de
+            Arquitetura V1 (25/08/2026) — Operacoes/Inovacao/Impacto/
+            Branding&Experiencias movem para debaixo de /solucoes/, e
+            Creation Ops Rio corrige o typo "creator" -> "creation". Ja
+            existe redirect 301 espelhado em vercel.json (server-side, para
+            SEO); estes cobrem quem cai direto na rota antiga sem passar
+            pelo Vercel (dev local, cache de navegador). */}
+        <Route path={`/${lang}/operacoes/gestao-de-eventos`}>
+          <Redirect to={`/${lang}/solucoes/operacoes/gestao-de-eventos`} />
+        </Route>
+        <Route path={`/${lang}/operacoes/producao-executiva`}>
+          <Redirect to={`/${lang}/solucoes/operacoes/producao-executiva`} />
+        </Route>
+        <Route path={`/${lang}/operacoes/location-fixer-rio-de-janeiro`}>
+          <Redirect to={`/${lang}/solucoes/operacoes/location-fixer-rio-de-janeiro`} />
+        </Route>
+        <Route path={`/${lang}/operacoes/receptivo-drivers-locacoes`}>
+          <Redirect to={`/${lang}/solucoes/operacoes/receptivo-drivers-locacoes`} />
+        </Route>
+        <Route path={`/${lang}/operacoes`}>
+          <Redirect to={`/${lang}/solucoes/operacoes`} />
+        </Route>
+        <Route path={`/${lang}/inovacao`}>
+          <Redirect to={`/${lang}/solucoes/inovacao`} />
+        </Route>
+        <Route path={`/${lang}/impacto/marketing-de-causa`}>
+          <Redirect to={`/${lang}/solucoes/impacto/marketing-de-causa`} />
+        </Route>
+        <Route path={`/${lang}/impacto`}>
+          <Redirect to={`/${lang}/solucoes/impacto`} />
+        </Route>
+        <Route path={`/${lang}/branding-experiencias`}>
+          <Redirect to={`/${lang}/solucoes/branding-experiencias`} />
+        </Route>
+        <Route path={`/${lang}/creator-ops-rio`}>
+          <Redirect to={`/${lang}/creation-ops-rio`} />
         </Route>
 
         <Route component={NotFound} />

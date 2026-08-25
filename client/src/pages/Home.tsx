@@ -4,7 +4,7 @@ import CapacidadesSection from "@/components/CapacidadesSection";
 import EspecialidadesSection from "@/components/EspecialidadesSection";
 import SolucoesCreationSection from "@/components/SolucoesCreationSection";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
-import MethodTeaserSection from "@/components/MethodTeaserSection";
+import CicloCompletoSection from "@/components/CicloCompletoSection";
 import TargetAudienceSection from "@/components/TargetAudienceSection";
 import CTASection from "@/components/CTASection";
 import SectionNav from "@/components/SectionNav";
@@ -55,6 +55,11 @@ const navLabels = {
  * (LatestInsightsSection), adicionado depois que o cliente publicou os
  * primeiros artigos e perguntou se apareceriam na Home. O componente
  * some sozinho (retorna null) se ainda nao houver nenhum publicado.
+ *
+ * Metodo: MethodTeaserSection (faixa fina) foi substituida por
+ * CicloCompletoSection variant="teaser" — mesmo Ciclo Completo (Entender/
+ * Estruturar/Realizar/Comprovar) que agora tambem aparece, na versao
+ * interativa completa, em /como-trabalhamos (ver StubPageLayout.tsx).
  */
 export default function Home() {
   const lang = useLang();
@@ -67,7 +72,7 @@ export default function Home() {
       <CapacidadesSection />
       <EspecialidadesSection />
       <SolucoesCreationSection />
-      <MethodTeaserSection />
+      <CicloCompletoSection variant="teaser" />
       <TargetAudienceSection />
       <LatestInsightsSection />
       <CTASection />

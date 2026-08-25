@@ -1,7 +1,70 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { MethodologyCard, MetricsGrid, Funnel } from "@/components/MethodologyCard";
 import { useContent, useLang } from "@/content";
+
+// Card de exemplo (ilustrativo) portado de projetos/metodologias/
+// creation-cards-site/cards/22-bi-de-eventos.html — ver MethodologyCard.tsx.
+const biExample = {
+  pt: {
+    title: "BI de Eventos",
+    description: "Do alcance ao engajamento: o evento inteiro em dados.",
+    label: "Exemplo ilustrativo",
+    metrics: [
+      { label: "Público total", value: "3.480", sub: "check-ins", lead: true },
+      { label: "Comparecimento", value: "78%", sub: "dos confirmados" },
+      { label: "NPS", value: "+62", sub: "satisfação" },
+      { label: "Retorno", value: "3,1×", sub: "sobre investimento" },
+    ],
+    funnel: [
+      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "—" },
+      { label: "Inscrições", value: "4.460", widthPct: 62, conversionPct: "3,7%" },
+      { label: "Confirmados", value: "3.900", widthPct: 52, conversionPct: "87%" },
+      { label: "Presentes", value: "3.480", widthPct: 46, conversionPct: "89%" },
+      { label: "Engajados", value: "2.100", widthPct: 30, conversionPct: "60%" },
+    ],
+    disclaimer: "Valores ilustrativos, para demonstração. Substituídos pelos dados reais do evento.",
+  },
+  en: {
+    title: "Event BI",
+    description: "From reach to engagement: the whole event in data.",
+    label: "Illustrative example",
+    metrics: [
+      { label: "Total audience", value: "3,480", sub: "check-ins", lead: true },
+      { label: "Attendance", value: "78%", sub: "of confirmed" },
+      { label: "NPS", value: "+62", sub: "satisfaction" },
+      { label: "Return", value: "3.1×", sub: "on investment" },
+    ],
+    funnel: [
+      { label: "Reach", value: "120,000", widthPct: 100, conversionPct: "—" },
+      { label: "Registrations", value: "4,460", widthPct: 62, conversionPct: "3.7%" },
+      { label: "Confirmed", value: "3,900", widthPct: 52, conversionPct: "87%" },
+      { label: "Attended", value: "3,480", widthPct: 46, conversionPct: "89%" },
+      { label: "Engaged", value: "2,100", widthPct: 30, conversionPct: "60%" },
+    ],
+    disclaimer: "Illustrative values, for demonstration. Replaced with the event's real data.",
+  },
+  es: {
+    title: "BI de Eventos",
+    description: "Del alcance al engagement: el evento entero en datos.",
+    label: "Ejemplo ilustrativo",
+    metrics: [
+      { label: "Público total", value: "3.480", sub: "check-ins", lead: true },
+      { label: "Asistencia", value: "78%", sub: "de los confirmados" },
+      { label: "NPS", value: "+62", sub: "satisfacción" },
+      { label: "Retorno", value: "3,1×", sub: "sobre la inversión" },
+    ],
+    funnel: [
+      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "—" },
+      { label: "Inscripciones", value: "4.460", widthPct: 62, conversionPct: "3,7%" },
+      { label: "Confirmados", value: "3.900", widthPct: 52, conversionPct: "87%" },
+      { label: "Presentes", value: "3.480", widthPct: 46, conversionPct: "89%" },
+      { label: "Comprometidos", value: "2.100", widthPct: 30, conversionPct: "60%" },
+    ],
+    disclaimer: "Valores ilustrativos, para demostración. Sustituidos por los datos reales del evento.",
+  },
+};
 
 /**
  * /bi-de-eventos — landing nova, consome c.biEventosPage. Ainda oculta do
@@ -131,6 +194,32 @@ export default function BiEventos() {
           ))}
         </ul>
         <p className="text-small text-abyss/60 leading-relaxed max-w-measure">{page.deliverables.note}</p>
+      </Section>
+
+      {/* Exemplo ilustrativo do entregavel (pedido do cliente: mostrar o
+          dado, nao so descreve-lo — ver MethodologyCard.tsx) */}
+      <Section tone="bone">
+        <SectionHeader
+          title={
+            lang === "en" ? "What a dashboard looks like" : lang === "es" ? "Cómo se ve un panel" : "Como um painel se parece"
+          }
+          subtitle={
+            lang === "en"
+              ? "An illustrative example — not the result of any real event."
+              : lang === "es"
+                ? "Un ejemplo ilustrativo — no es el resultado de ningún evento real."
+                : "Um exemplo ilustrativo — não é o resultado de nenhum evento real."
+          }
+        />
+        <MethodologyCard
+          title={biExample[lang].title}
+          description={biExample[lang].description}
+          label={biExample[lang].label}
+          disclaimer={biExample[lang].disclaimer}
+        >
+          <MetricsGrid items={biExample[lang].metrics} />
+          <Funnel rows={biExample[lang].funnel} />
+        </MethodologyCard>
       </Section>
 
       {/* Dados pessoais e consentimento */}

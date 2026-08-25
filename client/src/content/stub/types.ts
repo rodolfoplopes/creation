@@ -55,6 +55,9 @@ export interface StubPageData {
   blocks?: StubBlock[];
   childrenLabel?: string;
   children?: StubChild[];
+  // Quando true, StubPageLayout renderiza CicloCompletoSection (variant="full")
+  // no lugar do grid de "children" — usado so por "como-trabalhamos".
+  cicloCompleto?: boolean;
   ctaBody?: string;
   ctaLabel: string;
   ctaHref: string;
@@ -94,10 +97,31 @@ export interface CaseStub {
   imageHint?: string; // usado quando ainda nao ha foto real (ver ImagePlaceholder)
 }
 
+// Ciclo Completo interativo (ver CicloCompletoSection.tsx) — versao
+// visual/diagramada do mesmo conteudo ja aprovado em
+// stubData["como-trabalhamos"] (Entender/Estruturar/Realizar/Comprovar).
+// "family" referencia as cores terciarias do adendo V7.1
+// (tailwind.config.ts): cada etapa usa a familia com o papel semantico
+// mais proximo (Iris=conhecimento, Lapis=estrutura, Amber=movimento,
+// Kelp=resultado).
+export interface CicloStage {
+  number: string;
+  name: string;
+  role: string;
+  family: "iris" | "lapis" | "amber" | "kelp";
+  lead: string;
+  leftHeading: string;
+  left: string[];
+  rightHeading: string;
+  right: string[];
+  out: string;
+}
+
 export interface StubLangPack {
   stubData: Record<string, StubPageData>;
   homeCapacidades: HomeCapacidade[];
   homeEspecialidades: HomeEspecialidade[];
   homeSolucoes: HomeSolucao[];
   casesStub: CaseStub[];
+  cicloCompletoStages: CicloStage[];
 }

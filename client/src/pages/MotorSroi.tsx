@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import SectionNav from "@/components/SectionNav";
+import { MethodologyCard, MetricsGrid, DataTable } from "@/components/MethodologyCard";
 import { useContent, useLang } from "@/content";
 
 const navLabels = {
@@ -10,6 +11,7 @@ const navLabels = {
     { id: "prontidao", label: "Prontidão" },
     { id: "jornada", label: "Jornada" },
     { id: "entregaveis", label: "Entregáveis" },
+    { id: "exemplo", label: "Exemplo" },
     { id: "limites", label: "Limites" },
     { id: "consultivo", label: "Consultivo" },
   ],
@@ -18,6 +20,7 @@ const navLabels = {
     { id: "prontidao", label: "Readiness" },
     { id: "jornada", label: "Journey" },
     { id: "entregaveis", label: "Deliverables" },
+    { id: "exemplo", label: "Example" },
     { id: "limites", label: "Limits" },
     { id: "consultivo", label: "Advisory" },
   ],
@@ -26,9 +29,69 @@ const navLabels = {
     { id: "prontidao", label: "Preparación" },
     { id: "jornada", label: "Recorrido" },
     { id: "entregaveis", label: "Entregables" },
+    { id: "exemplo", label: "Ejemplo" },
     { id: "limites", label: "Límites" },
     { id: "consultivo", label: "Consultivo" },
   ],
+};
+
+// Card de exemplo (ilustrativo) portado de projetos/metodologias/
+// creation-cards-site/cards/21-motor-sroi.html — ver MethodologyCard.tsx.
+const sroiExample = {
+  pt: {
+    title: "Motor SROI",
+    description: "Cálculo de retorno social sobre investimento — metodologias SVI e CBPS.",
+    label: "Exemplo ilustrativo",
+    metrics: [
+      { label: "Razão SROI", value: "4,20", unit: " : 1", sub: "valor por real investido", lead: true },
+      { label: "Valor social", value: "R$ 2,1M", sub: "líquido, 12 meses" },
+      { label: "Investimento", value: "R$ 500k", sub: "total aportado" },
+      { label: "Requisitos", value: "15", sub: "8 SVI + 7 CBPS" },
+    ],
+    columns: ["Resultado (outcome)", "Proxy financeiro", "Qtd.", "Ajuste líquido", "Valor"],
+    rows: [
+      ["Renda familiar ampliada", "Salário-mínimo/ano", "120", "−28% peso morto", "R$ 980k"],
+      ["Empregabilidade", "Custo de recolocação", "85", "−15% atribuição", "R$ 620k"],
+      ["Bem-estar comunitário", "Proxy de saúde", "340", "−20% decaimento", "R$ 500k"],
+    ],
+    disclaimer: "Valores ilustrativos, para demonstração. Substituídos pelos dados reais do projeto.",
+  },
+  en: {
+    title: "SROI Engine",
+    description: "Social return on investment calculation — SVI and CBPS methodologies.",
+    label: "Illustrative example",
+    metrics: [
+      { label: "SROI ratio", value: "4.20", unit: " : 1", sub: "value per dollar invested", lead: true },
+      { label: "Social value", value: "$2.1M", sub: "net, 12 months" },
+      { label: "Investment", value: "$500k", sub: "total contributed" },
+      { label: "Requirements", value: "15", sub: "8 SVI + 7 CBPS" },
+    ],
+    columns: ["Outcome", "Financial proxy", "Qty.", "Net adjustment", "Value"],
+    rows: [
+      ["Increased household income", "Minimum wage/year", "120", "−28% deadweight", "$980k"],
+      ["Employability", "Reemployment cost", "85", "−15% attribution", "$620k"],
+      ["Community wellbeing", "Health proxy", "340", "−20% drop-off", "$500k"],
+    ],
+    disclaimer: "Illustrative values, for demonstration. Replaced with the project's real data.",
+  },
+  es: {
+    title: "Motor SROI",
+    description: "Cálculo de retorno social sobre la inversión — metodologías SVI y CBPS.",
+    label: "Ejemplo ilustrativo",
+    metrics: [
+      { label: "Razón SROI", value: "4,20", unit: " : 1", sub: "valor por real invertido", lead: true },
+      { label: "Valor social", value: "R$ 2,1M", sub: "neto, 12 meses" },
+      { label: "Inversión", value: "R$ 500k", sub: "total aportado" },
+      { label: "Requisitos", value: "15", sub: "8 SVI + 7 CBPS" },
+    ],
+    columns: ["Resultado (outcome)", "Proxy financiero", "Cant.", "Ajuste neto", "Valor"],
+    rows: [
+      ["Renta familiar ampliada", "Salario mínimo/año", "120", "−28% peso muerto", "R$ 980k"],
+      ["Empleabilidad", "Costo de recolocación", "85", "−15% atribución", "R$ 620k"],
+      ["Bienestar comunitario", "Proxy de salud", "340", "−20% decaimiento", "R$ 500k"],
+    ],
+    disclaimer: "Valores ilustrativos, para demostración. Sustituidos por los datos reales del proyecto.",
+  },
 };
 
 /**
@@ -158,6 +221,32 @@ export default function MotorSroi() {
             </li>
           ))}
         </ul>
+      </Section>
+
+      {/* Exemplo ilustrativo do entregavel (pedido do cliente: mostrar o
+          dado, nao so descreve-lo — ver MethodologyCard.tsx) */}
+      <Section id="exemplo" tone="bone">
+        <SectionHeader
+          title={
+            lang === "en" ? "What a report looks like" : lang === "es" ? "Cómo se ve un informe" : "Como um relatório se parece"
+          }
+          subtitle={
+            lang === "en"
+              ? "An illustrative example — not the result of any real project."
+              : lang === "es"
+                ? "Un ejemplo ilustrativo — no es el resultado de ningún proyecto real."
+                : "Um exemplo ilustrativo — não é o resultado de nenhum projeto real."
+          }
+        />
+        <MethodologyCard
+          title={sroiExample[lang].title}
+          description={sroiExample[lang].description}
+          label={sroiExample[lang].label}
+          disclaimer={sroiExample[lang].disclaimer}
+        >
+          <MetricsGrid items={sroiExample[lang].metrics} />
+          <DataTable columns={sroiExample[lang].columns} rows={sroiExample[lang].rows} />
+        </MethodologyCard>
       </Section>
 
       {/* O que a razão não pode esconder */}

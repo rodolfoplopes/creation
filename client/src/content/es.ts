@@ -34,46 +34,6 @@ export const es: Content = {
       "Creation reúne estrategia, gestión y capacidad operativa para transformar desafíos en proyectos claros, viables y bien ejecutados, desde el entendimiento hasta la entrega.",
   },
 
-  // LOCKED — Ciclo Completo / Diagnostico / Estructuracion / Ejecucion /
-  // Validacion, travado no doc.
-  method: {
-    badge: "MÉTODO",
-    title: "Ciclo Completo",
-    intro:
-      "Todo proyecto que conducimos recorre el mismo camino, ya sea un evento, una consultoría, un programa social o una iniciativa de innovación. Son cuatro tiempos que van del entendimiento a la comprobación.",
-    stages: [
-      {
-        number: "01",
-        name: "Diagnóstico",
-        tagline: "entender antes de actuar",
-        description:
-          "Antes de proponer cualquier cosa, entendemos el problema, el contexto y lo que el proyecto necesita alcanzar. Es común que el pedido inicial no sea el problema real, y es en el diagnóstico donde esa diferencia aparece.",
-      },
-      {
-        number: "02",
-        name: "Estructuración",
-        tagline: "diseñar el plan",
-        description:
-          "Con el problema entendido, diseñamos el plan: alcance, gobernanza, equipos y la forma de medir el resultado. Cuando hay un camino obvio y un camino más consistente, es aquí donde optamos por el segundo, incluso cuando exige más de nosotros.",
-      },
-      {
-        number: "03",
-        name: "Ejecución",
-        tagline: "poner la mano, hacer",
-        description:
-          "Conducimos la realización de principio a fin. No entregamos el plan y nos vamos: ponemos la mano, coordinamos y respondemos por el resultado hasta que el proyecto sucede.",
-      },
-      {
-        number: "04",
-        name: "Validación",
-        tagline: "medir, mostrar",
-        description:
-          "Un proyecto no termina cuando sucede, sino cuando se comprueba lo que generó. Medimos y documentamos el resultado, y eso es lo que cierra el ciclo e informa el próximo diagnóstico.",
-      },
-    ],
-    loopNote:
-      "La comprobación de un proyecto alimenta el diagnóstico del siguiente. Por eso es un ciclo, y no una línea.",
-  },
 
   targetAudience: {
     title: "Para quién trabajamos",
@@ -700,8 +660,8 @@ export const es: Content = {
       { label: "Soluciones", href: "/solucoes" },
       { label: "Estrategia", href: "/solucoes/estrategia" },
       { label: "Gestión", href: "/solucoes/gestao" },
-      { label: "Operaciones", href: "/operacoes" },
-      { label: "Creation Ops Rio", href: "/creator-ops-rio" },
+      { label: "Operaciones", href: "/solucoes/operacoes" },
+      { label: "Creation Ops Rio", href: "/creation-ops-rio" },
       { label: "Creation Marcas", href: "/creation-marcas" },
       { label: "ONG.zero", href: "/ong-zero" },
       { label: "Motor SROI", href: "/motor-sroi" },

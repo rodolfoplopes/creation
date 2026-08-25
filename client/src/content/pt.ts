@@ -33,44 +33,6 @@ export const pt: Content = {
       "A Creation reúne estratégia, gestão e capacidade operacional para transformar desafios em projetos claros, viáveis e bem executados, do entendimento à entrega.",
   },
 
-  method: {
-    badge: "MÉTODO",
-    title: "Ciclo Completo",
-    intro:
-      "Todo projeto que conduzimos percorre o mesmo caminho, seja um evento, uma consultoria, um programa social ou uma iniciativa de inovação. São quatro tempos que vão do entendimento à prova.",
-    stages: [
-      {
-        number: "01",
-        name: "Diagnóstico",
-        tagline: "entender antes de agir",
-        description:
-          "Antes de propor qualquer coisa, entendemos o problema, o contexto e o que o projeto precisa alcançar. É comum o pedido inicial não ser o problema real, e é no diagnóstico que essa diferença aparece.",
-      },
-      {
-        number: "02",
-        name: "Estruturação",
-        tagline: "desenhar o plano",
-        description:
-          "Com o problema entendido, desenhamos o plano: escopo, governança, equipes e a forma de medir o resultado. Quando há um caminho óbvio e um caminho mais consistente, é aqui que optamos pelo segundo, mesmo quando ele exige mais de nós.",
-      },
-      {
-        number: "03",
-        name: "Execução",
-        tagline: "pôr a mão, fazer",
-        description:
-          "Conduzimos a realização de ponta a ponta. Não entregamos o plano e saímos: colocamos a mão, coordenamos e respondemos pelo resultado até o projeto acontecer.",
-      },
-      {
-        number: "04",
-        name: "Prova",
-        tagline: "medir, mostrar",
-        description:
-          "Um projeto não termina quando acontece, e sim quando se comprova o que gerou. Medimos e documentamos o resultado, e é isso que fecha o ciclo e informa o próximo diagnóstico.",
-      },
-    ],
-    loopNote: "A prova de um projeto alimenta o diagnóstico do próximo. Por isso é um ciclo, e não uma linha.",
-  },
-
   targetAudience: {
     title: "Para quem trabalhamos",
     subtitle: "Onde propósito e resultado se encontram.",
@@ -693,8 +655,8 @@ export const pt: Content = {
       { label: "Soluções", href: "/solucoes" },
       { label: "Estratégia", href: "/solucoes/estrategia" },
       { label: "Gestão", href: "/solucoes/gestao" },
-      { label: "Operações", href: "/operacoes" },
-      { label: "Creation Ops Rio", href: "/creator-ops-rio" },
+      { label: "Operações", href: "/solucoes/operacoes" },
+      { label: "Creation Ops Rio", href: "/creation-ops-rio" },
       { label: "Creation Marcas", href: "/creation-marcas" },
       { label: "ONG.zero", href: "/ong-zero" },
       { label: "Motor SROI", href: "/motor-sroi" },

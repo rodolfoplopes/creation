@@ -25,42 +25,38 @@ import { storeLang } from "@/lib/detectLang";
  *
  * ESTAGIO 4 (Arquitetura V2 — Manual V7.1 + indice de aprovacao do
  * cliente) — a IA de 3 areas de negocio (Consultoria/Producoes/Impacto
- * Social) foi substituida pela estrutura recomendada no indice mestre:
- *
- *   Solucoes (submenu: Estrategia · Gestao · Operacoes · Especialidades
- *   [Inovacao/Impacto/Branding & Experiencias] · Creation Ops Rio) · Cases ·
- *   Como Trabalhamos · Quem Somos · Contato
- *
- * Insights fica FORA por enquanto — o indice classifica a pagina como
- * "dependente de validacao adicional", ainda sem acervo minimo publicavel.
+ * Social) foi substituida pela estrutura recomendada no indice mestre.
  *
  * Creation Marcas/ONG.zero/Motor SROI/BI de Eventos — os 4 docs originais
  * pediam para ficar fora do menu ate validacao juridica/operacional
- * formal. Decisao do cliente (22/08/2026): publicar as 4 em Especialidades
- * mesmo assim, mantendo os disclaimers de "o que este servico nao
- * garante/promete" bem visiveis em cada pagina como protecao ate a
- * validacao formal terminar.
+ * formal. Decisao do cliente (22/08/2026): publicar as 4 mesmo assim,
+ * mantendo os disclaimers de "o que este servico nao garante/promete"
+ * bem visiveis em cada pagina como protecao ate a validacao formal
+ * terminar. Confirmado novamente em 25/08/2026 ao revisar o Blueprint de
+ * Arquitetura V1 (que descrevia essas 4 paginas como ocultas): as ofertas
+ * ja foram validadas nesse meio-tempo, entao o menu permanece publicado.
  *
- * As paginas novas (Estrategia, Gestao, Operacoes, Inovacao, Impacto,
- * Branding & Experiencias, Cases, Como Trabalhamos) ja tem conteudo nos 3
- * idiomas (ver client/src/content/stub/pt.ts, en.ts, es.ts).
+ * ESTAGIO 5 (Blueprint de Arquitetura V1, 25/08/2026) — mega-menu
+ * reestruturado para as 4 colunas do blueprint: Capacidades (Estrategia ·
+ * Gestao · Operacoes, cada uma com seus servicos), Especialidades
+ * (Inovacao · Impacto · Branding & Experiencias), Solucoes Creation
+ * (Creation Ops Rio · Creation Marcas · ONG.zero · Motor SROI · BI de
+ * Eventos) e A Creation (Cases · Insights · Como Trabalhamos · Quem Somos
+ * · Contato). Accordion mobile passa a abrir só uma coluna por vez
+ * (openColumn), em vez do Set anterior que permitia varias abertas.
  */
 export default function Header() {
   const [location, setLocation] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  // Acordeao do mega-menu no mobile (achado da auditoria UX/UI
-  // 22/08/2026): a lista flat de 5 grupos + subitens exigia rolar por
-  // 25+ links antes de chegar no seletor de idioma. No desktop (md+) os
-  // subitens continuam sempre visiveis, ignorando este estado.
-  const [openGroups, setOpenGroups] = useState<Set<string>>(new Set());
-  const toggleGroup = (href: string) => {
-    setOpenGroups((prev) => {
-      const next = new Set(prev);
-      if (next.has(href)) next.delete(href);
-      else next.add(href);
-      return next;
-    });
+  // Acordeao do mega-menu no mobile: so uma das 4 colunas (Capacidades/
+  // Especialidades/Solucoes Creation/A Creation) fica aberta por vez —
+  // regra explicita do Blueprint de Arquitetura V1 secao 7 ("Somente um
+  // grupo permanece aberto por vez"). No desktop (lg+) todas as colunas
+  // ficam sempre expandidas, ignorando este estado.
+  const [openColumn, setOpenColumn] = useState<string | null>(null);
+  const toggleColumn = (id: string) => {
+    setOpenColumn((prev) => (prev === id ? null : id));
   };
   const c = useContent();
   const currentLang = useLang();
@@ -132,57 +128,71 @@ export default function Header() {
   const t = (pt: string, en: string, es: string) =>
     currentLang === "en" ? en : currentLang === "es" ? es : pt;
 
-  // Cada grupo de Solucoes lista os SERVICOS reais (pagina propria) + os
-  // PRODUTOS/sub-marcas com pagina propria (kind:"product"). Substitui a IA
-  // antiga de 3 areas de negocio por Estrategia/Gestao/Operacoes +
-  // Especialidades, conforme indice mestre da Arquitetura V2.
-  const solutionGroups = [
+  // 4 colunas do mega-menu, conforme o Blueprint de Arquitetura V1
+  // (25/08/2026, secoes 1-2): Capacidades e Especialidades agrupam
+  // sub-paginas (bold, "paginas principais") com seus proprios servicos/
+  // subitens; Solucoes Creation lista as ofertas proprietarias, sem
+  // subitens proprios; A Creation e a coluna institucional (sem grupos
+  // aninhados). O titulo de cada coluna aponta para "/solucoes" (unico hub
+  // agregador que existe hoje — ver stubData.solucoes) quando faz sentido;
+  // Solucoes Creation nao tem hub proprio ainda, entao o titulo fica so
+  // como rotulo (mesmo padrao ja usado em "A Creation").
+  const megaColumns = [
     {
-      href: "/solucoes/estrategia",
-      label: t("Estratégia", "Strategy", "Estrategia"),
-      subItems: [
-        { label: t("Inteligência de Mercado", "Market Intelligence", "Inteligencia de Mercado"), href: "/solucoes/inteligencia-de-mercado", kind: "service" as const },
-        { label: t("Diagnóstico e Planejamento", "Diagnosis & Planning", "Diagnóstico y Planificación"), href: "/solucoes/diagnostico-e-planejamento", kind: "service" as const },
-        { label: t("Estruturação de Projetos", "Project Structuring", "Estructuración de Proyectos"), href: "/solucoes/estruturacao-de-projetos", kind: "service" as const },
-      ],
-    },
-    {
-      href: "/solucoes/gestao",
-      label: t("Gestão", "Management", "Gestión"),
-      subItems: [
-        { label: t("Gestão de Projetos e PMO", "Project Management & PMO", "Gestión de Proyectos y PMO"), href: "/solucoes/gestao-de-projetos", kind: "service" as const },
-        { label: t("Gestão de Processos", "Business Process Management", "Gestión de Procesos"), href: "/solucoes/gestao-de-processos", kind: "service" as const },
-        { label: t("Governança e Indicadores", "Governance & KPIs", "Gobernanza e Indicadores"), href: "/solucoes/governanca-e-indicadores", kind: "service" as const },
-      ],
-    },
-    {
-      href: "/operacoes",
-      label: t("Operações", "Operations", "Operaciones"),
-      subItems: [
-        { label: t("Gestão de Eventos", "Event Management", "Gestión de Eventos"), href: "/operacoes/gestao-de-eventos", kind: "service" as const },
-        { label: t("Produção Executiva", "Executive Production", "Producción Ejecutiva"), href: "/operacoes/producao-executiva", kind: "service" as const },
-        { label: "Location & Fixer", href: "/operacoes/location-fixer-rio-de-janeiro", kind: "service" as const },
-        { label: t("Receptivo, Drivers & Locações", "Ground Transport & Rentals", "Receptivo, Choferes y Locaciones"), href: "/operacoes/receptivo-drivers-locacoes", kind: "service" as const },
-      ],
-    },
-    {
+      id: "capacidades",
+      label: t("Capacidades", "Capabilities", "Capacidades"),
       href: "/solucoes",
+      groups: [
+        {
+          href: "/solucoes/estrategia",
+          label: t("Estratégia", "Strategy", "Estrategia"),
+          subItems: [
+            { label: t("Inteligência de Mercado", "Market Intelligence", "Inteligencia de Mercado"), href: "/solucoes/inteligencia-de-mercado" },
+            { label: t("Diagnóstico e Planejamento", "Diagnosis & Planning", "Diagnóstico y Planificación"), href: "/solucoes/diagnostico-e-planejamento" },
+            { label: t("Estruturação de Projetos", "Project Structuring", "Estructuración de Proyectos"), href: "/solucoes/estruturacao-de-projetos" },
+          ],
+        },
+        {
+          href: "/solucoes/gestao",
+          label: t("Gestão", "Management", "Gestión"),
+          subItems: [
+            { label: t("Gestão de Projetos e PMO", "Project Management & PMO", "Gestión de Proyectos y PMO"), href: "/solucoes/gestao-de-projetos" },
+            { label: t("Gestão de Processos", "Business Process Management", "Gestión de Procesos"), href: "/solucoes/gestao-de-processos" },
+            { label: t("Governança e Indicadores", "Governance & KPIs", "Gobernanza e Indicadores"), href: "/solucoes/governanca-e-indicadores" },
+          ],
+        },
+        {
+          href: "/solucoes/operacoes",
+          label: t("Operações", "Operations", "Operaciones"),
+          subItems: [
+            { label: t("Gestão de Eventos", "Event Management", "Gestión de Eventos"), href: "/solucoes/operacoes/gestao-de-eventos" },
+            { label: t("Produção Executiva", "Executive Production", "Producción Ejecutiva"), href: "/solucoes/operacoes/producao-executiva" },
+            { label: "Location & Fixer", href: "/solucoes/operacoes/location-fixer-rio-de-janeiro" },
+            { label: t("Receptivo, Drivers & Locações", "Ground Transport & Rentals", "Receptivo, Choferes y Locaciones"), href: "/solucoes/operacoes/receptivo-drivers-locacoes" },
+          ],
+        },
+      ],
+    },
+    {
+      id: "especialidades",
       label: t("Especialidades", "Specialties", "Especialidades"),
-      subItems: [
-        { label: t("Inovação", "Innovation", "Innovación"), href: "/inovacao", kind: "service" as const },
-        { label: t("Impacto", "Impact", "Impacto"), href: "/impacto", kind: "service" as const },
-        { label: t("Branding & Experiências", "Branding & Experiences", "Branding y Experiencias"), href: "/branding-experiencias", kind: "service" as const },
+      href: "/solucoes",
+      groups: [
+        { href: "/solucoes/inovacao", label: t("Inovação", "Innovation", "Innovación"), subItems: [] },
+        { href: "/solucoes/impacto", label: t("Impacto", "Impact", "Impacto"), subItems: [] },
+        { href: "/solucoes/branding-experiencias", label: t("Branding & Experiências", "Branding & Experiences", "Branding y Experiencias"), subItems: [] },
       ],
     },
     {
-      href: "/solucoes",
-      label: t("Soluções", "Solutions", "Soluciones"),
-      subItems: [
-        { label: "Creation Ops Rio", href: "/creator-ops-rio", kind: "product" as const },
-        { label: "Creation Marcas", href: "/creation-marcas", kind: "product" as const },
-        { label: "ONG.zero", href: "/ong-zero", kind: "product" as const },
-        { label: "Motor SROI", href: "/motor-sroi", kind: "product" as const },
-        { label: "BI de Eventos", href: "/bi-de-eventos", kind: "product" as const },
+      id: "solucoes-creation",
+      label: t("Soluções Creation", "Creation Solutions", "Soluciones Creation"),
+      href: null,
+      groups: [
+        { href: "/creation-ops-rio", label: "Creation Ops Rio", subItems: [] },
+        { href: "/creation-marcas", label: "Creation Marcas", subItems: [] },
+        { href: "/ong-zero", label: "ONG.zero", subItems: [] },
+        { href: "/motor-sroi", label: "Motor SROI", subItems: [] },
+        { href: "/bi-de-eventos", label: "BI de Eventos", subItems: [] },
       ],
     },
   ];
@@ -270,73 +280,101 @@ export default function Header() {
           {/* Corpo do overlay: largura de conteudo (max-w-6xl), mesma
               proporcao das paginas internas */}
           <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24">
-            {/* Corpo: grupos de Solucoes (Estrategia/Gestao/Operacoes/
-                Especialidades) + institucional */}
+            {/* Corpo: as 4 colunas do Blueprint (Capacidades/Especialidades/
+                Solucoes Creation/A Creation). No mobile viram acordeao de
+                coluna unica (openColumn); no desktop (lg+) todas ficam
+                sempre expandidas. */}
             <nav
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10 md:py-16"
+              className="grid grid-cols-1 lg:grid-cols-4 gap-10 py-10 md:py-16"
               data-testid="nav-overlay"
             >
-              {solutionGroups.map((area) => (
-                <div key={area.label}>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <Link href={localize(area.href)} onClick={() => handleMenuClick(area.href)}>
-                      <span
-                        className={`block text-h2 font-bold cursor-pointer transition-colors ${
-                          isCurrentPath(area.href)
-                            ? "text-signal"
-                            : "text-bone hover:text-signal"
-                        }`}
-                      >
-                        {area.label}
-                      </span>
-                    </Link>
-                    {area.subItems.length > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => toggleGroup(area.label)}
-                        className="md:hidden text-bone/60 hover:text-bone p-1 -mr-1 transition-transform"
-                        style={{ transform: openGroups.has(area.label) ? "rotate(180deg)" : "none" }}
-                        aria-expanded={openGroups.has(area.label)}
-                        aria-label={t("Expandir", "Expand", "Expandir")}
-                        data-testid={`button-toggle-group-${area.label}`}
-                      >
-                        <ChevronDown className="h-5 w-5" />
-                      </button>
+              {megaColumns.map((column) => (
+                <div key={column.id}>
+                  <div className="flex items-center justify-between gap-2 mb-5">
+                    {column.href ? (
+                      <Link href={localize(column.href)} onClick={() => handleMenuClick(column.href)}>
+                        <span
+                          className={`block text-h2 font-bold cursor-pointer transition-colors ${
+                            isCurrentPath(column.href)
+                              ? "text-signal"
+                              : "text-bone hover:text-signal"
+                          }`}
+                        >
+                          {column.label}
+                        </span>
+                      </Link>
+                    ) : (
+                      <span className="block text-h2 font-bold text-bone">{column.label}</span>
                     )}
-                  </div>
-                  {area.subItems.length > 0 && (
-                    <ul
-                      className={`space-y-3 ${openGroups.has(area.label) ? "block" : "hidden"} md:block`}
+                    <button
+                      type="button"
+                      onClick={() => toggleColumn(column.id)}
+                      className="lg:hidden text-bone/60 hover:text-bone p-1 -mr-1 transition-transform"
+                      style={{ transform: openColumn === column.id ? "rotate(180deg)" : "none" }}
+                      aria-expanded={openColumn === column.id}
+                      aria-label={t("Expandir", "Expand", "Expandir")}
+                      data-testid={`button-toggle-column-${column.id}`}
                     >
-                      {area.subItems.map((item) => (
-                        <li key={item.href}>
-                          <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>
-                            <span
-                              className={`cursor-pointer transition-colors text-small ${
-                                item.kind === "product"
-                                  ? "font-semibold tracking-wide"
-                                  : "font-normal"
-                              } ${
-                                isCurrentPath(item.href.split("#")[0])
-                                  ? "text-signal"
-                                  : "text-bone/60 hover:text-signal"
-                              }`}
-                            >
-                              {item.label}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                      <ChevronDown className="h-5 w-5" />
+                    </button>
+                  </div>
+                  <div className={`space-y-5 ${openColumn === column.id ? "block" : "hidden"} lg:block`}>
+                    {column.groups.map((group) => (
+                      <div key={group.href}>
+                        <Link href={localize(group.href)} onClick={() => handleMenuClick(group.href)}>
+                          <span
+                            className={`block text-h3 font-semibold cursor-pointer transition-colors ${
+                              isCurrentPath(group.href)
+                                ? "text-signal"
+                                : "text-bone hover:text-signal"
+                            }`}
+                          >
+                            {group.label}
+                          </span>
+                        </Link>
+                        {group.subItems.length > 0 && (
+                          <ul className="space-y-2.5 mt-2.5">
+                            {group.subItems.map((item) => (
+                              <li key={item.href}>
+                                <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>
+                                  <span
+                                    className={`cursor-pointer transition-colors text-small font-normal ${
+                                      isCurrentPath(item.href.split("#")[0])
+                                        ? "text-signal"
+                                        : "text-bone/60 hover:text-signal"
+                                    }`}
+                                  >
+                                    {item.label}
+                                  </span>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
 
               <div>
-                <p className="text-caption font-semibold text-bone/50 mb-4 uppercase tracking-widest">
-                  {t("Navegação", "Navigation", "Navegación")}
-                </p>
-                <ul className="space-y-3">
+                <div className="flex items-center justify-between gap-2 mb-5">
+                  <span className="block text-h2 font-bold text-bone">
+                    {t("A Creation", "About Creation", "Sobre Creation")}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => toggleColumn("a-creation")}
+                    className="lg:hidden text-bone/60 hover:text-bone p-1 -mr-1 transition-transform"
+                    style={{ transform: openColumn === "a-creation" ? "rotate(180deg)" : "none" }}
+                    aria-expanded={openColumn === "a-creation"}
+                    aria-label={t("Expandir", "Expand", "Expandir")}
+                    data-testid="button-toggle-column-a-creation"
+                  >
+                    <ChevronDown className="h-5 w-5" />
+                  </button>
+                </div>
+                <ul className={`space-y-3 ${openColumn === "a-creation" ? "block" : "hidden"} lg:block`}>
                   {institutional.map((item) => (
                     <li key={item.href}>
                       <Link href={localize(item.href)} onClick={() => handleMenuClick(item.href)}>

@@ -34,45 +34,6 @@ export const en: Content = {
       "Creation brings together strategy, management and operational capacity to turn challenges into clear, viable and well-executed projects, from understanding to delivery.",
   },
 
-  // LOCKED — Full Cycle / Diagnosis / Structuring / Execution / Validation (doc).
-  method: {
-    badge: "METHOD",
-    title: "Full Cycle",
-    intro:
-      "Every project we lead follows the same path, whether it's an event, a consulting engagement, a social program or an innovation initiative. There are four stages, from understanding to proof.",
-    stages: [
-      {
-        number: "01",
-        name: "Diagnosis",
-        tagline: "understand before acting",
-        description:
-          "Before proposing anything, we understand the problem, the context and what the project needs to achieve. The initial request is often not the real problem, and that difference surfaces during diagnosis.",
-      },
-      {
-        number: "02",
-        name: "Structuring",
-        tagline: "design the plan",
-        description:
-          "With the problem understood, we design the plan: scope, governance, teams and how to measure the result. When there's an obvious path and a more consistent one, this is where we choose the latter, even when it demands more of us.",
-      },
-      {
-        number: "03",
-        name: "Execution",
-        tagline: "do the work",
-        description:
-          "We lead the delivery from end to end. We don't hand over the plan and leave: we do the work, coordinate and remain accountable for the result until the project happens.",
-      },
-      {
-        number: "04",
-        name: "Validation",
-        tagline: "measure, show",
-        description:
-          "A project doesn't end when it happens, but when what it generated is proven. We measure and document the result, and that's what closes the cycle and informs the next diagnosis.",
-      },
-    ],
-    loopNote:
-      "The proof of one project feeds the diagnosis of the next. That's why it's a cycle, not a line.",
-  },
 
   targetAudience: {
     title: "Who we work with",
@@ -699,8 +660,8 @@ export const en: Content = {
       { label: "Solutions", href: "/solucoes" },
       { label: "Strategy", href: "/solucoes/estrategia" },
       { label: "Management", href: "/solucoes/gestao" },
-      { label: "Operations", href: "/operacoes" },
-      { label: "Creation Ops Rio", href: "/creator-ops-rio" },
+      { label: "Operations", href: "/solucoes/operacoes" },
+      { label: "Creation Ops Rio", href: "/creation-ops-rio" },
       { label: "Creation Marcas", href: "/creation-marcas" },
       { label: "ONG.zero", href: "/ong-zero" },
       { label: "Motor SROI", href: "/motor-sroi" },

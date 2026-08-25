@@ -1,4 +1,4 @@
-import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub } from "./types";
+import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub, CicloStage } from "./types";
 import caseHackingRio from "@assets/case-hacking-rio.jpg";
 import caseHackingHelp from "@assets/case-hacking-help.jpg";
 import caseHrTalks from "@assets/case-hr-talks.jpg";
@@ -43,11 +43,11 @@ export const stubData: Record<string, StubPageData> = {
     children: [
       { title: "Estrategia", description: "Claridad para decidir: inteligencia de mercado, diagnóstico y planificación, estructuración y viabilización de proyectos.", href: "/solucoes/estrategia" },
       { title: "Gestión", description: "Ritmo para avanzar: gestión de proyectos y PMO, procesos de negocio, gobernanza e indicadores.", href: "/solucoes/gestao" },
-      { title: "Operaciones", description: "Ejecución para realizar: gestión de eventos, producción ejecutiva, location & fixer, receptivo y logística.", href: "/operacoes" },
-      { title: "Innovación", description: "Proyectos, programas, hackathons, ideathons y jornadas para transformar desafíos en soluciones aplicables.", href: "/inovacao" },
-      { title: "Impacto", description: "Programas de responsabilidad social, iniciativas territoriales, estructuración de organizaciones y medición de resultados.", href: "/impacto" },
-      { title: "Branding & Experiencias", description: "Estrategia de marca, narrativa, contenido, activaciones y experiencias que conectan posicionamiento y presencia.", href: "/branding-experiencias" },
-      { title: "Creation Ops Rio", description: "Operación local integrada en Río de Janeiro para agencias, productoras, marcas y equipos internacionales.", href: "/creator-ops-rio" },
+      { title: "Operaciones", description: "Ejecución para realizar: gestión de eventos, producción ejecutiva, location & fixer, receptivo y logística.", href: "/solucoes/operacoes" },
+      { title: "Innovación", description: "Proyectos, programas, hackathons, ideathons y jornadas para transformar desafíos en soluciones aplicables.", href: "/solucoes/inovacao" },
+      { title: "Impacto", description: "Programas de responsabilidad social, iniciativas territoriales, estructuración de organizaciones y medición de resultados.", href: "/solucoes/impacto" },
+      { title: "Branding & Experiencias", description: "Estrategia de marca, narrativa, contenido, activaciones y experiencias que conectan posicionamiento y presencia.", href: "/solucoes/branding-experiencias" },
+      { title: "Creation Ops Rio", description: "Operación local integrada en Río de Janeiro para agencias, productoras, marcas y equipos internacionales.", href: "/creation-ops-rio" },
     ],
     ctaBody: "Cuéntenos el contexto, el momento del proyecto y lo que necesita suceder. La primera conversación sirve para identificar el problema, no para forzar una solución ya lista.",
     ctaLabel: "Cuéntenos su proyecto",
@@ -629,10 +629,10 @@ export const stubData: Record<string, StubPageData> = {
     ],
     childrenLabel: "Nuestros frentes de actuación",
     children: [
-      { title: "Gestión de Eventos", description: "Planificación y coordinación del ciclo completo de eventos corporativos, culturales, institucionales, de innovación y de impacto.", href: "/operacoes/gestao-de-eventos" },
-      { title: "Producción Ejecutiva", description: "Presupuesto, cronograma, proveedores, equipos, infraestructura y seguimiento de la realización, desde la preproducción hasta el cierre.", href: "/operacoes/producao-executiva" },
-      { title: "Location & Fixer", description: "Investigación de locaciones, articulación local, permisos, apoyo a equipos y solución de necesidades de producción en Río de Janeiro y la Costa Verde.", href: "/operacoes/location-fixer-rio-de-janeiro" },
-      { title: "Receptivo, Choferes & Locaciones", description: "Traslados, vehículos, choferes, hospedaje, espacios, equipos y soporte de llegada para equipos, invitados y producciones.", href: "/operacoes/receptivo-drivers-locacoes" },
+      { title: "Gestión de Eventos", description: "Planificación y coordinación del ciclo completo de eventos corporativos, culturales, institucionales, de innovación y de impacto.", href: "/solucoes/operacoes/gestao-de-eventos" },
+      { title: "Producción Ejecutiva", description: "Presupuesto, cronograma, proveedores, equipos, infraestructura y seguimiento de la realización, desde la preproducción hasta el cierre.", href: "/solucoes/operacoes/producao-executiva" },
+      { title: "Location & Fixer", description: "Investigación de locaciones, articulación local, permisos, apoyo a equipos y solución de necesidades de producción en Río de Janeiro y la Costa Verde.", href: "/solucoes/operacoes/location-fixer-rio-de-janeiro" },
+      { title: "Receptivo, Choferes & Locaciones", description: "Traslados, vehículos, choferes, hospedaje, espacios, equipos y soporte de llegada para equipos, invitados y producciones.", href: "/solucoes/operacoes/receptivo-drivers-locacoes" },
     ],
     ctaLabel: "Presente su operación",
     ctaHref: "/contato",
@@ -645,7 +645,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Objetivo, público, experiencia, contenido, presupuesto y operación necesitan apuntar en la misma dirección.",
     lead: "Creation estructura y coordina eventos desde el concepto hasta el cierre, conectando decisión estratégica y realización.",
     parentLabel: "Operaciones",
-    parentHref: "/operacoes",
+    parentHref: "/solucoes/operacoes",
     blocks: [
       { type: "bullets", heading: "Un evento no es solo una fecha", items: [
         "Es un proyecto temporal con una promesa clara para el público y una amplia red de dependencias. Cuando esas dependencias no se tratan de forma integrada, la experiencia pierde coherencia y el equipo termina solo reaccionando.",
@@ -713,7 +713,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Cuando el proyecto necesita salir del papel, cada contratación, plazo, acceso y decisión empieza a afectar al conjunto.",
     lead: "Creation organiza esas dependencias y coordina la realización con visión de presupuesto, cronograma, calidad y riesgo.",
     parentLabel: "Operaciones",
-    parentHref: "/operacoes",
+    parentHref: "/solucoes/operacoes",
     blocks: [
       { type: "bullets", heading: "De la intención a la condición real de ejecutar", items: [
         "La producción ejecutiva no es solo hacer seguimiento a proveedores. Es traducir una propuesta creativa o estratégica en recursos, responsabilidades, secuencias y criterios de entrega.",
@@ -772,7 +772,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Locaciones, autorizaciones, accesos, equipos y traslados cambian de un territorio a otro.",
     lead: "Creation ofrece investigación de locaciones y soporte de producción local para equipos que necesitan realizar filmaciones, campañas, eventos y proyectos en Río de Janeiro y la Costa Verde.",
     parentLabel: "Operaciones",
-    parentHref: "/operacoes",
+    parentHref: "/solucoes/operacoes",
     blocks: [
       { type: "cards", heading: "Dos servicios que se complementan", intro: "Una contratación puede incluir uno de los frentes o los dos.", items: [
         { title: "Location", description: "Investigación y viabilización de espacios compatibles con la propuesta creativa, las necesidades técnicas, el presupuesto y la logística de la producción." },
@@ -847,7 +847,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Equipos, invitados y recursos necesitan estar en el lugar correcto, a la hora correcta y con información suficiente para seguir el plan.",
     lead: "Creation coordina la logística de llegada, permanencia y traslado para producciones, eventos y proyectos especiales.",
     parentLabel: "Operaciones",
-    parentHref: "/operacoes",
+    parentHref: "/solucoes/operacoes",
     blocks: [
       { type: "bullets", heading: "Un recorrido operativo, no una lista de reservas", items: [
         "Pasajes, vehículos, hospedaje, espacios y equipos se afectan entre sí. Un cambio de agenda puede modificar ruta, tarifa diaria, acceso, carga y equipo.",
@@ -1032,7 +1032,7 @@ export const stubData: Record<string, StubPageData> = {
     ],
     childrenLabel: "Especialidad relacionada",
     children: [
-      { title: "Marketing de Causa", description: "Estrategia que conecta marca, causa y acción, con alianza, gobernanza, experiencia y comunicación responsable.", href: "/impacto/marketing-de-causa" },
+      { title: "Marketing de Causa", description: "Estrategia que conecta marca, causa y acción, con alianza, gobernanza, experiencia y comunicación responsable.", href: "/solucoes/impacto/marketing-de-causa" },
     ],
     ctaLabel: "Conversemos sobre su iniciativa",
     ctaHref: "/contato",
@@ -1045,7 +1045,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Cuando una marca se asocia a una cuestión social, asume responsabilidad sobre lo que promete, cómo actúa y a quién involucra.",
     lead: "Creation estructura iniciativas que conectan posicionamiento, alianza, experiencia y entrega concreta.",
     parentLabel: "Impacto",
-    parentHref: "/impacto",
+    parentHref: "/solucoes/impacto",
     blocks: [
       { type: "bullets", heading: "Relevancia para la marca, legitimidad para la causa", intro: "El marketing de causa puede movilizar atención, recursos y participación. También puede generar desconfianza cuando la narrativa es mayor que la acción, cuando los socios sociales aparecen solo como aval o cuando no hay transparencia sobre los resultados. Nuestro trabajo busca coherencia entre tres dimensiones:", items: [
         "El rol legítimo de la marca.",
@@ -1184,12 +1184,6 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Proyectos diferentes exigen equipos, herramientas y recorridos diferentes. Lo que permanece es una forma disciplinada de transformar una necesidad en dirección, estructura, entrega y evidencia.",
     lead: "No llamamos a este enfoque metodología propietaria. El valor está en elegir y aplicar el método adecuado a cada decisión, no en inventar nombres para etapas conocidas.",
     blocks: [
-      { type: "bullets", heading: "El recorrido no necesita comenzar por el inicio", items: [
-        "Un desafío todavía difuso puede empezar por Entender.",
-        "Una iniciativa aprobada puede empezar por Estructurar.",
-        "Un proyecto planificado puede necesitar Realizar.",
-        "Una entrega concluida puede necesitar Comprobar.",
-      ]},
       { type: "bullets", heading: "Responsabilidades claras antes de la ejecución", intro: "Cada propuesta debe definir:", items: [
         "Lo que Creation asume.",
         "Lo que permanece con el cliente.",
@@ -1200,15 +1194,8 @@ export const stubData: Record<string, StubPageData> = {
         "Cuándo se considerará concluido el trabajo.",
         "La claridad contractual no burocratiza el proyecto. Protege el ritmo de la ejecución.",
       ]},
-      { type: "bullets", heading: "Herramientas al servicio del proyecto", intro: "SWOT, PESTEL, BPMN, Canvas, Design Thinking, Lean, Kanban, Scrum, RACI, OKRs y otras herramientas pueden utilizarse cuando ayudan a responder una pregunta real. No aplicamos una herramienta porque sea conocida o porque produzca un diagrama bonito — elegimos el recurso por el problema, la madurez del equipo y la decisión que necesita tomarse.", items: ["SWOT y PESTEL", "BPMN y Canvas", "Design Thinking y Lean", "Kanban y Scrum", "RACI y OKRs"] },
     ],
-    childrenLabel: "Las cuatro etapas",
-    children: [
-      { title: "01 — Entender", description: "Antes de proponer una solución, investigamos el contexto en el que el proyecto necesita existir: qué necesidad dio origen al pedido, quién decide, participa, se ve afectado o puede bloquear el avance, qué restricciones de plazo, presupuesto, territorio y capacidad existen, qué ya se intentó y qué se aprendió, y qué resultado necesita alcanzarse o demostrarse. Pueden utilizarse entrevistas, análisis documental, investigación de mercado, escucha de públicos, datos secundarios, observación de campo, benchmarking y mapeo de stakeholders. El resultado es una lectura compartida del desafío, de las preguntas que necesitan respuesta y de los criterios que orientarán el resto del trabajo.", href: "/contato" },
-      { title: "02 — Estructurar", description: "Transformamos el entendimiento en un proyecto que pueda decidirse, financiarse, gestionarse y ejecutarse: objetivos, alcance y prioridades, entregas y criterios de aceptación, gobernanza y responsabilidades, equipo, socios y proveedores, presupuesto, cronograma y dependencias, riesgos, premisas y decisiones pendientes, e indicadores y formas de seguimiento. El resultado es el plan de proyecto, la arquitectura de gobernanza, el presupuesto, el cronograma, el mapa de riesgos, la estrategia de movilización y el sistema inicial de indicadores, según el alcance contratado.", href: "/contato" },
-      { title: "03 — Realizar", description: "Ponemos la estructura en movimiento, coordinando personas, decisiones y recursos hasta la entrega: mantenemos una cadencia clara de decisión y seguimiento, coordinamos equipos internos, socios y proveedores, registramos cambios de alcance y sus impactos, seguimos presupuesto, plazo, riesgos y calidad, resolvemos dependencias e impedimentos, y ajustamos el recorrido sin perder el objetivo del proyecto. El resultado son entregas realizadas, decisiones registradas, riesgos tratados y una operación seguida de forma transparente.", href: "/contato" },
-      { title: "04 — Comprobar", description: "El cierre no es solo el momento de declarar que algo fue entregado. Es cuando organizamos las evidencias disponibles y evaluamos lo que el proyecto efectivamente produjo: consolidamos entregas, datos y registros, comparamos ejecución, metas y criterios definidos, analizamos resultados y limitaciones, documentamos aprendizajes y recomendaciones, y orientamos la continuidad, la próxima edición o el cierre. El resultado es un informe, panel, presentación ejecutiva, rendición de cuentas, lecciones aprendidas u otro formato de evidencia adecuado al proyecto. \"Comprobar\" no significa atribuir al proyecto resultados que los datos no sostienen: cuando no sea posible demostrar causalidad, distinguimos entrega, resultado observado e hipótesis de impacto.", href: "/contato" },
-    ],
+    cicloCompleto: true,
     ctaLabel: "Cuéntenos su proyecto",
     ctaHref: "/contato",
   },
@@ -1236,7 +1223,7 @@ export const homeCapacidades: HomeCapacidade[] = [
     tagline: "Ejecución para realizar.",
     description: "Movilizamos personas, socios, proveedores, logística, espacios y recursos para transformar la planificación en entrega, coordinando la operación desde la preparación hasta el cierre.",
     items: ["Gestión y Producción de Eventos", "Producción Ejecutiva y Logística", "Location & Fixer", "Receptivo, Choferes y Locaciones"],
-    href: "/operacoes",
+    href: "/solucoes/operacoes",
     linkLabel: "Conozca Operaciones",
   },
 ];
@@ -1246,7 +1233,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     title: "Innovación",
     tagline: "Las ideas ganan valor cuando se convierten en proyectos.",
     description: "Estructuramos y realizamos programas de innovación, desafíos, hackathons, ideathons y jornadas.",
-    href: "/inovacao",
+    href: "/solucoes/inovacao",
     linkLabel: "Conozca Innovación",
     image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — programa de innovación realizado por Creation" },
   },
@@ -1254,7 +1241,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     title: "Impacto",
     tagline: "Impacto que se construye y se comprueba.",
     description: "Diseñamos, gestionamos y realizamos programas de responsabilidad social, marketing de causa y desarrollo territorial.",
-    href: "/impacto",
+    href: "/solucoes/impacto",
     linkLabel: "Conozca Impacto",
     image: { src: "/images/impacto-hero.webp", alt: "Programa de impacto social en territorio, realizado por Creation" },
   },
@@ -1262,7 +1249,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     title: "Branding & Experiencias",
     tagline: "Estrategia que puede verse, vivirse y recordarse.",
     description: "Transformamos posicionamiento en identidad, narrativa, contenido, activaciones y experiencias.",
-    href: "/branding-experiencias",
+    href: "/solucoes/branding-experiencias",
     linkLabel: "Conozca Branding & Experiencias",
     image: { src: "/images/reservax-lounge.webp", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
   },
@@ -1272,7 +1259,7 @@ export const homeSolucoes: HomeSolucao[] = [
   {
     title: "Creation Ops Rio",
     description: "Operación local integrada para agencias, productoras, marcas y equipos que realizan proyectos en Río de Janeiro. Location, fixer, receptivo, choferes, locaciones, proveedores y logística bajo una única coordinación.",
-    href: "/creator-ops-rio",
+    href: "/creation-ops-rio",
   },
 ];
 
@@ -1320,5 +1307,60 @@ export const casesStub: CaseStub[] = [
     context: "Concepción y ejecución de programación presencial y en línea sobre creatividad, distribuida en diferentes espacios y días.",
     numbers: ["3 días de programación", "2 espacios", "+1 mil personas alcanzadas", "+50 inspiradores en línea"],
     image: { src: caseWorldCreativity, alt: "Presentación del World Creativity Day en el Centro Cultural Banco do Brasil Río de Janeiro" },
+  },
+];
+
+// Ciclo Completo interactivo — el mismo recorrido ya aprobado en
+// stubData["como-trabalhamos"], destilado en lead + dos columnas +
+// resultado por etapa (ver CicloCompletoSection.tsx). Fuente:
+// creation-ciclo-completo.html (carpeta projetos/metodologias).
+export const cicloCompletoStages: CicloStage[] = [
+  {
+    number: "01",
+    name: "Entender",
+    role: "Contexto",
+    family: "iris",
+    lead: "Antes de proponer una solución, investigamos el contexto en el que el proyecto necesita existir: qué necesidad dio origen al pedido, quién decide, participa, se ve afectado o puede bloquear el avance, y qué resultado necesita alcanzarse o demostrarse.",
+    leftHeading: "Investigamos",
+    left: ["Necesidad y origen del pedido", "Quién decide, participa o bloquea", "Restricciones de plazo, presupuesto y territorio", "Qué ya se intentó y se aprendió"],
+    rightHeading: "Instrumentos",
+    right: ["Entrevistas y escucha de públicos", "Análisis documental y datos secundarios", "Investigación de mercado y benchmarking", "Mapeo de stakeholders"],
+    out: "Una lectura compartida del desafío",
+  },
+  {
+    number: "02",
+    name: "Estructurar",
+    role: "Plan",
+    family: "lapis",
+    lead: "Transformamos el entendimiento en un proyecto que pueda decidirse, financiarse, gestionarse y ejecutarse — con objetivos, alcance, gobernanza, presupuesto, cronograma e indicadores.",
+    leftHeading: "Definimos",
+    left: ["Objetivos, alcance y prioridades", "Entregas y criterios de aceptación", "Gobernanza y responsabilidades", "Presupuesto, cronograma y riesgos"],
+    rightHeading: "Entregas",
+    right: ["Plan de proyecto", "Arquitectura de gobernanza", "Mapa de riesgos", "Sistema inicial de indicadores"],
+    out: "Un proyecto listo para decidir y ejecutar",
+  },
+  {
+    number: "03",
+    name: "Realizar",
+    role: "Entrega",
+    family: "amber",
+    lead: "Ponemos la estructura en movimiento, coordinando personas, decisiones y recursos hasta la entrega — con una cadencia clara de decisión y seguimiento, ajustando el recorrido sin perder el objetivo.",
+    leftHeading: "Conducimos",
+    left: ["Cadencia de decisión y seguimiento", "Coordinación de equipos y socios", "Registro de cambios e impactos", "Seguimiento de plazo, riesgo y calidad"],
+    rightHeading: "Entregas",
+    right: ["Entregas realizadas", "Decisiones registradas", "Riesgos tratados", "Operación transparente"],
+    out: "La estructura en movimiento hasta la entrega",
+  },
+  {
+    number: "04",
+    name: "Comprobar",
+    role: "Evidencia",
+    family: "kelp",
+    lead: "El cierre no es solo declarar que algo fue entregado. Es cuando organizamos las evidencias y evaluamos lo que el proyecto efectivamente produjo — distinguiendo entrega, resultado observado e hipótesis de impacto.",
+    leftHeading: "Evaluamos",
+    left: ["Consolidación de entregas y datos", "Ejecución comparada con metas y criterios", "Análisis de resultados y limitaciones", "Aprendizajes y recomendaciones"],
+    rightHeading: "Entregas",
+    right: ["Informe y panel ejecutivo", "Rendición de cuentas", "Lecciones aprendidas", "Orientación para la continuidad"],
+    out: "La evidencia de lo que el proyecto produjo",
   },
 ];

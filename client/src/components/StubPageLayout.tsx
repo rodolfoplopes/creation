@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import PhotoFrame from "@/components/PhotoFrame";
+import CicloCompletoSection from "@/components/CicloCompletoSection";
 import { Link } from "wouter";
 import { ArrowLeft, Check } from "lucide-react";
 import { useLocalizedHref } from "@/content";
@@ -130,6 +131,8 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
       {data.blocks?.map((block) => (
         <BlockRenderer key={block.heading} block={block} />
       ))}
+
+      {data.cicloCompleto && <CicloCompletoSection variant="full" />}
 
       {data.children && data.children.length > 0 && (
         <Section tone="white">

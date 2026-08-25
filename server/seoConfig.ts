@@ -15,9 +15,9 @@ interface PageSEO {
 
 const baseUrl = 'https://creation-pro.com';
 
-// FIX: nome "Creator Ops Rio" -> "Creation Ops Rio" (renomeado na sessao de
-// hoje). URL "/producoes/creator-ops-rio" -> "/creator-ops-rio" (URL curta,
-// tambem da sessao de hoje).
+// FIX: nome "Creator Ops Rio" -> "Creation Ops Rio". URL "/creator-ops-rio"
+// -> "/creation-ops-rio" (corrige o typo, conforme Blueprint de Arquitetura
+// V1 de 25/08/2026 — ver redirects 301 em vercel.json).
 const creationOpsRioJsonLd = {
   en: {
     "@context": "https://schema.org",
@@ -34,7 +34,7 @@ const creationOpsRioJsonLd = {
       "name": "Rio de Janeiro",
     },
     "serviceType": "Executive Production",
-    "url": `${baseUrl}/en/creator-ops-rio`,
+    "url": `${baseUrl}/en/creation-ops-rio`,
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
@@ -56,7 +56,7 @@ const creationOpsRioJsonLd = {
       "name": "Río de Janeiro",
     },
     "serviceType": "Producción Ejecutiva",
-    "url": `${baseUrl}/es/creator-ops-rio`,
+    "url": `${baseUrl}/es/creation-ops-rio`,
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
@@ -78,7 +78,7 @@ const creationOpsRioJsonLd = {
       "name": "Rio de Janeiro",
     },
     "serviceType": "Produção Executiva",
-    "url": `${baseUrl}/pt/creator-ops-rio`,
+    "url": `${baseUrl}/pt/creation-ops-rio`,
     "offers": {
       "@type": "Offer",
       "priceCurrency": "BRL",
@@ -87,11 +87,10 @@ const creationOpsRioJsonLd = {
   },
 };
 
-// FIX: rotas inteiras reescritas para bater com a arquitetura de 3 areas
-// de hoje. Removidas: /servicos, /impacto, /producoes/creator-ops-rio
-// (paginas que nao existem mais, sem redirect por decisao de projeto).
-// Adicionadas: /consultoria, /impacto-social, /creator-ops-rio (url curta),
-// /creation-marcas, /ong-zero, /motor-sroi, /bi-de-eventos.
+// Rotas atualizadas conforme o Blueprint de Arquitetura V1 (25/08/2026):
+// Operacoes/Inovacao/Impacto/Branding & Experiencias moveram para debaixo
+// de /solucoes/, e Creation Ops Rio corrigiu o typo "creator" -> "creation"
+// (ver redirects 301 em vercel.json para as URLs antigas).
 // Titulo/descricao reaproveitam o texto ja aprovado em pt.ts/en.ts/es.ts
 // (hero de cada pagina), condensados para o tamanho de meta tag.
 export const seoConfig: Record<string, PageSEO> = {
@@ -146,7 +145,7 @@ export const seoConfig: Record<string, PageSEO> = {
     en: { title: 'Management | Creation', description: 'Project management and PMO, business process management, governance and KPIs.' },
     es: { title: 'Gestión | Creation', description: 'Gestión de proyectos y PMO, gestión de procesos, gobernanza e indicadores.' },
   },
-  '/operacoes': {
+  '/solucoes/operacoes': {
     pt: {
       title: 'Operações | É na execução que o projeto se decide | Creation',
       description: 'Gestão de eventos, produção executiva, location & fixer, receptivo, drivers e locações.',
@@ -154,7 +153,7 @@ export const seoConfig: Record<string, PageSEO> = {
     en: { title: 'Operations | Creation', description: 'Event management, executive production, location & fixer, ground transport.' },
     es: { title: 'Operaciones | Creation', description: 'Gestión de eventos, producción ejecutiva, location & fixer, receptivo y choferes.' },
   },
-  '/inovacao': {
+  '/solucoes/inovacao': {
     pt: {
       title: 'Inovação | Ideias ganham valor quando se tornam projetos | Creation',
       description: 'Programas de inovação, desafios, hackathons, ideathons e jornadas.',
@@ -162,7 +161,7 @@ export const seoConfig: Record<string, PageSEO> = {
     en: { title: 'Innovation | Creation', description: 'Innovation programs, challenges, hackathons, ideathons and journeys.' },
     es: { title: 'Innovación | Creation', description: 'Programas de innovación, desafíos, hackathons, ideathons y jornadas.' },
   },
-  '/impacto': {
+  '/solucoes/impacto': {
     pt: {
       title: 'Impacto | Impacto que se constrói e se comprova | Creation',
       description: 'Programas de responsabilidade social, marketing de causa e desenvolvimento territorial.',
@@ -170,7 +169,7 @@ export const seoConfig: Record<string, PageSEO> = {
     en: { title: 'Impact | Creation', description: 'Social responsibility programs, cause marketing and territorial development.' },
     es: { title: 'Impacto | Creation', description: 'Programas de responsabilidad social, marketing de causa y desarrollo territorial.' },
   },
-  '/branding-experiencias': {
+  '/solucoes/branding-experiencias': {
     pt: {
       title: 'Branding & Experiências | Estratégia que pode ser vista, vivida e lembrada | Creation',
       description: 'Identidade, narrativa, conteúdo, ativações e experiências de marca.',
@@ -222,7 +221,7 @@ export const seoConfig: Record<string, PageSEO> = {
       description: 'Cuéntenos lo que necesita lograr. Respondemos con el camino para hacerlo realidad.',
     },
   },
-  '/creator-ops-rio': {
+  '/creation-ops-rio': {
     pt: {
       title: 'Creation Ops Rio | Produção executiva no Rio de Janeiro',
       description: 'Recepção, logística e produção local completa para content creators e marcas internacionais no Rio de Janeiro.',

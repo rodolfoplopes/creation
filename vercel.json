@@ -1,4 +1,18 @@
 {
+  "redirects": [
+    { "source": "/:lang(pt|en|es)/operacoes/gestao-de-eventos", "destination": "/:lang/solucoes/operacoes/gestao-de-eventos", "permanent": true },
+    { "source": "/:lang(pt|en|es)/operacoes/producao-executiva", "destination": "/:lang/solucoes/operacoes/producao-executiva", "permanent": true },
+    { "source": "/:lang(pt|en|es)/operacoes/location-fixer-rio-de-janeiro", "destination": "/:lang/solucoes/operacoes/location-fixer-rio-de-janeiro", "permanent": true },
+    { "source": "/:lang(pt|en|es)/operacoes/receptivo-drivers-locacoes", "destination": "/:lang/solucoes/operacoes/receptivo-drivers-locacoes", "permanent": true },
+    { "source": "/:lang(pt|en|es)/operacoes", "destination": "/:lang/solucoes/operacoes", "permanent": true },
+    { "source": "/:lang(pt|en|es)/inovacao", "destination": "/:lang/solucoes/inovacao", "permanent": true },
+    { "source": "/:lang(pt|en|es)/impacto/marketing-de-causa", "destination": "/:lang/solucoes/impacto/marketing-de-causa", "permanent": true },
+    { "source": "/:lang(pt|en|es)/impacto", "destination": "/:lang/solucoes/impacto", "permanent": true },
+    { "source": "/:lang(pt|en|es)/branding-experiencias", "destination": "/:lang/solucoes/branding-experiencias", "permanent": true },
+    { "source": "/:lang(pt|en|es)/creator-ops-rio", "destination": "/:lang/creation-ops-rio", "permanent": true },
+    { "source": "/:lang(pt|en|es)/producoes", "destination": "/:lang/solucoes/operacoes", "permanent": true },
+    { "source": "/:lang(pt|en|es)/impacto-social", "destination": "/:lang/solucoes/impacto", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/)(?!.*\\.).*)",
