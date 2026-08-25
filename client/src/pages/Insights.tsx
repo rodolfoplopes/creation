@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { Section, SectionHeader } from "@/components/primitives";
 import PhotoFrame from "@/components/PhotoFrame";
 import { useLang, useLocalizedHref } from "@/content";
+import { categoryChipClasses } from "@/lib/categoryColor";
 import type { InsightListItem } from "@shared/insights";
 
 /**
@@ -100,9 +101,11 @@ export default function Insights() {
                   )}
                   <div className="p-6">
                     {item.category.length > 0 && (
-                      <p className="text-caption font-semibold text-spark mb-2 uppercase tracking-widest">
+                      <span
+                        className={`inline-block text-caption font-semibold mb-2 uppercase tracking-widest px-2.5 py-1 rounded-full ${categoryChipClasses(item.category[0])}`}
+                      >
                         {item.category[0]}
-                      </p>
+                      </span>
                     )}
                     <h3 className="text-h3 font-semibold text-abyss group-hover:text-spark transition-colors mb-2">
                       {item.title}

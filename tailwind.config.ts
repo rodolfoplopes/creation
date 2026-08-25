@@ -136,6 +136,38 @@ export default {
         ouro: {
           DEFAULT: "hsl(var(--ouro) / <alpha-value>)",
         },
+
+        // ========================================================
+        // CORES TERCIÁRIAS — Adendo ao Manual V7.1 (agosto/2026),
+        // doc "Creation_Cores_Terciarias.pdf". Sistema cromático de
+        // APOIO, nao uma nova identidade: cada familia tem um papel
+        // semantico fixo (uma cor, um sentido) e so entra pra
+        // codificar categoria/status/etapa em metodologias, matrizes
+        // e ilustracoes — nunca como decoracao ou substituto do
+        // Abyss/Bone/Spark, que continuam a base em 80%+ de qualquer
+        // peca. Signal (ja o token "spark" no codigo) fica de fora
+        // dessa lista de proposito: e o acento unico da marca, as
+        // terciarias apoiam, nao competem com ele.
+        //
+        // 4 tokens por familia: icon (mais vivo — icones/pontos/tracos),
+        // text (escurecido, 4.5:1 sobre bone — rotulos/tags em fundo
+        // claro), on-abyss (clareado, 4.5:1 sobre abyss — texto/dado em
+        // secao escura), tint (quase-branco — fundo de tag/celula, como
+        // os backgrounds do Notion).
+        //
+        // Mapeamento semantico -> categorias do site (Especialidades/
+        // Insights): Estrategia=Iris, Gestao=Lapis, Operacoes=Amber,
+        // Inovacao=Lichen, Impacto=Kelp, Branding & Experiencias=Rose.
+        // Institucional fica sem cor terciaria (nenhuma familia combina
+        // semanticamente — regra do doc: "se a cor nao esta dizendo
+        // algo, ela nao deveria estar ali").
+        iris: { icon: "#763BCE", text: "#632FB1", "on-abyss": "#A87DE8", tint: "#EEEAF6" }, // estrategia, conhecimento, pesquisa
+        lapis: { icon: "#3B7BCE", text: "#2F68B1", "on-abyss": "#5692E1", tint: "#EAEFF6" }, // estrutura, processo, governanca
+        kelp: { icon: "#3BCE98", text: "#207958", "on-abyss": "#26D997", tint: "#EAF6F1" }, // crescimento, ativo, concluido, territorio
+        lichen: { icon: "#A2CE3B", text: "#5B751F", "on-abyss": "#A3D926", tint: "#F2F6EA" }, // energia, ideacao, destaque de dado
+        amber: { icon: "#CE983B", text: "#896424", "on-abyss": "#D99726", tint: "#F6F1EA" }, // atencao, em andamento, financeiro
+        ember: { icon: "#CE5D3B", text: "#B14D2F", "on-abyss": "#E07352", tint: "#F6ECEA" }, // alerta, bloqueio, prioridade
+        rose: { icon: "#CE3B67", text: "#B12F56", "on-abyss": "#E4678D", tint: "#F6EAED" }, // pessoas, cultura, comunidade
       },
       // ========================================================
       // TIPOGRAFIA — Manual V6.0, pagina 16

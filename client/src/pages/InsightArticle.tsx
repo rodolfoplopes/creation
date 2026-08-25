@@ -6,6 +6,7 @@ import PhotoFrame from "@/components/PhotoFrame";
 import NotionRenderer from "@/components/notion/NotionRenderer";
 import { useLang, useLocalizedHref } from "@/content";
 import { ArrowLeft } from "lucide-react";
+import { categoryChipClasses } from "@/lib/categoryColor";
 import type { InsightArticle } from "@shared/insights";
 
 /**
@@ -71,9 +72,11 @@ export default function InsightArticlePage() {
           ) : (
             <>
               {article.category.length > 0 && (
-                <p className="text-caption font-semibold text-spark mb-4 uppercase tracking-widest">
+                <span
+                  className={`inline-block text-caption font-semibold mb-4 uppercase tracking-widest px-2.5 py-1 rounded-full ${categoryChipClasses(article.category[0])}`}
+                >
                   {article.category[0]}
-                </p>
+                </span>
               )}
               <h1 className="font-display text-display sm:text-5xl font-bold text-abyss mb-6">
                 {article.title}
