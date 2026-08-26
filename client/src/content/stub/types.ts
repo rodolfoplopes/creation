@@ -50,6 +50,12 @@ export interface StubPageData {
   // uma foto real definida (data.image). Renderizado como uma caixa de
   // placeholder visivel na pagina, pra facilitar a selecao de fotos.
   imageHint?: string;
+  // Card de metodologia/ferramenta pronto (biblioteca "Creation - Metodos
+  // & Ferramentas", ver Drive) — alternativa a foto quando a pagina e
+  // sobre um metodo especifico (SWOT, Canvas, PMBOK, BPMN, OKR...).
+  // Renderizado sem o tratamento fotografico do PhotoFrame (e um grafico
+  // de marca ja finalizado, nao uma foto a ser recortada/tingida).
+  diagramImage?: StubPageImage;
   parentLabel?: string;
   parentHref?: string;
   blocks?: StubBlock[];
@@ -94,7 +100,6 @@ export interface CaseStub {
   numbers: string[];
   note?: string; // disclaimer de atribuicao/evidencia (ex: avaliacao conduzida por terceiro, resultado abaixo da projecao)
   image?: StubPageImage;
-  imageHint?: string; // usado quando ainda nao ha foto real (ver ImagePlaceholder)
 }
 
 // Ciclo Completo interativo (ver CicloCompletoSection.tsx) — versao

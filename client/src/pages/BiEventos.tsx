@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import PhotoFrame from "@/components/PhotoFrame";
 import { MethodologyCard, MetricsGrid, Funnel } from "@/components/MethodologyCard";
 import { useContent, useLang } from "@/content";
 
@@ -85,12 +86,12 @@ export default function BiEventos() {
   const c = useContent();
   const page = c.biEventosPage;
   const lang = useLang();
-  const heroImageHint =
+  const heroImageAlt =
     lang === "en"
-      ? "Photo of an event data dashboard or a team monitoring an event"
+      ? "Backstage view of an event, with production cases and scaffolding"
       : lang === "es"
-        ? "Foto de un panel de datos de evento o un equipo monitoreando un evento"
-        : "Foto de painel de dados de evento ou equipe acompanhando um evento";
+        ? "Vista de backstage de un evento, con cases de producción y andamios"
+        : "Vista de bastidores de um evento, com cases de produção e estrutura metálica";
   const stepImageHint =
     lang === "en"
       ? "Photo of data collection during an event (check-in, survey, form)"
@@ -120,7 +121,7 @@ export default function BiEventos() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
-        <ImagePlaceholder hint={heroImageHint} />
+        <PhotoFrame src="/images/heroes/bi-de-eventos.webp" alt={heroImageAlt} className="rounded-2xl shadow-sm h-[280px] md:h-[420px]" />
       </div>
 
       {/* Medir começa antes da abertura das inscrições */}

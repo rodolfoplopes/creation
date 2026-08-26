@@ -122,6 +122,14 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
             className="rounded-2xl shadow-sm h-[280px] md:h-[420px]"
           />
         </div>
+      ) : data.diagramImage ? (
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+          <img
+            src={data.diagramImage.src}
+            alt={data.diagramImage.alt}
+            className="w-full h-auto rounded-2xl shadow-sm"
+          />
+        </div>
       ) : data.imageHint ? (
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
           <ImagePlaceholder hint={data.imageHint} />

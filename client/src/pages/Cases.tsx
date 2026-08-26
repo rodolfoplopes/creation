@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import PhotoFrame from "@/components/PhotoFrame";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { stubPages } from "@/content/stub";
 import { useLang } from "@/content";
 
@@ -61,11 +60,9 @@ export default function Cases() {
               key={item.title}
               className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors overflow-hidden"
             >
-              {item.image ? (
+              {item.image && (
                 <PhotoFrame src={item.image.src} alt={item.image.alt} className="h-48" />
-              ) : item.imageHint ? (
-                <ImagePlaceholder hint={item.imageHint} className="h-48" rounded={false} bordered={false} />
-              ) : null}
+              )}
               <div className="p-8">
               <p className="text-caption font-semibold text-abyss/70 mb-2 uppercase tracking-widest">
                 {item.client}

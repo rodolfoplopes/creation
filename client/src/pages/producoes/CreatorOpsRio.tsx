@@ -48,6 +48,18 @@ export default function CreatorOpsRio() {
         </div>
       </section>
 
+      {/* Hero — mesma foto de Operacoes (pedido do cliente, 26/08/2026):
+          Creation Ops Rio e a extensao operacional da Creation no Rio, sem
+          foto propria ainda — reaproveita o hero de Operacoes ate ter uma
+          foto dedicada. */}
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+        <PhotoFrame
+          src="/images/heroes/operacoes.webp"
+          alt="Van em operação logística nas ruas do Rio de Janeiro, com o Morro Dois Irmãos ao fundo"
+          className="rounded-2xl shadow-sm h-[280px] md:h-[420px]"
+        />
+      </div>
+
       {/* Galeria — fotos reais do Rio + Costa Verde */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 bg-abyss">
         {[galleryImg1, galleryImg5, galleryImg6, galleryImg3, galleryImg4, galleryImg2, galleryImg7, galleryImg8].map(

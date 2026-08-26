@@ -176,7 +176,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "diagnostico-e-planejamento": {
-    imageHint: "Photo of a diagnosis meeting or planning workshop with the client",
+    diagramImage: { src: "/images/methodologies/swot.webp", alt: "SWOT card — methodology used in strategic diagnosis" },
     eyebrow: "DIAGNOSIS AND PLANNING",
     title: "Before the plan, the right problem.",
     intro: "Planning too early can organize the wrong answer. Diagnosis clarifies what's happening, why it matters and what conditions need to change.",
@@ -239,7 +239,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "estruturacao-de-projetos": {
-    imageHint: "Photo of a project timeline, project board, or team structuring a plan",
+    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Business Model Canvas card — methodology used in project structuring" },
     eyebrow: "PROJECT STRUCTURING AND VIABILITY",
     title: "An idea only becomes a project when it can be executed.",
     intro: "We structure initiatives so they can be understood, decided on, financed, managed and realized.",
@@ -369,7 +369,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-projetos": {
-    imageHint: "Photo of a PMO in action: follow-up meeting, backlog or project dashboard",
+    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "PMI/PMBOK card — project management methodology" },
     eyebrow: "PROJECT MANAGEMENT AND PMO",
     title: "Projects move forward when decisions have an owner.",
     intro: "We coordinate the system that connects objective, scope, teams, budget, deadline, risks and deliverables.",
@@ -442,7 +442,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-processos": {
-    imageHint: "Photo of process mapping, a flowchart, or an operational meeting",
+    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "BPMN card — business process modeling notation" },
     eyebrow: "BUSINESS PROCESS MANAGEMENT",
     title: "The work needs to function beyond the people who sustain it.",
     intro: "When a process only exists in the memory of whoever runs it, the organization becomes vulnerable to delays, rework, information loss and inconsistent decisions.",
@@ -509,7 +509,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "governanca-e-indicadores": {
-    imageHint: "Photo of an indicator panel, dashboard, or governance meeting",
+    diagramImage: { src: "/images/methodologies/okr.webp", alt: "OKR card — goals and indicators methodology" },
     eyebrow: "GOVERNANCE AND KPIS",
     title: "Decision, responsibility and evidence in the same system.",
     intro: "Governance defines who decides, based on what information and within what limits. Indicators show what needs attention.",

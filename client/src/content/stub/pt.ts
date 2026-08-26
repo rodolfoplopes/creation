@@ -176,7 +176,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "diagnostico-e-planejamento": {
-    imageHint: "Foto de reunião de diagnóstico ou workshop de planejamento com o cliente",
+    diagramImage: { src: "/images/methodologies/swot.webp", alt: "Card SWOT — metodologia usada em diagnóstico estratégico" },
     eyebrow: "DIAGNÓSTICO E PLANEJAMENTO",
     title: "Antes do plano, o problema certo.",
     intro: "Planejar cedo demais pode organizar a resposta errada. O diagnóstico esclarece o que está acontecendo, por que isso importa e quais condições precisam mudar.",
@@ -239,7 +239,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "estruturacao-de-projetos": {
-    imageHint: "Foto de cronograma, quadro de projeto ou equipe estruturando um plano",
+    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Card Business Model Canvas — metodologia usada em estruturação de projetos" },
     eyebrow: "ESTRUTURAÇÃO E VIABILIZAÇÃO DE PROJETOS",
     title: "Uma ideia só vira projeto quando consegue ser executada.",
     intro: "Estruturamos iniciativas para que possam ser compreendidas, decididas, financiadas, geridas e realizadas.",
@@ -369,7 +369,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-projetos": {
-    imageHint: "Foto de PMO em ação: reunião de acompanhamento, backlog ou dashboard de projeto",
+    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "Card PMI/PMBOK — metodologia de gestão de projetos" },
     eyebrow: "GESTÃO DE PROJETOS E PMO",
     title: "Projetos avançam quando decisões têm dono.",
     intro: "Coordenamos o sistema que conecta objetivo, escopo, equipes, orçamento, prazo, riscos e entregas.",
@@ -442,7 +442,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-processos": {
-    imageHint: "Foto de mapeamento de processos, fluxograma ou reunião operacional",
+    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "Card BPMN — notação de modelagem de processos de negócio" },
     eyebrow: "GESTÃO DE PROCESSOS DE NEGÓCIOS",
     title: "O trabalho precisa funcionar além das pessoas que o sustentam.",
     intro: "Quando um processo existe apenas na memória de quem o executa, a organização fica vulnerável a atrasos, retrabalho, perda de informação e decisões inconsistentes.",
@@ -509,7 +509,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "governanca-e-indicadores": {
-    imageHint: "Foto de painel de indicadores, dashboard ou reunião de governança",
+    diagramImage: { src: "/images/methodologies/okr.webp", alt: "Card OKR — metodologia de metas e indicadores" },
     eyebrow: "GOVERNANÇA E INDICADORES",
     title: "Decisão, responsabilidade e evidência no mesmo sistema.",
     intro: "Governança define quem decide, com base em qual informação e dentro de que limite. Indicadores mostram o que precisa de atenção.",
