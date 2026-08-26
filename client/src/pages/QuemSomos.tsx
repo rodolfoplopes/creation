@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import PhotoFrame from "@/components/PhotoFrame";
 import { useContent, useLang, useLocalizedHref } from "@/content";
 import { Link } from "wouter";
 import { Check } from "lucide-react";
@@ -40,9 +41,9 @@ export default function QuemSomos() {
       : lang === "es"
         ? "Foto del equipo o la oficina de Creation"
         : "Foto da equipe ou do escritório da Creation";
-  const leadershipImageHints = [
-    lang === "en" ? "Portrait of Rodolfo Lopes, Managing Director" : lang === "es" ? "Retrato de Rodolfo Lopes, Managing Director" : "Retrato de Rodolfo Lopes, Managing Director",
-    lang === "en" ? "Portrait of Raí Lopes, Creative Director" : lang === "es" ? "Retrato de Raí Lopes, Creative Director" : "Retrato de Raí Lopes, Creative Director",
+  const leadershipPhotos = [
+    { src: "/images/team/rodolfo-lopes.webp", alt: "Rodolfo Lopes, Managing Director" },
+    { src: "/images/team/rai-lopes.webp", alt: "Raí Lopes, Creative Director" },
   ];
 
   return (
@@ -125,15 +126,20 @@ export default function QuemSomos() {
       {/* Liderança — Rodolfo Lopes (Managing Director) + Raí Lopes
           (Creative Director). So foto + nome + funcao por enquanto (pedido
           do cliente, 26/08/2026); bio fica de fora ate as duas liderancas
-          terem o mesmo tratamento. Fotos ainda pendentes (Drive) — quando
-          chegarem, trocar ImagePlaceholder por PhotoFrame com
-          intensity="strong" (tambem pedido do cliente). */}
+          terem o mesmo tratamento. Retratos ja em preto e branco — usa
+          intensity="strong" no PhotoFrame (pedido do cliente) pra reforcar
+          o tom abyss/spark por cima do P&B, em vez do tratamento padrao. */}
       <Section tone="white">
         <SectionHeader title={about.leadership.title} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
           {about.leadership.people.map((person, i) => (
             <div key={person.name} className="rounded-2xl border border-abyss/10 bg-bone/50 overflow-hidden">
-              <ImagePlaceholder hint={leadershipImageHints[i]} className="h-64" rounded={false} bordered={false} />
+              <PhotoFrame
+                src={leadershipPhotos[i].src}
+                alt={leadershipPhotos[i].alt}
+                intensity="strong"
+                className="h-64"
+              />
               <div className="p-6">
                 <h3 className="text-h3 font-bold text-abyss">{person.name}</h3>
                 <p className="text-abyss font-semibold">{person.role}</p>
