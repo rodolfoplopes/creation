@@ -56,6 +56,8 @@ export const stubData: Record<string, StubPageData> = {
 
   estrategia: {
     image: { src: "/images/heroes/estrategia.webp", alt: "Pizarra con un roadmap de producto en una sesión de planificación estratégica" },
+    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Tarjeta 5 Fuerzas de Porter — metodología de análisis competitivo" },
+    secondaryDiagramLabel: "Herramienta de referencia",
     eyebrow: "ESTRATEGIA",
     title: "Claridad antes de la acción.",
     intro: "Investigamos el contexto, organizamos la información y estructuramos las decisiones que permiten al proyecto avanzar con dirección.",
@@ -106,7 +108,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
-    imageHint: "Foto de investigación y análisis de datos, o equipo revisando informes y gráficos",
+    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "Tarjeta PESTEL — metodología de análisis de escenario externo" },
     eyebrow: "INTELIGENCIA DE MERCADO",
     title: "Decidir mejor empieza por entender el mercado real.",
     intro: "Las opiniones internas, las tendencias y los datos aislados no forman una estrategia. La inteligencia de mercado conecta evidencias para responder preguntas específicas sobre demanda, competencia, públicos, contexto y oportunidad.",
@@ -973,6 +975,8 @@ export const stubData: Record<string, StubPageData> = {
     intro: "La intención social no reemplaza la estrategia, la gestión ni la evidencia. Creation ayuda a empresas, organizaciones y socios a transformar compromisos en programas estructurados.",
     lead: "Con públicos definidos, responsabilidades claras y seguimiento compatible con lo que se pretende cambiar.",
     image: { src: "/images/heroes/impacto.webp", alt: "Personas en un entorno natural, parte de un programa de impacto social realizado por Creation" },
+    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Tarjeta Liderazgo de Impacto — organización ambidiestra entre presente y futuro" },
+    secondaryDiagramLabel: "Herramienta de referencia",
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [

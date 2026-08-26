@@ -110,9 +110,17 @@ export const es: Content = {
     },
     leadership: {
       title: "Liderazgo",
-      name: "Rodolfo Lopes",
-      role: "Fundador y liderazgo ejecutivo",
-      bio: "Publicista, emprendedor y gestor de proyectos, actúa en la estructuración y realización de iniciativas ligadas a la innovación, la economía creativa, eventos, comunicación e impacto. Su experiencia combina desarrollo de conceptos, articulación de socios, gestión, producción ejecutiva y una sólida experiencia operativa, conectando el diseño estratégico con el trabajo necesario para hacerlo realidad.",
+      people: [
+        {
+          name: "Rodolfo Lopes",
+          role: "Managing Director",
+          bio: "Publicista, emprendedor y gestor de proyectos, actúa en la estructuración y realización de iniciativas ligadas a la innovación, la economía creativa, eventos, comunicación e impacto. Su experiencia combina desarrollo de conceptos, articulación de socios, gestión, producción ejecutiva y una sólida experiencia operativa, conectando el diseño estratégico con el trabajo necesario para hacerlo realidad.",
+        },
+        {
+          name: "Raí Lopes",
+          role: "Creative Director",
+        },
+      ],
     },
     structure: {
       title: "Una estructura que se forma alrededor del proyecto",

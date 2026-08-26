@@ -119,12 +119,6 @@ export default function MotorSroi() {
       : lang === "es"
         ? "Persona sosteniendo una hoja impresa de cálculo de retorno sobre la inversión"
         : "Pessoa segurando uma folha impressa de cálculo de retorno sobre investimento";
-  const whatIsSroiImageHint =
-    lang === "en"
-      ? "Illustration or photo explaining the social return on investment concept"
-      : lang === "es"
-        ? "Ilustración o foto explicando el concepto de retorno social sobre la inversión"
-        : "Ilustração ou foto explicando o conceito de retorno social sobre investimento";
   const stepImageHint =
     lang === "en"
       ? "Photo of a stakeholder session defining SROI scope"
@@ -172,7 +166,17 @@ export default function MotorSroi() {
               ))}
             </div>
           </div>
-          <ImagePlaceholder hint={whatIsSroiImageHint} className="h-64 lg:h-80" />
+          <img
+            src="/images/methodologies/teoria-da-mudanca.webp"
+            alt={
+              lang === "en"
+                ? "Theory of Change card — logic chain from inputs to impact"
+                : lang === "es"
+                  ? "Tarjeta Teoría del Cambio — cadena lógica de insumos a impacto"
+                  : "Card Teoria da Mudança — cadeia lógica de insumos a impacto"
+            }
+            className="w-full h-auto rounded-2xl shadow-sm"
+          />
         </div>
       </Section>
 

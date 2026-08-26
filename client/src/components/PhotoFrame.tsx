@@ -15,30 +15,44 @@
  * Uso: substitui a tag <img> crua em qualquer lugar que renderiza foto real
  * (nao logos/icones). O container pai continua responsavel por
  * rounded-2xl/aspect/height, como antes.
+ *
+ * intensity="strong" (pedido do cliente, retratos de lideranca em Quem
+ * Somos): mesmo tratamento, mais acentuado — usar com moderacao, so onde
+ * pedido explicitamente.
  */
 export default function PhotoFrame({
   src,
   alt,
   className,
   imgClassName,
+  intensity = "normal",
   "data-testid": dataTestId,
 }: {
   src: string;
   alt: string;
   className?: string;
   imgClassName?: string;
+  intensity?: "normal" | "strong";
   "data-testid"?: string;
 }) {
+  // Classes literais completas — interpolar a string do filtro dentro de
+  // [filter:...] nao funciona: o scanner estatico do Tailwind nao resolve
+  // template literals partidos, so tokens de classe completos e literais.
+  const filterClass =
+    intensity === "strong" ? "[filter:saturate(0.8)_contrast(1.08)]" : "[filter:saturate(0.92)_contrast(1.03)]";
+  const abyssOpacityClass = intensity === "strong" ? "opacity-[0.2]" : "opacity-[0.12]";
+  const sparkOpacityClass = intensity === "strong" ? "opacity-[0.08]" : "opacity-[0.05]";
+
   return (
     <div className={`relative overflow-hidden ${className ?? ""}`}>
       <img
         src={src}
         alt={alt}
-        className={`[filter:saturate(0.92)_contrast(1.03)] ${imgClassName ?? "w-full h-full object-cover"}`}
+        className={`${filterClass} ${imgClassName ?? "w-full h-full object-cover"}`}
         data-testid={dataTestId}
       />
-      <div className="absolute inset-0 bg-abyss mix-blend-multiply opacity-[0.12] pointer-events-none" />
-      <div className="absolute inset-0 bg-spark mix-blend-overlay opacity-[0.05] pointer-events-none" />
+      <div className={`absolute inset-0 bg-abyss mix-blend-multiply ${abyssOpacityClass} pointer-events-none`} />
+      <div className={`absolute inset-0 bg-spark mix-blend-overlay ${sparkOpacityClass} pointer-events-none`} />
     </div>
   );
 }

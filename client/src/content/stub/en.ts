@@ -56,6 +56,8 @@ export const stubData: Record<string, StubPageData> = {
 
   estrategia: {
     image: { src: "/images/heroes/estrategia.webp", alt: "Whiteboard with a product roadmap in a strategic planning session" },
+    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Porter's Five Forces card — competitive analysis methodology" },
+    secondaryDiagramLabel: "Reference tool",
     eyebrow: "STRATEGY",
     title: "Clarity before action.",
     intro: "We investigate the context, organize information and structure the choices that let the project move forward with direction.",
@@ -106,7 +108,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
-    imageHint: "Photo of research and data analysis, or a team reviewing reports and charts",
+    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "PESTEL card — external scenario analysis methodology" },
     eyebrow: "MARKET INTELLIGENCE",
     title: "Deciding better starts with understanding the real market.",
     intro: "Internal opinions, trends and isolated data don't form a strategy. Market intelligence connects evidence to answer specific questions about demand, competition, audiences, context and opportunity.",
@@ -973,6 +975,8 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Social intention doesn't replace strategy, management or evidence. Creation helps companies, organizations and partners turn commitments into structured programs.",
     lead: "With defined audiences, clear responsibilities and follow-up compatible with the change being pursued.",
     image: { src: "/images/heroes/impacto.webp", alt: "People in a natural setting, part of a social impact program run by Creation" },
+    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Impact Leadership card — ambidextrous organization between present and future" },
+    secondaryDiagramLabel: "Reference tool",
     parentLabel: "Solutions",
     parentHref: "/solucoes",
     blocks: [

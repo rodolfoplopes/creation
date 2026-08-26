@@ -40,12 +40,10 @@ export default function QuemSomos() {
       : lang === "es"
         ? "Foto del equipo o la oficina de Creation"
         : "Foto da equipe ou do escritório da Creation";
-  const leadershipImageHint =
-    lang === "en"
-      ? "Portrait of Rodolfo Lopes"
-      : lang === "es"
-        ? "Retrato de Rodolfo Lopes"
-        : "Foto/retrato de Rodolfo Lopes";
+  const leadershipImageHints = [
+    lang === "en" ? "Portrait of Rodolfo Lopes, Managing Director" : lang === "es" ? "Retrato de Rodolfo Lopes, Managing Director" : "Retrato de Rodolfo Lopes, Managing Director",
+    lang === "en" ? "Portrait of Raí Lopes, Creative Director" : lang === "es" ? "Retrato de Raí Lopes, Creative Director" : "Retrato de Raí Lopes, Creative Director",
+  ];
 
   return (
     <Layout>
@@ -124,16 +122,24 @@ export default function QuemSomos() {
         </div>
       </Section>
 
-      {/* Liderança */}
+      {/* Liderança — Rodolfo Lopes (Managing Director) + Raí Lopes
+          (Creative Director). So foto + nome + funcao por enquanto (pedido
+          do cliente, 26/08/2026); bio fica de fora ate as duas liderancas
+          terem o mesmo tratamento. Fotos ainda pendentes (Drive) — quando
+          chegarem, trocar ImagePlaceholder por PhotoFrame com
+          intensity="strong" (tambem pedido do cliente). */}
       <Section tone="white">
         <SectionHeader title={about.leadership.title} />
-        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-6 max-w-4xl">
-          <ImagePlaceholder hint={leadershipImageHint} className="h-[220px] md:h-full" />
-          <div className="rounded-2xl border border-abyss/10 bg-bone/50 p-8 md:p-10">
-            <h3 className="text-h3 font-bold text-abyss">{about.leadership.name}</h3>
-            <p className="text-abyss font-semibold mb-4">{about.leadership.role}</p>
-            <p className="text-abyss/70 leading-relaxed">{about.leadership.bio}</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+          {about.leadership.people.map((person, i) => (
+            <div key={person.name} className="rounded-2xl border border-abyss/10 bg-bone/50 overflow-hidden">
+              <ImagePlaceholder hint={leadershipImageHints[i]} className="h-64" rounded={false} bordered={false} />
+              <div className="p-6">
+                <h3 className="text-h3 font-bold text-abyss">{person.name}</h3>
+                <p className="text-abyss font-semibold">{person.role}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
 

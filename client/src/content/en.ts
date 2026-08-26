@@ -110,9 +110,17 @@ export const en: Content = {
     },
     leadership: {
       title: "Leadership",
-      name: "Rodolfo Lopes",
-      role: "Founder and executive lead",
-      bio: "An advertiser, entrepreneur and project manager, he works on structuring and running initiatives connected to innovation, the creative economy, events, communications and impact. His experience combines concept development, partner engagement, management, executive production and strong operational expertise, connecting strategic design to the work needed to make it happen.",
+      people: [
+        {
+          name: "Rodolfo Lopes",
+          role: "Managing Director",
+          bio: "An advertiser, entrepreneur and project manager, he works on structuring and running initiatives connected to innovation, the creative economy, events, communications and impact. His experience combines concept development, partner engagement, management, executive production and strong operational expertise, connecting strategic design to the work needed to make it happen.",
+        },
+        {
+          name: "Raí Lopes",
+          role: "Creative Director",
+        },
+      ],
     },
     structure: {
       title: "A structure that forms around the project",

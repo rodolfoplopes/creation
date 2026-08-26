@@ -142,6 +142,21 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
 
       {data.cicloCompleto && <CicloCompletoSection variant="full" />}
 
+      {data.secondaryDiagram && (
+        <Section tone="white">
+          {data.secondaryDiagramLabel && (
+            <p className="text-caption font-semibold text-abyss/50 mb-4 uppercase tracking-widest">
+              {data.secondaryDiagramLabel}
+            </p>
+          )}
+          <img
+            src={data.secondaryDiagram.src}
+            alt={data.secondaryDiagram.alt}
+            className="w-full h-auto rounded-2xl shadow-sm"
+          />
+        </Section>
+      )}
+
       {data.children && data.children.length > 0 && (
         <Section tone="white">
           <SectionHeader title={data.childrenLabel ?? "O que podemos assumir"} />

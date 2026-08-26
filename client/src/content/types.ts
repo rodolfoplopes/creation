@@ -84,7 +84,12 @@ export interface Content {
     journey: { title: string; paragraphs: string[] };                     // "Uma trajetoria construida entre disciplinas"
     orgCharts: { title: string; paragraphs: string[] };                   // "Projetos nao respeitam organogramas"
     beliefs: { title: string; items: TitledItem[] };                     // "No que acreditamos" (5 crencas)
-    leadership: { title: string; name: string; role: string; bio: string }; // Rodolfo Lopes
+    // Rodolfo Lopes (Managing Director) + Rai Lopes (Diretor Criativo).
+    // FOTO+NOME+FUNCAO por enquanto (pedido do cliente, 26/08/2026) — bio
+    // so existe hoje pra Rodolfo (conteudo ja aprovado antes da segunda
+    // lideranca entrar), e fica de fora da renderizacao ate as duas terem
+    // o mesmo tratamento.
+    leadership: { title: string; people: { name: string; role: string; bio?: string }[] };
     structure: { title: string; paragraphs: string[] };                  // "Uma estrutura que se forma em torno do projeto"
     forWhom: { title: string; items: string[]; note: string };
     closing: { title: string; body: string; casesLabel: string };        // "O que permanece desde 2009"

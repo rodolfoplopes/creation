@@ -56,6 +56,11 @@ export interface StubPageData {
   // Renderizado sem o tratamento fotografico do PhotoFrame (e um grafico
   // de marca ja finalizado, nao uma foto a ser recortada/tingida).
   diagramImage?: StubPageImage;
+  // Card de metodologia como reforco visual secundario — pagina ja tem
+  // foto real no hero (data.image), esse card entra depois dos blocks,
+  // antes de children/CTA, com um rotulo curto (secondaryDiagramLabel).
+  secondaryDiagram?: StubPageImage;
+  secondaryDiagramLabel?: string;
   parentLabel?: string;
   parentHref?: string;
   blocks?: StubBlock[];

@@ -56,6 +56,8 @@ export const stubData: Record<string, StubPageData> = {
 
   estrategia: {
     image: { src: "/images/heroes/estrategia.webp", alt: "Quadro branco com roadmap de produto em sessão de planejamento estratégico" },
+    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Card 5 Forças de Porter — metodologia de análise competitiva" },
+    secondaryDiagramLabel: "Ferramenta de referência",
     eyebrow: "ESTRATÉGIA",
     title: "Clareza antes da ação.",
     intro: "Investigamos o contexto, organizamos as informações e estruturamos as escolhas que permitem ao projeto avançar com direção.",
@@ -106,7 +108,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
-    imageHint: "Foto de pesquisa e análise de dados, ou equipe revisando relatórios e gráficos",
+    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "Card PESTEL — metodologia de análise de cenário externo" },
     eyebrow: "INTELIGÊNCIA DE MERCADO",
     title: "Decidir melhor começa por entender o mercado real.",
     intro: "Opiniões internas, tendências e dados isolados não formam uma estratégia. A inteligência de mercado conecta evidências para responder perguntas específicas sobre demanda, concorrência, públicos, contexto e oportunidade.",
@@ -973,6 +975,8 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Intenção social não substitui estratégia, gestão nem evidência. A Creation ajuda empresas, organizações e parceiros a transformar compromissos em programas estruturados.",
     lead: "Com públicos definidos, responsabilidades claras e acompanhamento compatível com o que se pretende mudar.",
     image: { src: "/images/heroes/impacto.webp", alt: "Pessoas em ambiente natural, parte de um programa de impacto social realizado pela Creation" },
+    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Card Liderança de Impacto — organização ambidestra entre presente e futuro" },
+    secondaryDiagramLabel: "Ferramenta de referência",
     parentLabel: "Soluções",
     parentHref: "/solucoes",
     blocks: [
