@@ -4,6 +4,7 @@ import CapacidadesSection from "@/components/CapacidadesSection";
 import EspecialidadesSection from "@/components/EspecialidadesSection";
 import SolucoesCreationSection from "@/components/SolucoesCreationSection";
 import WhyWeExistSection from "@/components/WhyWeExistSection";
+import ClientLogosSlideshow from "@/components/ClientLogosSlideshow";
 import CicloCompletoSection from "@/components/CicloCompletoSection";
 import TargetAudienceSection from "@/components/TargetAudienceSection";
 import CTASection from "@/components/CTASection";
@@ -60,6 +61,11 @@ const navLabels = {
  * CicloCompletoSection variant="teaser" — mesmo Ciclo Completo (Entender/
  * Estruturar/Realizar/Comprovar) que agora tambem aparece, na versao
  * interativa completa, em /como-trabalhamos (ver StubPageLayout.tsx).
+ *
+ * ClientLogosSlideshow: restaurado na Home (pedido do cliente, 25/08/2026)
+ * como prova social logo apos o carrossel de fotos — nao entra em Quem
+ * Somos, que segue fiel ao doc aprovado 30-Quem-Somos.md (ver comentario
+ * em QuemSomos.tsx).
  */
 export default function Home() {
   const lang = useLang();
@@ -68,6 +74,7 @@ export default function Home() {
     <Layout>
       <HeroSection />
       <WhyWeExistSection />
+      <ClientLogosSlideshow />
       <SectionNav items={navLabels[lang]} />
       <CapacidadesSection />
       <EspecialidadesSection />
