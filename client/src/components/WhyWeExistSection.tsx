@@ -4,12 +4,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import PhotoFrame from "@/components/PhotoFrame";
 
 /**
- * Voltou para as 3 fotos originais que sobraram do primeiro corte
- * (Creation Pro Story, Expo, ReservaX Lounge). As 3 novas (slide-home-
- * 04/05/06) foram removidas — corte/enquadramento ruim com object-cover
- * em altura fixa (rosto cortado, foto esticada). Se voltar a tentar fotos
- * novas aqui, pre-cortar pra uma proporcao larga (perto de 16:9) antes de
- * subir evita o mesmo problema.
+ * FOTOS NOVAS (25/08/2026, pasta Drive "Imagens do Site/Slide-Hero-Home"):
+ * 6 fotos reais de eventos/producoes da Creation, ja com o tratamento de
+ * design proprio do cliente (contorno/overlay) aplicado antes do envio.
+ * Substituem as 3 fotos antigas (story-line/expo/world-creativity).
+ * Pre-cortadas em proporcao larga pelo cliente — evita o problema de
+ * rosto cortado/foto esticada que a tentativa anterior teve.
  *
  * ENTRADA DE IMAGEM (pedido explicito do cliente — emular notion.com):
  * o carrossel deixou de ser full-bleed (py-0, borda a borda) e passou a
@@ -25,9 +25,12 @@ import PhotoFrame from "@/components/PhotoFrame";
  * aparece cortado no rodape da dobra inicial.
  */
 const slides = [
-  { src: "/images/story-line.webp", alt: "Creation Pro Story" },
-  { src: "/images/expo.webp", alt: "Expo" },
-  { src: "/images/world-creativity.webp", alt: "World Creativity Day" },
+  { src: "/images/home-slides/slide-0.webp", alt: "Ativação de rua em evento da Creation" },
+  { src: "/images/home-slides/slide-1.webp", alt: "Feira e distribuição de material educativo em evento da Creation" },
+  { src: "/images/home-slides/slide-2.webp", alt: "ReservaX Lounge, ativação de marca realizada pela Creation" },
+  { src: "/images/home-slides/slide-3.webp", alt: "Plateia em conferência produzida pela Creation" },
+  { src: "/images/home-slides/slide-4.webp", alt: "Caiaque na praia" },
+  { src: "/images/home-slides/slide-5.webp", alt: "Veleiro na Baía de Guanabara com o Pão de Açúcar ao fundo" },
 ];
 export default function WhyWeExistSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });

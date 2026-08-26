@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import PhotoFrame from "@/components/PhotoFrame";
 import SectionNav from "@/components/SectionNav";
 import { useContent, useLang } from "@/content";
 
@@ -50,12 +51,12 @@ export default function OngZero() {
   const c = useContent();
   const page = c.ongZeroPage;
   const lang = useLang();
-  const heroImageHint =
+  const heroImageAlt =
     lang === "en"
-      ? "Photo of a community/social initiative team in action"
+      ? "Windsock against the sky, a symbol for finding direction from zero"
       : lang === "es"
-        ? "Foto de un equipo de comunidad/iniciativa social en acción"
-        : "Foto de equipe ou comunidade de uma iniciativa social em atividade";
+        ? "Manga de viento contra el cielo, símbolo de encontrar la dirección desde cero"
+        : "Manga de vento contra o céu, símbolo de encontrar a direção a partir do zero";
   const stepImageHint =
     lang === "en"
       ? "Photo of the first operating cycles of the implementation"
@@ -94,7 +95,7 @@ export default function OngZero() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
-        <ImagePlaceholder hint={heroImageHint} />
+        <PhotoFrame src="/images/heroes/ong-zero.webp" alt={heroImageAlt} className="rounded-2xl shadow-sm h-[280px] md:h-[420px]" />
       </div>
 
       <SectionNav items={navLabels[lang]} />

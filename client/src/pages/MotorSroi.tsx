@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import PhotoFrame from "@/components/PhotoFrame";
 import SectionNav from "@/components/SectionNav";
 import { MethodologyCard, MetricsGrid, DataTable } from "@/components/MethodologyCard";
 import { useContent, useLang } from "@/content";
@@ -112,12 +113,12 @@ export default function MotorSroi() {
   const c = useContent();
   const page = c.motorSroiPage;
   const lang = useLang();
-  const heroImageHint =
+  const heroImageAlt =
     lang === "en"
-      ? "Photo of a team analyzing social impact data or in a stakeholder session"
+      ? "Person holding a printed return-on-investment calculation sheet"
       : lang === "es"
-        ? "Foto de un equipo analizando datos de impacto social o en una sesión con partes interesadas"
-        : "Foto de equipe analisando dados de impacto social ou em sessão com stakeholders";
+        ? "Persona sosteniendo una hoja impresa de cálculo de retorno sobre la inversión"
+        : "Pessoa segurando uma folha impressa de cálculo de retorno sobre investimento";
   const whatIsSroiImageHint =
     lang === "en"
       ? "Illustration or photo explaining the social return on investment concept"
@@ -150,7 +151,7 @@ export default function MotorSroi() {
       </section>
 
       <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
-        <ImagePlaceholder hint={heroImageHint} />
+        <PhotoFrame src="/images/heroes/motor-sroi.webp" alt={heroImageAlt} className="rounded-2xl shadow-sm h-[280px] md:h-[420px]" />
       </div>
 
       <SectionNav items={navLabels[lang]} />

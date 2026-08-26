@@ -8,7 +8,7 @@ import caseWorldCreativity from "@assets/case-world-creativity-day..jpg";
 
 export const stubData: Record<string, StubPageData> = {
   solucoes: {
-    imageHint: "Foto del equipo de Creation en una reunión de planificación o trabajo colaborativo",
+    image: { src: "/images/heroes/solucoes.webp", alt: "Manos organizando un cubo mágico, metáfora de la resolución de problemas" },
     eyebrow: "SOLUCIONES",
     title: "Soluciones que empiezan por el desafío, no por el catálogo.",
     intro:
@@ -55,7 +55,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   estrategia: {
-    imageHint: "Foto de una sesión de planificación estratégica, pizarra o reunión de diagnóstico",
+    image: { src: "/images/heroes/estrategia.webp", alt: "Pizarra con un roadmap de producto en una sesión de planificación estratégica" },
     eyebrow: "ESTRATEGIA",
     title: "Claridad antes de la acción.",
     intro: "Investigamos el contexto, organizamos la información y estructuramos las decisiones que permiten al proyecto avanzar con dirección.",
@@ -306,7 +306,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   gestao: {
-    imageHint: "Foto de un equipo en rutina de gestión, reunión de estado o panel de indicadores",
+    image: { src: "/images/heroes/gestao.webp", alt: "Cuaderno con bocetos de indicadores y panel de gestión" },
     eyebrow: "GESTIÓN",
     title: "La responsabilidad que no se transfiere.",
     intro: "Un plan no crea ritmo por sí solo. Los proyectos avanzan cuando las decisiones tienen responsables, la información circula, los riesgos se gestionan y los equipos saben qué debe suceder a continuación.",
@@ -581,7 +581,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   operacoes: {
-    imageHint: "Foto de una operación en campo: evento, producción o equipo en ejecución",
+    image: { src: "/images/heroes/operacoes.webp", alt: "Furgoneta en una operación logística en las calles de Río de Janeiro, con el Morro Dois Irmãos al fondo" },
     eyebrow: "OPERACIONES",
     title: "Es en la ejecución donde el proyecto se decide.",
     intro: "Un buen plan necesita funcionar en el tiempo, el presupuesto y el territorio reales. Creation coordina personas, proveedores, recursos, permisos, traslados y decisiones para que cada frente avance con claridad hasta la entrega.",
@@ -639,7 +639,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-eventos": {
-    imageHint: "Foto de un evento en producción: montaje, acreditación o equipo operativo",
+    image: { src: "/images/heroes/gestao-de-eventos.webp", alt: "Público en un evento de gran escala, parte de la gestión de eventos de Creation" },
     eyebrow: "GESTIÓN DE EVENTOS",
     title: "Un evento empieza mucho antes del montaje.",
     intro: "Objetivo, público, experiencia, contenido, presupuesto y operación necesitan apuntar en la misma dirección.",
@@ -707,7 +707,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "producao-executiva": {
-    imageHint: "Foto de producción ejecutiva en campo: equipo, equipamiento u operación en vivo",
+    image: { src: "/images/heroes/producao-executiva.webp", alt: "Concierto en producción ejecutiva realizado por Creation, en la playa" },
     eyebrow: "PRODUCCIÓN EJECUTIVA",
     title: "La producción ejecutiva es transformar muchas dependencias en una entrega.",
     intro: "Cuando el proyecto necesita salir del papel, cada contratación, plazo, acceso y decisión empieza a afectar al conjunto.",
@@ -905,7 +905,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Las ideas ganan valor cuando se convierten en proyectos.",
     intro: "La innovación no empieza en una dinámica ni termina en una presentación. Necesita un problema relevante, criterios de decisión, personas movilizadas y un camino para probar, aprender e implementar.",
     lead: "Creation estructura y realiza iniciativas de innovación conectadas a la estrategia y a la capacidad real de la organización.",
-    image: { src: "/images/blockchain-rio.webp", alt: "Blockchain Rio — evento de innovación realizado por Creation" },
+    image: { src: "/images/heroes/inovacao.webp", alt: "Tarjetas de estrategia de marca siendo organizadas en un proceso de innovación" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -972,7 +972,7 @@ export const stubData: Record<string, StubPageData> = {
     title: "Impacto que se construye y se comprueba.",
     intro: "La intención social no reemplaza la estrategia, la gestión ni la evidencia. Creation ayuda a empresas, organizaciones y socios a transformar compromisos en programas estructurados.",
     lead: "Con públicos definidos, responsabilidades claras y seguimiento compatible con lo que se pretende cambiar.",
-    image: { src: "/images/impacto-artesanato.webp", alt: "Feria de artesanía local, parte de un programa de impacto realizado por Creation" },
+    image: { src: "/images/heroes/impacto.webp", alt: "Personas en un entorno natural, parte de un programa de impacto social realizado por Creation" },
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
     blocks: [
@@ -1039,7 +1039,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "marketing-de-causa": {
-    imageHint: "Foto de una activación de marca vinculada a una causa social, evento o campaña",
+    image: { src: "/images/heroes/marketing-de-causa.webp", alt: "Activación de marca vinculada a una causa social en una feria de artesanía" },
     eyebrow: "MARKETING DE CAUSA",
     title: "Una causa no puede ser solo una campaña.",
     intro: "Cuando una marca se asocia a una cuestión social, asume responsabilidad sobre lo que promete, cómo actúa y a quién involucra.",
