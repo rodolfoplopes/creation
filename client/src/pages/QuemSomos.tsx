@@ -138,7 +138,8 @@ export default function QuemSomos() {
                 src={leadershipPhotos[i].src}
                 alt={leadershipPhotos[i].alt}
                 intensity="strong"
-                className="h-64"
+                className="h-80"
+                imgClassName="w-full h-full object-cover object-top"
               />
               <div className="p-6">
                 <h3 className="text-h3 font-bold text-abyss">{person.name}</h3>
