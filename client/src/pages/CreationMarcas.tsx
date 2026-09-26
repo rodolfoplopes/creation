@@ -58,9 +58,11 @@ export default function CreationMarcas() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
-        <ImagePlaceholder hint={heroImageHint} />
-      </div>
+      {import.meta.env.DEV && (
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+          <ImagePlaceholder hint={heroImageHint} />
+        </div>
+      )}
 
       {/* Registrar é um processo, não uma promessa de aprovação */}
       <Section tone="white">
@@ -86,7 +88,7 @@ export default function CreationMarcas() {
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
               {/* Processo mostrado, nao so descrito (pedido do cliente,
                   emula notion.com): a etapa "Conversa inicial" ganha foto. */}
-              {i === 0 && (
+              {i === 0 && import.meta.env.DEV && (
                 <ImagePlaceholder hint={stepImageHint} className="mb-4 h-32" />
               )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">

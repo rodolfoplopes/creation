@@ -130,7 +130,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
             className="w-full h-auto rounded-2xl shadow-sm"
           />
         </div>
-      ) : data.imageHint ? (
+      ) : data.imageHint && import.meta.env.DEV ? (
         <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
           <ImagePlaceholder hint={data.imageHint} />
         </div>

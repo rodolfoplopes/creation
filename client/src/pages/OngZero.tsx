@@ -103,9 +103,24 @@ export default function OngZero() {
       {/* O começo costuma reunir urgência e pouca estrutura — layout
           alternado (imagem + texto), emula notion.com */}
       <Section id="comeco" tone="white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <ImagePlaceholder hint={beginningImageHint} className="h-64 lg:h-80 order-2 lg:order-1" />
-          <div className="order-1 lg:order-2">
+        {import.meta.env.DEV ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <ImagePlaceholder hint={beginningImageHint} className="h-64 lg:h-80 order-2 lg:order-1" />
+            <div className="order-1 lg:order-2">
+              <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+                {page.beginning.title}
+              </h2>
+              <div className="space-y-4">
+                {page.beginning.paragraphs.map((paragraph, i) => (
+                  <p key={i} className="text-abyss/70 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="max-w-measure">
             <h2 className="font-display text-h2 font-bold text-abyss mb-4">
               {page.beginning.title}
             </h2>
@@ -117,7 +132,7 @@ export default function OngZero() {
               ))}
             </div>
           </div>
-        </div>
+        )}
       </Section>
 
       {/* Para quem */}
@@ -190,8 +205,24 @@ export default function OngZero() {
       {/* Estrutura proporcional ao estágio — layout alternado (texto +
           imagem), lado invertido em relacao a secao "comeco" acima */}
       <Section id="proporcional" tone="white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div>
+        {import.meta.env.DEV ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <h2 className="font-display text-h2 font-bold text-abyss mb-4">
+                {page.proportionalStructure.title}
+              </h2>
+              <div className="space-y-4">
+                {page.proportionalStructure.paragraphs.map((paragraph, i) => (
+                  <p key={i} className="text-abyss/70 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <ImagePlaceholder hint={proportionalImageHint} className="h-64 lg:h-80" />
+          </div>
+        ) : (
+          <div className="max-w-measure">
             <h2 className="font-display text-h2 font-bold text-abyss mb-4">
               {page.proportionalStructure.title}
             </h2>
@@ -203,8 +234,7 @@ export default function OngZero() {
               ))}
             </div>
           </div>
-          <ImagePlaceholder hint={proportionalImageHint} className="h-64 lg:h-80" />
-        </div>
+        )}
       </Section>
 
       {/* Fechamento */}

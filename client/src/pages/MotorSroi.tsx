@@ -202,7 +202,7 @@ export default function MotorSroi() {
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
               {/* Processo mostrado, nao so descrito (pedido do cliente,
                   emula notion.com): a etapa "Escopo e stakeholders" ganha foto. */}
-              {i === 0 && (
+              {i === 0 && import.meta.env.DEV && (
                 <ImagePlaceholder hint={stepImageHint} className="mb-4 h-32" />
               )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">

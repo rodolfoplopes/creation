@@ -247,7 +247,7 @@ export default function BiEventos() {
             <div key={step.title} className="border-l-2 border-spark pl-6 py-1">
               {/* Processo mostrado, nao so descrito (pedido do cliente,
                   emula notion.com): a etapa "Coleta" ganha foto. */}
-              {i === 2 && (
+              {i === 2 && import.meta.env.DEV && (
                 <ImagePlaceholder hint={stepImageHint} className="mb-4 h-32" />
               )}
               <p className="text-caption font-semibold text-spark mb-2 tracking-widest">

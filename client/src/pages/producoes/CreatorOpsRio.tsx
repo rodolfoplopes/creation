@@ -60,15 +60,24 @@ export default function CreatorOpsRio() {
         />
       </div>
 
-      {/* Galeria — fotos reais do Rio + Costa Verde */}
+      {/* Galeria — fotos reais do Rio + Costa Verde. Alt descritivo por
+          foto (Tarefa 7.3, comando tecnico 26/09/2026) — antes vinha vazio
+          pra todas. */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 bg-abyss">
-        {[galleryImg1, galleryImg5, galleryImg6, galleryImg3, galleryImg4, galleryImg2, galleryImg7, galleryImg8].map(
-          (img, i) => (
-            <div key={i} className="aspect-square overflow-hidden">
-              <PhotoFrame src={img} alt="" className="w-full h-full" />
-            </div>
-          ),
-        )}
+        {[
+          { src: galleryImg1, alt: "Vista do Cristo Redentor sobre o Rio de Janeiro ao amanhecer" },
+          { src: galleryImg5, alt: "Praia de Ipanema ao pôr do sol, com o Morro Dois Irmãos ao fundo" },
+          { src: galleryImg6, alt: "Costa rochosa e enseada na região da Costa Verde/Búzios" },
+          { src: galleryImg3, alt: "Escadaria Selarón, no centro do Rio de Janeiro" },
+          { src: galleryImg4, alt: "Rua colonial de casario colorido em Paraty" },
+          { src: galleryImg2, alt: "Bondinho do Pão de Açúcar ao entardecer, com o Corcovado ao fundo" },
+          { src: galleryImg7, alt: "Praça da matriz colonial de Paraty ao entardecer" },
+          { src: galleryImg8, alt: "Parque Lage com o Corcovado ao fundo, Rio de Janeiro" },
+        ].map(({ src, alt }, i) => (
+          <div key={i} className="aspect-square overflow-hidden">
+            <PhotoFrame src={src} alt={alt} className="w-full h-full" />
+          </div>
+        ))}
       </div>
 
       {/* Conhecimento de território com disciplina de projeto */}

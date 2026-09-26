@@ -143,7 +143,7 @@ export default function CreationProfile() {
               arquivo real. Trocar por <img src="..." /> quando chegar. */}
           <div className="hidden lg:block">
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={heroImg} alt="" className="w-full h-full object-cover" />
+              <img src={heroImg} alt="Corporate portrait placeholder" className="w-full h-full object-cover" />
             </div>
           </div>
           </div>

@@ -71,9 +71,11 @@ export default function QuemSomos() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
-        <ImagePlaceholder hint={heroImageHint} />
-      </div>
+      {import.meta.env.DEV && (
+        <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16 xl:px-24 pb-14 md:pb-20">
+          <ImagePlaceholder hint={heroImageHint} />
+        </div>
+      )}
 
       {/* Uma trajetória construída entre disciplinas */}
       <Section tone="white">

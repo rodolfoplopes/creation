@@ -4,8 +4,14 @@ import { useLang } from "@/content";
 /**
  * Caixa visivel indicando onde uma foto real deve entrar. Usada nas
  * paginas que ainda nao tem foto definida (data.imageHint), pra deixar
- * claro pro cliente o que falta selecionar/enviar — pedido explicito
- * dele em vez de deixar o gap invisivel.
+ * claro pro time o que falta selecionar/enviar.
+ *
+ * FIX (Tarefa 7.1a, comando tecnico 26/09/2026): a caixa so renderiza em
+ * desenvolvimento (import.meta.env.DEV). Em producao ela expunha pro
+ * publico o texto "Foto sugerida: " + a dica interna — informacao de
+ * bastidor que nao deveria estar no ar. O componente que chama este aqui
+ * (StubPageLayout e as paginas com placeholder proprio) e responsavel por
+ * nao deixar espaco/gap orfao quando isto retorna null (ver Tarefa 7.1b/c).
  */
 export default function ImagePlaceholder({
   hint,
@@ -23,6 +29,8 @@ export default function ImagePlaceholder({
 }) {
   const lang = useLang();
   const label = lang === "en" ? "Suggested photo: " : lang === "es" ? "Foto sugerida: " : "Foto sugerida: ";
+
+  if (!import.meta.env.DEV) return null;
 
   return (
     <div
