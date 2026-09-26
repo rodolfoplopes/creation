@@ -28,6 +28,7 @@ import {
   type SupportedLang,
 } from "@/lib/lang";
 import { resolveInitialLang } from "@/lib/detectLang";
+import { trackPageView } from "@/lib/analytics";
 
 /**
  * `import './i18n'` REMOVIDO (Sprint 0). O idioma vem da rota e o conteudo do
@@ -93,6 +94,16 @@ function ScrollToTop({ path }: { path: string }) {
   return null;
 }
 
+// Dispara page_view no GA4 a cada troca de rota, incluindo a primeira
+// renderizacao (Tarefa 1.2, comando tecnico 26/09/2026) — necessario porque
+// send_page_view:false desliga o pageview automatico do gtag.js.
+function PageViewTracker({ path }: { path: string }) {
+  useEffect(() => {
+    trackPageView(path, document.title);
+  }, [path]);
+  return null;
+}
+
 function LangRouter({ lang }: { lang: SupportedLang }) {
   const [location] = useLocation();
   const s = stubPages[lang].stubData;
@@ -100,6 +111,7 @@ function LangRouter({ lang }: { lang: SupportedLang }) {
   return (
     <>
       <ScrollToTop path={location} />
+      <PageViewTracker path={location} />
       <LanguageSync lang={lang} />
       <HrefLangTags currentPath={location} />
       <Switch>

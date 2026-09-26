@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocalizedHref } from "@/content";
+import { trackEvent } from "@/lib/analytics";
 
 // ============================================================================
 // PRIMITIVOS — Manual de Identidade V6.0
@@ -237,6 +238,7 @@ export function CTAButton({
   className?: string;
 }) {
   const localize = useLocalizedHref();
+  const [page] = useLocation();
 
   const styles = {
     primary: onDark
@@ -250,9 +252,17 @@ export function CTAButton({
       : "text-abyss font-semibold underline underline-offset-4 hover:gap-3",
   }[variant];
 
+  // cta_click centralizado aqui (Tarefa 1.3, comando tecnico 26/09/2026) —
+  // qualquer CTAButton do site reporta sozinho, sem instrumentar pagina a
+  // pagina.
+  const handleClick = () => {
+    trackEvent("cta_click", { label, href, page });
+  };
+
   return (
     <Link href={localize(href)}>
       <span
+        onClick={handleClick}
         className={cn(
           "inline-flex items-center gap-2 font-semibold transition-all cursor-pointer active:scale-[0.97]",
           styles,

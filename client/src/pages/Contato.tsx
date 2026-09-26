@@ -17,6 +17,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
 import { useContent, useLang } from "@/content";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * REMOVIDO: um MutationObserver que observava o <body> inteiro (childList,
@@ -99,6 +100,11 @@ export default function Contato() {
       });
 
       if (!response.ok) throw new Error("Failed to send message");
+
+      trackEvent("generate_lead", {
+        form: "contato",
+        ...(formData.projectType ? { project_type: formData.projectType } : {}),
+      });
 
       setSubmitted(true);
       setFormData({
@@ -358,6 +364,7 @@ export default function Contato() {
                 <div className="space-y-3">
                   <a
                     href={`mailto:${c.contact.aside.email}`}
+                    onClick={() => trackEvent("email_click", { source: "contato_aside" })}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-spark/5 transition-colors"
                   >
                     <Mail className="h-5 w-5 text-abyss" />
@@ -369,6 +376,7 @@ export default function Contato() {
                     href="https://wa.me/5521999176231"
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("whatsapp_click", { source: "contato_aside" })}
                     className="flex items-center gap-3 p-3 rounded-xl bg-white hover:bg-spark/5 transition-colors"
                   >
                     <MessageSquare className="h-5 w-5 text-abyss" />
