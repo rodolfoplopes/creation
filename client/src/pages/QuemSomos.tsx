@@ -65,7 +65,7 @@ export default function QuemSomos() {
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
+            <CTAButton label={about.hero.ctaLabel} href={c.cta.href} variant="primary" />
             <CTAButton label={c.cta.secondary} href={c.cta.methodHref} variant="secondary" />
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function QuemSomos() {
                 {about.closing.casesLabel}
               </span>
             </Link>
-            <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" onDark />
+            <CTAButton label={about.closing.ctaLabel} href={c.cta.href} variant="primary" onDark />
           </div>
         </div>
       </Section>

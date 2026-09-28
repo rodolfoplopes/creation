@@ -5,7 +5,7 @@ export const en: Content = {
     name: "Creation",
     microcopy: "Clarity. Rhythm. Execution.",
     footerTagline: "Thinking and doing are the same responsibility.",
-    locations: "Brazil | United States",
+    locations: "Rio de Janeiro, Brazil. We also serve clients from the United States.",
   },
 
   nav: {
@@ -14,7 +14,7 @@ export const en: Content = {
   },
 
   cta: {
-    primary: "Book a call",
+    primary: "Tell us about your project",
     secondary: "See the Method",
     href: "/contato",
     methodHref: "/como-trabalhamos",
@@ -50,7 +50,7 @@ export const en: Content = {
       },
       {
         title: "Cultural and creative organizations",
-        description: "That need to get projects off the ground and raise funding.",
+        description: "That need to get projects off the ground, raise funds through open calls or incentive laws, and report back without a scramble.",
       },
       {
         title: "Public sector and brands",
@@ -101,6 +101,7 @@ export const en: Content = {
         "Over time, execution revealed a simple truth: a project's biggest problems usually surface before delivery day. They live in the lack of clarity, scope, governance, rhythm and connection between who decides and who does.",
         "That's how Creation became a multidisciplinary project company.",
       ],
+      ctaLabel: "Talk to Creation",
     },
     journey: {
       title: "A path built across disciplines",
@@ -177,6 +178,7 @@ export const en: Content = {
       title: "What has remained over time",
       body: "Creation has changed in scale, language and repertoire. The core commitment has stayed the same: understanding what needs to happen and taking on the work required to turn decision into reality.",
       casesLabel: "See our Cases",
+      ctaLabel: "Tell us about your project",
     },
   },
 
@@ -193,7 +195,7 @@ export const en: Content = {
       ],
     },
     whatWeCanTake: {
-      title: "What we can take on",
+      title: "What we take on",
       items: [
         "location research and technical scouting",
         "fixer support and local production",
@@ -382,7 +384,7 @@ export const en: Content = {
       note: "Forming a legal entity isn't always the first or best path. The initial stage assesses alternatives before recommending a structure.",
     },
     journey: {
-      title: "A possible journey.",
+      title: "How the journey unfolds.",
       steps: [
         { title: "Purpose and context", description: "Problem, audiences, territory, existing activity, legitimacy, goals and limits." },
         { title: "Operating model", description: "Programs, services, audiences, partnerships, social value proposition and priorities." },
@@ -468,7 +470,7 @@ export const en: Content = {
       note: "When these requirements don't yet exist, the best work may be to prepare the measurement system before calculating an SROI ratio.",
     },
     journey: {
-      title: "A possible journey",
+      title: "How the journey unfolds",
       steps: [
         { title: "Scope and stakeholders", description: "Defining the object, period, boundaries, audiences, users of the analysis and the decisions it should support." },
         { title: "Changes", description: "Building or reviewing the theory of change and identifying relevant outcomes, including unintended or negative changes." },
@@ -685,7 +687,7 @@ export const en: Content = {
 
   footer: {
     description: "Thinking and doing are the same responsibility.",
-    locations: "Brazil | United States",
+    locations: "Rio de Janeiro, Brazil. We also serve clients from the United States.",
     companyTitle: "Creation",
     companyLinks: [
       { label: "About", href: "/quem-somos" },

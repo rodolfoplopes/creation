@@ -17,6 +17,12 @@ export interface StubBulletBlock {
   heading: string;
   intro?: string;
   items: string[];
+  // Ressalva de responsabilidade legal (Tarefa 5.1, comando tecnico
+  // 26/09/2026) — usado no bloco de fomento/projetos incentivados, onde a
+  // nota nao e opcional no conteudo (e o que diferencia a secao de
+  // promessa vazia), mas fica opcional no tipo porque nem todo bloco de
+  // bullets precisa de uma.
+  note?: string;
 }
 
 export interface StubCardBlock {

@@ -1,7 +1,7 @@
 import { Section, CTAButton } from "@/components/primitives";
 import { useContent } from "@/content";
 
-export default function CTASection() {
+export default function CTASection({ label }: { label?: string } = {}) {
   const c = useContent();
 
   return (
@@ -19,7 +19,7 @@ export default function CTASection() {
         </p>
 
         <CTAButton
-          label={c.cta.primary}
+          label={label ?? c.cta.primary}
           href={c.cta.href}
           variant="primary"
           onDark

@@ -5,7 +5,7 @@ export const es: Content = {
     name: "Creation",
     microcopy: "Claridad. Ritmo. Ejecución.",
     footerTagline: "Pensar y hacer son la misma responsabilidad.",
-    locations: "Brasil | Estados Unidos",
+    locations: "Río de Janeiro, Brasil. También atendemos desde los Estados Unidos.",
   },
 
   nav: {
@@ -14,7 +14,7 @@ export const es: Content = {
   },
 
   cta: {
-    primary: "Agendar una llamada",
+    primary: "Cuéntenos su proyecto",
     secondary: "Conocer el método",
     href: "/contato",
     methodHref: "/como-trabalhamos",
@@ -50,7 +50,7 @@ export const es: Content = {
       },
       {
         title: "Organizaciones culturales y creativas",
-        description: "Que necesitan viabilizar proyectos y captar recursos.",
+        description: "Que necesitan viabilizar proyectos, captar en convocatorias o incentivos, y rendir cuentas sin apuros.",
       },
       {
         title: "Sector público y marcas",
@@ -101,6 +101,7 @@ export const es: Content = {
         "Con el tiempo, la ejecución reveló una verdad simple: los mayores problemas de un proyecto suelen surgir antes del día de la entrega. Están en la falta de claridad, alcance, gobernanza, ritmo y conexión entre quien decide y quien hace.",
         "Así fue como Creation se convirtió en una empresa multidisciplinaria de proyectos.",
       ],
+      ctaLabel: "Hablar con Creation",
     },
     journey: {
       title: "Una trayectoria construida entre disciplinas",
@@ -177,6 +178,7 @@ export const es: Content = {
       title: "Lo que permanece a lo largo del tiempo",
       body: "Creation cambió de escala, lenguaje y repertorio. El compromiso central permaneció: comprender qué necesita suceder y asumir el trabajo necesario para transformar decisión en realización.",
       casesLabel: "Vea nuestros Cases",
+      ctaLabel: "Cuéntenos su proyecto",
     },
   },
 
@@ -193,7 +195,7 @@ export const es: Content = {
       ],
     },
     whatWeCanTake: {
-      title: "Lo que podemos asumir",
+      title: "Lo que asumimos",
       items: [
         "investigación de locaciones y visitas técnicas",
         "soporte fixer y producción local",
@@ -382,7 +384,7 @@ export const es: Content = {
       note: "La constitución de una persona jurídica no siempre es el primer ni el mejor camino. La etapa inicial evalúa alternativas antes de recomendar una estructura.",
     },
     journey: {
-      title: "Un recorrido posible.",
+      title: "Cómo ocurre el recorrido.",
       steps: [
         { title: "Propósito y contexto", description: "Problema, públicos, territorio, actuación existente, legitimidad, objetivos y límites." },
         { title: "Modelo de actuación", description: "Programas, servicios, públicos, alianzas, propuesta de valor social y prioridades." },
@@ -468,7 +470,7 @@ export const es: Content = {
       note: "Cuando los requisitos todavía no existen, el mejor trabajo puede ser preparar el sistema de medición antes de calcular una razón SROI.",
     },
     journey: {
-      title: "Una jornada posible",
+      title: "Cómo ocurre el recorrido",
       steps: [
         { title: "Alcance y stakeholders", description: "Definición del objeto, período, fronteras, públicos, usuarios del análisis y decisiones que debe apoyar." },
         { title: "Cambios", description: "Construcción o revisión de la teoría del cambio e identificación de los resultados relevantes, incluidos cambios no previstos o negativos." },
@@ -685,7 +687,7 @@ export const es: Content = {
 
   footer: {
     description: "Pensar y hacer son la misma responsabilidad.",
-    locations: "Brasil | Estados Unidos",
+    locations: "Río de Janeiro, Brasil. También atendemos desde los Estados Unidos.",
     companyTitle: "Creation",
     companyLinks: [
       { label: "Nosotros", href: "/quem-somos" },

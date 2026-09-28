@@ -13,14 +13,21 @@ function BlockRenderer({ block }: { block: StubBlock }) {
     <Section tone="white">
       <SectionHeader title={block.heading} subtitle={block.intro} />
       {block.type === "bullets" && (
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
-          {block.items.map((item) => (
-            <li key={item} className="flex items-start gap-3 text-abyss/70 leading-relaxed">
-              <Check className="h-4 w-4 mt-1 shrink-0 text-spark" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3 max-w-4xl">
+            {block.items.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-abyss/70 leading-relaxed">
+                <Check className="h-4 w-4 mt-1 shrink-0 text-spark" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          {block.note && (
+            <p className="mt-6 text-small text-abyss/60 leading-relaxed border-t border-abyss/10 pt-4 max-w-4xl">
+              {block.note}
+            </p>
+          )}
+        </>
       )}
       {block.type === "cards" && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,7 +166,7 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
 
       {data.children && data.children.length > 0 && (
         <Section tone="white">
-          <SectionHeader title={data.childrenLabel ?? "O que podemos assumir"} />
+          <SectionHeader title={data.childrenLabel ?? "O que assumimos"} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.children.map((child) => (
               <Link key={child.href} href={localize(child.href)}>

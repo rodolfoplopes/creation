@@ -20,12 +20,12 @@ export const stubData: Record<string, StubPageData> = {
         heading: "Start with what needs to happen",
         intro: "You don't need to know consulting vocabulary to find the right solution. The starting point is recognizing what's keeping the project from moving forward.",
         items: [
-          { title: "I need to understand and decide", description: "When there's an opportunity, an intention or a lot of information, but still not enough clarity to choose a path. We can help with: market intelligence, research, diagnosis, planning and prioritization." },
-          { title: "I need to structure and make it viable", description: "When the idea already exists, but still needs scope, governance, budget, timeline, partners, risks and indicators to become executable. We can help with: project structuring, modeling, resource planning and viability strategy." },
-          { title: "I need to organize and manage", description: "When the project is underway, but decisions, responsibilities, processes or information remain scattered. We can help with: project management and PMO, process management, governance, KPIs and team coordination." },
-          { title: "I need to execute and operate", description: "When delivery depends on vendors, production, logistics, permits, people and coordinated real-world decisions. We can help with: event management, executive production, location services, fixer, ground transport and rentals." },
-          { title: "I need to mobilize people and audiences", description: "When the project needs to connect an organization to participants, communities, partners, causes or consumers. We can help with: innovation, impact programs, cause marketing, branding, activations and experiences." },
-          { title: "I need to measure and demonstrate", description: "When it's necessary to organize data, track indicators, document deliverables and produce a responsible reading of results. We can help with: indicator design, data governance, evaluation, reports and measurement of impact or events." },
+          { title: "I need to understand and decide", description: "When there's an opportunity, an intention or a lot of information, but still not enough clarity to choose a path. We bring: market intelligence, research, diagnosis, planning and prioritization." },
+          { title: "I need to structure and make it viable", description: "When the idea already exists, but still needs scope, governance, budget, timeline, partners, risks and indicators to become executable. We bring: project structuring, modeling, resource planning and viability strategy." },
+          { title: "I need to organize and manage", description: "When the project is underway, but decisions, responsibilities, processes or information remain scattered. We bring: project management and PMO, process management, governance, KPIs and team coordination." },
+          { title: "I need to execute and operate", description: "When delivery depends on vendors, production, logistics, permits, people and coordinated real-world decisions. We bring: event management, executive production, location services, fixer, ground transport and rentals." },
+          { title: "I need to mobilize people and audiences", description: "When the project needs to connect an organization to participants, communities, partners, causes or consumers. We bring: innovation, impact programs, cause marketing, branding, activations and experiences." },
+          { title: "I need to measure and demonstrate", description: "When it's necessary to organize data, track indicators, document deliverables and produce a responsible reading of results. We bring: indicator design, data governance, evaluation, reports and measurement of impact or events." },
         ],
       },
       {
@@ -74,7 +74,7 @@ export const stubData: Record<string, StubPageData> = {
         "Different areas need to agree on objective, priority and path.",
         "A project has stalled and the problem needs to be revisited before accelerating again.",
       ]},
-      { type: "bullets", heading: "Possible deliverables", intro: "Depending on scope, the Strategy front can produce:", items: [
+      { type: "bullets", heading: "What you get", intro: "Depending on the scope defined in the contract, the Strategy front delivers:", items: [
         "Research and intelligence report.",
         "Organizational, market or project diagnosis.",
         "Scenarios and decision criteria.",
@@ -86,7 +86,7 @@ export const stubData: Record<string, StubPageData> = {
         "Risk and assumption map.",
         "Executive presentation for decision-making.",
       ]},
-      { type: "bullets", heading: "Where this capability is applied", intro: "Strategy can be mobilized in projects across:", items: [
+      { type: "bullets", heading: "Where this capability is applied", intro: "We mobilize the Strategy front in projects across:", items: [
         "Innovation.",
         "Social responsibility and impact.",
         "Branding and experiences.",
@@ -97,7 +97,7 @@ export const stubData: Record<string, StubPageData> = {
         "Territorial projects.",
       ]},
     ],
-    childrenLabel: "What we can take on",
+    childrenLabel: "What we take on",
     children: [
       { title: "Market Intelligence", description: "Research and analysis to understand market, competition, audiences, trends, risks and opportunities before deciding.", href: "/solucoes/inteligencia-de-mercado" },
       { title: "Diagnosis and Planning", description: "Structured reading of the current situation, problem definition, priorities, objectives and action plan.", href: "/solucoes/diagnostico-e-planejamento" },
@@ -142,7 +142,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Territorial context", description: "Reading local actors, infrastructure, dynamics, opportunities and constraints of the territory." },
         { title: "Strategic synthesis", description: "Organizing evidence into implications, options and practical recommendations." },
       ]},
-      { type: "bullets", heading: "What you get", intro: "The format depends on the question, but may include:", items: [
+      { type: "bullets", heading: "What you get", intro: "The format depends on the question and includes:", items: [
         "Research plan.",
         "Market or ecosystem map.",
         "Competitor and reference analysis.",
@@ -211,7 +211,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Prioritization", description: "We compare themes by impact, urgency, feasibility and dependencies." },
         { number: "05", title: "Planning", description: "We turn priorities into objectives, initiatives, owners, deadlines, resources and KPIs." },
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Executive diagnosis.",
         "Cause-and-effect map.",
         "Stakeholder analysis.",
@@ -267,7 +267,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Indicators", description: "How to track execution, reach, quality, results and learning." },
         { title: "Viability", description: "Possible contracting, sponsorship, partnership, public-call or incentive models, when compatible with the project." },
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Structured project document.",
         "Logical framework or theory of change.",
         "Scope and work breakdown structure.",
@@ -281,6 +281,13 @@ export const stubData: Record<string, StubPageData> = {
         "Institutional or commercial presentation.",
         "Adaptation for a specific public call, sponsor or decision process.",
       ]},
+      { type: "bullets", heading: "Grant-funded and incentivized projects", intro: "Some culture and impact projects depend on incentivized, public or sponsored funding: Lei Rouanet (Brazil's federal tax-incentive law for culture), Lei Paulo Gustavo (a federal relief law for the culture sector), state and municipal incentive laws, public and private calls for proposals, direct sponsorship. In all of them the requirement isn't only creative, it's documentary.", items: [
+        "Reading the public call and checking fit before applying.",
+        "Structuring the project in the format the instrument requires, with scope, timeline, budget and indicators that are consistent with each other.",
+        "A budget spreadsheet compatible with the instrument's expense categories.",
+        "Organizing documentation and deadlines during execution, so reporting doesn't start at the end.",
+        "Execution and outcome reports for the funder, sponsor and board.",
+      ], note: "We work on project management and document organization. Legal responsibility for approval and financial reporting remains with the applicant." },
       { type: "steps", heading: "How we work", items: [
         { number: "01", title: "Understanding", description: "We gather what already exists and define the questions still without answers." },
         { number: "02", title: "Architecture", description: "We connect problem, objectives, audiences, activities, deliverables and results." },
@@ -325,7 +332,7 @@ export const stubData: Record<string, StubPageData> = {
         "Recurring problems point to process failures, not just lack of effort.",
         "The organization needs to track a portfolio, not just a single project.",
       ]},
-      { type: "bullets", heading: "Management is more than tracking", intro: "Tracking means observing what happened. Managing means creating the conditions for the next decisions to happen at the right time. Our role can include:", items: [
+      { type: "bullets", heading: "Management is more than tracking", intro: "Tracking means observing what happened. Managing means creating the conditions for the next decisions to happen at the right time. Our role includes:", items: [
         "turning strategy into a work plan;",
         "defining governance, roles and cadence;",
         "coordinating internal teams, partners and vendors;",
@@ -346,7 +353,7 @@ export const stubData: Record<string, StubPageData> = {
         "Management doesn't replace decisions that belong to the organization. The proposal should define who approves scope, budget, contracts, priorities and relevant changes.",
         "Creation organizes information, recommends paths, runs the forums and executes the delegated responsibilities. The client retains the decision-making power that hasn't been formally transferred.",
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Project plan.",
         "Governance structure.",
         "Responsibility matrix.",
@@ -360,7 +367,7 @@ export const stubData: Record<string, StubPageData> = {
         "Closeout report and lessons learned.",
       ]},
     ],
-    childrenLabel: "What we can take on",
+    childrenLabel: "What we take on",
     children: [
       { title: "Project Management and PMO", description: "Planning, governance, coordination, monitoring and closeout of projects or portfolios.", href: "/solucoes/gestao-de-projetos" },
       { title: "Business Process Management", description: "Mapping, redesigning and implementing processes to reduce dependency on people, rework and information loss.", href: "/solucoes/gestao-de-processos" },
@@ -403,7 +410,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Portfolio PMO", description: "Supports prioritization, capacity, indicators and decisions across multiple initiatives." },
         { title: "Temporary PMO", description: "Implements practices and runs management during a critical phase, preparing the handover to the internal team." },
       ]},
-      { type: "bullets", heading: "What can be delivered", items: [
+      { type: "bullets", heading: "What we deliver", items: [
         "Charter or initiation document.",
         "Integrated project plan.",
         "Work breakdown structure and timeline.",
@@ -416,6 +423,7 @@ export const stubData: Record<string, StubPageData> = {
         "Meeting minutes and decision log.",
         "Status reports.",
         "Closeout and transition plan.",
+        "Execution records organized for reporting and audit.",
       ]},
       { type: "bullets", heading: "Creation can step in at three moments", items: [
         "Before kickoff: to structure the project and prepare governance, plan and mobilization.",
@@ -477,7 +485,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Implement", description: "We define owners, procedures, tools, training and transition." },
         { number: "05", title: "Follow up", description: "We measure adoption, fix gaps and prepare the team to run it independently." },
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Process inventory.",
         "Current-state and future-state maps.",
         "BPMN diagrams when appropriate.",
@@ -536,7 +544,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Dashboards and reports", description: "Visualizations and summaries suited to who operates, manages or sponsors." },
         { title: "Accountability", description: "Organizing evidence, deliverables, results, risks, deviations and learnings." },
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Governance map.",
         "RACI matrix or equivalent.",
         "Forum and committee charter.",
@@ -615,7 +623,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Operation", description: "We coordinate the work on the ground, follow up on incidents and keep decisions and changes logged." },
         { number: "05", title: "Close-out", description: "We check deliverables, costs, returns, documents, evidence and learnings." },
       ]},
-      { type: "bullets", heading: "Where we plug in", intro: "Creation can take on the whole operation or a delimited front. We can also integrate into existing structures, including:", items: [
+      { type: "bullets", heading: "Where we plug in", intro: "We take on the whole operation or a delimited front. We also integrate into structures that already exist, including:", items: [
         "Marketing and communications teams.",
         "Production companies and agencies.",
         "Social responsibility and sustainability areas.",
@@ -674,7 +682,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "06", title: "Execution", description: "Overall coordination, stage or floor operation, vendor follow-up, incident management and field communication." },
         { number: "07", title: "Closeout", description: "Teardown, reconciliation, payments, data, records, report and recommendations." },
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Event concept and design.",
         "Master plan and timeline.",
         "Budget and contracting map.",
@@ -731,7 +739,7 @@ export const stubData: Record<string, StubPageData> = {
         "Special projects with multiple partners.",
         "Each scope is sized according to format, territory, deadline and responsibility taken on.",
       ]},
-      { type: "cards", heading: "What executive production can include", items: [
+      { type: "cards", heading: "What executive production includes", items: [
         { title: "Production planning", description: "Scope breakdown, timeline, budget, resource map, work sequence and decision points." },
         { title: "Budgets and contracting", description: "Requesting and comparing proposals, technical and commercial equalization, contracting support and commitment control." },
         { title: "Vendors and teams", description: "Selection, briefing, integration, follow-up, deliverable validation and interface management." },
@@ -934,7 +942,7 @@ export const stubData: Record<string, StubPageData> = {
         "What evidence will indicate progress?",
         "Without at least these answers, innovation risks becoming an event disconnected from the organization.",
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Innovation diagnosis.",
         "Priority thesis or agenda.",
         "Opportunity map.",
@@ -1000,7 +1008,7 @@ export const stubData: Record<string, StubPageData> = {
         "Result: change observed in the audience or system.",
         "Impact: change of greater scale or duration, analyzed with attention to contribution, attribution and context.",
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Diagnosis or baseline.",
         "Stakeholder map.",
         "Strategy of action.",
@@ -1086,7 +1094,7 @@ export const stubData: Record<string, StubPageData> = {
         "How will results and limitations be communicated?",
         "What happens when the campaign ends?",
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Fit and risk analysis.",
         "Cause and opportunity map.",
         "Strategy and core narrative.",
@@ -1156,7 +1164,7 @@ export const stubData: Record<string, StubPageData> = {
         "Continuity: what happens after the encounter, and how the relationship can continue.",
         "An experience loses value when communication promises something the journey doesn't deliver.",
       ]},
-      { type: "bullets", heading: "Possible deliverables", items: [
+      { type: "bullets", heading: "What you get", items: [
         "Brand and context diagnosis.",
         "Positioning or messaging platform.",
         "Experience concept and narrative.",

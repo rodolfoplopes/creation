@@ -140,7 +140,7 @@ export default function MotorSroi() {
           <p className="text-xl text-abyss/70 leading-relaxed max-w-measure mx-auto mb-10">
             {page.intro}
           </p>
-          <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
+          <CTAButton label={page.closing.ctaLabel} href={c.cta.href} variant="primary" />
         </div>
       </section>
 

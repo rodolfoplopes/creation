@@ -102,7 +102,7 @@ export interface Content {
 
   // ---- SOBRE (reconstruida fiel ao doc 30-Quem-Somos.md, agosto/2026) ----
   about: {
-    hero: { eyebrow: string; title: string; paragraphs: string[] };       // fundacao 2009, Rodolfo Lopes
+    hero: { eyebrow: string; title: string; paragraphs: string[]; ctaLabel: string };       // fundacao 2009, Rodolfo Lopes
     journey: { title: string; paragraphs: string[] };                     // "Uma trajetoria construida entre disciplinas"
     orgCharts: { title: string; paragraphs: string[] };                   // "Projetos nao respeitam organogramas"
     beliefs: { title: string; items: TitledItem[] };                     // "No que acreditamos" (5 crencas)
@@ -114,7 +114,7 @@ export interface Content {
     leadership: { title: string; people: { name: string; role: string; bio?: string }[] };
     structure: { title: string; paragraphs: string[] };                  // "Uma estrutura que se forma em torno do projeto"
     forWhom: { title: string; items: string[]; note: string };
-    closing: { title: string; body: string; casesLabel: string };        // "O que permanece desde 2009"
+    closing: { title: string; body: string; casesLabel: string; ctaLabel: string };        // "O que permanece desde 2009"
   };
 
   // ---- SUB-MARCAS / LANDINGS (paginas proprias) ----

@@ -20,12 +20,12 @@ export const stubData: Record<string, StubPageData> = {
         heading: "Empiece por lo que necesita suceder",
         intro: "No necesita conocer el vocabulario de una consultoría para encontrar la solución correcta. El punto de partida es reconocer qué está impidiendo que el proyecto avance.",
         items: [
-          { title: "Necesito entender y decidir", description: "Cuando hay una oportunidad, una intención o mucha información, pero todavía falta claridad para elegir el camino. Podemos contribuir con: inteligencia de mercado, investigación, diagnóstico, planificación y definición de prioridades." },
-          { title: "Necesito estructurar y viabilizar", description: "Cuando la idea ya existe, pero todavía necesita alcance, gobernanza, presupuesto, cronograma, socios, riesgos e indicadores para volverse ejecutable. Podemos contribuir con: estructuración de proyectos, modelado, planificación de recursos y estrategia de viabilización." },
-          { title: "Necesito organizar y gestionar", description: "Cuando el proyecto está en marcha, pero decisiones, responsabilidades, procesos o información permanecen dispersos. Podemos contribuir con: gestión de proyectos y PMO, gestión de procesos, gobernanza, indicadores y coordinación de equipos." },
-          { title: "Necesito ejecutar y operar", description: "Cuando la entrega depende de proveedores, producción, logística, autorizaciones, personas y decisiones coordinadas en el mundo real. Podemos contribuir con: gestión de eventos, producción ejecutiva, location services, fixer, receptivo, choferes y locaciones." },
-          { title: "Necesito movilizar personas y públicos", description: "Cuando el proyecto necesita conectar una organización con participantes, comunidades, socios, causas o consumidores. Podemos contribuir con: innovación, programas de impacto, marketing de causa, branding, activaciones y experiencias." },
-          { title: "Necesito medir y demostrar", description: "Cuando es necesario organizar datos, seguir indicadores, documentar entregas y producir una lectura responsable de los resultados. Podemos contribuir con: diseño de indicadores, gobernanza de datos, evaluación, informes y medición de impacto o eventos." },
+          { title: "Necesito entender y decidir", description: "Cuando hay una oportunidad, una intención o mucha información, pero todavía falta claridad para elegir el camino. Entramos con: inteligencia de mercado, investigación, diagnóstico, planificación y definición de prioridades." },
+          { title: "Necesito estructurar y viabilizar", description: "Cuando la idea ya existe, pero todavía necesita alcance, gobernanza, presupuesto, cronograma, socios, riesgos e indicadores para volverse ejecutable. Entramos con: estructuración de proyectos, modelado, planificación de recursos y estrategia de viabilización." },
+          { title: "Necesito organizar y gestionar", description: "Cuando el proyecto está en marcha, pero decisiones, responsabilidades, procesos o información permanecen dispersos. Entramos con: gestión de proyectos y PMO, gestión de procesos, gobernanza, indicadores y coordinación de equipos." },
+          { title: "Necesito ejecutar y operar", description: "Cuando la entrega depende de proveedores, producción, logística, autorizaciones, personas y decisiones coordinadas en el mundo real. Entramos con: gestión de eventos, producción ejecutiva, location services, fixer, receptivo, choferes y locaciones." },
+          { title: "Necesito movilizar personas y públicos", description: "Cuando el proyecto necesita conectar una organización con participantes, comunidades, socios, causas o consumidores. Entramos con: innovación, programas de impacto, marketing de causa, branding, activaciones y experiencias." },
+          { title: "Necesito medir y demostrar", description: "Cuando es necesario organizar datos, seguir indicadores, documentar entregas y producir una lectura responsable de los resultados. Entramos con: diseño de indicadores, gobernanza de datos, evaluación, informes y medición de impacto o eventos." },
         ],
       },
       {
@@ -74,7 +74,7 @@ export const stubData: Record<string, StubPageData> = {
         "Diferentes áreas necesitan acordar objetivo, prioridad y camino.",
         "Un proyecto se estancó y es necesario revisar el problema antes de acelerar de nuevo.",
       ]},
-      { type: "bullets", heading: "Entregables posibles", intro: "Según el alcance, el frente de Estrategia puede producir:", items: [
+      { type: "bullets", heading: "Lo que usted recibe", intro: "Según el alcance definido en el contrato, el frente de Estrategia entrega:", items: [
         "Informe de investigación e inteligencia.",
         "Diagnóstico organizacional, de mercado o de proyecto.",
         "Escenarios y criterios de decisión.",
@@ -86,7 +86,7 @@ export const stubData: Record<string, StubPageData> = {
         "Mapa de riesgos y premisas.",
         "Presentación ejecutiva para la decisión.",
       ]},
-      { type: "bullets", heading: "Dónde se aplica esta capacidad", intro: "La Estrategia puede movilizarse en proyectos de:", items: [
+      { type: "bullets", heading: "Dónde se aplica esta capacidad", intro: "Movilizamos el frente de Estrategia en proyectos de:", items: [
         "Innovación.",
         "Responsabilidad social e impacto.",
         "Branding y experiencias.",
@@ -97,7 +97,7 @@ export const stubData: Record<string, StubPageData> = {
         "Proyectos territoriales.",
       ]},
     ],
-    childrenLabel: "Lo que podemos asumir",
+    childrenLabel: "Lo que asumimos",
     children: [
       { title: "Inteligencia de Mercado", description: "Investigación y análisis para comprender mercado, competencia, públicos, tendencias, riesgos y oportunidades antes de decidir.", href: "/solucoes/inteligencia-de-mercado" },
       { title: "Diagnóstico y Planificación", description: "Lectura estructurada de la situación actual, definición del problema, prioridades, objetivos y plan de acción.", href: "/solucoes/diagnostico-e-planejamento" },
@@ -142,7 +142,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Contexto territorial", description: "Lectura de actores, infraestructura, dinámicas locales, oportunidades y restricciones del territorio." },
         { title: "Síntesis estratégica", description: "Organización de las evidencias en implicaciones, opciones y recomendaciones prácticas." },
       ]},
-      { type: "bullets", heading: "Lo que usted recibe", intro: "El formato depende de la pregunta, pero puede incluir:", items: [
+      { type: "bullets", heading: "Lo que usted recibe", intro: "El formato depende de la pregunta e incluye:", items: [
         "Plan de investigación.",
         "Mapa de mercado o ecosistema.",
         "Análisis de competidores y referencias.",
@@ -211,7 +211,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Priorización", description: "Comparamos temas por impacto, urgencia, viabilidad y dependencias." },
         { number: "05", title: "Planificación", description: "Transformamos prioridades en objetivos, iniciativas, responsables, plazos, recursos e indicadores." },
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Diagnóstico ejecutivo.",
         "Mapa de causas y efectos.",
         "Análisis de stakeholders.",
@@ -267,7 +267,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Indicadores", description: "Cómo hacer seguimiento a ejecución, alcance, calidad, resultado y aprendizaje." },
         { title: "Viabilización", description: "Posibles modelos de contratación, patrocinio, alianza, convocatoria o incentivo, cuando sean compatibles con el proyecto." },
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Documento estructurado del proyecto.",
         "Matriz lógica o teoría de cambio.",
         "Alcance y estructura analítica del proyecto.",
@@ -281,6 +281,13 @@ export const stubData: Record<string, StubPageData> = {
         "Presentación institucional o comercial.",
         "Adaptación para convocatoria, patrocinador o proceso decisorio específico.",
       ]},
+      { type: "bullets", heading: "Proyectos incentivados y de fomento", intro: "Parte de los proyectos de cultura e impacto depende de recursos incentivados, públicos o patrocinados: Lei Rouanet, Lei Paulo Gustavo, leyes estatales y municipales de incentivo, convocatorias públicas y privadas, patrocinio directo. En todos ellos la exigencia no es solo creativa, es documental.", items: [
+        "Lectura de la convocatoria y verificación de adherencia antes de la inscripción.",
+        "Estructuración del proyecto en el formato que exige el instrumento, con alcance, cronograma, presupuesto e indicadores coherentes entre sí.",
+        "Planilla presupuestaria compatible con los rubros del instrumento.",
+        "Organización de la documentación y los plazos durante la ejecución, para que la rendición de cuentas no comience al final.",
+        "Informes de ejecución y de resultado para financiador, patrocinador y consejo.",
+      ], note: "Actuamos en la gestión del proyecto y en la organización documental. La responsabilidad legal por la aprobación y la rendición de cuentas permanece con el proponente." },
       { type: "steps", heading: "Cómo trabajamos", items: [
         { number: "01", title: "Entendimiento", description: "Reunimos lo que ya existe y definimos las preguntas todavía sin respuesta." },
         { number: "02", title: "Arquitectura", description: "Conectamos problema, objetivos, públicos, actividades, entregas y resultados." },
@@ -325,7 +332,7 @@ export const stubData: Record<string, StubPageData> = {
         "Problemas recurrentes indican fallas de proceso, no solo de esfuerzo.",
         "La organización necesita seguir un portafolio, y no solo un proyecto.",
       ]},
-      { type: "bullets", heading: "Gestión es más que seguimiento", intro: "Seguir significa observar lo que sucedió. Gestionar significa crear las condiciones para que las próximas decisiones sucedan en el momento correcto. Nuestro rol puede incluir:", items: [
+      { type: "bullets", heading: "Gestión es más que seguimiento", intro: "Seguir significa observar lo que sucedió. Gestionar significa crear las condiciones para que las próximas decisiones sucedan en el momento correcto. Nuestro rol incluye:", items: [
         "transformar estrategia en plan de trabajo;",
         "definir gobernanza, roles y cadencia;",
         "coordinar equipos, socios y proveedores;",
@@ -346,7 +353,7 @@ export const stubData: Record<string, StubPageData> = {
         "La gestión no sustituye decisiones que pertenecen a la organización. La propuesta debe definir quién aprueba alcance, presupuesto, contratos, prioridades y cambios relevantes.",
         "Creation organiza información, recomienda caminos, conduce los foros y ejecuta las responsabilidades delegadas. El cliente mantiene los poderes de decisión que no hayan sido formalmente transferidos.",
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Plan de proyecto.",
         "Estructura de gobernanza.",
         "Matriz de responsabilidades.",
@@ -360,7 +367,7 @@ export const stubData: Record<string, StubPageData> = {
         "Informe de cierre y lecciones aprendidas.",
       ]},
     ],
-    childrenLabel: "Lo que podemos asumir",
+    childrenLabel: "Lo que asumimos",
     children: [
       { title: "Gestión de Proyectos y PMO", description: "Planificación, gobernanza, coordinación, seguimiento y cierre de proyectos o portafolios.", href: "/solucoes/gestao-de-projetos" },
       { title: "Gestión de Procesos de Negocio", description: "Mapeo, rediseño e implementación de procesos para reducir la dependencia de las personas, el retrabajo y la pérdida de información.", href: "/solucoes/gestao-de-processos" },
@@ -403,7 +410,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "PMO de portafolio", description: "Apoya priorización, capacidad, indicadores y decisiones sobre varias iniciativas." },
         { title: "PMO temporal", description: "Implementa prácticas y opera la gestión durante una fase crítica, preparando la transferencia al equipo interno." },
       ]},
-      { type: "bullets", heading: "Lo que puede entregarse", items: [
+      { type: "bullets", heading: "Lo que entregamos", items: [
         "Acta de constitución o documento de iniciación.",
         "Plan integrado del proyecto.",
         "Estructura analítica y cronograma.",
@@ -416,6 +423,7 @@ export const stubData: Record<string, StubPageData> = {
         "Actas y registro de decisiones.",
         "Informes de estado.",
         "Plan de cierre y transición.",
+        "Documentación de ejecución organizada para rendición de cuentas y auditoría.",
       ]},
       { type: "bullets", heading: "Creation puede entrar en tres momentos", items: [
         "Antes del inicio: para estructurar el proyecto y preparar gobernanza, plan y movilización.",
@@ -477,7 +485,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Implementar", description: "Definimos responsables, procedimientos, herramientas, capacitación y transición." },
         { number: "05", title: "Acompañar", description: "Medimos la adopción, corregimos fallas y preparamos la operación autónoma." },
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Inventario de procesos.",
         "Mapas del estado actual y futuro.",
         "Diagramas BPMN cuando sea adecuado.",
@@ -536,7 +544,7 @@ export const stubData: Record<string, StubPageData> = {
         { title: "Dashboards e informes", description: "Visualizaciones y síntesis adecuadas a quien opera, gestiona o patrocina." },
         { title: "Rendición de cuentas", description: "Organización de evidencias, entregas, resultados, riesgos, desvíos y aprendizajes." },
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Mapa de gobernanza.",
         "Matriz RACI o equivalente.",
         "Reglamento de foros y comités.",
@@ -615,7 +623,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "04", title: "Operación", description: "Coordinamos el trabajo en campo, hacemos seguimiento de incidencias y mantenemos decisiones y cambios registrados." },
         { number: "05", title: "Cierre", description: "Verificamos entregas, costos, devoluciones, documentos, evidencias y aprendizajes." },
       ]},
-      { type: "bullets", heading: "Dónde entramos", intro: "Creation puede asumir toda la operación o un frente delimitado. También puede integrarse a estructuras ya existentes, incluyendo:", items: [
+      { type: "bullets", heading: "Dónde entramos", intro: "Asumimos toda la operación o un frente delimitado. También nos integramos a estructuras que ya existen, incluyendo:", items: [
         "Equipos de marketing y comunicación.",
         "Productoras y agencias.",
         "Áreas de responsabilidad social y sostenibilidad.",
@@ -674,7 +682,7 @@ export const stubData: Record<string, StubPageData> = {
         { number: "06", title: "Realización", description: "Coordinación general, operación de sala o escenario, seguimiento de proveedores, gestión de incidencias y comunicación de campo." },
         { number: "07", title: "Cierre", description: "Desmontaje, conciliación, pagos, datos, registros, informe y recomendaciones." },
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Concepto y diseño del evento.",
         "Plan maestro y cronograma.",
         "Presupuesto y mapa de contrataciones.",
@@ -731,7 +739,7 @@ export const stubData: Record<string, StubPageData> = {
         "Proyectos especiales con múltiples socios.",
         "Cada alcance se dimensiona según el formato, el territorio, el plazo y la responsabilidad asumida.",
       ]},
-      { type: "cards", heading: "Lo que puede incluir la producción ejecutiva", items: [
+      { type: "cards", heading: "Lo que incluye la producción ejecutiva", items: [
         { title: "Planificación de producción", description: "Descomposición del alcance, cronograma, presupuesto, mapa de recursos, secuencia de trabajo y puntos de decisión." },
         { title: "Presupuestos y contrataciones", description: "Solicitud y comparación de propuestas, equiparación técnica y comercial, apoyo a la contratación y control de compromisos." },
         { title: "Proveedores y equipos", description: "Selección, briefing, integración, seguimiento, validación de entregas y gestión de las interfaces." },
@@ -778,7 +786,7 @@ export const stubData: Record<string, StubPageData> = {
     blocks: [
       { type: "cards", heading: "Dos servicios que se complementan", intro: "Una contratación puede incluir uno de los frentes o los dos.", items: [
         { title: "Location", description: "Investigación y viabilización de espacios compatibles con la propuesta creativa, las necesidades técnicas, el presupuesto y la logística de la producción." },
-        { title: "Fixer", description: "Articulación local para transformar el briefing en una operación posible, conectando información, personas, proveedores, requisitos y decisiones en el territorio." },
+        { title: "Fixer", description: "Articulación local para transformar el briefing en una operación viable, conectando información, personas, proveedores, requisitos y decisiones en el territorio." },
       ]},
       { type: "bullets", heading: "Servicios de location", items: [
         "Lectura del briefing creativo y técnico.",
@@ -934,7 +942,7 @@ export const stubData: Record<string, StubPageData> = {
         "¿Qué evidencias indicarán avance?",
         "Sin respuestas mínimas, la innovación corre el riesgo de convertirse en un evento desconectado de la organización.",
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Diagnóstico de innovación.",
         "Tesis o agenda de prioridades.",
         "Mapa de oportunidades.",
@@ -982,7 +990,7 @@ export const stubData: Record<string, StubPageData> = {
     blocks: [
       { type: "bullets", heading: "Del compromiso al cambio observable", items: [
         "Los proyectos de impacto operan en contextos complejos. Los resultados dependen de factores externos, relaciones de confianza, continuidad, participación de los públicos y capacidad de las organizaciones involucradas.",
-        "Por eso empezamos por comprender el territorio y tener claridad sobre la contribución que el programa puede producir. A partir de ahí, conectamos diseño, viabilización, ejecución, monitoreo y aprendizaje.",
+        "Por eso empezamos por comprender el territorio y tener claridad sobre la contribución que el programa produce. A partir de ahí, conectamos diseño, viabilización, ejecución, monitoreo y aprendizaje.",
       ]},
       { type: "cards", heading: "Frentes de actuación", items: [
         { title: "Diagnóstico social y territorial", description: "Lectura de contexto, públicos, activos, vulnerabilidades, actores, iniciativas existentes, datos y brechas de conocimiento." },
@@ -1000,7 +1008,7 @@ export const stubData: Record<string, StubPageData> = {
         "Resultado: cambio observado en el público o sistema.",
         "Impacto: cambio de mayor alcance o duración, analizado con atención a la contribución, la atribución y el contexto.",
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Diagnóstico o línea de base.",
         "Mapa de stakeholders.",
         "Estrategia de actuación.",
@@ -1086,7 +1094,7 @@ export const stubData: Record<string, StubPageData> = {
         "¿Cómo se comunicarán los resultados y las limitaciones?",
         "¿Qué sucede cuando termina la campaña?",
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Análisis de adherencia y riesgo.",
         "Mapa de causas y oportunidades.",
         "Estrategia y narrativa central.",
@@ -1156,7 +1164,7 @@ export const stubData: Record<string, StubPageData> = {
         "Continuidad: qué sucede después del encuentro y cómo puede continuar la relación.",
         "Una experiencia pierde valor cuando la comunicación promete algo que el recorrido no entrega.",
       ]},
-      { type: "bullets", heading: "Entregables posibles", items: [
+      { type: "bullets", heading: "Lo que usted recibe", items: [
         "Diagnóstico de marca y contexto.",
         "Posicionamiento o plataforma de mensajes.",
         "Concepto y narrativa de la experiencia.",

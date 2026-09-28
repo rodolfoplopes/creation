@@ -116,7 +116,7 @@ export default function BiEventos() {
           <p className="text-lg text-abyss/70 leading-relaxed max-w-measure mx-auto mb-10">
             {page.body}
           </p>
-          <CTAButton label={c.cta.primary} href={c.cta.href} variant="primary" />
+          <CTAButton label={page.closing.ctaLabel} href={c.cta.href} variant="primary" />
         </div>
       </section>
 
