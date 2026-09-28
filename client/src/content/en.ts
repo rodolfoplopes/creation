@@ -92,6 +92,13 @@ export const en: Content = {
     },
   ],
 
+  methodArtifacts: [
+    { id: "raci", name: "Responsibility matrix", question: "Who decides what, and who just needs to know" },
+    { id: "marcos", name: "Milestone schedule", question: "What needs to be ready before what" },
+    { id: "riscos", name: "Risk matrix", question: "What can go wrong and what the plan is if it does" },
+    { id: "contas", name: "Execution report", question: "What was done, with which resources, with which evidence" },
+  ],
+
   about: {
     hero: {
       eyebrow: "CREATION",

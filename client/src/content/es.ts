@@ -92,6 +92,13 @@ export const es: Content = {
     },
   ],
 
+  methodArtifacts: [
+    { id: "raci", name: "Matriz de responsabilidades", question: "Quién decide qué, y quién solo necesita estar al tanto" },
+    { id: "marcos", name: "Cronograma de hitos", question: "Qué necesita estar listo antes de qué" },
+    { id: "riscos", name: "Matriz de riesgos", question: "Qué puede salir mal y cuál es el plan si sucede" },
+    { id: "contas", name: "Informe de ejecución", question: "Qué se hizo, con qué recurso, con qué evidencia" },
+  ],
+
   about: {
     hero: {
       eyebrow: "CREATION",

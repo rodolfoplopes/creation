@@ -3,9 +3,10 @@ import { Section, SectionHeader, CTAButton } from "@/components/primitives";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import PhotoFrame from "@/components/PhotoFrame";
 import CicloCompletoSection from "@/components/CicloCompletoSection";
+import MethodArtifacts from "@/components/MethodArtifacts";
 import { Link } from "wouter";
 import { ArrowLeft, Check } from "lucide-react";
-import { useLocalizedHref } from "@/content";
+import { useContent, useLocalizedHref } from "@/content";
 import type { StubBlock, StubPageData } from "@/content/stub";
 
 function BlockRenderer({ block }: { block: StubBlock }) {
@@ -90,6 +91,7 @@ function BlockRenderer({ block }: { block: StubBlock }) {
  */
 export default function StubPageLayout({ data }: { data: StubPageData }) {
   const localize = useLocalizedHref();
+  const c = useContent();
 
   return (
     <Layout>
@@ -148,6 +150,8 @@ export default function StubPageLayout({ data }: { data: StubPageData }) {
       ))}
 
       {data.cicloCompleto && <CicloCompletoSection variant="full" />}
+
+      {data.methodArtifacts && <MethodArtifacts items={c.methodArtifacts} />}
 
       {data.secondaryDiagram && (
         <Section tone="white">

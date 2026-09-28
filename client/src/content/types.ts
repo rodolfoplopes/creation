@@ -32,6 +32,17 @@ export interface LinkItem {
 // Slide do carrossel da home (Tarefa 8, comando tecnico 26/09/2026).
 // ctaHref sem prefixo de idioma: passa por useLocalizedHref() no componente,
 // mesmo padrao de cta.href.
+// Peca do metodo (Tarefa 6, comando tecnico 26/09/2026) — artefato real
+// anonimizado exibido em /como-trabalhamos, como prova de gestao (o "como?"),
+// nao de evento. `image` fica ausente ate o usuario enviar o arquivo
+// (ver docs/pecas-do-metodo.md); item sem imagem nao renderiza.
+export interface MethodArtifact {
+  id: "raci" | "marcos" | "riscos" | "contas";
+  name: string;
+  question: string;
+  image?: { src: string; alt: string };
+}
+
 export interface HomeSlide {
   id: "inovacao" | "impacto" | "ops-rio";
   image: string;
@@ -99,6 +110,10 @@ export interface Content {
   // Carrossel da home (Tarefa 8): 3 ofertas (Inovacao/Impacto/Creation Ops
   // Rio), migrado de hardcode em WhyWeExistSection.tsx pro content.
   homeSlides: HomeSlide[];
+
+  // Pecas do metodo (Tarefa 6): 4 artefatos fixos, prontos sem imagem ate o
+  // usuario enviar os arquivos anonimizados (docs/pecas-do-metodo.md).
+  methodArtifacts: MethodArtifact[];
 
   // ---- SOBRE (reconstruida fiel ao doc 30-Quem-Somos.md, agosto/2026) ----
   about: {

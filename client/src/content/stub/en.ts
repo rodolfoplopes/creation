@@ -1208,6 +1208,7 @@ export const stubData: Record<string, StubPageData> = {
       ]},
     ],
     cicloCompleto: true,
+    methodArtifacts: true,
     ctaLabel: "Tell us about your project",
     ctaHref: "/contato",
   },

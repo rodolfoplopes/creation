@@ -75,6 +75,10 @@ export interface StubPageData {
   // Quando true, StubPageLayout renderiza CicloCompletoSection (variant="full")
   // no lugar do grid de "children" — usado so por "como-trabalhamos".
   cicloCompleto?: boolean;
+  // Quando true, StubPageLayout renderiza MethodArtifacts (Tarefa 6) logo
+  // apos o CicloCompletoSection — usado so por "como-trabalhamos". Os
+  // itens vem de c.methodArtifacts (content tipado), nao daqui.
+  methodArtifacts?: boolean;
   ctaBody?: string;
   ctaLabel: string;
   ctaHref: string;
