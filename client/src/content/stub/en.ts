@@ -521,7 +521,7 @@ export const stubData: Record<string, StubPageData> = {
   "governanca-e-indicadores": {
     diagramImage: { src: "/images/methodologies/okr.webp", alt: "OKR card: goals and indicators methodology" },
     eyebrow: "GOVERNANCE AND KPIS",
-    title: "Decision, responsibility and evidence in the same system.",
+    title: "We connect who decides to what needs attention.",
     intro: "Governance defines who decides, based on what information and within what limits. Indicators show what needs attention.",
     lead: "When the two are disconnected, reports pile up and problems remain without an owner. We structure the system that links information to decision and decision to follow-up.",
     parentLabel: "Management",

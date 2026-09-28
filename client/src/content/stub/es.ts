@@ -521,7 +521,7 @@ export const stubData: Record<string, StubPageData> = {
   "governanca-e-indicadores": {
     diagramImage: { src: "/images/methodologies/okr.webp", alt: "Tarjeta OKR: metodología de metas e indicadores" },
     eyebrow: "GOBERNANZA E INDICADORES",
-    title: "Decisión, responsabilidad y evidencia en el mismo sistema.",
+    title: "Conectamos a quien decide con lo que necesita atención.",
     intro: "La gobernanza define quién decide, con base en qué información y dentro de qué límite. Los indicadores muestran qué necesita atención.",
     lead: "Cuando ambos elementos están desconectados, los informes se acumulan y los problemas siguen sin responsable. Estructuramos el sistema que une información a decisión y decisión a seguimiento.",
     parentLabel: "Gestión",

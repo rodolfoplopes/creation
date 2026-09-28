@@ -5,7 +5,7 @@ export const en: Content = {
     name: "Creation",
     microcopy: "Clarity. Rhythm. Execution.",
     footerTagline: "Thinking and doing are the same responsibility.",
-    locations: "Rio de Janeiro, Brazil. We also serve clients from the United States.",
+    locations: "Rio de Janeiro, Brazil · Florida, United States",
   },
 
   nav: {
@@ -694,7 +694,7 @@ export const en: Content = {
 
   footer: {
     description: "Thinking and doing are the same responsibility.",
-    locations: "Rio de Janeiro, Brazil. We also serve clients from the United States.",
+    locations: "Rio de Janeiro, Brazil · Florida, United States",
     companyTitle: "Creation",
     companyLinks: [
       { label: "About", href: "/quem-somos" },
