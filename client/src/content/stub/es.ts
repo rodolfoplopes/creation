@@ -1279,6 +1279,7 @@ export const casesStub: CaseStub[] = [
     context: "Producción y operación ejecutiva de cuatro ediciones en tres formatos diferentes (presencial, digital y metaverso), integrando participantes, mentores, socios y proveedores.",
     numbers: ["4 ediciones", "3 formatos", "+5 mil competidores", "+170 mil personas alcanzadas"],
     image: { src: caseHackingRio, alt: "Escenario del Hacking.Rio, el hackathon más grande de América Latina" },
+    group: "inovacao",
   },
   {
     title: "Hacking.Help",
@@ -1286,6 +1287,7 @@ export const casesStub: CaseStub[] = [
     context: "Concepción y producción ejecutiva de una maratón en línea creada rápidamente para mantener la movilización de propósito social durante la pandemia.",
     numbers: ["1.533 competidores", "5 países de habla portuguesa", "R$500 mil en medios espontáneos estimados"],
     image: { src: caseHackingHelp, alt: "Programación de la maratón en línea Hacking.Help" },
+    group: "inovacao",
   },
   {
     title: "HR Talks",
@@ -1293,6 +1295,15 @@ export const casesStub: CaseStub[] = [
     context: "Producción ejecutiva de una programación digital internacional de larga duración, coordinando agenda, ponentes y transmisión en vivo.",
     numbers: ["15.500 inscritos", "172 ponentes globales", "40 horas de contenido en vivo"],
     image: { src: caseHrTalks, alt: "Programación digital HR Talks" },
+    group: "inovacao",
+  },
+  {
+    title: "World Creativity Day",
+    client: "Centro Cultural Banco do Brasil Río de Janeiro",
+    context: "Concepción y ejecución de programación presencial y en línea sobre creatividad, distribuida en diferentes espacios y días.",
+    numbers: ["3 días de programación", "2 espacios", "+1 mil personas alcanzadas", "+50 inspiradores en línea"],
+    image: { src: caseWorldCreativity, alt: "Presentación del World Creativity Day en el Centro Cultural Banco do Brasil Río de Janeiro" },
+    group: "inovacao",
   },
   {
     title: "Pertinho de Casa: Escuela y Ferias",
@@ -1301,6 +1312,7 @@ export const casesStub: CaseStub[] = [
     numbers: ["2 frentes de actuación", "6 eventos de comercialización", "R$19.649 en ventas acompañadas"],
     note: "La evaluación de impacto fue realizada por Rede Asta. Los números presentados describen entregas y resultados comerciales informados para el período, no una atribución integral de impacto a Creation.",
     image: { src: casePertinhoEscola, alt: "Feria de comercialización Pertinho de Casa en Itaguaí" },
+    group: "impacto",
   },
   {
     title: "Pertinho de Casa: Plataforma",
@@ -1309,13 +1321,7 @@ export const casesStub: CaseStub[] = [
     numbers: ["241 emprendedores", "56 barrios de Itaguaí y Seropédica", "R$30.650,11 en facturación registrada"],
     note: "El crecimiento quedó por debajo de la proyección inicial indicada en los materiales. La evaluación de impacto fue realizada por Rede Asta. Registrar esta diferencia es importante porque un case también debe mostrar lo que la ejecución enseñó y qué hipótesis necesitan revisarse.",
     image: { src: casePertinhoPlataforma, alt: "Emprendedora local vendiendo productos textiles en la plataforma Pertinho de Casa" },
-  },
-  {
-    title: "World Creativity Day",
-    client: "Centro Cultural Banco do Brasil Río de Janeiro",
-    context: "Concepción y ejecución de programación presencial y en línea sobre creatividad, distribuida en diferentes espacios y días.",
-    numbers: ["3 días de programación", "2 espacios", "+1 mil personas alcanzadas", "+50 inspiradores en línea"],
-    image: { src: caseWorldCreativity, alt: "Presentación del World Creativity Day en el Centro Cultural Banco do Brasil Río de Janeiro" },
+    group: "impacto",
   },
 ];
 

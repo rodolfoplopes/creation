@@ -57,6 +57,39 @@ export const pt: Content = {
     ],
   },
 
+  homeSlides: [
+    {
+      id: "inovacao",
+      image: "/images/home-slides/slide-3.webp",
+      alt: "Plateia na conferência do Hacking.Rio, operada pela Creation",
+      tag: "Inovação",
+      title: "Hackathons e projetos de inovação, da ideia à entrega.",
+      proof: "4 edições do Hacking.Rio · +5 mil competidores · +170 mil pessoas alcançadas",
+      ctaLabel: "Ver cases de inovação",
+      ctaHref: "/cases#inovacao",
+    },
+    {
+      id: "impacto",
+      image: "/images/home-slides/slide-1.webp",
+      alt: "Jovem segura cartaz em feira de projeto de impacto territorial",
+      tag: "Impacto",
+      title: "Projetos de impacto social que mobilizam o território.",
+      proof: "+1.000 nano empreendedores impactados em uma única região.",
+      ctaLabel: "Ver cases de impacto",
+      ctaHref: "/cases#impacto",
+    },
+    {
+      id: "ops-rio",
+      image: "/images/home-slides/slide-4.webp",
+      alt: "Gravação de documentário em praia do Rio de Janeiro",
+      tag: "Creation Ops Rio",
+      title: "Vai produzir no Rio? A operação local é com a gente.",
+      proof: "Location, fixer, drivers e fornecedores sob uma única coordenação.",
+      ctaLabel: "Conhecer Creation Ops Rio",
+      ctaHref: "/creation-ops-rio",
+    },
+  ],
+
   about: {
     hero: {
       eyebrow: "A CREATION",

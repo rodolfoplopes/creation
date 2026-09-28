@@ -198,7 +198,7 @@ export default function Header() {
   ];
 
   const institutional = [
-    { label: "Cases", href: "/cases" },
+    { label: t("Cases", "Cases", "Casos"), href: "/cases" },
     { label: "Insights", href: "/insights" },
     { label: t("Como Trabalhamos", "How We Work", "Cómo Trabajamos"), href: "/como-trabalhamos" },
     { label: c.nav.about, href: "/quem-somos" },

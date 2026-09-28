@@ -105,6 +105,10 @@ export interface CaseStub {
   numbers: string[];
   note?: string; // disclaimer de atribuicao/evidencia (ex: avaliacao conduzida por terceiro, resultado abaixo da projecao)
   image?: StubPageImage;
+  // Ancora de grupo pra receber o CTA dos slides "Inovacao"/"Impacto" do
+  // carrossel da home (Tarefa 8, comando tecnico 26/09/2026). O primeiro
+  // case de cada grupo em Cases.tsx recebe id={group}.
+  group?: "inovacao" | "impacto";
 }
 
 // Ciclo Completo interativo (ver CicloCompletoSection.tsx) — versao

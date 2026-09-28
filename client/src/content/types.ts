@@ -29,6 +29,20 @@ export interface LinkItem {
   href: string;
 }
 
+// Slide do carrossel da home (Tarefa 8, comando tecnico 26/09/2026).
+// ctaHref sem prefixo de idioma: passa por useLocalizedHref() no componente,
+// mesmo padrao de cta.href.
+export interface HomeSlide {
+  id: "inovacao" | "impacto" | "ops-rio";
+  image: string;
+  alt: string;
+  tag: string;
+  title: string;
+  proof: string;
+  ctaLabel: string;
+  ctaHref: string;
+}
+
 // ============================================================================
 // CONTRATO PRINCIPAL
 // ============================================================================
@@ -81,6 +95,10 @@ export interface Content {
     subtitle: string;
     audiences: TitledItem[];
   };
+
+  // Carrossel da home (Tarefa 8): 3 ofertas (Inovacao/Impacto/Creation Ops
+  // Rio), migrado de hardcode em WhyWeExistSection.tsx pro content.
+  homeSlides: HomeSlide[];
 
   // ---- SOBRE (reconstruida fiel ao doc 30-Quem-Somos.md, agosto/2026) ----
   about: {

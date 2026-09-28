@@ -1,7 +1,10 @@
 import { useState, useCallback, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import useEmblaCarousel from "embla-carousel-react";
 import PhotoFrame from "@/components/PhotoFrame";
+import { useContent, useLang, useLocalizedHref } from "@/content";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * FOTOS NOVAS (25/08/2026, pasta Drive "Imagens do Site/Slide-Hero-Home"):
@@ -23,19 +26,23 @@ import PhotoFrame from "@/components/PhotoFrame";
  * do Hero (uma tira/"1 dedo" da imagem visivel ainda dentro da area do
  * Hero) — mesmo recurso do notion.com, cujo screenshot de produto sempre
  * aparece cortado no rodape da dobra inicial.
+ *
+ * TAREFA 8 (comando tecnico 26/09/2026): de 6 fotos genericas pra 3
+ * ofertas (Inovacao/Impacto/Creation Ops Rio), com texto sobre a foto e
+ * CTA por slide. Slides migrados de hardcode pro content (c.homeSlides),
+ * pra ter paridade pt/en/es. Setas somem no mobile (cobriam rosto a
+ * 375px); o swipe do Embla mais os pontos bastam ali.
  */
-const slides = [
-  { src: "/images/home-slides/slide-0.webp", alt: "Ativação de rua em evento da Creation" },
-  { src: "/images/home-slides/slide-1.webp", alt: "Feira e distribuição de material educativo em evento da Creation" },
-  { src: "/images/home-slides/slide-2.webp", alt: "ReservaX Lounge, ativação de marca realizada pela Creation" },
-  { src: "/images/home-slides/slide-3.webp", alt: "Plateia em conferência produzida pela Creation" },
-  { src: "/images/home-slides/slide-4.webp", alt: "Caiaque na praia" },
-  { src: "/images/home-slides/slide-5.webp", alt: "Veleiro na Baía de Guanabara com o Pão de Açúcar ao fundo" },
-];
 export default function WhyWeExistSection() {
+  const c = useContent();
+  const lang = useLang();
+  const localize = useLocalizedHref();
+  const slides = c.homeSlides;
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -46,6 +53,7 @@ export default function WhyWeExistSection() {
     if (!emblaApi) return;
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
+    setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
   useEffect(() => {
     if (!emblaApi) return;
@@ -53,6 +61,16 @@ export default function WhyWeExistSection() {
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
+
+  const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
+  const prevLabel = t("Slide anterior", "Previous slide", "Diapositiva anterior");
+  const nextLabel = t("Próximo slide", "Next slide", "Siguiente diapositiva");
+  const goToLabel = (n: number) => t(`Ir para o slide ${n}`, `Go to slide ${n}`, `Ir a la diapositiva ${n}`);
+
+  const handleCtaClick = (slideId: string) => () => {
+    trackEvent("home_slide_cta", { slide_id: slideId });
+  };
+
   return (
     <section
       className="relative z-10 bg-white -mt-3 md:-mt-10 pb-10 md:pb-14"
@@ -62,41 +80,69 @@ export default function WhyWeExistSection() {
         <div className="relative rounded-2xl overflow-hidden shadow-md" ref={emblaRef}>
           <div className="flex">
             {slides.map((slide, index) => (
-              <div key={index} className="flex-[0_0_100%] min-w-0">
+              <div key={slide.id} className="flex-[0_0_100%] min-w-0 relative">
                 <PhotoFrame
-                  src={slide.src}
+                  src={slide.image}
                   alt={slide.alt}
-                  className="h-[300px] md:h-[420px]"
+                  className="h-[340px] md:h-[420px]"
                   data-testid={`slide-image-${index}`}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-abyss/80 via-abyss/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 p-5 md:p-10 text-bone">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-bone/30 mb-3 text-xs uppercase tracking-wide font-semibold">
+                    {slide.tag}
+                  </span>
+                  <h2 className="text-xl md:text-4xl font-semibold leading-tight max-w-2xl">
+                    {slide.title}
+                  </h2>
+                  <p className="hidden md:block mt-3 text-base opacity-90 max-w-xl">
+                    {slide.proof}
+                  </p>
+                  <Link href={localize(slide.ctaHref)}>
+                    <span
+                      onClick={handleCtaClick(slide.id)}
+                      className="mt-4 inline-flex items-center gap-2 font-semibold transition-all cursor-pointer active:scale-[0.97] bg-bone text-abyss px-5 py-2.5 md:px-8 md:py-4 hover:bg-signal text-sm md:text-base"
+                      data-testid={`link-slide-cta-${slide.id}`}
+                    >
+                      {slide.ctaLabel}
+                      <ArrowRight className="h-4 w-4 md:h-5 md:w-5" />
+                    </span>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
           <button
             onClick={scrollPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors shadow-sm"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white items-center justify-center transition-colors shadow-sm"
             data-testid="button-slide-prev"
-            aria-label="Previous slide"
+            aria-label={prevLabel}
           >
             <ChevronLeft className="h-5 w-5 text-abyss" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors shadow-sm"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 hover:bg-white items-center justify-center transition-colors shadow-sm"
             data-testid="button-slide-next"
-            aria-label="Next slide"
+            aria-label={nextLabel}
           >
             <ChevronRight className="h-5 w-5 text-abyss" />
           </button>
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            {slides.map((_, index) => (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+            {slides.map((slide, index) => (
               <button
-                key={index}
+                key={slide.id}
                 onClick={() => emblaApi?.scrollTo(index)}
-                className="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-colors"
+                className="w-6 h-6 flex items-center justify-center"
                 data-testid={`slide-indicator-${index}`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+                aria-label={goToLabel(index + 1)}
+              >
+                <span
+                  className={`rounded-full transition-colors ${
+                    index === selectedIndex ? "w-4 h-2 bg-white" : "w-2 h-2 bg-white/60"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

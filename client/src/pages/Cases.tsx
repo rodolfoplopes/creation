@@ -24,6 +24,11 @@ export default function Cases() {
   const lang = useLang();
   const casesStub = stubPages[lang].casesStub;
   const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
+  // Ancoras de grupo (Tarefa 8, comando tecnico 26/09/2026): o CTA dos
+  // slides "Inovacao"/"Impacto" do carrossel da home rola ate aqui. So o
+  // primeiro case de cada grupo recebe o id. scroll-mt compensa o header
+  // sticky (h-5/py-4 mobile = ~52px, h-7/py-4 desktop = ~60px).
+  const seenGroups = new Set<string>();
 
   return (
     <Layout>
@@ -55,10 +60,14 @@ export default function Cases() {
       <Section tone="white">
         <SectionHeader title={t("Projetos selecionados", "Selected projects", "Proyectos seleccionados")} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {casesStub.map((item) => (
+          {casesStub.map((item) => {
+            const isGroupAnchor = !!item.group && !seenGroups.has(item.group);
+            if (item.group) seenGroups.add(item.group);
+            return (
             <article
               key={item.title}
-              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors overflow-hidden"
+              id={isGroupAnchor ? item.group : undefined}
+              className="rounded-2xl border border-abyss/10 bg-bone/50 hover:bg-spark/5 hover:border-spark/30 transition-colors overflow-hidden scroll-mt-[52px] md:scroll-mt-[60px]"
             >
               {item.image && (
                 <PhotoFrame src={item.image.src} alt={item.image.alt} className="h-48" />
@@ -90,7 +99,8 @@ export default function Cases() {
               )}
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
