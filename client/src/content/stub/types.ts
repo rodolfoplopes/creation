@@ -127,10 +127,19 @@ export interface CicloStage {
   out: string;
 }
 
+// Titulo/subtitulo da secao Especialidades da Home — movido de hardcode
+// em EspecialidadesSection.tsx pra arquivo de conteudo (Tarefa 3.1b,
+// comando tecnico 26/09/2026).
+export interface HomeEspecialidadesSection {
+  title: string;
+  subtitle: string;
+}
+
 export interface StubLangPack {
   stubData: Record<string, StubPageData>;
   homeCapacidades: HomeCapacidade[];
   homeEspecialidades: HomeEspecialidade[];
+  homeEspecialidadesSection: HomeEspecialidadesSection;
   homeSolucoes: HomeSolucao[];
   casesStub: CaseStub[];
   cicloCompletoStages: CicloStage[];

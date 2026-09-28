@@ -70,6 +70,10 @@ export interface Content {
     // A frase de posicionamento (a coroa).
     headline: string;        // "Pensar e fazer sao a mesma responsabilidade."
     subheadline: string;
+    // Linha de prova opcional (Tarefa 2.1, comando tecnico 26/09/2026) —
+    // nomes de projeto como autoridade, ate existir depoimento real.
+    // Componente trata como opcional: sem a chave, nada renderiza.
+    proof?: string;
   };
 
   targetAudience: {

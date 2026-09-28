@@ -83,9 +83,9 @@ export default function Insights() {
                     )
               }
               subtitle={t(
-                "Volte em breve — os primeiros artigos estão a caminho.",
-                "Check back soon — the first articles are on their way.",
-                "Vuelve pronto — los primeros artículos están en camino.",
+                "Volte em breve. Os primeiros artigos estão a caminho.",
+                "Check back soon. The first articles are on their way.",
+                "Vuelve pronto. Los primeros artículos están en camino.",
               )}
             />
           </div>

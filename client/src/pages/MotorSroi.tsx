@@ -41,7 +41,7 @@ const navLabels = {
 const sroiExample = {
   pt: {
     title: "Motor SROI",
-    description: "Cálculo de retorno social sobre investimento — metodologias SVI e CBPS.",
+    description: "Cálculo de retorno social sobre investimento: metodologias SVI e CBPS.",
     label: "Exemplo ilustrativo",
     metrics: [
       { label: "Razão SROI", value: "4,20", unit: " : 1", sub: "valor por real investido", lead: true },
@@ -59,7 +59,7 @@ const sroiExample = {
   },
   en: {
     title: "SROI Engine",
-    description: "Social return on investment calculation — SVI and CBPS methodologies.",
+    description: "Social return on investment calculation: SVI and CBPS methodologies.",
     label: "Illustrative example",
     metrics: [
       { label: "SROI ratio", value: "4.20", unit: " : 1", sub: "value per dollar invested", lead: true },
@@ -77,7 +77,7 @@ const sroiExample = {
   },
   es: {
     title: "Motor SROI",
-    description: "Cálculo de retorno social sobre la inversión — metodologías SVI y CBPS.",
+    description: "Cálculo de retorno social sobre la inversión: metodologías SVI y CBPS.",
     label: "Ejemplo ilustrativo",
     metrics: [
       { label: "Razón SROI", value: "4,20", unit: " : 1", sub: "valor por real invertido", lead: true },
@@ -170,10 +170,10 @@ export default function MotorSroi() {
             src="/images/methodologies/teoria-da-mudanca.webp"
             alt={
               lang === "en"
-                ? "Theory of Change card — logic chain from inputs to impact"
+                ? "Theory of Change card: logic chain from inputs to impact"
                 : lang === "es"
-                  ? "Tarjeta Teoría del Cambio — cadena lógica de insumos a impacto"
-                  : "Card Teoria da Mudança — cadeia lógica de insumos a impacto"
+                  ? "Tarjeta Teoría del Cambio: cadena lógica de insumos a impacto"
+                  : "Card Teoria da Mudança: cadeia lógica de insumos a impacto"
             }
             className="w-full h-auto rounded-2xl shadow-sm"
           />
@@ -237,10 +237,10 @@ export default function MotorSroi() {
           }
           subtitle={
             lang === "en"
-              ? "An illustrative example — not the result of any real project."
+              ? "An illustrative example, not the result of any real project."
               : lang === "es"
-                ? "Un ejemplo ilustrativo — no es el resultado de ningún proyecto real."
-                : "Um exemplo ilustrativo — não é o resultado de nenhum projeto real."
+                ? "Un ejemplo ilustrativo, no es el resultado de ningún proyecto real."
+                : "Um exemplo ilustrativo, não é o resultado de nenhum projeto real."
           }
         />
         <MethodologyCard

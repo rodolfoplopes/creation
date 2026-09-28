@@ -9,10 +9,12 @@ import { useContent } from "@/content";
  * Altura reduzida (era min-h quase full-screen com py-24/36) pra que os
  * botoes fiquem visiveis sem rolar na maioria das telas.
  *
- * FIX v4: c.hero.proof nao existe mais no contrato (hero so tem
- * headline + subheadline). A linha de "prova" no hero foi removida daqui;
- * a prova agora vive nos cases dentro de cada pagina de area.
+ * PROVA (Tarefa 2.1, comando tecnico 26/09/2026): c.hero.proof volta ao
+ * contrato como campo opcional — nomes de projeto como autoridade barata,
+ * ate existir depoimento real. Renderiza so quando a chave existe; remover
+ * a chave do content basta pra tirar a linha, sem mexer aqui.
  *
+
  * TESTE EXPERIMENTAL (nao aprovado): cor de acento viva "spark" (ver
  * tailwind.config.ts), pedida apos referencia a bcg.com/notion.com. Nao
  * mexe no token "signal" nem no CTAButton (isso mudaria o site inteiro).
@@ -50,6 +52,11 @@ export default function HeroSection() {
               variant="secondary"
             />
           </div>
+          {c.hero.proof && (
+            <p className="mt-8 text-caption text-abyss/60 uppercase tracking-widest" data-testid="text-hero-proof">
+              {c.hero.proof}
+            </p>
+          )}
         </Reveal>
       </div>
     </section>

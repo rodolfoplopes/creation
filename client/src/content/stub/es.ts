@@ -1,4 +1,4 @@
-import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub, CicloStage } from "./types";
+import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeEspecialidadesSection, HomeSolucao, CaseStub, CicloStage } from "./types";
 import caseHackingRio from "@assets/case-hacking-rio.jpg";
 import caseHackingHelp from "@assets/case-hacking-help.jpg";
 import caseHrTalks from "@assets/case-hr-talks.jpg";
@@ -32,9 +32,9 @@ export const stubData: Record<string, StubPageData> = {
         type: "bullets",
         heading: "Diferentes formas de trabajar con nosotros",
         items: [
-          "Proyecto integrado — Creation conecta estrategia, gestión y operación y responde por todo el recorrido definido en el contrato.",
-          "Frente específico — asumimos una etapa o competencia delimitada, integrada a la estructura ya existente del cliente.",
-          "Extensión del equipo — sumamos capacidad temporal de gestión, producción o coordinación a equipos internos, agencias y productoras.",
+          "Proyecto integrado: Creation conecta estrategia, gestión y operación y responde por todo el recorrido definido en el contrato.",
+          "Frente específico: asumimos una etapa o competencia delimitada, integrada a la estructura ya existente del cliente.",
+          "Extensión del equipo: sumamos capacidad temporal de gestión, producción o coordinación a equipos internos, agencias y productoras.",
           "En cualquier formato, alcance, responsabilidades, entregas y criterios de conclusión se definen antes del inicio.",
         ],
       },
@@ -56,7 +56,7 @@ export const stubData: Record<string, StubPageData> = {
 
   estrategia: {
     image: { src: "/images/heroes/estrategia.webp", alt: "Pizarra con un roadmap de producto en una sesión de planificación estratégica" },
-    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Tarjeta 5 Fuerzas de Porter — metodología de análisis competitivo" },
+    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Tarjeta 5 Fuerzas de Porter: metodología de análisis competitivo" },
     secondaryDiagramLabel: "Herramienta de referencia",
     eyebrow: "ESTRATEGIA",
     title: "Claridad antes de la acción.",
@@ -108,7 +108,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
-    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "Tarjeta PESTEL — metodología de análisis de escenario externo" },
+    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "Tarjeta PESTEL: metodología de análisis de escenario externo" },
     eyebrow: "INTELIGENCIA DE MERCADO",
     title: "Decidir mejor empieza por entender el mercado real.",
     intro: "Las opiniones internas, las tendencias y los datos aislados no forman una estrategia. La inteligencia de mercado conecta evidencias para responder preguntas específicas sobre demanda, competencia, públicos, contexto y oportunidad.",
@@ -178,7 +178,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "diagnostico-e-planejamento": {
-    diagramImage: { src: "/images/methodologies/swot.webp", alt: "Tarjeta SWOT — metodología usada en diagnóstico estratégico" },
+    diagramImage: { src: "/images/methodologies/swot.webp", alt: "Tarjeta SWOT: metodología usada en diagnóstico estratégico" },
     eyebrow: "DIAGNÓSTICO Y PLANIFICACIÓN",
     title: "Antes del plan, el problema correcto.",
     intro: "Planificar demasiado pronto puede organizar la respuesta equivocada. El diagnóstico esclarece qué está pasando, por qué importa y qué condiciones necesitan cambiar.",
@@ -241,7 +241,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "estruturacao-de-projetos": {
-    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Tarjeta Business Model Canvas — metodología usada en estructuración de proyectos" },
+    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Tarjeta Business Model Canvas: metodología usada en estructuración de proyectos" },
     eyebrow: "ESTRUCTURACIÓN Y VIABILIZACIÓN DE PROYECTOS",
     title: "Una idea solo se vuelve proyecto cuando puede ejecutarse.",
     intro: "Estructuramos iniciativas para que puedan ser comprendidas, decididas, financiadas, gestionadas y realizadas.",
@@ -371,7 +371,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-projetos": {
-    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "Tarjeta PMI/PMBOK — metodología de gestión de proyectos" },
+    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "Tarjeta PMI/PMBOK: metodología de gestión de proyectos" },
     eyebrow: "GESTIÓN DE PROYECTOS Y PMO",
     title: "Los proyectos avanzan cuando las decisiones tienen dueño.",
     intro: "Coordinamos el sistema que conecta objetivo, alcance, equipos, presupuesto, plazo, riesgos y entregas.",
@@ -418,9 +418,9 @@ export const stubData: Record<string, StubPageData> = {
         "Plan de cierre y transición.",
       ]},
       { type: "bullets", heading: "Creation puede entrar en tres momentos", items: [
-        "Antes del inicio — para estructurar el proyecto y preparar gobernanza, plan y movilización.",
-        "Durante la ejecución — para asumir la coordinación, recuperar visibilidad y resolver bloqueos.",
-        "En una fase crítica — para reorganizar un frente, preparar un evento, realizar una implementación o conducir el cierre.",
+        "Antes del inicio: para estructurar el proyecto y preparar gobernanza, plan y movilización.",
+        "Durante la ejecución: para asumir la coordinación, recuperar visibilidad y resolver bloqueos.",
+        "En una fase crítica: para reorganizar un frente, preparar un evento, realizar una implementación o conducir el cierre.",
       ]},
       { type: "bullets", heading: "Trabajo integrado, responsabilidades explícitas", intro: "La propuesta define:", items: [
         "quién patrocina y decide;",
@@ -444,7 +444,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-processos": {
-    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "Tarjeta BPMN — notación de modelado de procesos de negocio" },
+    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "Tarjeta BPMN: notación de modelado de procesos de negocio" },
     eyebrow: "GESTIÓN DE PROCESOS DE NEGOCIO",
     title: "El trabajo necesita funcionar más allá de las personas que lo sostienen.",
     intro: "Cuando un proceso existe solo en la memoria de quien lo ejecuta, la organización queda vulnerable a atrasos, retrabajo, pérdida de información y decisiones inconsistentes.",
@@ -511,7 +511,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "governanca-e-indicadores": {
-    diagramImage: { src: "/images/methodologies/okr.webp", alt: "Tarjeta OKR — metodología de metas e indicadores" },
+    diagramImage: { src: "/images/methodologies/okr.webp", alt: "Tarjeta OKR: metodología de metas e indicadores" },
     eyebrow: "GOBERNANZA E INDICADORES",
     title: "Decisión, responsabilidad y evidencia en el mismo sistema.",
     intro: "La gobernanza define quién decide, con base en qué información y dentro de qué límite. Los indicadores muestran qué necesita atención.",
@@ -553,7 +553,7 @@ export const stubData: Record<string, StubPageData> = {
         "Un panel extenso no es necesariamente un panel útil. Empezamos por las decisiones que necesitan apoyo y por las preguntas que la gestión necesita responder.",
         "Cada indicador debe tener definición, fuente, responsable, frecuencia y consecuencia. Si un número cambia y no pasa nada, tal vez sea solo información, no un indicador de gestión.",
       ]},
-      { type: "bullets", heading: "Diferentes niveles de evidencia", intro: "Distinguimos actividad, entrega, alcance, resultado e impacto — para que el volumen de actividad nunca se presente como transformación comprobada.", items: [
+      { type: "bullets", heading: "Diferentes niveles de evidencia", intro: "Distinguimos actividad, entrega, alcance, resultado e impacto, para que el volumen de actividad nunca se presente como transformación comprobada.", items: [
         "Actividad: lo que se hizo.",
         "Entrega: lo que se produjo.",
         "Alcance: quién se vio involucrado.",
@@ -754,9 +754,9 @@ export const stubData: Record<string, StubPageData> = {
         "Los instrumentos se adecuan al tamaño y la complejidad del proyecto. Un control útil apoya la operación, no solo aumenta la documentación.",
       ]},
       { type: "bullets", heading: "Cómo nos integramos al equipo", items: [
-        "Producción completa — Creation responde por la planificación y la coordinación del conjunto definido en el contrato.",
-        "Frente específico — asumimos una parte delimitada, como logística, proveedores, producción local u operación de campo.",
-        "Refuerzo temporal — entramos como extensión de la agencia, productora, marca u organización durante una etapa crítica.",
+        "Producción completa: Creation responde por la planificación y la coordinación del conjunto definido en el contrato.",
+        "Frente específico: asumimos una parte delimitada, como logística, proveedores, producción local u operación de campo.",
+        "Refuerzo temporal: entramos como extensión de la agencia, productora, marca u organización durante una etapa crítica.",
         "En cualquier modelo, los niveles de decisión, aprobaciones y dependencias quedan claros antes del inicio.",
       ]},
       { type: "bullets", heading: "Presencia en el campo, información para decidir", items: [
@@ -975,7 +975,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "La intención social no reemplaza la estrategia, la gestión ni la evidencia. Creation ayuda a empresas, organizaciones y socios a transformar compromisos en programas estructurados.",
     lead: "Con públicos definidos, responsabilidades claras y seguimiento compatible con lo que se pretende cambiar.",
     image: { src: "/images/heroes/impacto.webp", alt: "Personas en un entorno natural, parte de un programa de impacto social realizado por Creation" },
-    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Tarjeta Liderazgo de Impacto — organización ambidiestra entre presente y futuro" },
+    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Tarjeta Liderazgo de Impacto: organización ambidiestra entre presente y futuro" },
     secondaryDiagramLabel: "Herramienta de referencia",
     parentLabel: "Soluciones",
     parentHref: "/solucoes",
@@ -1150,10 +1150,10 @@ export const stubData: Record<string, StubPageData> = {
         "Iniciativas ligadas a causas.",
       ]},
       { type: "bullets", heading: "Lo que necesita permanecer coherente", items: [
-        "Promesa — lo que la marca afirma y qué expectativa crea.",
-        "Participación — lo que el público puede hacer, sentir, aprender o llevarse.",
-        "Operación — cómo el espacio, el equipo, la fila, el acceso, el contenido, la atención y la tecnología sostienen la experiencia.",
-        "Continuidad — qué sucede después del encuentro y cómo puede continuar la relación.",
+        "Promesa: lo que la marca afirma y qué expectativa crea.",
+        "Participación: lo que el público puede hacer, sentir, aprender o llevarse.",
+        "Operación: cómo el espacio, el equipo, la fila, el acceso, el contenido, la atención y la tecnología sostienen la experiencia.",
+        "Continuidad: qué sucede después del encuentro y cómo puede continuar la relación.",
         "Una experiencia pierde valor cuando la comunicación promete algo que el recorrido no entrega.",
       ]},
       { type: "bullets", heading: "Entregables posibles", items: [
@@ -1239,7 +1239,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "Estructuramos y realizamos programas de innovación, desafíos, hackathons, ideathons y jornadas.",
     href: "/solucoes/inovacao",
     linkLabel: "Conozca Innovación",
-    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — programa de innovación realizado por Creation" },
+    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio: programa de innovación realizado por Creation" },
   },
   {
     title: "Impacto",
@@ -1258,6 +1258,11 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     image: { src: "/images/reservax-lounge.webp", alt: "Activación de marca ReservaX Lounge, producida por Creation" },
   },
 ];
+
+export const homeEspecialidadesSection: HomeEspecialidadesSection = {
+  title: "Tres frentes en los que ya entregamos muchas veces.",
+  subtitle: "Algunos desafíos piden repertorio específico, además de la capacidad general. En estos tres campos, reunimos experiencia, lenguaje y conexiones que hacen la solución más consistente.",
+};
 
 export const homeSolucoes: HomeSolucao[] = [
   {
@@ -1290,7 +1295,7 @@ export const casesStub: CaseStub[] = [
     image: { src: caseHrTalks, alt: "Programación digital HR Talks" },
   },
   {
-    title: "Pertinho de Casa — Escuela y Ferias",
+    title: "Pertinho de Casa: Escuela y Ferias",
     client: "Rede Asta y Porto Sudeste",
     context: "Coordinación territorial de una escuela de negocios y ferias de comercialización para fortalecer a emprendedores locales.",
     numbers: ["2 frentes de actuación", "6 eventos de comercialización", "R$19.649 en ventas acompañadas"],
@@ -1298,7 +1303,7 @@ export const casesStub: CaseStub[] = [
     image: { src: casePertinhoEscola, alt: "Feria de comercialización Pertinho de Casa en Itaguaí" },
   },
   {
-    title: "Pertinho de Casa — Plataforma",
+    title: "Pertinho de Casa: Plataforma",
     client: "Rede Asta y Porto Sudeste",
     context: "Reclutamiento de vendedores, articulación del Comité por la Economía Local y seguimiento trimestral de la plataforma.",
     numbers: ["241 emprendedores", "56 barrios de Itaguaí y Seropédica", "R$30.650,11 en facturación registrada"],
@@ -1336,7 +1341,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Estructurar",
     role: "Plan",
     family: "lapis",
-    lead: "Transformamos el entendimiento en un proyecto que pueda decidirse, financiarse, gestionarse y ejecutarse — con objetivos, alcance, gobernanza, presupuesto, cronograma e indicadores.",
+    lead: "Transformamos el entendimiento en un proyecto que pueda decidirse, financiarse, gestionarse y ejecutarse: con objetivos, alcance, gobernanza, presupuesto, cronograma e indicadores.",
     leftHeading: "Definimos",
     left: ["Objetivos, alcance y prioridades", "Entregas y criterios de aceptación", "Gobernanza y responsabilidades", "Presupuesto, cronograma y riesgos"],
     rightHeading: "Entregas",
@@ -1348,7 +1353,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Realizar",
     role: "Entrega",
     family: "amber",
-    lead: "Ponemos la estructura en movimiento, coordinando personas, decisiones y recursos hasta la entrega — con una cadencia clara de decisión y seguimiento, ajustando el recorrido sin perder el objetivo.",
+    lead: "Ponemos la estructura en movimiento, coordinando personas, decisiones y recursos hasta la entrega: con una cadencia clara de decisión y seguimiento, ajustando el recorrido sin perder el objetivo.",
     leftHeading: "Conducimos",
     left: ["Cadencia de decisión y seguimiento", "Coordinación de equipos y socios", "Registro de cambios e impactos", "Seguimiento de plazo, riesgo y calidad"],
     rightHeading: "Entregas",
@@ -1360,7 +1365,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Comprobar",
     role: "Evidencia",
     family: "kelp",
-    lead: "El cierre no es solo declarar que algo fue entregado. Es cuando organizamos las evidencias y evaluamos lo que el proyecto efectivamente produjo — distinguiendo entrega, resultado observado e hipótesis de impacto.",
+    lead: "El cierre no es solo declarar que algo fue entregado. Es cuando organizamos las evidencias y evaluamos lo que el proyecto efectivamente produjo, distinguiendo entrega, resultado observado e hipótesis de impacto.",
     leftHeading: "Evaluamos",
     left: ["Consolidación de entregas y datos", "Ejecución comparada con metas y criterios", "Análisis de resultados y limitaciones", "Aprendizajes y recomendaciones"],
     rightHeading: "Entregas",

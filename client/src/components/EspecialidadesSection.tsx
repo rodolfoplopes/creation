@@ -18,23 +18,23 @@ import { stubPages } from "@/content/stub";
  * "confiado por equipes que..."): cada uma das 3 especialidades ganhou
  * uma foto real (esp.image) acima do texto, rounded-2xl + sombra leve,
  * mesmo tratamento usado no carrossel da Home (WhyWeExistSection).
+ *
+ * TITULO/SUBTITULO (Tarefa 3.1b, comando tecnico 26/09/2026): saiu do
+ * hardcode em t() aqui dentro e foi pra stub/{pt,en,es}.ts
+ * (homeEspecialidadesSection), seguindo o padrao do resto do site de
+ * manter texto em arquivo de conteudo. Titulo trocado de categoria
+ * abstrata ("Onde combinamos capacidade com repertório") pra frase com
+ * sujeito e verbo que diz o que o leitor ganha.
  */
 export default function EspecialidadesSection() {
   const localize = useLocalizedHref();
   const lang = useLang();
   const homeEspecialidades = stubPages[lang].homeEspecialidades;
-  const t = (pt: string, en: string, es: string) => (lang === "en" ? en : lang === "es" ? es : pt);
+  const section = stubPages[lang].homeEspecialidadesSection;
 
   return (
     <Section id="especialidades" tone="white" divider>
-      <SectionHeader
-        title={t("Onde combinamos capacidade com repertório.", "Where we combine capability with expertise.", "Donde combinamos capacidad con repertorio.")}
-        subtitle={t(
-          "Alguns desafios pedem repertório específico, além da competência geral. Nesses três campos, reunimos experiência, linguagem e conexões que tornam a solução mais consistente.",
-          "Some challenges call for specific expertise, beyond general capability. In these three fields, we bring together experience, language and connections that make the solution more consistent.",
-          "Algunos desafíos piden repertorio específico, además de la capacidad general. En estos tres campos, reunimos experiencia, lenguaje y conexiones que hacen la solución más consistente.",
-        )}
-      />
+      <SectionHeader title={section.title} subtitle={section.subtitle} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {homeEspecialidades.map((esp, i) => (
           <Reveal key={esp.href} delay={i * 80}>

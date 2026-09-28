@@ -19,7 +19,7 @@ const biExample = {
       { label: "Retorno", value: "3,1×", sub: "sobre investimento" },
     ],
     funnel: [
-      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "—" },
+      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "" },
       { label: "Inscrições", value: "4.460", widthPct: 62, conversionPct: "3,7%" },
       { label: "Confirmados", value: "3.900", widthPct: 52, conversionPct: "87%" },
       { label: "Presentes", value: "3.480", widthPct: 46, conversionPct: "89%" },
@@ -38,7 +38,7 @@ const biExample = {
       { label: "Return", value: "3.1×", sub: "on investment" },
     ],
     funnel: [
-      { label: "Reach", value: "120,000", widthPct: 100, conversionPct: "—" },
+      { label: "Reach", value: "120,000", widthPct: 100, conversionPct: "" },
       { label: "Registrations", value: "4,460", widthPct: 62, conversionPct: "3.7%" },
       { label: "Confirmed", value: "3,900", widthPct: 52, conversionPct: "87%" },
       { label: "Attended", value: "3,480", widthPct: 46, conversionPct: "89%" },
@@ -57,7 +57,7 @@ const biExample = {
       { label: "Retorno", value: "3,1×", sub: "sobre la inversión" },
     ],
     funnel: [
-      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "—" },
+      { label: "Alcance", value: "120.000", widthPct: 100, conversionPct: "" },
       { label: "Inscripciones", value: "4.460", widthPct: 62, conversionPct: "3,7%" },
       { label: "Confirmados", value: "3.900", widthPct: 52, conversionPct: "87%" },
       { label: "Presentes", value: "3.480", widthPct: 46, conversionPct: "89%" },
@@ -206,10 +206,10 @@ export default function BiEventos() {
           }
           subtitle={
             lang === "en"
-              ? "An illustrative example — not the result of any real event."
+              ? "An illustrative example, not the result of any real event."
               : lang === "es"
-                ? "Un ejemplo ilustrativo — no es el resultado de ningún evento real."
-                : "Um exemplo ilustrativo — não é o resultado de nenhum evento real."
+                ? "Un ejemplo ilustrativo, no es el resultado de ningún evento real."
+                : "Um exemplo ilustrativo, não é o resultado de nenhum evento real."
           }
         />
         <MethodologyCard

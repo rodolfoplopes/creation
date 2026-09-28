@@ -131,7 +131,7 @@ export function Funnel({ rows }: { rows: FunnelRow[] }) {
               {row.value}
             </span>
           </div>
-          <span className="text-small font-semibold text-abyss/50 text-right tabular-nums">{row.conversionPct ?? "—"}</span>
+          <span className="text-small font-semibold text-abyss/50 text-right tabular-nums">{row.conversionPct ?? ""}</span>
         </div>
       ))}
     </div>

@@ -1,4 +1,4 @@
-import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeSolucao, CaseStub, CicloStage } from "./types";
+import type { StubPageData, HomeCapacidade, HomeEspecialidade, HomeEspecialidadesSection, HomeSolucao, CaseStub, CicloStage } from "./types";
 import caseHackingRio from "@assets/case-hacking-rio.jpg";
 import caseHackingHelp from "@assets/case-hacking-help.jpg";
 import caseHrTalks from "@assets/case-hr-talks.jpg";
@@ -32,9 +32,9 @@ export const stubData: Record<string, StubPageData> = {
         type: "bullets",
         heading: "Different ways to work with us",
         items: [
-          "Integrated project — Creation connects strategy, management and operation and answers for the complete journey defined in the contract.",
-          "Specific front — we take on a delimited stage or competency, integrated into the client's existing structure.",
-          "Team extension — we add temporary management, production or coordination capacity to internal teams, agencies and production companies.",
+          "Integrated project: Creation connects strategy, management and operation and answers for the complete journey defined in the contract.",
+          "Specific front: we take on a delimited stage or competency, integrated into the client's existing structure.",
+          "Team extension: we add temporary management, production or coordination capacity to internal teams, agencies and production companies.",
           "In any format, scope, responsibilities, deliverables and completion criteria are defined before the start.",
         ],
       },
@@ -56,7 +56,7 @@ export const stubData: Record<string, StubPageData> = {
 
   estrategia: {
     image: { src: "/images/heroes/estrategia.webp", alt: "Whiteboard with a product roadmap in a strategic planning session" },
-    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Porter's Five Forces card — competitive analysis methodology" },
+    secondaryDiagram: { src: "/images/methodologies/5-forcas-de-porter.webp", alt: "Porter's Five Forces card: competitive analysis methodology" },
     secondaryDiagramLabel: "Reference tool",
     eyebrow: "STRATEGY",
     title: "Clarity before action.",
@@ -108,7 +108,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "inteligencia-de-mercado": {
-    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "PESTEL card — external scenario analysis methodology" },
+    diagramImage: { src: "/images/methodologies/pestel.webp", alt: "PESTEL card: external scenario analysis methodology" },
     eyebrow: "MARKET INTELLIGENCE",
     title: "Deciding better starts with understanding the real market.",
     intro: "Internal opinions, trends and isolated data don't form a strategy. Market intelligence connects evidence to answer specific questions about demand, competition, audiences, context and opportunity.",
@@ -178,7 +178,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "diagnostico-e-planejamento": {
-    diagramImage: { src: "/images/methodologies/swot.webp", alt: "SWOT card — methodology used in strategic diagnosis" },
+    diagramImage: { src: "/images/methodologies/swot.webp", alt: "SWOT card: methodology used in strategic diagnosis" },
     eyebrow: "DIAGNOSIS AND PLANNING",
     title: "Before the plan, the right problem.",
     intro: "Planning too early can organize the wrong answer. Diagnosis clarifies what's happening, why it matters and what conditions need to change.",
@@ -241,7 +241,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "estruturacao-de-projetos": {
-    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Business Model Canvas card — methodology used in project structuring" },
+    diagramImage: { src: "/images/methodologies/business-model-canvas.webp", alt: "Business Model Canvas card: methodology used in project structuring" },
     eyebrow: "PROJECT STRUCTURING AND VIABILITY",
     title: "An idea only becomes a project when it can be executed.",
     intro: "We structure initiatives so they can be understood, decided on, financed, managed and realized.",
@@ -371,7 +371,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-projetos": {
-    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "PMI/PMBOK card — project management methodology" },
+    diagramImage: { src: "/images/methodologies/pmi-pmbok.webp", alt: "PMI/PMBOK card: project management methodology" },
     eyebrow: "PROJECT MANAGEMENT AND PMO",
     title: "Projects move forward when decisions have an owner.",
     intro: "We coordinate the system that connects objective, scope, teams, budget, deadline, risks and deliverables.",
@@ -418,9 +418,9 @@ export const stubData: Record<string, StubPageData> = {
         "Closeout and transition plan.",
       ]},
       { type: "bullets", heading: "Creation can step in at three moments", items: [
-        "Before kickoff — to structure the project and prepare governance, plan and mobilization.",
-        "During execution — to take on coordination, restore visibility and address blockers.",
-        "In a critical phase — to reorganize a front, prepare an event, carry out an implementation or lead the closeout.",
+        "Before kickoff: to structure the project and prepare governance, plan and mobilization.",
+        "During execution: to take on coordination, restore visibility and address blockers.",
+        "In a critical phase: to reorganize a front, prepare an event, carry out an implementation or lead the closeout.",
       ]},
       { type: "bullets", heading: "Integrated work, explicit responsibilities", intro: "The proposal defines:", items: [
         "who sponsors and decides;",
@@ -444,7 +444,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "gestao-de-processos": {
-    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "BPMN card — business process modeling notation" },
+    diagramImage: { src: "/images/methodologies/bpmn.webp", alt: "BPMN card: business process modeling notation" },
     eyebrow: "BUSINESS PROCESS MANAGEMENT",
     title: "The work needs to function beyond the people who sustain it.",
     intro: "When a process only exists in the memory of whoever runs it, the organization becomes vulnerable to delays, rework, information loss and inconsistent decisions.",
@@ -511,7 +511,7 @@ export const stubData: Record<string, StubPageData> = {
   },
 
   "governanca-e-indicadores": {
-    diagramImage: { src: "/images/methodologies/okr.webp", alt: "OKR card — goals and indicators methodology" },
+    diagramImage: { src: "/images/methodologies/okr.webp", alt: "OKR card: goals and indicators methodology" },
     eyebrow: "GOVERNANCE AND KPIS",
     title: "Decision, responsibility and evidence in the same system.",
     intro: "Governance defines who decides, based on what information and within what limits. Indicators show what needs attention.",
@@ -553,7 +553,7 @@ export const stubData: Record<string, StubPageData> = {
         "An extensive dashboard isn't necessarily a useful one. We start from the decisions that need support and the questions management needs answered.",
         "Every indicator should have a definition, source, owner, frequency and consequence. If a number changes and nothing happens, it may just be information, not a management indicator.",
       ]},
-      { type: "bullets", heading: "Different levels of evidence", intro: "We distinguish activity, output, reach, result and impact — so that volume of activity is never presented as proven transformation.", items: [
+      { type: "bullets", heading: "Different levels of evidence", intro: "We distinguish activity, output, reach, result and impact, so that volume of activity is never presented as proven transformation.", items: [
         "Activity: what was done.",
         "Output: what was produced.",
         "Reach: who was involved.",
@@ -751,12 +751,12 @@ export const stubData: Record<string, StubPageData> = {
         "Risk and contingency map.",
         "Technical run-of-show or day plan.",
         "Incident and closeout report.",
-        "Instruments are sized to the project's scale and complexity. A useful control supports the operation — it doesn't just pile up documentation.",
+        "Instruments are sized to the project's scale and complexity. A useful control supports the operation. It doesn't just pile up documentation.",
       ]},
       { type: "bullets", heading: "How we integrate with the team", items: [
-        "Full production — Creation is responsible for planning and coordinating the whole set defined in the contract.",
-        "Specific front — we take on a delimited part, such as logistics, vendors, local production or field operation.",
-        "Temporary reinforcement — we come in as an extension of the agency, production company, brand or organization during a critical stage.",
+        "Full production: Creation is responsible for planning and coordinating the whole set defined in the contract.",
+        "Specific front: we take on a delimited part, such as logistics, vendors, local production or field operation.",
+        "Temporary reinforcement: we come in as an extension of the agency, production company, brand or organization during a critical stage.",
         "In any model, authority levels, approvals and dependencies are clear before the start.",
       ]},
       { type: "bullets", heading: "Presence in the field, information to decide", items: [
@@ -975,7 +975,7 @@ export const stubData: Record<string, StubPageData> = {
     intro: "Social intention doesn't replace strategy, management or evidence. Creation helps companies, organizations and partners turn commitments into structured programs.",
     lead: "With defined audiences, clear responsibilities and follow-up compatible with the change being pursued.",
     image: { src: "/images/heroes/impacto.webp", alt: "People in a natural setting, part of a social impact program run by Creation" },
-    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Impact Leadership card — ambidextrous organization between present and future" },
+    secondaryDiagram: { src: "/images/methodologies/lideranca-de-impacto.webp", alt: "Impact Leadership card: ambidextrous organization between present and future" },
     secondaryDiagramLabel: "Reference tool",
     parentLabel: "Solutions",
     parentHref: "/solucoes",
@@ -1150,10 +1150,10 @@ export const stubData: Record<string, StubPageData> = {
         "Cause-linked initiatives.",
       ]},
       { type: "bullets", heading: "What needs to stay coherent", items: [
-        "Promise — what the brand states and what expectation it creates.",
-        "Participation — what the audience can do, feel, learn or take with them.",
-        "Operation — how space, staff, queue, access, content, service and technology sustain the experience.",
-        "Continuity — what happens after the encounter, and how the relationship can continue.",
+        "Promise: what the brand states and what expectation it creates.",
+        "Participation: what the audience can do, feel, learn or take with them.",
+        "Operation: how space, staff, queue, access, content, service and technology sustain the experience.",
+        "Continuity: what happens after the encounter, and how the relationship can continue.",
         "An experience loses value when communication promises something the journey doesn't deliver.",
       ]},
       { type: "bullets", heading: "Possible deliverables", items: [
@@ -1239,7 +1239,7 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     description: "We structure and run innovation programs, challenges, hackathons, ideathons and journeys.",
     href: "/solucoes/inovacao",
     linkLabel: "See Innovation",
-    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio — innovation program run by Creation" },
+    image: { src: "/images/hacking-rio.webp", alt: "Hacking.Rio: innovation program run by Creation" },
   },
   {
     title: "Impact",
@@ -1258,6 +1258,11 @@ export const homeEspecialidades: HomeEspecialidade[] = [
     image: { src: "/images/reservax-lounge.webp", alt: "ReservaX Lounge brand activation, produced by Creation" },
   },
 ];
+
+export const homeEspecialidadesSection: HomeEspecialidadesSection = {
+  title: "Three areas we have delivered in many times over.",
+  subtitle: "Some challenges call for specific expertise, beyond general capability. In these three fields, we bring together experience, language and connections that make the solution more consistent.",
+};
 
 export const homeSolucoes: HomeSolucao[] = [
   {
@@ -1290,7 +1295,7 @@ export const casesStub: CaseStub[] = [
     image: { src: caseHrTalks, alt: "HR Talks digital program" },
   },
   {
-    title: "Pertinho de Casa — School and Fairs",
+    title: "Pertinho de Casa: School and Fairs",
     client: "Rede Asta and Porto Sudeste",
     context: "Territorial coordination of a business school and sales fairs to strengthen local entrepreneurs.",
     numbers: ["2 fronts of work", "6 sales events", "R$19,649 in tracked sales"],
@@ -1298,7 +1303,7 @@ export const casesStub: CaseStub[] = [
     image: { src: casePertinhoEscola, alt: "Pertinho de Casa sales fair in Itaguaí" },
   },
   {
-    title: "Pertinho de Casa — Platform",
+    title: "Pertinho de Casa: Platform",
     client: "Rede Asta and Porto Sudeste",
     context: "Recruiting sellers, coordinating the Local Economy Committee, and quarterly follow-up on the platform.",
     numbers: ["241 entrepreneurs", "56 neighborhoods across Itaguaí and Seropédica", "R$30,650.11 in registered revenue"],
@@ -1336,7 +1341,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Structure",
     role: "Plan",
     family: "lapis",
-    lead: "We turn understanding into a project that can be decided on, funded, managed and executed — with objectives, scope, governance, budget, timeline and indicators.",
+    lead: "We turn understanding into a project that can be decided on, funded, managed and executed: with objectives, scope, governance, budget, timeline and indicators.",
     leftHeading: "We define",
     left: ["Objectives, scope and priorities", "Deliverables and acceptance criteria", "Governance and responsibilities", "Budget, timeline and risks"],
     rightHeading: "Deliverables",
@@ -1348,7 +1353,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Execute",
     role: "Delivery",
     family: "amber",
-    lead: "We put the structure into motion, coordinating people, decisions and resources through to delivery — with a clear cadence of decisions and follow-up, adjusting course without losing sight of the objective.",
+    lead: "We put the structure into motion, coordinating people, decisions and resources through to delivery: with a clear cadence of decisions and follow-up, adjusting course without losing sight of the objective.",
     leftHeading: "We lead",
     left: ["Decision and follow-up cadence", "Coordination of teams and partners", "Logging changes and impacts", "Tracking timeline, risk and quality"],
     rightHeading: "Deliverables",
@@ -1360,7 +1365,7 @@ export const cicloCompletoStages: CicloStage[] = [
     name: "Prove",
     role: "Evidence",
     family: "kelp",
-    lead: "Closing isn't just declaring something delivered. It's when we organize the evidence and assess what the project actually produced — distinguishing delivery, observed result and impact hypothesis.",
+    lead: "Closing isn't just declaring something delivered. It's when we organize the evidence and assess what the project actually produced, distinguishing delivery, observed result and impact hypothesis.",
     leftHeading: "We assess",
     left: ["Consolidation of deliverables and data", "Execution compared to goals and criteria", "Analysis of results and limitations", "Learnings and recommendations"],
     rightHeading: "Deliverables",

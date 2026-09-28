@@ -31,13 +31,14 @@ export const en: Content = {
   hero: {
     headline: "Thinking and doing are the same responsibility.",
     subheadline:
-      "Creation brings together strategy, management and operational capacity to turn challenges into clear, viable and well-executed projects, from understanding to delivery.",
+      "We manage and deliver projects in innovation, culture and social impact, from understanding to delivery.",
+    proof: "HACKING.RIO · WORLD CREATIVITY DAY · FESTIVAL PERTINHO DE CASA",
   },
 
 
   targetAudience: {
     title: "Who we work with",
-    subtitle: "Where purpose and results meet.",
+    subtitle: "Different organizations, the same problem: getting the project off the page and all the way to the finish.",
     audiences: [
       {
         title: "Institutes and foundations",
@@ -72,7 +73,7 @@ export const en: Content = {
       title: "A path built across disciplines",
       paragraphs: [
         "Our origin is in making things happen. Production, communications, events and operations taught us that a good idea only gains value when it survives budget, deadline, team, vendors, territory and the unexpected.",
-        "To our capacity to execute, we added strategy, intelligence, project management, processes, innovation and measurement — not to abandon practice, but to arrive at execution with better decisions and more consistent structures.",
+        "To our capacity to execute, we added strategy, intelligence, project management, processes, innovation and measurement, not to abandon practice, but to arrive at execution with better decisions and more consistent structures.",
         "Today, we work mainly in management and the creative economy, with expertise in innovation, impact, branding, experiences, events and operations.",
       ],
     },
@@ -518,7 +519,7 @@ export const en: Content = {
         { title: "Goals and questions", description: "Defining what this event needs to prove, and for whom that answer matters." },
         { title: "Data architecture", description: "Mapping what data exists, what data is missing, and how to connect it." },
         { title: "Indicators", description: "Selecting the indicators relevant to this specific format and goal." },
-        { title: "Instruments", description: "Defining how each data point will be collected — form, check-in, survey, third-party system." },
+        { title: "Instruments", description: "Defining how each data point will be collected: form, check-in, survey, third-party system." },
         { title: "Monitoring", description: "Reading the numbers during the event itself, when the format allows real-time adjustment." },
         { title: "Analysis and visualization", description: "Post-event consolidation in a format that supports decisions, not just description." },
       ],

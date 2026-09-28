@@ -78,9 +78,9 @@ export default function CicloCompletoSection({ variant = "full" }: { variant?: "
           <h2 className="font-display text-h2 font-bold text-bone mb-3">{t("Ciclo Completo", "Complete Cycle", "Ciclo Completo")}</h2>
           <p className="text-bone/70 max-w-measure mx-auto leading-relaxed">
             {t(
-              "Todo projeto percorre o mesmo caminho — do entendimento à prova.",
-              "Every project follows the same path — from understanding to proof.",
-              "Todo proyecto recorre el mismo camino — del entendimiento a la prueba.",
+              "Todo projeto percorre o mesmo caminho: do entendimento à prova.",
+              "Every project follows the same path: from understanding to proof.",
+              "Todo proyecto recorre el mismo camino: del entendimiento a la prueba.",
             )}
           </p>
         </div>
@@ -112,9 +112,9 @@ export default function CicloCompletoSection({ variant = "full" }: { variant?: "
         </h2>
         <p className="text-bone/70 max-w-measure mx-auto leading-relaxed">
           {t(
-            "Uma forma disciplinada de transformar uma necessidade em direção, estrutura, entrega e evidência — do entendimento à comprovação.",
-            "A disciplined way of turning a need into direction, structure, delivery and evidence — from understanding to proof.",
-            "Una forma disciplinada de transformar una necesidad en dirección, estructura, entrega y evidencia — del entendimiento a la comprobación.",
+            "Uma forma disciplinada de transformar uma necessidade em direção, estrutura, entrega e evidência: do entendimento à comprovação.",
+            "A disciplined way of turning a need into direction, structure, delivery and evidence: from understanding to proof.",
+            "Una forma disciplinada de transformar una necesidad en dirección, estructura, entrega y evidencia: del entendimiento a la comprobación.",
           )}
         </p>
       </div>

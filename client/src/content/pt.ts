@@ -30,12 +30,13 @@ export const pt: Content = {
   hero: {
     headline: "Pensar e fazer são a mesma responsabilidade.",
     subheadline:
-      "A Creation reúne estratégia, gestão e capacidade operacional para transformar desafios em projetos claros, viáveis e bem executados, do entendimento à entrega.",
+      "Gerimos e realizamos projetos de inovação, cultura e impacto social, do entendimento à entrega.",
+    proof: "HACKING.RIO · WORLD CREATIVITY DAY · FESTIVAL PERTINHO DE CASA",
   },
 
   targetAudience: {
     title: "Para quem trabalhamos",
-    subtitle: "Onde propósito e resultado se encontram.",
+    subtitle: "Organizações diferentes, o mesmo problema: fazer o projeto sair do papel e chegar ao fim.",
     audiences: [
       {
         title: "Institutos e fundações",
@@ -513,7 +514,7 @@ export const pt: Content = {
         { title: "Objetivos e perguntas", description: "Definição do que este evento precisa provar e para quem essa resposta importa." },
         { title: "Arquitetura de dados", description: "Desenho de que dados existem, que dados faltam e como conectá-los." },
         { title: "Indicadores", description: "Seleção dos indicadores relevantes para este formato e objetivo específicos." },
-        { title: "Instrumentos", description: "Definição de como cada dado será coletado — formulário, check-in, pesquisa, sistema de terceiro." },
+        { title: "Instrumentos", description: "Definição de como cada dado será coletado: formulário, check-in, pesquisa, sistema de terceiro." },
         { title: "Acompanhamento", description: "Leitura dos números durante o próprio evento, quando o formato permite ajuste em tempo real." },
         { title: "Análise e visualização", description: "Consolidação pós-evento em um formato que permita decisão, não apenas descrição." },
       ],
