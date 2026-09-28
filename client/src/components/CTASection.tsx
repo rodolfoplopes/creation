@@ -6,7 +6,11 @@ export default function CTASection() {
 
   return (
     <Section tone="ink" size="sm">
-      <div className="text-center max-w-2xl mx-auto">
+      {/* data-fab-hide-target (Tarefa 10.1): WhatsAppFab some quando este
+          CTA final ja esta na tela — nao faz sentido oferecer o atalho
+          quando o destino ja esta visivel. */}
+      <div className="text-center max-w-2xl mx-auto" data-fab-hide-target>
+
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-bone mb-6 tracking-tight">
           {c.contact.title}
         </h2>

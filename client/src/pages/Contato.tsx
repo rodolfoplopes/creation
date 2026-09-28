@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MessageSquare, Send, CheckCircle2, ChevronDown } from "lucide-react";
 import { Section, SectionHeader } from "@/components/primitives";
 import { useContent, useLang } from "@/content";
 import { trackEvent } from "@/lib/analytics";
@@ -38,6 +38,17 @@ import { trackEvent } from "@/lib/analytics";
  * genericas virou as 13 opcoes reais do doc. Adicionada tambem a secao
  * "O que acontece depois do contato?" (ausente) e a mensagem de
  * confirmacao pos-envio (era um toast generico).
+ *
+ * REDUCAO DE 9 PARA 3 CAMPOS (Tarefa 9, comando tecnico 26/09/2026): os
+ * 9 campos formavam um briefing, nao um primeiro contato. Nome, e-mail,
+ * "conte o desafio" e consentimento ficam sempre visiveis; WhatsApp,
+ * organizacao, "o que voce precisa agora" (13 opcoes viraram 7 — as
+ * mesmas 6 situacoes ja usadas em stubData.solucoes + "Ainda nao sei"),
+ * momento do projeto, local e prazo entram num disclosure fechado por
+ * padrao. api/contact.ts ja so exigia name/email/message — a
+ * obrigatoriedade de organization era so do front (removida). Campos
+ * recolhidos continuam enviados quando preenchidos, sem mudar o
+ * contrato da API.
  */
 // Mensagens de erro por idioma — a validacao nativa do navegador (bolha
 // cinza padrao) destoava do design do resto do site (achado da auditoria
@@ -55,6 +66,8 @@ export default function Contato() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const [detailsOpenedOnce, setDetailsOpenedOnce] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "",
@@ -76,7 +89,6 @@ export default function Contato() {
     if (!formData.name.trim()) next.name = em.required;
     if (!formData.email.trim()) next.email = em.required;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) next.email = em.email;
-    if (!formData.organization.trim()) next.organization = em.required;
     if (!formData.message.trim()) next.message = em.required;
     if (!consent) next.consent = em.consent;
     return next;
@@ -133,6 +145,14 @@ export default function Contato() {
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
+  };
+
+  const toggleDetails = () => {
+    setDetailsOpen((prev) => !prev);
+    if (!detailsOpen && !detailsOpenedOnce) {
+      trackEvent("form_details_open");
+      setDetailsOpenedOnce(true);
+    }
   };
 
   const fieldError = (field: string) =>
@@ -200,95 +220,111 @@ export default function Contato() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="whatsapp">{c.contact.form.whatsapp}</Label>
-                        <Input
-                          id="whatsapp"
-                          type="tel"
-                          value={formData.whatsapp}
-                          onChange={(e) => handleChange("whatsapp", e.target.value)}
-                          placeholder={c.contact.form.whatsappPlaceholder}
-                          data-testid="input-whatsapp"
+                    <div>
+                      <button
+                        type="button"
+                        onClick={toggleDetails}
+                        aria-expanded={detailsOpen}
+                        aria-controls="contact-details"
+                        className="flex items-center gap-2 text-small font-semibold text-abyss hover:text-spark transition-colors"
+                        data-testid="button-toggle-details"
+                      >
+                        <ChevronDown
+                          className="h-4 w-4 transition-transform"
+                          style={{ transform: detailsOpen ? "rotate(180deg)" : "none" }}
                         />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="organization">{c.contact.form.organization}</Label>
-                        <Input
-                          id="organization"
-                          type="text"
-                          value={formData.organization}
-                          onChange={(e) => handleChange("organization", e.target.value)}
-                          placeholder={c.contact.form.organizationPlaceholder}
-                          aria-invalid={!!errors.organization}
-                          className={errors.organization ? "border-destructive focus-visible:ring-destructive" : undefined}
-                          data-testid="input-organization"
-                        />
-                        {fieldError("organization")}
-                      </div>
-                    </div>
+                        {c.contact.form.detailsToggle}
+                      </button>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="projectType">{c.contact.form.projectType}</Label>
-                        <Select
-                          value={formData.projectType}
-                          onValueChange={(value) => handleChange("projectType", value)}
-                        >
-                          <SelectTrigger id="projectType" data-testid="select-project-type">
-                            <SelectValue placeholder={c.contact.form.projectTypePlaceholder} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {c.contact.form.projectTypes.map((type) => (
-                              <SelectItem key={type} value={type}>
-                                {type}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="projectStage">{c.contact.form.projectStage}</Label>
-                        <Select
-                          value={formData.projectStage}
-                          onValueChange={(value) => handleChange("projectStage", value)}
-                        >
-                          <SelectTrigger id="projectStage" data-testid="select-project-stage">
-                            <SelectValue placeholder={c.contact.form.projectStagePlaceholder} />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {c.contact.form.projectStages.map((stage) => (
-                              <SelectItem key={stage} value={stage}>
-                                {stage}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
-                    </div>
+                      <div id="contact-details" hidden={!detailsOpen} className="space-y-6 mt-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="whatsapp">{c.contact.form.whatsapp}</Label>
+                            <Input
+                              id="whatsapp"
+                              type="tel"
+                              value={formData.whatsapp}
+                              onChange={(e) => handleChange("whatsapp", e.target.value)}
+                              placeholder={c.contact.form.whatsappPlaceholder}
+                              data-testid="input-whatsapp"
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="organization">{c.contact.form.organization}</Label>
+                            <Input
+                              id="organization"
+                              type="text"
+                              value={formData.organization}
+                              onChange={(e) => handleChange("organization", e.target.value)}
+                              placeholder={c.contact.form.organizationPlaceholder}
+                              data-testid="input-organization"
+                            />
+                          </div>
+                        </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="location">{c.contact.form.location}</Label>
-                        <Input
-                          id="location"
-                          type="text"
-                          value={formData.location}
-                          onChange={(e) => handleChange("location", e.target.value)}
-                          placeholder={c.contact.form.locationPlaceholder}
-                          data-testid="input-location"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="deadline">{c.contact.form.deadline}</Label>
-                        <Input
-                          id="deadline"
-                          type="text"
-                          value={formData.deadline}
-                          onChange={(e) => handleChange("deadline", e.target.value)}
-                          placeholder={c.contact.form.deadlinePlaceholder}
-                          data-testid="input-deadline"
-                        />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="projectType">{c.contact.form.projectType}</Label>
+                            <Select
+                              value={formData.projectType}
+                              onValueChange={(value) => handleChange("projectType", value)}
+                            >
+                              <SelectTrigger id="projectType" data-testid="select-project-type">
+                                <SelectValue placeholder={c.contact.form.projectTypePlaceholder} />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {c.contact.form.projectTypes.map((type) => (
+                                  <SelectItem key={type} value={type}>
+                                    {type}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="projectStage">{c.contact.form.projectStage}</Label>
+                            <Select
+                              value={formData.projectStage}
+                              onValueChange={(value) => handleChange("projectStage", value)}
+                            >
+                              <SelectTrigger id="projectStage" data-testid="select-project-stage">
+                                <SelectValue placeholder={c.contact.form.projectStagePlaceholder} />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {c.contact.form.projectStages.map((stage) => (
+                                  <SelectItem key={stage} value={stage}>
+                                    {stage}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="location">{c.contact.form.location}</Label>
+                            <Input
+                              id="location"
+                              type="text"
+                              value={formData.location}
+                              onChange={(e) => handleChange("location", e.target.value)}
+                              placeholder={c.contact.form.locationPlaceholder}
+                              data-testid="input-location"
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="deadline">{c.contact.form.deadline}</Label>
+                            <Input
+                              id="deadline"
+                              type="text"
+                              value={formData.deadline}
+                              onChange={(e) => handleChange("deadline", e.target.value)}
+                              placeholder={c.contact.form.deadlinePlaceholder}
+                              data-testid="input-deadline"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -327,22 +363,25 @@ export default function Contato() {
                       {fieldError("consent")}
                     </div>
 
-                    <Button
-                      type="submit"
-                      size="lg"
-                      disabled={isSubmitting}
-                      className="w-full md:w-auto bg-abyss text-bone hover:bg-ink font-semibold"
-                      data-testid="button-submit"
-                    >
-                      {isSubmitting ? (
-                        c.contact.form.sending
-                      ) : (
-                        <>
-                          {c.contact.form.submit}
-                          <Send className="ml-2 h-4 w-4" />
-                        </>
-                      )}
-                    </Button>
+                    <div>
+                      <p className="text-small text-abyss/60 mb-3">{c.contact.aside.subtitle}</p>
+                      <Button
+                        type="submit"
+                        size="lg"
+                        disabled={isSubmitting}
+                        className="w-full md:w-auto bg-abyss text-bone hover:bg-ink font-semibold"
+                        data-testid="button-submit"
+                      >
+                        {isSubmitting ? (
+                          c.contact.form.sending
+                        ) : (
+                          <>
+                            {c.contact.form.submit}
+                            <Send className="ml-2 h-4 w-4" />
+                          </>
+                        )}
+                      </Button>
+                    </div>
                   </form>
                 )}
               </CardContent>

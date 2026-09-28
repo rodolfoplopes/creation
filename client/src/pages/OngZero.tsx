@@ -239,7 +239,7 @@ export default function OngZero() {
 
       {/* Fechamento */}
       <Section tone="abyss" size="lg">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center" data-fab-hide-target>
           <h2 className="font-display text-h2 sm:text-h1 font-bold text-bone mb-6">
             {page.closing.title}
           </h2>

@@ -1,5 +1,7 @@
 import { Link } from "wouter";
-import { useContent, useLocalizedHref } from "@/content";
+import { useContent, useLocalizedHref, useLang } from "@/content";
+import { trackEvent } from "@/lib/analytics";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 /**
  * ============================================================================
  * A TERCEIRA TAXONOMIA MORAVA AQUI
@@ -20,6 +22,8 @@ import { useContent, useLocalizedHref } from "@/content";
 export default function Footer() {
   const c = useContent();
   const localize = useLocalizedHref();
+  const lang = useLang();
+  const whatsappHref = buildWhatsAppUrl(c.contact.aside.whatsappNumber, "", lang);
   return (
     <footer className="bg-abyss text-bone" data-testid="footer">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-8 lg:px-10">
@@ -38,6 +42,28 @@ export default function Footer() {
                 {c.footer.description}
               </p>
               <p className="mt-3 text-bone/60 text-sm">{c.footer.locations}</p>
+              {/* WhatsApp com numero visivel (Tarefa 10.3): prova que existe
+                  alguem do outro lado, e permite copiar em vez de clicar. */}
+              <div className="mt-6 flex flex-col gap-2 text-sm">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("whatsapp_click", { source: "footer" })}
+                  className="text-bone/60 hover:text-signal transition-colors w-fit"
+                  data-testid="link-footer-whatsapp"
+                >
+                  {c.contact.aside.whatsapp} {c.contact.aside.whatsappDisplay}
+                </a>
+                <a
+                  href={`mailto:${c.contact.aside.email}`}
+                  onClick={() => trackEvent("email_click", { source: "footer" })}
+                  className="text-bone/60 hover:text-signal transition-colors w-fit"
+                  data-testid="link-footer-email"
+                >
+                  {c.contact.aside.email}
+                </a>
+              </div>
               <p className="mt-6 text-signal font-semibold tracking-widest text-sm uppercase">
                 {c.brand.microcopy}
               </p>

@@ -190,13 +190,17 @@ export interface Content {
       namePlaceholder: string;
       email: string;
       emailPlaceholder: string;
+      // Tarefa 9 (comando tecnico 26/09/2026): campos abaixo ficam dentro
+      // do disclosure "Adicionar detalhes (opcional)", fechado por padrao —
+      // so nome/email/message/consent ficam sempre visiveis.
+      detailsToggle: string;         // "Adicionar detalhes (opcional)"
       whatsapp: string;              // campo opcional, novo
       whatsappPlaceholder: string;
       organization: string;
       organizationPlaceholder: string;
-      projectType: string;           // "Com o que podemos ajudar?"
+      projectType: string;           // "O que você precisa agora?"
       projectTypePlaceholder: string;
-      projectTypes: string[];        // 12 opcoes reais do doc + "Outro"
+      projectTypes: string[];        // 7 opcoes (6 cards de stubData.solucoes + "Ainda nao sei")
       projectStage: string;          // "Em que momento o projeto esta?" — novo
       projectStagePlaceholder: string;
       projectStages: string[];
@@ -218,6 +222,10 @@ export interface Content {
       email: string;
       whatsapp: string;
       whatsappNumber: string;
+      // Mesmo numero, formatado local (sem +55) para exibicao no rodape
+      // (Tarefa 10.3, comando tecnico 26/09/2026) — numero visivel prova
+      // que existe alguem do outro lado e permite copiar em vez de clicar.
+      whatsappDisplay: string;
       note: string;
     };
     process: {                       // "O que acontece depois do contato?" — novo
